@@ -1,7 +1,7 @@
 <?php
+$LAST_UPDATE = 'Feb-09-2012';
 /* =============================================================
   Author(s): Gregory Krudysz
-  Last Update: Feb-19-2012
 /* ============================================================= */
 ?>
 <script type="text/javascript">
@@ -75,26 +75,23 @@
         //$("#select_class").buttonset(); /*== NOT WORKING IN FF ?? ==*/
         /*-------------------------------------------------------------------------*/
         $("#scoreContainer").click(function(){$("#scoreContainerContent").slideToggle("slow");});
-		/*-------------------------------------------------------------------------*/
-		/*
-		$("input[name='question_nav']").live('click', function(event) {
-			
-		  var nav = $(this).val();
-		  var qid = $('#ITS_QCONTROL_TEXT').attr("value");
-		  
-		  switch(nav){
-                case '>>': qid++;break;
-                case '<<': qid--;break;
-		  }
-		  
-		  //alert(nav+' , '+qid);
-
-          $.get('ITS_admin_AJAX.php', { ajax_args: "getQuestionMeta", ajax_data: qid}, function(data) {       
-                alert(data);
-                //$('#metaContainer').html(data);
-          });				
-		});
-		*/	      	
+        /*-------------------------------------------------------------------------*/	
+        $('#previousQuestion').live('click', function(event) {
+            var qid = $('#ITS_QCONTROL_TEXT').attr("value");
+            //var del = $(this).attr("del"); //alert(delta);
+            $.get('ITS_admin_AJAX.php', { ajax_args: "getQuestionMeta", ajax_data: qid}, function(data) {       
+                $('#metaContainer').html(data);
+            });
+        });		
+        /*-------------------------------------------------------------------------*/	
+        $('#nextQuestion').live('click', function(event) {
+            var qid = $('#ITS_QCONTROL_TEXT').attr("value");
+            //var del = $(this).attr("del"); //alert(delta);
+            alert(qid);
+            $.get('ITS_admin_AJAX.php', { ajax_args: "getQuestionMeta", ajax_data: qid}, function(data) {
+                $('#metaContainer').html(data);  
+            });
+        });		
         /*-------------------------------------------------------------------------*/
         $('#testme2').live('click', function(event) {
 			$("#ImgDlg").dialog('close');
@@ -209,7 +206,7 @@
             var css = 'text ui-widget-content ui-corner-all ITS_Q';
             var lbl = '<b>ANSWERS:</b><br>';
             var sel = '<input type="button" name="changeAnswer" id="remAnswer" v="-" value="&mdash;" class="ITS_buttonQ" /><br>'
-					 +'<input type="button" name="changeAnswer" id="addAnswer" v="+" value="+"       class="ITS_buttonQ" />';		
+                +'<input type="button" name="changeAnswer" id="addAnswer" v="+" value="+"        class="ITS_buttonQ" />';		
             switch(qtype){
                 //------------------//
                 case 'mc':
@@ -224,9 +221,10 @@
                             +'<td width="20%"><input type="text" name="weight'+a+'" id="weight'+a+'" value="" class="'+css+'" /></td>'
                             +'</tr>';
                     }
-                    ans += '</table>';
+                    ans += '</table>'
+						  +'<input type="hidden" name="answers" id="answers" value="'+n+'" />';
                     ans = '<td>'+lbl+sel+'</td>'
-                         +'<td>'+ans+'</td>';
+                        +'<td>'+ans+'</td>';
                     break;
                 //------------------//
             case 'm':
@@ -241,20 +239,39 @@
                         +'<td width="50%"><textarea name="R'+a+'" id="R'+a+'" value="" class="'+css+'" /></td>'
                         +'</tr>';								 
                 }
-                ans += '</table>';			 
+                ans += '</table>'
+						+'<input type="hidden" name="answers" id="answers" value="'+n+'" />';
                 ans = '<td>'+lbl+sel+'</td>'
                     +'<td>'+ans+'</td>';
                 break;
             //------------------//
         case 'c':
             //------------------//
+            lbl = '<b>Number of Variables:</b><br>';
             n = 1;
-            ans = '<table id="ITS_Qans" class="" n="'+n+'" qtype="'+qtype+'">'
+            /*ans = '<table id="ITS_Qans" class="" n="'+n+'" qtype="'+qtype+'">'
                 +'<tr>'
                 +'<td width="10%"><label for="formula">formula</label></td>'
                 +'<td width="90%" colspan="6"><textarea name="formula" id="formula" value="" class="'+css+'" /></td>'
                 +'<td><input type="hidden" name="vals" id="vals" value="'+n+'" /></td>'
                 +'</tr>';
+                */
+            // Khyatis Changes
+            
+            ans = '<table id="ITS_Qans" class="" n="'+n+'" qtype="'+qtype+'">'
+                +'<tr><td><LABEL>Number of Formulaes</LABEL></td>'
+                +'<td><input type="button" value="+" id="add_fcount" class="ITS_buttonQ"></td><td><input type="button" id="dec_fcount" value="-" class="ITS_buttonQ"></td>'
+				+'<td  width="90%">Weights must sum up to 100</td></tr>';
+			ans +='<tr><input type="hidden" name="answers" id="answers" value="1" /></tr>';
+			ans +='<tr class="formla" id="formulaes1"><td width="10%"><label for="text1">Text</label></td>'
+                +'<td width="30%" ><textarea name="text1" id="text1" value="" class="'+css+'" /></td>'
+   				+'<td width="10%"><label for="formula">Formula</label></td>'
+			    +'<td width="30%" colspan="4"><textarea name="formula" id="formula" value="" class="'+css+'" /></td>'
+                + '<td width="10%"><label for="weight1">Weight</label></td><td width="20%"><input type="text" class="'+css+'" MAXLENGTH=3 name="weight1" id="weight1"></td>'
+                +'</tr>';
+            ans+='<tr><td><input type="hidden" name="vals" id="vals" value="'+n+'" /></td></tr>';
+            
+             // Khyatis Changes
             for (a=1;a<=n;a++){							
                 ans += '<tr>'
                     +'<td width="10%"><label for="value'+a+'">value&nbsp;'+a+'</label></td>'
@@ -301,6 +318,40 @@ case 'p':
 }
 $("#ansQ").html(ans);
 });
+
+/* NEW CHANGE by Khyati - 15th Feb 2012*/
+$('#add_fcount').live('click',function() {
+	//alert('hello');
+	var css   = 'text ui-widget-content ui-corner-all ITS_Q';
+	var n1 =  parseInt($("#answers").val());
+	var new_value  = n1+1;
+   
+    if(new_value<=4){
+	 $("#answers").val(new_value);
+		var tr = '<tr  id="formulaes'+new_value+'">'
+					+'<td width="10%"><label for="text'+new_value+'">Text'+new_value+'</label></td>'
+					+'<td width="30%" ><textarea name="text'+new_value+'" id="text'+new_value+'" value="" class="'+css+'" /></td>'
+                    +'<td width="10%"><label for="formula">Formula'+new_value+'</label></td>'
+					+'<td width="30%" colspan="6"><textarea name="formula'+new_value+'" id="formula'+new_value+'" value="" class="'+css+'" /></td>'
+					+'<td width="10%"><label for="weight1">Weight'+new_value+'</label></td><td width="20%"><input type="text" MAXLENGTH=3 name="weight'+new_value+'" class="'+css+'" id="weight'+new_value+'"></td>'
+					+'</tr>';
+		$("#formulaes"+n1).after(tr);
+	}
+    
+});
+
+
+$('#dec_fcount').live('click',function() {
+	var css   = 'text ui-widget-content ui-corner-all ITS_Q';
+	var n1 =  parseInt($("#answers").val());
+	var new_value  = n1-1;
+    if(new_value>0){
+		$("#answers").val(new_value);
+		$("#formulaes"+n1).remove();
+	}
+    
+});
+/*   NEW CHANGE ENDS   */
 /*-------------------------------------------------------------------------*/		
 $( "input[name=changeAnswer]" ).live('click', function(event) {
 
@@ -408,8 +459,15 @@ switch(v){
     $("#submitDialog").live('click', function(event) {	
         var qtype = $("#ITS_Qans").attr("qtype");
         var n     = $("#ITS_Qans").attr("n");
+        if(qtype=="mc" || qtype=="m"){
+			$("#answers").val(n);
+			alert('value odf answers now is made' + n + 'lets check:' + $("#answers").val());
+		}
         var str   = $("#Qform").serialize();  // name,value & ...
-        str       = 'qtype='+qtype+'&answers='+n+'&'+str;
+        
+        
+       // -> khyatis modification: commented str       = 'qtype='+qtype+'&answers='+n+'&'+str;
+         str       = 'qtype='+qtype+'&'+str;
         // 
         //alert($("#ITS_Qans").attr("n"));
         $.get('ITS_admin_AJAX.php', { ajax_args: "addQuestion", ajax_data: str}, function(data) {   
@@ -527,7 +585,7 @@ switch(v){
     });		 
     /*-------------------------------------------------------------------------*/
     $("a[name='ITS_EDIT_QCONTROL']").live('click', function(event) {
-        //alert('jquery ITS_EDIT_QCONTROL');
+        alert('jquery ITS_EDIT_QCONTROL');
         var textarea_id = $('textarea.ITS_EDIT').attr("id");
         var textarea_value = $('textarea#'+textarea_id).val();
         //alert(textarea_value);
@@ -537,28 +595,16 @@ switch(v){
     });
     /*-------------------------------------------------------------------------*/
     $(".ITS_button[name='editMode']").live('click', function(event) {
-		// EDIT TEXT BOXES
         $('span.ITS_QCONTROL').each(function(index) {
             //<a href="#" name="ITS_EDIT" class="ITS_EDIT" ref="'+$(this).attr("id")+'"> Edit </a>
-            $(this).html('<div id="navEdit"><ul id="navlistEdit"><li><a href="#" name="ITS_EDIT" ref="'+$(this).attr("id")+'"> Edit </a></li></ul></div>');
+            $(this).html('<div id="navEdit"><ul id="navlistEdit"><li><a href="#" name="ITS_IMG" ref="'+$(this).attr("id")+'"> Image </a></li><li><a href="#" name="ITS_EDIT" ref="'+$(this).attr("id")+'"> Edit </a></li></ul></div>');
             var idd = $(this).attr("id");
             //alert('#'+idd+'_TARGET');
             $('#'+idd+'_TARGET').css({'border': '2px dotted silver'});
         });
-        // EDIT IMAGES
-        $('span.ITS_ICONTROL').each(function(index) {
-			//alert($(this).attr("ref"));
-            //<a href="#" name="ITS_EDIT" class="ITS_EDIT" ref="'+$(this).attr("id")+'"> Edit </a>
-            $(this).html('<div id="navEdit"><ul id="navlistEdit"><li><a href="#" name="ITS_IMG" ref="'+$(this).attr("ref")+'"> Image </a></li></ul></div>');
-            var idd = $(this).attr("id");
-            //alert('#'+idd+'_TARGET');
-            $('#'+idd+'_TARGET').css({'border': '2px dashed #666','padding':'0.25em','overflow':'auto'});
-        });        
-        
     });		
     /*-------------------------------------------------------------------------*/
     $("a.[name='ITS_EDIT']").live('click', function(event) {
-		
         //alert('ITS_EDIT');
         var obj_id = $(this).attr("ref");
         var tar_id = obj_id+'_TARGET';
@@ -665,9 +711,7 @@ switch(v){
     /*-------------------------------------------------------------------------*/
     $("a[name='ITS_IMG']").live('click', function(event) {
 		var qid = $('#ITS_QCONTROL_TEXT').attr("value");
-		var fld = $(this).attr("ref");
-//alert(qid+' - '+fld);				
-        var dialog = $('<div id="ImgDlg" style="ITS" fld="'+fld+'"></div>').appendTo('body');
+        var dialog = $('<div id="ImgDlg" style="ITS"></div>').appendTo('body');
         dialog.dialog({
 			title: 'UPLOAD IMAGE FROM:',
             resizable: true,
@@ -676,13 +720,13 @@ switch(v){
             modal: false,
             buttons: { "My Computer": function() { 
 						//$( this ).dialog( "close" );
-                        $('#ImgDlg').html('<center><form name="ITS_file" action="ajax/ITS_image.php" enctype="multipart/form-data" method="POST"><input id="ITS_image_file" name="ITS_image" size="10" type="file"><input id="ITS_image_upload" name="upload" value="Upload" type="submit"><input type="hidden" name="qid" value="'+qid+'"><input type="hidden" name="fld" value="'+fld+'"></form></center>');
+                        $('#ImgDlg').html('<center><form name="ITS_file" action="ajax/ITS_image.php" enctype="multipart/form-data" method="POST"><input id="ITS_image_file" name="ITS_image" size="10" type="file"><input id="ITS_image_upload" name="upload" value="Upload" type="submit"><input type="hidden" name="qid" value="'+qid+'"/></form></center>');
 						$("#ImgDlg").dialog( "option", "title","From My Computer:");
 						//$('#ITS_image_file').css('border','1px solid red');
 
                 },"SERVER": function() { 
 					/* Solution 1: Redirect to another page */
-					window.location.replace('Image.php?id='+qid+'&f='+fld);
+					window.location.replace('Image.php?id='+qid);
 					//*/
 					/* Solution 2: Redirect to lower div-page //
                     $.get('server_browser2.php', { ajax_args: "deleteQuestion", ajax_data: 0}, function(data) {
@@ -697,12 +741,6 @@ switch(v){
                         $('#ImgDlg').html(data);
                     });
                     */
-                },"delete": function() { 
-						//$( this ).dialog( "close" );
-                        $('#ImgDlg').html('<center><input name="ITS_image_delete" value="Yes, delete it" type="button" qid="'+qid+'" fld="'+fld+'"><input name="ITS_image_delete" value="No" type="button">');
-						$("#ImgDlg").dialog( "option", "title","Delete this image from question?");
-						//$('#ITS_image_file').css('border','1px solid red');
-
                 },
                 Cancel: function() { $( this ).dialog( "close" ); }
             }
@@ -736,23 +774,6 @@ switch(v){
     $('#ITS_image_upload').live('click', function(event) {
 			$("#ImgDlg").dialog('close');    
     });
-    /*-------------------------------------------------------------------------*/
-    $('input[name="ITS_image_delete"]').live('click', function(event) {
-            if ($(this).val()=='Yes, delete it'){
-			   var qid = $(this).attr('qid');
-			   var fld = $(this).attr('fld');
-              
-			   $.get('ajax/ITS_image.php', {
-				  ajax_args: "delete", 
-				  ajax_data: qid+'~'+0+'~'+fld
-			   }, function(data) {
-				  $("#ImgDlg").dialog('close');		
-				  window.location.replace('Question.php?qNum='+qid);	
-			   });	     
-			} else {
-			   $("#ImgDlg").dialog( "option", "title","Image:").html(''); 
-			}			   
-    });    
     /*-------------------------------------------------------------------------*/
     $(".ITS_addTAG").live('click', function(event) {
         var obj_id = $(this).attr("ref");	
