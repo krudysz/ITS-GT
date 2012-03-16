@@ -328,12 +328,12 @@ $('#add_fcount').live('click',function() {
    
     if(new_value<=4){
 	 $("#answers").val(new_value);
-		var tr = '<tr  id="formulaes'+new_value+'">'
-					+'<td width="10%"><label for="text'+new_value+'">Text'+new_value+'</label></td>'
+		var tr = '<tr id="formulaes'+new_value+'">'
+					+'<td width="10%"><label for="text">Text'+new_value+'</label></td>'
 					+'<td width="30%" ><textarea name="text'+new_value+'" id="text'+new_value+'" value="" class="'+css+'" /></td>'
                     +'<td width="10%"><label for="formula">Formula'+new_value+'</label></td>'
-					+'<td width="30%" colspan="6"><textarea name="formula'+new_value+'" id="formula'+new_value+'" value="" class="'+css+'" /></td>'
-					+'<td width="10%"><label for="weight1">Weight'+new_value+'</label></td><td width="20%"><input type="text" MAXLENGTH=3 name="weight'+new_value+'" class="'+css+'" id="weight'+new_value+'"></td>'
+					+'<td width="90%" colspan="6"><textarea name="formula'+new_value+'" id="formula'+new_value+'" value="" class="'+css+'" /></td>'
+					+'<td width="10%"><label for="weight1">Weight'+new_value+'</label></td><td width="40%"><input type="text" MAXLENGTH=3 name="weight'+new_value+'" class="'+css+'" id="weight'+new_value+'"></td>'
 					+'</tr>';
 		$("#formulaes"+n1).after(tr);
 	}
