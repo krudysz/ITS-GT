@@ -8,7 +8,7 @@ ITS_screen2 - creates user ITS screen.
 								 ex. $ITS_table = new ITS_screen('tableA',2,2,array(1,2,3,4),array(20,30));
 								
 	 Author(s): Greg Krudysz |  Oct-26-2010
-	 Last Revision: Mar-04-2012
+	 Last Revision: Jan-03-2012
 //-----------------------------------------
  SCHEMA: 
  				 screen.php
@@ -42,7 +42,7 @@ class ITS_screen2 {
     public $style;
 
     public $screen;
-    public $mode;	 	   // question | review | survey
+    public $mode;	 			 	 // question | review | survey
     public $question_info; // := $Q->Q_answers_permutation;
 
     //--- LAB ---//
@@ -484,8 +484,9 @@ class ITS_screen2 {
                     $answer = $form.$question
                             .'<div id="errorContainer" class="ITS_message"></div>'
                             .'<div id="tagContainer" class="tagContainer">'.$tags.'</div>'
-                            .'<div style="border:1px solid pink" id="ratingContainer" class="ratingContainer">'.$rating.'</div>'
+                            .'<div id="ratingContainer" class="ratingContainer">'.$rating.'</div>'
                             .$submit.'</form>';
+
 
                     //$this->_answers_permutation[$name] = $Q->Q_answers_permutation;
                     //$this->_question_type[$name] = $Q->Q_type;
@@ -505,8 +506,8 @@ class ITS_screen2 {
                     $this->lab_completed = true;
 
                     $msg = '<center><DIV class="ITS_MESSAGE" style="background:LemonChiffon">'
-                          .'<p>Thanks, your <b>'.ucfirst($this->lab_tag).'</b> answers have been recorded on <font color="purple">'.$time.'</font>'
-                          .'</DIV></center>';
+                            .'<p>Thanks, your <b>'.ucfirst($this->lab_tag).'</b> answers have been recorded on <font color="purple">'.$time.'</font>'
+                            .'</DIV></center>';
 
                     $this->lab_index = 1;
                     $index = $this->getLabIndex();
@@ -540,8 +541,8 @@ class ITS_screen2 {
                 }
                 // COMPLETED
             }	else { //echo ' - COMPLETED';
-                $qid   	  = $ques[$this->lab_index-1][0];
-                $qtype 	  = $ques[$this->lab_index-1][1];
+                $qid   = $ques[$this->lab_index-1][0];
+                $qtype = $ques[$this->lab_index-1][1];
                 $index    = $this->getLabIndex();
                 $question = $this->getLabQuestion($this->lab_active,$this->lab_index);
 
@@ -675,6 +676,8 @@ class ITS_screen2 {
                     /*
                     $tagObj = new ITS_tagInterface();
                     $tags   = $tagObj->displayTags($this->id,$qid,$tagObj->getTags($qid));
+                    //
+                    echo '<hr><hr>';
                     echo $tags; die();
                     * */
                     //-- RATING -----------------------------//
@@ -751,8 +754,8 @@ class ITS_screen2 {
                 }
                 // COMPLETED
             }	else { //echo ' - COMPLETED';
-                $qid   	  = $ques[$this->lab_index-1][0];
-                $qtype 	  = $ques[$this->lab_index-1][1];
+                $qid   		= $ques[$this->lab_index-1][0];
+                $qtype 		= $ques[$this->lab_index-1][1];
                 $index    = $this->getLabIndex();
                 $question = $this->getLabQuestion($this->lab_active,$this->lab_index);
 
@@ -771,7 +774,8 @@ class ITS_screen2 {
                 }
 
                 //$ans = $this->getUserAnswer($qid,$qtype,$answered);
-                $ans = $this->getAnswer($qid,$qtype,$answered,0);  //die($ans);
+                $ans = $this->getAnswer($qid,$qtype,$answered,0);
+                //die($ans);
                 $navigation_str = $this->getNavigation($ans,$qid);
 
                 //$this->_answers_permutation[$name] = $Q->Q_answers_permutation;
@@ -875,7 +879,7 @@ class ITS_screen2 {
 	 echo '<table class="ITS_backtrace">';	
 	 array_walk( debug_backtrace(), create_function( '$a,$b', 'print "<tr><td><font color=\"blue\">". basename( $a[\'file\'] ). "</b></font></td><td><font color=\"red\">{$a[\'line\']}</font></td><td><font color=\"green\">{$a[\'function\']}()</font></td><td>". dirname( $a[\'file\'] ). "/</td></tr>";' ) ); 	
 	 echo '</table>';	
-		/******************/
+	 /******************/
         //DEBUG: echo '<p>-in getQuestion-<p>'.$Qnum;
         // connect to database
         $mdb2 =& MDB2::connect($this->db_dsn);
@@ -1182,7 +1186,8 @@ class ITS_screen2 {
         $next_icon = '&gt;';  // Next
         $prev_icon = '&lt;';  // Previous
         //echo isset($this->screen);
-        //echo '<p><hr>'.$this->screen.'+++'; //die($this->screen);
+        //echo '<p><hr>'.$this->screen.'+++'; 
+        //echo("screen".$this->screen);
 
         switch ($this->screen) {
             //-------------------------------//
@@ -1219,6 +1224,7 @@ class ITS_screen2 {
                 $next_str = $button_onClick.$next_icon;
 
                 $container = "'getContent'";
+
                 break;
             //-------------------------------//
             case 2:  // EXERCISES screen
@@ -1247,7 +1253,7 @@ class ITS_screen2 {
             //-------------------------------//
             case 4:
             //-------------------------------//
-            //echo '<b>'.$this->mode.'<p>';
+            //echo '<b>'.$this->mode.' and '.$nav_content.'<p>';
 
                 switch ($this->mode) {
                     /********************/
@@ -1261,6 +1267,13 @@ class ITS_screen2 {
                         $container = "'getContent'";
                         $button_onClick = ''; //"onClick=ITS_question_next()";
                         $next_str = 'name="update_index" class="ITS_navigation" mode="'.$this->mode.'" '.$button_onClick;
+
+                        //--- rating ---//
+                        $rateObj  = new ITS_rating();
+                        $rating   = $rateObj->renderRating('');
+                        $rateBox  = '<div id="ratingContainer" style="float:right">'.$rating.'</div>';
+                        $nav_content .= $rateBox;
+                        //--------------//
                         break;
                     /********************/
                     case 'review':
@@ -1333,7 +1346,7 @@ class ITS_screen2 {
         $style2 = ',ITS_screen,\'contentContainer\')>';
         //$style3 = 'onClick=ITS_lab_submit(document.getElementById(\'ITS_SubmitForm\'),'.$qid.')>';
 
-        //<div name="updateLab_index" class="ITS_navigation"
+		//<div name="updateLab_index" class="ITS_navigation"
         $prev = '<div id="ITS_nav_prev" '.$prev_str.'>'.$prev_icon.'</div>';
         $next = '<p><div id="ITS_nav_next" '.$next_str.'>'.$next_icon.'</div>';
 
@@ -1386,130 +1399,90 @@ class ITS_screen2 {
     //=====================================================================//
     function recordQuestion($qid,$qtype,$answered,$info,$tstart) {
         //=====================================================================//
-        /*** BACK-TRACE ***/
-        //echo '<table class="ITS_backtrace">';
-        //array_walk( debug_backtrace(), create_function( '$a,$b', 'print "<tr><td><font color=\"blue\">". basename( $a[\'file\'] ). "</b></font></td><td><font color=\"red\">{$a[\'line\']}</font></td><td><font color=\"green\">{$a[\'function\']}()</font></td><td>". dirname( $a[\'file\'] ). "/</td></tr>";' ) );
-        //echo '</table>';
-        /******************/
-        //echo '<p>recordQuestion($qid,$qtype,$answered,';
-        //print_r($info[0]);die('<br>aa');
-        //echo ')<p>';
-        //var_dump($this->_answers_permutation); die();
-        //echo $qid.' - '.$qid.' - '.$answered;
-        //var_dump($info); die();
-        //echo 'recordQuestion: '.$this->chapter_number.'<p>';
-
-        //*** Prevent Multiple submissions: - 2. Server: Accept only the first session ticket ***//
         $qTicket = FALSE;
-        //$tdiff   = (time()-$_SESSION['ITSQ_'.$qid]);
         if (isset($_SESSION['ITSQ_'.$qid]) ) { // OR ticket really old: OR ($tdiff>60)
-            $qTicket = TRUE;
-            unset($_SESSION['ITSQ_'.$qid]); //var_dump($_SESSION['ITSQ_'.$qid]);
+			$qTicket = TRUE;
+			unset($_SESSION['ITSQ_'.$qid]); //var_dump($_SESSION['ITSQ_'.$qid]);
+		}
+	    if ($qTicket) {
+        // connect to database
+        $mdb2 =& MDB2::connect($this->db_dsn);
+        if (PEAR::isError($mdb2)) {
+            throw new Question_Control_Exception($mdb2->getMessage());
         }
-        //***---------------------------------------------------------------------------------***//
 
-        if ($qTicket) {
-            // connect to database
-            $mdb2 =& MDB2::connect($this->db_dsn);
-            if (PEAR::isError($mdb2)) {
-                throw new Question_Control_Exception($mdb2->getMessage());
+        $current_chapter = $this->chapter_number;
+		switch ($this->mode) {
+            case 'survey':
+                $scoreArr = array('NULL');
+                break;
+            case 'practice':
+                $current_chapter = -$current_chapter;  // NEGATIVE CHAPTERS
+            default:
+                $config = implode(",",$info);
+                $tr     = new ITS_statistics($this->id,$this->term,$this->role);
+               // die('died');
+                $scoreArr = $tr->get_question_score($qid,mysql_real_escape_string($answered),$config,$qtype);
+              //  die('hiiiiii'.$scoreArr);
+                //$scoreArr = 0;
+        }
+		$dur = time()-$tstart;
+		
+		switch (strtolower($qtype)) {
+            //-------------------------------//
+            case 'm':
+            //-------------------------------//
+            
+                $perm_str = implode(',',$info); //$this->_answers_permutation[$name]
+				 
+				$score = strval($scoreArr[0]); // Was scoreArr
+                
+                $query_str = 'INSERT IGNORE INTO '.$this->tb_user.$this->id.' (question_id,current_chapter,answered,comment,score,epochtime,duration) VALUES('.$qid.','.$current_chapter.',"'.mysql_real_escape_string($answered).'","'.$perm_str.'",'.$score.','.$tstart.','.$dur.')';
+                break;
+            //-------------------------------//
+            case 'c':
+            //-------------------------------//
+            
+                $score = strval($scoreArr[0]);
+                $perm_str = implode(',',$info); //$this->_answers_permutation[$name]
+                //$score = $scoreArr; 
+                //die('scpre:'.$score);
+                $query_str = 'INSERT IGNORE INTO '.$this->tb_user.$this->id.' (question_id,current_chapter,answered,comment,score,epochtime,duration) VALUES('.$qid.','.$current_chapter.',"'.mysql_real_escape_string($answered).'","'.$perm_str.'",'.$score.','.$tstart.','.$dur.')';
+                break;
+            //-------------------------------//
+            default;
+            //-------------------------------//
+                $score = $scoreArr[0];
+                
+                $query_str = 'INSERT IGNORE INTO '.$this->tb_user.$this->id.' (question_id,current_chapter,answered,score,epochtime,duration) VALUES('.$qid.','.$current_chapter.',"'.mysql_real_escape_string($answered).'",'.$score.','.$tstart.','.$dur.')';
+            //-------------------------------//
+        }	
+        //OLD
+	   //die('died');
+		// OLD
+		//die('died');
+		if (!(is_empty($answered))) {		
+			 	
+			$query = 'SELECT question_id,answered,epochtime,count(*) FROM '.$this->tb_user.$this->id.' WHERE score IS NOT NULL AND question_id='.$qid.' GROUP BY question_id,answered,epochtime HAVING epochtime BETWEEN '.($tstart-1).' AND '.($tstart+1);
+			$res =& $mdb2->query($query);
+            if (PEAR::isError($res)) {
+                throw new Question_Control_Exception($res->getMessage());
             }
-            $current_chapter = $this->chapter_number;
-            // echo '<font color="Red">'.$this->mode.'</font>';//die('rec');
-            switch ($this->mode) {
-                case 'survey':
-                    $scoreArr = array('NULL');
-                    break;
-                case 'practice':
-                    $current_chapter = -$current_chapter;  // NEGATIVE CHAPTERS
-                //break; <= let it go thru
-                default:
-                    if ($info[0]!='skip') {
-                        $config = $info[1];
-                        $tr     = new ITS_statistics($this->id,$this->term,$this->role);
-                        $scoreArr = $tr->get_question_score($qid,mysql_real_escape_string($answered),$config,$qtype);
-                    } else {
-                        $scoreArr = array('NULL');
-                    }
+            $qExists = $res->fetchAll();
+            if (empty($qExists)){
+            $res = & $mdb2->query($query_str);
+            if (PEAR::isError($res)) {
+                die('hello');
+                throw new Question_Control_Exception($res->getMessage());
+                
             }
-            //var_dump($score);
-            //die('in recordQuestion');
-            //die('score '.$qtype);
-            //echo 'TIME '.$tstart.'<p>'.date("D M j G:i:s T Y",$tstart);
-
-            //--- DURATION ---//
-            $dur = time()-$tstart;
-
-            //--- RATING ---//
-            //if (empty($rating)) { $rating = 'NULL'; }
-
-            switch (strtolower($qtype)) {
-                //-------------------------------//
-                case 'm':
-                //-------------------------------//
-                    $perm_str = '"'.$info[1].'"'; //$this->_answers_permutation[$name]
-                    //echo '<hr><p>';var_dump($scoreArr);echo '<hr></p>';
-                    $score = strval($scoreArr[0]);
-                    // var_dump($score);die('in m');
-                    //if (strcmp($this->mode,'survey')) {
-                    //    $score = array_sum($scoreArr[0]);
-                    //}
-                    //echo '<p>recordQuestion: SCORE: '.$perm_str.'<p>';
-                    break;
-                //-------------------------------//
-                case 'c':
-                //-------------------------------//
-                    $score    = $scoreArr[0];
-                    $perm_str = '"'.$info[1].'"'; //$this->_answers_permutation[$name]
-                    //echo '<p>recordQuestion: SCORE: '.$perm_str.'<p>';
-                    break;
-                //-------------------------------//
-                default:
-                //-------------------------------//
-                    $score = $scoreArr[0];
-                    $perm_str = 'NULL';
-                //-------------------------------//
-            }
-
-            switch ($info[0]) {
-                case 'skip':
-                    $query_str = 'INSERT IGNORE INTO '.$this->tb_user.$this->id.' (question_id,current_chapter,comment,epochtime,duration) VALUES('.$qid.','.$current_chapter.',"skip",'.$tstart.','.$dur.')';
-                    $res = & $mdb2->query($query_str);
-                    if (PEAR::isError($res)) {
-                        throw new Question_Control_Exception($res->getMessage());
-                    }
-                    break;
-                default:
-                    $query_str = 'INSERT IGNORE INTO '.$this->tb_user.$this->id.' (question_id,current_chapter,answered,comment,score,epochtime,duration) VALUES('.$qid.','.$current_chapter.',"'.mysql_real_escape_string($answered).'",'.$perm_str.','.$score.','.$tstart.','.$dur.')';
-                    if (!(is_empty($answered))) {
-                        //*** Prevent Multiple submissions: - 3. Server: MySQL check for recent (+/- 1 sec ) INSERT with qid ***//
-                        $query = 'SELECT question_id,answered,epochtime,count(*) FROM '.$this->tb_user.$this->id.' WHERE score IS NOT NULL AND question_id='.$qid.' GROUP BY question_id,answered,epochtime HAVING epochtime BETWEEN '.($tstart-1).' AND '.($tstart+1);
-                        //echo $query;
-                        $res =& $mdb2->query($query);
-                        if (PEAR::isError($res)) {
-                            throw new Question_Control_Exception($res->getMessage());
-                        }
-                        $qExists = $res->fetchAll();
-                        //***----------------------------------------------------------***//
-                        if (empty($qExists)) {
-                            //  die($query_str);
-                            $res = & $mdb2->query($query_str);
-                            if (PEAR::isError($res)) {
-                                throw new Question_Control_Exception($res->getMessage());
-                            }
-                        } else {
-                            echo '<div class="ITS_error">WARNING: MULTIPLE RECORDS <br>Details: ( '.$qExists[0][0].' | '.$qExists[0][1].' | '.$qExists[0][2].' )</div>';
-                        }
-                    }
-            }
-
-            //*** DEBUG: ***//
-            //echo 'ch: '.$this->chapter_number.'<p>';
-            //echo 'ANSWERS: '.$ans." | ".is_string($ans)."<p> ";die();
-            // echo $query_str."<p>";  die('-+++++-');
-
-        } //if:$qTicket
+		    } else { echo '<div class="ITS_error">WARNING: MULTIPLE RECORDS <br>Details: ( '.$qExists[0][0].' | '.$qExists[0][1].' | '.$qExists[0][2].' )</div>'; }
+        }
+	    } //if:$qTicket
+       
+    
         $mdb2->disconnect();
+       
     }
     //=====================================================================//
     function recordRating($qid,$rating) {
@@ -1536,8 +1509,7 @@ class ITS_screen2 {
         /* $config: mode: (0-rand) | (1-DB) parameters */
         //echo $qid,$qtype,$config,$answered
         //echo $qid.' -- '.$qtype.' -- '.$answered.' --> '.$config.'<p>';
-
-        $tr = new ITS_statistics($this->id,$this->term,$this->role);
+       $tr = new ITS_statistics($this->id,$this->term,$this->role);
 
         $Q = new ITS_question($this->id,$this->db_name,$this->tb_name);
         $Q->load_DATA_from_DB($qid);                 //$this->lab_questions[$n]
@@ -1559,17 +1531,15 @@ class ITS_screen2 {
 
         //$Q->get_ANSWERS_solution_from_DB();
         //echo $Q->Q_answers_permutation;
-        //
-        //var_dump($answered);
-        //echo '<hr>';
         //echo 'NULL '.is_null($answered).' EMPTY: '.empty($answered).' OUT '.($answered==0);
 
         if (is_null($answered)) { //| empty($answered)) {
+			
             $ans    = '&nbsp;';
             $score  = 0;
             $tscore = NULL;
-            $dist   = '';
         } else {
+		
             //DEBUG:
             //echo 'SCORE: '.$answers[$qn][0].' | '.$answers[$qn][1].'<p>';
             //echo $qid.' | '.$answered.' | '.$qtype.'<p>';
@@ -1578,19 +1548,14 @@ class ITS_screen2 {
             //ITS_debug($score);
             $index  = count($score)-1;
             $ans    = $tr->render_question_answer($score,$answered,$qtype,$index);
+            
             //$tscore = $this->get_total_score($score,$answers[$qn][1],$qtype);
-            //******//
-            $dist = $this->getQuestionDist($qid,$qtype,$score,$Q->Q_answers);
         }
+		
+        $dist = ''; //'DISTRIBUTION';
         //echo '<p>score: '.$score.'<p>';
-        
-        //--- rating ---//                       
-        $rateObj  = new ITS_rating();
-        $rating   = $rateObj->renderRating('');
-        $rateBox  = '<div id="ratingContainer">'.$rating.'</div>';
-        //--------------//     
-        $list = $tr->render_user_answer($ans,$score,$dist.$rateBox,0,$index);
-        
+
+        $list = $tr->render_user_answer($ans,$score,$dist,0,$index);
 
         return $list;
     }
@@ -1676,165 +1641,31 @@ class ITS_screen2 {
                 $rateBox = '';
             }
             else {
-                $dist = getQuestionDist($qid,$qtype,$score,$Nanswers);
-                $FEEDBACK = $tr->render_user_answer($ans,$score,$dist,2,$qn);
+                //--- Question Distribution ---------//
+                switch (strtoupper($qtype)) {
+                    case 'MC':
+                    case 'C':
+                        $query = 'SELECT id FROM users WHERE status="'.$this->term_current.'"';
+                        //echo $query;
+                        $res = & $mdb2->query($query);
+                        if (PEAR :: isError($res)) {
+                            throw new Question_Control_Exception($res->getMessage());
+                        }
+                        $activity_users = $res->fetchCol();
 
-                $feedback = '<table style="border:1px solid #fff"><tr><td>'.$FEEDBACK.'</td><td style="width:220px">'.$rateBox.'</td></tr></table>';
-                $Estr.= '<tr class="PROFILE">'.
-                        '<td class="PROFILE_IDX" style="width:1%"><b>' . ($qn+1) .'.</b></td>'.
-                        '<td class="PROFILE">' . $QUESTION . '</td>'.
-                        '<td class="PROFILE" colspan="2">' . $ANSWER.'<BR>'.$feedback.'</td>'.
-                        '</tr>';
-                //} // eof $qn
-                $Estr .= '</table>';
-
-                $qinfo = $this->getQuestionRef($qid);
-                $nav_info = array($this->review_number,$this->review_count,$qinfo);
-                $nav = $this->getNavigation($nav_info,$qid);  // implode(',',$nav_info)
-                $review_str = $nav.$Estr;
+                        $pop   = array ($activity_users);
+                        $DATA  = $tr->get_question_data($qid, $pop);
+                        $stats = $tr->get_question_stats($DATA, $qtype, $Nanswers);
+                        $dist  = $tr->get_question_dist($stats, $qid, $qtype,array($this->term_current),$score);
+                        break;
+                    default:
+                        $dist = '';
+                }
             }
-            return $review_str;
-        }
-	}
-        //=====================================================================//
-        function getQuestionDist($qid,$qtype,$score,$Nanswers) {
-            //=====================================================================//
-            //--- Question Distribution ---------//
-            $tr = new ITS_statistics($this->id,$this->term,$this->role);
-
-            switch (strtoupper($qtype)) {
-                case 'MC':
-                //case 'M': NEEDS WORK !! ==> wrong stats: adjust for conf
-                /*	$sc = 0;
-					foreach ( $score as $s ) {
-						if (!is_null($s)) { $sc++; }
-					} //echo $sc;
-					$Nanswers = $sc;
-                */                
-                case 'C':  
-					// connect to database
-					$mdb2 =& MDB2::connect($this->db_dsn);
-					if (PEAR::isError($mdb2)) {
-						throw new Exception($this->mdb2->getMessage());
-					}                             
-                    $query = 'SELECT id FROM users WHERE status="'.$this->term_current.'"';
-
-                    $res = & $mdb2->query($query);
-                    if (PEAR :: isError($res)) {
-                        throw new Question_Control_Exception($res->getMessage());
-                    }
- 
-                    $activity_users = $res->fetchCol();
-                    $pop   = array($activity_users);
-                    
-                    $DATA  = $tr->get_question_data($qid,$qtype,$pop);                 
-                    $stats = $tr->get_question_stats($DATA, $qtype, $Nanswers);
-                    $dist  = $tr->get_question_dist($stats, $qid, $qtype,array($this->term_current),$score);
-                    break;
-                default:
-                    $dist = '';
-            }
-            return $dist;
-        }
-        //=====================================================================//
-        function getQuestionQuery($chapter) {
-            //=====================================================================//
-            $this->chapter_number = $chapter;
-            $ITSq = new ITS_query();
-            //die($this->chapter_number);
-            $category = $ITSq->getCategory($this->chapter_number);
-            //var_dump($ITSq);
-            $query = 'SELECT question_id,answered,qtype,answers,rating,comment,epochtime FROM stats_'.$this->id.',webct WHERE webct.id=stats_'.$this->id.'.question_id AND current_chapter='.$this->chapter_number.' AND score IS NOT NULL AND '.$category.' AND epochtime > '.$this->epochtime;
-            // EEE   echo '<p style="color:red">getQuestionQuery: '.$query.'<p>'; //die();
-
-            // connect to database
-            $mdb2 =& MDB2::connect($this->db_dsn);
-            if (PEAR::isError($mdb2)) {
-                throw new Exception($this->mdb2->getMessage());
-            }
-            $res = & $mdb2->query($query);
-            if (PEAR :: isError($res)) {
-                throw new Question_Control_Exception($res->getMessage());
-            }
-            $answers = $res->fetchAll();
-
-            return $answers;
-        }
-        //=====================================================================//
-        function reviewNav($qid,$qAvail) {
-            //=====================================================================//
-            $slider = '<label for="qidtext"></label>'.
-                    '<div id="reviewNavTxt">'.$qAvail.' / '.$qAvail.'</div>'.
-                    '<div id="slider"></div>';
-
-            //echo $qid.' | '.$qAvail.' | '.$this->review_number.' | '.$this->review_count.' | '.$slider.'<p>';
-
-            $nav_info = array($this->review_number,$this->review_count,$slider);
-            $nav = $this->getNavigation($nav_info,$qid);  // implode(',',$nav_info)
-
-            return $nav;
-        }
-        //=====================================================================//
-        function reviewQuestion($chapter,$qIndex,$queryList) {
-            //=====================================================================//
-            $this->review_count = count($queryList);
-            //$index_new = $this->review_number + $delta;
-            $index_new = $qIndex;
-
-            //echo $index_new.'||'.$this->review_count.'<p>'; die();
-
-            if ($index_new <= 0) {
-                $this->review_number = 0;
-            }
-            elseif ($index_new > ($this->review_count-1)) {
-                $this->review_number = $this->review_count - 1;
-            }
-            else {
-                $this->review_number = $index_new;
-            }
-
-            $list = '';
-
-            //-- LIST of questions (count($answers)-1)
-            $Estr = '<table class="PROFILE">';
-            //for ($qn = 0; $qn <= (count($answers)-1); $qn++) {
-            //die('da'.$this->review_number);
-            //echo 'conf: '.$answers[$qn][4].'<p>';
-            $qn    = $this->review_number; //count($answers) - 1;
-            $qid   = $queryList[$qn][0];  // echo 'qID: '.$qid;
-
-            $qtype = strtolower($queryList[$qn][2]);
-            $Nanswers = $queryList[$qn][3];
-
-            //die($qtype);
-            //die($answers[$qn][1]);
-
-            $tr = new ITS_statistics($this->id,$this->term,$this->role);
-            $score = $tr->get_question_score($qid, $queryList[$qn][1], $queryList[$qn][5],$qtype);
-            //ITS_debug($score);
-
-            $ans = $tr->render_question_answer($score, $queryList[$qn][1],$qtype,$qn);
-            $Q = new ITS_question($this->id, $this->db_name, $this->tb_name);
-            $Q->load_DATA_from_DB($qid);
-            $QUESTION = $Q->render_QUESTION_check($queryList[$qn][5]);
- 
-            $Q->get_ANSWERS_data_from_DB();
-            $Q->Q_answers_permutation = explode(',',$queryList[$qn][5]);
-            $ANSWER = $Q->render_ANSWERS('a', 0);
-
-            $config = 1;      
-			$dist = $this->getQuestionDist($qid,$qtype,$score,$Nanswers);           
-
-            //--- rating ---------//
-            $rateObj = new ITS_rating();
-            $rated   = $queryList[$qn][4];
-            $rating  = $rateObj->renderRating($rated);
-            $rateBox = '<div id="ratingContainer" qid="'.$qid.'">'.$rating.'</div>';
-            //-------------------//
-
             //+++--------------------------//
-            $FEEDBACK = $tr->render_user_answer($ans,$score,$dist,$config,$qn);
-            $feedback = '<table class="FEEDBACK"><tr><td>'.$FEEDBACK.'</td><td>'.$rateBox.'</td></tr></table>';
+            $FEEDBACK = $tr->render_user_answer($ans,$score,$dist,2,$qn);
+
+            $feedback = '<table style="border:1px solid #fff"><tr><td>'.$FEEDBACK.'</td><td style="width:220px">'.$rateBox.'</td></tr></table>';
             $Estr.= '<tr class="PROFILE">'.
                     '<td class="PROFILE_IDX" style="width:1%"><b>' . ($qn+1) .'.</b></td>'.
                     '<td class="PROFILE">' . $QUESTION . '</td>'.
@@ -1843,222 +1674,391 @@ class ITS_screen2 {
             //} // eof $qn
             $Estr .= '</table>';
 
-            $Qarr = array($qid,$Estr);
-
-            return $Qarr;
+            $qinfo = $this->getQuestionRef($qid);
+            $nav_info = array($this->review_number,$this->review_count,$qinfo);
+            $nav = $this->getNavigation($nav_info,$qid);  // implode(',',$nav_info)
+            $review_str = $nav.$Estr;
         }
+        return $review_str;
+    }
+    //=====================================================================//
+    function getQuestionQuery($chapter) {
         //=====================================================================//
-        function reviewUpdate($chapter,$qIndex) {
-        //=====================================================================//
-            //echo $chapter;
-            $this->chapter_number = $chapter;
-            $this->mode = 'review';
-            $queryList = $this->getQuestionQuery($chapter);
-
-            //var_dump($queryList);
-            if (empty($queryList)) {
-                $review_str = '<center><div class="ITS_MESSAGE">'.
-                        'You have not yet solved <b>any</b> problems for Module '.$chapter.'.'.
-                        '</div></center>';
-            }
-            else {
-                $Qarr       = $this->reviewQuestion($chapter,$qIndex,$queryList);   // $Qarr['qid']['content']
-                $qinfo      = $this->getQuestionRef($Qarr[0]);
-                $review_str = $qinfo.$Qarr[1];
-            }
-
-            return $review_str;
+        $this->chapter_number = $chapter;
+        $ITSq     = new ITS_query();
+        //die($this->chapter_number);
+		$category = $ITSq->getCategory($this->chapter_number);
+		        //var_dump($ITSq);       
+        $query = 'SELECT question_id,answered,qtype,answers,rating,comment,epochtime FROM stats_'.$this->id.',webct WHERE webct.id=stats_'.$this->id.'.question_id AND current_chapter='.$this->chapter_number.' AND '.$category.' AND epochtime > '.$this->epochtime;
+        // EEE   echo '<p style="color:red">getQuestionQuery: '.$query.'<p>'; //die();
+//die($query);
+        // connect to database
+        $mdb2 =& MDB2::connect($this->db_dsn);
+        if (PEAR::isError($mdb2)) {
+            throw new Exception($this->mdb2->getMessage());
         }
+        $res = & $mdb2->query($query);
+        if (PEAR :: isError($res)) {
+            throw new Question_Control_Exception($res->getMessage());
+        }
+        $answers = $res->fetchAll();
+        //var_dump($answers);
+        return $answers;
+    }
+    //=====================================================================//
+    function reviewNav($qid,$qAvail) {
+        //=====================================================================//     
+        $slider = '<label for="qidtext"></label>'.
+                  '<div id="reviewNavTxt">'.$qAvail.' / '.$qAvail.'</div>'.
+                  '<div id="slider"></div>';
+
+        //echo $qid.' | '.$qAvail.' | '.$this->review_number.' | '.$this->review_count.' | '.$slider.'<p>';
+
+        $nav_info = array($this->review_number,$this->review_count,$slider);
+        $nav = $this->getNavigation($nav_info,$qid);  // implode(',',$nav_info)
+
+        return $nav;
+    }
+    //=====================================================================//
+    function reviewQuestion($chapter,$qIndex,$queryList) {
         //=====================================================================//
-        function reviewMode($chapter,$qIndex) {
+
+        $this->review_count = count($queryList);
+        //$index_new = $this->review_number + $delta;
+        $index_new = $qIndex;
+
+        //echo $index_new.'||'.$this->review_count.'<p>'; die();
+
+        if ($index_new <= 0) {
+            $this->review_number = 0;
+        }
+        elseif ($index_new > ($this->review_count-1)) {
+            $this->review_number = $this->review_count - 1;
+        }
+        else {
+            $this->review_number = $index_new;
+        }
+
+        $list = '';
+
+        //-- LIST of questions (count($answers)-1)
+        $Estr = '<table class="PROFILE">';
+        //for ($qn = 0; $qn <= (count($answers)-1); $qn++) {
+        //die('da'.$this->review_number);
+        //echo 'conf: '.$answers[$qn][4].'<p>';
+        $qn    = $this->review_number; //count($answers) - 1;
+        $qid   = $queryList[$qn][0];  // echo 'qID: '.$qid;
+
+        $qtype = strtolower($queryList[$qn][2]);
+        $Nanswers = $queryList[$qn][3];
+
+        //die($qtype);
+        //die($answers[$qn][1]);
+
+        $tr = new ITS_statistics($this->id,$this->term,$this->role);
+        //echo "sending ".$qid." : ". $queryList[$qn][1]." : ". $queryList[$qn][5]." : ".$qtype;
+        $score = $tr->get_question_score($qid, $queryList[$qn][1], $queryList[$qn][5],$qtype);
+       // die("scpre".$score);
+
+        $ans   = $tr->render_question_answer($score, $queryList[$qn][1],$qtype,$qn);
+
+        $Q = new ITS_question($this->id, $this->db_name, $this->tb_name);
+        $Q->load_DATA_from_DB($qid);
+        $QUESTION = $Q->render_QUESTION_check($queryList[$qn][5]);
+
+        $Q->get_ANSWERS_data_from_DB();
+        $Q->Q_answers_permutation = explode(',',$queryList[$qn][5]);
+        $ANSWER = $Q->render_ANSWERS('a', 0);
+
+        $config = 1;
+
+        // connect to database
+        $mdb2 =& MDB2::connect($this->db_dsn);
+        if (PEAR::isError($mdb2)) {
+            throw new Exception($this->mdb2->getMessage());
+        }
+
+        //--- Question Distribution ---------//
+        switch (strtoupper($qtype)) {
+            case 'MC':
+            case 'M':
+            /*					$sc = 0;
+					foreach ( $score as $s ) {
+						if (!is_null($s)) { $sc++; }
+					} //echo $sc;
+					$Nanswers = $sc;
+            */
+            case 'C':
+                $query = 'SELECT id FROM users WHERE status="'.$this->term_current.'"';
+                //echo '<p style="color:green">'.$query.'</p>'.$Nanswers;
+                                $res = & $mdb2->query($query);
+                if (PEAR :: isError($res)) {
+                    throw new Question_Control_Exception($res->getMessage());
+                }
+                $activity_users = $res->fetchCol();
+
+                $pop   = array($activity_users);
+                $DATA  = $tr->get_question_data($qid,$qtype,$pop);
+                $stats = $tr->get_question_stats($DATA, $qtype, $Nanswers);
+                $dist  = $tr->get_question_dist($stats, $qid, $qtype,array($this->term_current),$score);
+
+                //DEBUG: ITS_debug($dist);
+                break;
+            default:
+                $dist = '';
+        }
+
+        //--- rating ---------//
+        $rateObj = new ITS_rating();
+        $rated   = $queryList[$qn][4];
+        $rating  = $rateObj->renderRating($rated);
+        $rateBox = '<div id="ratingContainer" qid="'.$qid.'">'.$rating.'</div>';
+        //-------------------//
+
+        //+++--------------------------//
+        $FEEDBACK = $tr->render_user_answer($ans,$score,$dist,$config,$qn);
+        $feedback = '<table class="FEEDBACK"><tr><td>'.$FEEDBACK.'</td><td style="width:220px">'.$rateBox.'</td></tr></table>';
+        $Estr.= '<tr class="PROFILE">'.
+                '<td class="PROFILE_IDX" style="width:1%"><b>' . ($qn+1) .'.</b></td>'.
+                '<td class="PROFILE">' . $QUESTION . '</td>'.
+                '<td class="PROFILE" colspan="2">' . $ANSWER.'<BR>'.$feedback.'</td>'.
+                '</tr>';
+        //} // eof $qn
+        $Estr .= '</table>';
+
+        $Qarr = array($qid,$Estr);
+
+        return $Qarr;
+    }     
+    //=====================================================================//
+    function reviewUpdate($chapter,$qIndex) {
         //=====================================================================//
-            //echo 'reviewMode('.$chapter.','.$qIndex.')</p>';die();
+        //echo $chapter;
+        $this->chapter_number = $chapter;
+        $this->mode = 'review';
+        $queryList = $this->getQuestionQuery($chapter);
+        
+        //var_dump($queryList);
+        if (empty($queryList)) {
+            $review_str = '<center><div class="ITS_MESSAGE">'.
+                    'You have not yet solved <b>any</b> problems for Module '.$chapter.'.'.
+                    '</div></center>';
+        }
+        else { 
+        $Qarr       = $this->reviewQuestion($chapter,$qIndex,$queryList);   // $Qarr['qid']['content']
+        $qinfo      = $this->getQuestionRef($Qarr[0]);
+        $review_str = $qinfo.$Qarr[1];
+	    }
 
-            $this->chapter_number = $chapter;
-            $this->mode = 'review';
-            $queryList  = $this->getQuestionQuery($chapter);
-			//var_dump($queryList);die();
+        return $review_str;
+    }
+    //=====================================================================//
+    function reviewMode($chapter,$qIndex) {
+        //=====================================================================//
+        //echo 'reviewMode('.$chapter.','.$qIndex.')</p>';die();
+        
+        $this->chapter_number = $chapter;
+        $this->mode = 'review';    
+        $queryList  = $this->getQuestionQuery($chapter);
 
-            if (empty($queryList)) {
-                $content = '<center><div class="ITS_MESSAGE">'.
-                        'You have not yet solved <b>any</b> problems for Module '.$chapter.'.'.
-                        '</div></center>';
-            }
-            else {
-                $Qarr    = $this->reviewQuestion($chapter,$qIndex,$queryList);   // $Qarr['qid']['content']               
-                $qid     = $Qarr[0];
-                $qAvail  = count($queryList);
-                $content = $this->getQuestionRef($qid).$Qarr[1];
-            }
+        if (empty($queryList)) {
+            $content = '<center><div class="ITS_MESSAGE">'.
+                       'You have not yet solved <b>any</b> problems for Module '.$chapter.'.'.
+                       '</div></center>';
+        }
+        else {
+		
+            $Qarr    = $this->reviewQuestion($chapter,$qIndex,$queryList);   // $Qarr['qid']['content']
+            
+            $qid     = $Qarr[0];
+           
+            $qAvail  = count($queryList);
+            $content = $this->getQuestionRef($qid).$Qarr[1];    
+        }
+        
+        // navigation
+        if (empty($queryList)) {
+			$nav     = $this->reviewNav(0,0);
+        }
+        else {
+			$nav     = $this->reviewNav($qid,$qAvail);
+		}
+        
+        $review_str = '<div id="N1" qN="'.$qAvail.'">'.$nav.'</div><div id="N2">'.$content.'</div>';
+      
+        return $review_str;
 
-            // navigation
-            if (empty($queryList)) {
-                $nav     = $this->reviewNav(0,0);
-            }
-            else {
-                $nav     = $this->reviewNav($qid,$qAvail);
-            }
-
-            $review_str = '<div id="N1" qN="'.$qAvail.'">'.$nav.'</div><div id="N2">'.$content.'</div>';
-
-            return $review_str;
-
-            //echo $chapter_number.' | '.$this->chapter_number.' | '.$delta.'<p>';
-            /*++++++++++++++++++++++++++++++++*/
-            /*
+        //echo $chapter_number.' | '.$this->chapter_number.' | '.$delta.'<p>';
+        /*++++++++++++++++++++++++++++++++*/
+        /*
 			if ($this->lab_index > count($ques)) { $this->lab_index = count($ques); }
-			$qid   = $ques[$this->lab_index-1][0];
+	    $qid   = $ques[$this->lab_index-1][0];
 			$qtype = $ques[$this->lab_index-1][1];
 			$index = $this->getLabIndex();
-			$question = $this->getLabQuestion($this->lab_active,$this->lab_index);
+      $question = $this->getLabQuestion($this->lab_active,$this->lab_index);
 			
 			$query = 'SELECT answered from stats_'.$this->id.' WHERE question_id='.$qid; 
 			//echo $query; 
 			$res   =& $mdb2->query($query);	
 			if (PEAR::isError($res)) {throw new Question_Control_Exception($res->getMessage());}
-			$answer = $res->fetchCol(); //var_dump($answer);
+	    $answer = $res->fetchCol(); //var_dump($answer);
 			
 			if (empty($answer)) { $answered = '';         } 
 			else                { $answered = $answer[0]; }
 		
 			$ans = $this->getAnswer($qid,$qtype,$answered);
-			$navigation_str = $this->getNavigation($ans);
+  		$navigation_str = $this->getNavigation($ans);
 				
-			//$this->_answers_permutation[$name] = $Q->Q_answers_permutation;
-			//$this->_question_type[$name] = $Q->Q_type;
-			//$tb = new ITS_table('ITS_pres',2,1,array($question,$answer),array(99,1),'ITS_ghost');
-			$str = $index.$question.$navigation_str;
-            */
-            /*++++++++++++++++++++++++++++++*/
-        }
+  	  //$this->_answers_permutation[$name] = $Q->Q_answers_permutation;
+  	  //$this->_question_type[$name] = $Q->Q_type;
+  	  //$tb = new ITS_table('ITS_pres',2,1,array($question,$answer),array(99,1),'ITS_ghost');
+  	  $str = $index.$question.$navigation_str;
+        */
+        /*++++++++++++++++++++++++++++++*/
+    }
+    //=====================================================================//
+    function getQuestionRef($qid) {
         //=====================================================================//
-        function getQuestionRef($qid) {
-            //=====================================================================//
-            //---- ADMIN WINDOW ------------------------------------------//
-            $qinfo = '';
-            if ($this->term == 'admin') {
-                /* $qinfo = '<table class="ITS_ADMIN" style="float: right;">'.
+        //---- ADMIN WINDOW ------------------------------------------//
+        $qinfo = '';
+        if ($this->term == 'admin') {
+            /* $qinfo = '<table class="ITS_ADMIN" style="float: right;">'.
 								 				  '<tr><th>qid</th><th>type</th><th>ch</th></tr>'.
 								 				  '<tr><td><a href="Question.php?qNum='.$qid.'" class="Qnum">'.$qid.'</a></td><td>'.$qtype.'</td><td>'.$resource_name.'</td></tr>'.
 												  '</table>'; 
-                */
-                $qinfo .= '<table class="ITS_ADMIN" style="float:right;border:1px solid red">'.
-                        '<tr><td><a href="Question.php?qNum='.$qid.'" class="ITS_ADMIN">'.$qid.'</a></td></tr>'.
-                        '</table>';
-            }
-            return $qinfo;
+            */
+            $qinfo .= '<table class="ITS_ADMIN" style="float:right;border:1px solid red">'.
+                      '<tr><td><a href="Question.php?qNum='.$qid.'" class="ITS_ADMIN">'.$qid.'</a></td></tr>'.
+                      '</table>';
         }
+        return $qinfo;
+    }
+    //=====================================================================//
+    function updateChapter($chp_num) {
         //=====================================================================//
-        function updateChapter($chp_num) {
-            //=====================================================================//
-            $this->chapter_number = $chp_num;
-            //die($chp_num);
-            $content_str          = $this->getChapter();
+        $this->chapter_number = $chp_num;
+        die($chp_num);
+        $content_str          = $this->getChapter();
 
-            return $content_str;
+        return $content_str;
+    }
+    //=====================================================================//
+    function getChapter($resource,$resource_name) {
+    //=====================================================================//
+        // echo '<p style="color:brown">getChapter(): '.$resource.' | '.$resource_name.'</p>';	   //die();
+//*
+        $NO_QUESTIONS = FALSE;
+        $ITSq = new ITS_query();
+
+        // connect to database
+        $mdb2 =& MDB2::connect($this->db_dsn);
+        if (PEAR::isError($mdb2)) {
+            throw new Question_Control_Exception($mdb2->getMessage());
         }
-        //=====================================================================//
-        function getChapter($resource,$resource_name) {
-            //=====================================================================//
-            //echo '<p style="color:brown">getChapter(): '.$resource.' | '.$resource_name.'</p>';die();
-            
-            $NO_QUESTIONS = FALSE;
-            $ITSq = new ITS_query();
+        // echo '<p style="color:blue">'.$resource.'<p>';
 
-            // connect to database
-            $mdb2 =& MDB2::connect($this->db_dsn);
-            if (PEAR::isError($mdb2)) {
-                throw new Question_Control_Exception($mdb2->getMessage());
-            }
-            // echo '<p style="color:blue">'.$resource.'<p>';
-
-            switch ($resource) {
-                //-------------------------------//
-                case 'review':
-                //-------------------------------//
-                    $msg = 'Review';
-                    break;
-                //-------------------------------//
-                case 'practice':
-                //-------------------------------//
-                    $msg = 'Practice';
-                    /*
+        switch ($resource) {
+            //-------------------------------//
+            case 'review':
+            //-------------------------------//
+                $msg = 'Review';
+                break;
+            //-------------------------------//
+            case 'practice':
+            //-------------------------------//
+                $msg = 'Practice';
+                /*
 					$this->question_completed = FALSE;
 		      $la = sprintf("%02d",$resource_name);
 					$term = $this->role; //'Spring_2011';
 					//die($term);
 					$this->lab_tag = 'survey';
     			$query = 'SELECT question_id,qtype,answers,qorder FROM activity,webct WHERE term="'.$term.'" AND name="'.$this->lab_tag.$la.'" AND activity.question_id=webct.id ORDER BY qorder';  
-                    */
-                
-                    //$msg = 'Chapter '.$resource_name;
-                    //$resource_source = 'category IN ("SPEN'.$resource_name.'","PreLab0'.$resource_name.'","Chapter'.$resource_name.'","Lab'.$resource_name.'"'.$other.') OR category RLIKE "-Mod'.$resource_name.'" AND qtype IN ("M","MC","C")';
-                    $resource_source = $ITSq->getCategory($resource_name);
+                */
+//*                
+                //$msg = 'Chapter '.$resource_name;
+				//$resource_source = 'category IN ("SPEN'.$resource_name.'","PreLab0'.$resource_name.'","Chapter'.$resource_name.'","Lab'.$resource_name.'"'.$other.') OR category RLIKE "-Mod'.$resource_name.'" AND qtype IN ("M","MC","C")';
+			    $resource_source = $ITSq->getCategory($resource_name);
 
-                    // AVAILABLE QUESTIONS for chapter
-                    $query = 'SELECT id FROM webct WHERE '.$resource_source; //die($query);
-                    //echo '<p>'.$query.'<p>'; // die();
-                    $res  =& $mdb2->query($query);
-                    $qarr = $res->fetchCol();
-                    break;
-                //-------------------------------//
-                case 'survey':
-                //-------------------------------//
-                    $msg = 'Survey';
-                    $this->question_completed = FALSE;
-                    $la = sprintf("%02d",$resource_name);
-                    $term = $this->term_current; //'Spring_2011';
-                    //die($term);
-                    $this->lab_tag = 'survey';
-                    $query = 'SELECT question_id,qtype,answers,qorder FROM activity,webct WHERE term="'.$term.'" AND name="'.$this->lab_tag.$la.'" AND activity.question_id=webct.id ORDER BY qorder';
-                    //echo '<p>'.$query.'<p>'; // die();
-                    $res  =& $mdb2->query($query);
-                    $qarr = $res->fetchCol();
-                    //var_dump($qarr);
-                    break;
-                //-------------------------------//
-                case 'chapter':
-                //-------------------------------//
-                    $msg = 'Chapter '.$resource_name;
-                    if (is_numeric($resource_name)) {
-                        $resource_source = 'chapter_id = '.$resource_name;
-                    }
-                    else {
-                        $resource_source = 'chapter_id = "'.$resource_name.'"';
-                    }
+                // AVAILABLE QUESTIONS for chapter
+                $query = 'SELECT id FROM webct WHERE '.$resource_source; //die($query);
+                //echo '<p>'.$query.'<p>'; // die();
+                $res  =& $mdb2->query($query);
+                $qarr = $res->fetchCol();
+                break;
+            //-------------------------------//
+            case 'survey':
+            //-------------------------------//
+                $msg = 'Survey';
+                $this->question_completed = FALSE;
+                $la = sprintf("%02d",$resource_name);
+                $term = $this->term_current; //'Spring_2011';
+                //die($term);
+                $this->lab_tag = 'survey';
+                $query = 'SELECT question_id,qtype,answers,qorder FROM activity,webct WHERE term="'.$term.'" AND name="'.$this->lab_tag.$la.'" AND activity.question_id=webct.id ORDER BY qorder';
+                //echo '<p>'.$query.'<p>'; // die();
+                $res  =& $mdb2->query($query);
+                $qarr = $res->fetchCol();
+                //var_dump($qarr);
+                break;
+            //-------------------------------//
+            case 'chapter':
+            //-------------------------------//
+                $msg = 'Chapter '.$resource_name;
+                if (is_numeric($resource_name)) {
+                    $resource_source = 'chapter_id = '.$resource_name;
+                }
+                else {
+                    $resource_source = 'chapter_id = "'.$resource_name.'"';
+                }
 
-                    // AVAILABLE QUESTIONS for chapter
-                    //$query = 'SELECT question_id FROM questions WHERE '.$resource_source; //die($query);
-                    $query = 'SELECT id FROM webct WHERE '.$resource_source; //die($query);
-                    //	echo '<p>'.$query.'<p>'; // die();
-                    // DEBUG: $query = 'SELECT id FROM webct WHERE category IN ("PreLab06","Chapter6","Lab6") AND qtype IN ("M")';
-                    $res  =& $mdb2->query($query);
-                    $qarr = $res->fetchCol();
-                    //var_dump($qarr);
-                    break;
-                //-------------------------------//
-                case 'index':
-                case 'question':
-                //-------------------------------//
-                //echo 'role: '.$this->term;
-                    $msg = 'Module '.$resource_name;
-                    $resource_source = $ITSq->getCategory($resource_name);
+                // AVAILABLE QUESTIONS for chapter
+                //$query = 'SELECT question_id FROM questions WHERE '.$resource_source; //die($query);
+                $query = 'SELECT id FROM webct WHERE '.$resource_source; //die($query);
+                //	echo '<p>'.$query.'<p>'; // die();
+                // DEBUG: $query = 'SELECT id FROM webct WHERE category IN ("PreLab06","Chapter6","Lab6") AND qtype IN ("M")';
+                $res  =& $mdb2->query($query);
+                $qarr = $res->fetchCol();
+                //var_dump($qarr);
+                break;
+            //-------------------------------//
+            case 'index':
+            case 'question':
+            //-------------------------------//
+            //echo 'role: '.$this->term;
+                $msg = 'Module '.$resource_name;
 
-                    // AVAILABLE QUESTIONS for chapter
-                    $query = 'SELECT id FROM webct WHERE '.$resource_source;
-                    //die($query);
-                    //**  echo '<p>'.$query.'<p>'; // die();
-                    // DEBUG: $query = 'SELECT id FROM webct WHERE category IN ("PreLab06","Chapter6","Lab6") AND qtype IN ("M")';
-                    $res  =& $mdb2->query($query);
-                    $qarr =  $res->fetchCol();
-                    //var_dump($qarr);
-                    break;
-                //-------------------------------//
-            }
-            //echo $resource.' - '.$msg.'<p></p>';
-            //var_dump($qarr);die();
+                /*(8-26-2011)*/
+                //echo $this->term;
+                /*
+                if ($this->term == 'admin') {
+                    $resource_source = 'category IN ("PreLab0'.$resource_name.'","Chapter'.$resource_name.'","Lab'.$resource_name.'"'.$other.') AND qtype IN ("M","MC","C")';
+                } else {
+                    //
+                    //$resource_source = 'category IN ("PreLab0'.$resource_name.'","Chapter'.$resource_name.'","Lab'.$resource_name.'"'.$other.') AND qtype IN ("M","MC","C")';
+                    //8-
+                    $resource_source = 'category IN ("Chapter'.$resource_name.'") AND qtype IN ("M","MC","C")';
+                    //$resource_source = 'category IN ("intro") AND qtype IN ("M","MC","C")';
+                }*/
+//*
+                //$resource_source = 'category IN ("SPEN'.$resource_name.'","PreLab0'.$resource_name.'","Chapter'.$resource_name.'","Lab'.$resource_name.'"'.$other.') OR category RLIKE "-Mod'.$resource_name.'"  AND qtype IN ("M","MC","C")';
+			    $resource_source = $ITSq->getCategory($resource_name);
+			    
+                // AVAILABLE QUESTIONS for chapter
+                $query = 'SELECT id FROM webct WHERE '.$resource_source;
+                //die($query);
+                //**  echo '<p>'.$query.'<p>'; // die();
+                // DEBUG: $query = 'SELECT id FROM webct WHERE category IN ("PreLab06","Chapter6","Lab6") AND qtype IN ("M")';
+                $res  =& $mdb2->query($query);
+                $qarr = $res->fetchCol();
+                //var_dump($qarr);
+                break;
+            //-------------------------------//
+        }
+        //echo $resource.' - '.$msg.'<p></p>';
+        //var_dump($qarr);die();
 
-            /*
+        /*
 		 $tag_list = implode(",",$tag_res);
 		 $tag_arr = explode(",",$tag_list);
 
@@ -2070,13 +2070,13 @@ class ITS_screen2 {
 					$n++;
 			 }
 		 }*/ 
-		
-            //var_dump($qarr);
-            if (empty($qarr)) {
-                $NO_QUESTIONS = TRUE;
-            }
-            else {
-                /*
+//*		
+        //var_dump($qarr);
+        if (empty($qarr)) {
+            $NO_QUESTIONS = TRUE;
+        }
+        else {
+             /*
     		 $tlist = implode(",",$tag_res);
     		
     		 // questions <= tags
@@ -2094,117 +2094,120 @@ class ITS_screen2 {
     				$n++;
     			 }
     		 } 
-                */
-                if (empty($qarr)) {
-                    $NO_QUESTIONS = TRUE;
-                }
-                else {
-                    // ALL POSSIBLE QUESTIONS
-                    $ques_list = implode(",",$qarr);
-                    $ques_arr  = explode(",",$ques_list);
+            */
+ //*           
+            if (empty($qarr)) {
+                $NO_QUESTIONS = TRUE;
+            }
+            else {
+                // ALL POSSIBLE QUESTIONS
+                $ques_list = implode(",",$qarr);
+                $ques_arr  = explode(",",$ques_list);
 
-                    // check if already taken
-                    // EEE echo 'USER: '.$resource;
-                    switch ($resource) {
-                        //-------------------------------//
-                        case 'practice':
-                        //-------------------------------//
-                            $query = 'SELECT id,qtype FROM webct WHERE id IN ('.$ques_list.') AND id NOT IN (SELECT question_id FROM stats_'.$this->id.' WHERE current_chapter='.$resource_name.' OR current_chapter=-'.$resource_name.')';
+                // check if already taken
+                // EEE echo 'USER: '.$resource;
+                switch ($resource) {
+                    //-------------------------------//
+                    case 'practice':
+                    //-------------------------------//
+                        $query = 'SELECT id,qtype FROM webct WHERE id IN ('.$ques_list.') AND id NOT IN (SELECT question_id FROM stats_'.$this->id.' WHERE current_chapter='.$resource_name.' OR current_chapter=-'.$resource_name.')';
+                        //echo '<p>'.$query; die($query);
+                        $res =& $mdb2->query($query);
+                        $qAvailable = $res->fetchAll();
+                        //echo '<pre>';print_r($qAvailable);echo '</pre>';
+                        $K = count($qAvailable);
+
+                        if (empty($K)) { // ALL QUESTIONS TAKEN
+                            //echo 'EMPTY K';
+                            $queryP = 'SELECT id,qtype FROM webct WHERE id IN ('.$ques_list.')';
                             //echo '<p>'.$query; die($query);
-                            $res =& $mdb2->query($query);
-                            $qAvailable = $res->fetchAll();
+                            $resP =& $mdb2->query($queryP);
+                            $qAvailable = $resP->fetchAll();
                             //echo '<pre>';print_r($qAvailable);echo '</pre>';
                             $K = count($qAvailable);
+                        }
+                        break;
+                    //-------------------------------//
+                    case 'survey':
+                    //-------------------------------//
+                    //$query = 'SELECT webct.id,webct.qtype FROM activity,webct WHERE webct.id IN ('.$ques_list.') AND webct.id NOT IN (SELECT question_id FROM stats_'.$this->id.' WHERE score IS NOT NULL) ORDER BY activity.qorder'; //###!!!
+                        $query = 'SELECT webct.id,webct.qtype,activity.qorder FROM webct LEFT JOIN activity ON  webct.id=activity.question_id WHERE activity.term="'.$term.'" AND webct.id IN ('.$ques_list.') AND webct.id NOT IN (SELECT question_id FROM stats_'.$this->id.') ORDER BY qorder';
+                        //echo '<p>'.$query; die($query);
+                        $res =& $mdb2->query($query);
+                        $qAvailable = $res->fetchAll();
+                        //echo '<pre>';print_r($qAvailable);echo '</pre>';
+                        $K   = count($qAvailable);
+                        break;
+                    //-------------------------------//
+                    default:
+                        $query = 'SELECT id,qtype FROM webct WHERE id IN ('.$ques_list.') AND id NOT IN (SELECT question_id FROM stats_'.$this->id.' WHERE score IS NOT NULL AND current_chapter='.$resource_name.' AND epochtime > '.$this->epochtime.')  AND qtype IN ("M","MC","C")'; //###!!!
+                        //EEE echo '<p><font color="green">'.$query.'</font>';
+                        //echo '<p>'.$query; //die($query);
+                        $res =& $mdb2->query($query);
+                        $qAvailable = $res->fetchAll();
+                        //echo '<pre>';print_r($qAvailable);echo '</pre>';
+                        $K   = count($qAvailable);
+                    //-------------------------------//
+                }
+                //echo $K . "\n";die();
 
-                            if (empty($K)) { // ALL QUESTIONS TAKEN
-                                //echo 'EMPTY K';
-                                $queryP = 'SELECT id,qtype FROM webct WHERE id IN ('.$ques_list.')';
-                                //echo '<p>'.$query; die($query);
-                                $resP =& $mdb2->query($queryP);
-                                $qAvailable = $resP->fetchAll();
-                                //echo '<pre>';print_r($qAvailable);echo '</pre>';
-                                $K = count($qAvailable);
-                            }
-                            break;
+                if ($K) {   // section questions available
+                    // choose random question from ALL POSSIBLE QUESTIONS
+                    // $qAvailable = array(581); //492,1211,1212);
+
+                    //----
+                    switch ($resource) {
                         //-------------------------------//
                         case 'survey':
                         //-------------------------------//
-                        //$query = 'SELECT webct.id,webct.qtype FROM activity,webct WHERE webct.id IN ('.$ques_list.') AND webct.id NOT IN (SELECT question_id FROM stats_'.$this->id.' WHERE score IS NOT NULL) ORDER BY activity.qorder'; //###!!!
-                            $query = 'SELECT webct.id,webct.qtype,activity.qorder FROM webct LEFT JOIN activity ON  webct.id=activity.question_id WHERE activity.term="'.$term.'" AND webct.id IN ('.$ques_list.') AND webct.id NOT IN (SELECT question_id FROM stats_'.$this->id.') ORDER BY qorder';
-                            //echo '<p>'.$query; die($query);
-                            $res =& $mdb2->query($query);
-                            $qAvailable = $res->fetchAll();
-                            //echo '<pre>';print_r($qAvailable);echo '</pre>';
-                            $K   = count($qAvailable);
+                        //echo '<pre>';print_r($qAvailable); echo '</pre>';//die('done');
+                            $qid   = $qAvailable[0][0];
+                            $qtype = $qAvailable[0][1];
+                            $this->mode = 'survey';
+                            $ch_idx = 14;
+                            $skip = '';
                             break;
                         //-------------------------------//
                         default:
-                            $query = 'SELECT id,qtype FROM webct WHERE id IN ('.$ques_list.') AND id NOT IN (SELECT question_id FROM stats_'.$this->id.' WHERE score IS NOT NULL AND current_chapter='.$resource_name.' AND epochtime > '.$this->epochtime.')  AND qtype IN ("M","MC","C")'; //###!!!
-                            //EEE echo '<p><font color="green">'.$query.'</font>';
-                            //echo '<p>'.$query; //die($query);
-                            $res =& $mdb2->query($query);
-                            $qAvailable = $res->fetchAll();
-                            //echo '<pre>';print_r($qAvailable);echo '</pre>';
-                            $K   = count($qAvailable);
                         //-------------------------------//
+                            $ques_arr_rand_key = array_rand($qAvailable,1);
+                            $qid   = $qAvailable[$ques_arr_rand_key][0];
+                            $qtype = $qAvailable[$ques_arr_rand_key][1];
+                            $ch_idx = $this->chapter_number;
+                            $this->mode = 'question';
+                            $skip = '<input type="button" class="ITS_skip" id="ITS_skip" name="skip" value="skip &nbsp;&rsaquo;&rsaquo;" mode="'.$resource.'">';
+                            break;
                     }
-                    //echo $K . "\n";die();
+                    //----
 
-                    if ($K) {   // section questions available
-                        // choose random question from ALL POSSIBLE QUESTIONS
-                        // $qAvailable = array(581); //492,1211,1212);
+                    //echo '<p>++++ '.$qid.' + '.$qtype.' ++++<p>';die();
+                    //==>>	$qid = 1196; $qtype = 'MC';
+                    //if ($this->role == 'admin') { echo 'ITS_screen2::getChapter '.$qid.'<p>'; }
 
-                        //----
-                        switch ($resource) {
-                            //-------------------------------//
-                            case 'survey':
-                            //-------------------------------//
-                            //echo '<pre>';print_r($qAvailable); echo '</pre>';//die('done');
-                                $qid   = $qAvailable[0][0];
-                                $qtype = $qAvailable[0][1];
-                                $this->mode = 'survey';
-                                $ch_idx = 14;
-                                $skip = '';
-                                break;
-                            //-------------------------------//
-                            default:
-                            //-------------------------------//
-                                $ques_arr_rand_key = array_rand($qAvailable,1);
-                                $qid   = $qAvailable[$ques_arr_rand_key][0];
-                                $qtype = $qAvailable[$ques_arr_rand_key][1];
-                                $ch_idx = $this->chapter_number;
-                                $this->mode = 'question';
-                                //$skip = '<input type="button" class="ITS_skip" id="ITS_skip" name="skip" value="skip &nbsp;&rsaquo;&rsaquo;" mode="'.$resource.'">';
-                                break;
+                    //echo $qAvailable[$ques_arr_rand_key[0]] . "\n";
+                    $qinfo    = $this->getQuestionRef($qid);
+                    $question = $this->getQuestion($qid,'');
+
+                    //echo 'NOW: '.empty($this->question_info);
+                    if (empty($this->question_info)) {
+                        $cstr = '';
+                    }
+                    else {
+                        if     (strtolower($qtype) == 'm') {
+                            $cstr = implode(',',$this->question_info);
                         }
-                        //echo '<p>++++ '.$qid.' + '.$qtype.' ++++<p>';die();
-                        //==>>	$qid = 1196; $qtype = 'MC';
-                        //if ($this->role == 'admin') { echo 'ITS_screen2::getChapter '.$qid.'<p>'; }
-
-                        //echo $qAvailable[$ques_arr_rand_key[0]] . "\n";
-                        $qinfo    = $this->getQuestionRef($qid);
-                        $question = $this->getQuestion($qid,'');
-
-                        //echo 'NOW: '.empty($this->question_info);
-                        if (empty($this->question_info)) {
-                            $cstr = '';
+                        elseif (strtolower($qtype) == 'c') {
+                            $cstr = implode(',',$this->question_info);
                         }
                         else {
-                            if     (strtolower($qtype) == 'm') {
-                                $cstr = implode(',',$this->question_info);
-                            }
-                            elseif (strtolower($qtype) == 'c') {
-                                $cstr = implode(',',$this->question_info);
-                            }
-                            else {
-                                $cstr = '';
-                            }
+                            $cstr = '';
                         }
-                        //var_dump($this->question_info);
-                        //var_dump($cstr);
-                        //die('aa');
-                        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-                        /*
+                    }
+                    //var_dump($this->question_info);
+                    //var_dump($cstr);
+                    //die('aa');
+                    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+                    /*
 							$tabs = '<div id="bookNavContainer"><ul id="metaList">'
 							.'<li><a href="#" onclick="ITS_book_select(this)" name="meta" value="paragraph">book</a></li>'
 							.'<li id="active"><a href="#" onclick="ITS_book_select(this)" name="meta" value="equation" id="current">equations</a></li>'
@@ -2219,76 +2222,79 @@ class ITS_screen2 {
               $o = $x->main();
 							$resources = $tabs.'<div id="bookContainer">'.$o.'</div>';
               //echo $resources.'<p>';die('done');
-                        */                   
-                        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
-                        $resources = '';
-                        //$this->_answers_permutation[$name] = $Q->Q_answers_permutation;
-                        $error     = '<br><div id="errorContainer"></div>';
-                        //<form action="javascript:ITS_question_submit(document.getElementById(\'ITS_SubmitForm\'),'.$qid.',\''.$qtype.'\');" name="ITS_SubmitForm" id="ITS_SubmitForm">
-                        //*** Prevent Multiple submissions: - 2. Server: Generate question session ticket ***//
-                        $token = time(); // based on current time
-                        $_SESSION['ITSQ_'.$qid] = $token;
-                        //echo $token;var_dump($_SESSION['ITSQ_'.$qid]);
-                        //***---------------------------------------------------------------------------------***//                    
-                        $form   = $qinfo.$question.$error	/*$rateBox*/
-                                .'<div class="navContainer" id="navBoxContainer">'
-                                .'<input type="submit" class="ITS_submit" id="ITS_submit" name="submit" value="Submit" ch="'.$ch_idx.'" qid="'.$qid.'" qtype="'.$qtype.'" c="'.$cstr.'" t="'.$token.'" mode="'.$resource.'">'
-                                .'</div>';
-                        $skip = '<input type="button" class="ITS_skip" id="ITS_skip" name="skip" value="skip &nbsp;&rsaquo;&rsaquo;" ch="'.$ch_idx.'" qid="'.$qid.'" qtype="'.$qtype.'" c="'.$cstr.'" t="'.$token.'" mode="'.$resource.'">';
-                        //$resource = '<div class="resContainer" id="resBoxContainer">my res</div>';
-                        //$answer = $form.'<div id="errorContainer" class="ITS_message"></div><div id="answerContainer" onreset="ITS_obj_timer()">'.$submit.'</div>';
-                        $answer = $form.$skip.$resources;
-                        //DEBUG: echo '|input type="submit" class="ITS_submit" id="ITS_submit" name="submit" value="Submit" qid="'.$qid.'" qtype="'.$qtype.'" c="'.$cstr.'"';
+                    */
+//*                    
+                    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+                    $resources = '';
+                    //$this->_answers_permutation[$name] = $Q->Q_answers_permutation;
+                    $error     = '<br><div id="errorContainer"></div>';
+                    //<form action="javascript:ITS_question_submit(document.getElementById(\'ITS_SubmitForm\'),'.$qid.',\''.$qtype.'\');" name="ITS_SubmitForm" id="ITS_SubmitForm">                    
+                    //*** Prevent Multiple submissions: - 2. Server: Generate question session ticket ***//
+//*
+                    $token = time(); // based on current time
+                    $_SESSION['ITSQ_'.$qid] = $token;
+                    //echo $token;var_dump($_SESSION['ITSQ_'.$qid]);
+					//***---------------------------------------------------------------------------------***//
+///*                    
+                    $form   = $qinfo.$question.$error	/*$rateBox*/
+                            .'<div class="navContainer" id="navBoxContainer">'
+                            .'<input type="submit" class="ITS_submit" id="ITS_submit" name="submit" value="Submit" ch="'.$ch_idx.'" qid="'.$qid.'" qtype="'.$qtype.'" c="'.$cstr.'" t="'.$token.'" mode="'.$resource.'">'
+                            .'</div>';
 
-                        /*-- TAGGING START --/
+                    //$resource = '<div class="resContainer" id="resBoxContainer">my res</div>';
+                    //$answer = $form.'<div id="errorContainer" class="ITS_message"></div><div id="answerContainer" onreset="ITS_obj_timer()">'.$submit.'</div>';
+                    $answer = $form.$skip.$resources;
+                    //DEBUG: echo '|input type="submit" class="ITS_submit" id="ITS_submit" name="submit" value="Submit" qid="'.$qid.'" qtype="'.$qtype.'" c="'.$cstr.'"';
+
+                    /*-- TAGGING START --/
 						$tagBox = new ITS_tagInterface();					
 						$tags   = $tagBox->displayTags($this->id,$qid,$tagBox->getTags($qid));
 						//$stags  = $tagBox->createSearchAddBox($this->id,$qid);
 						$answer = '<br>'.$answer.$tags.$stags.'<br>';//*/
-                        /*-- TAGGING END --*/
+                    /*-- TAGGING END --*/
 
-                        //$this->_answers_permutation[$name] = $Q->Q_answers_permutation;
-                        //$this->_question_type[$name] = $Q->Q_type;
-                        //$tb = new ITS_table('ITS_pres',2,1,array($question,$answer),array(99,1),'ITS_ghost');
+                    //$this->_answers_permutation[$name] = $Q->Q_answers_permutation;
+                    //$this->_question_type[$name] = $Q->Q_type;
+                    //$tb = new ITS_table('ITS_pres',2,1,array($question,$answer),array(99,1),'ITS_ghost');
 ///*
-                        if ($this->role == 'admin') {
-                            $qEdit = '<input type="button" onclick="javascript:ITS_QCONTROL_EDITMODE(this)" name="editMode" value="Edit" status="true">';
-                            //$available_str = '<span class="ITS_available">Available: '.$K.'</span>';
-                            $data = array('Question',$qid,'Available',$K);
-                            $tb = new ITS_table('ad',2,2,$data,array(20,80),'ADMIN');
-                            $admin_str = '<div class="ITS_ADMIN">'.$tb->str.'<br>'.$qEdit.'</div>';
-                        }
-                        else {
-                            $admin_str = '';
-                        }
-                        $str = $answer;//.$admin_str;
-                    }else {    // none available
-                        $NO_QUESTIONS = TRUE;
+                    if ($this->role == 'admin') {
+                        $qEdit = '<input type="button" onclick="javascript:ITS_QCONTROL_EDITMODE(this)" name="editMode" value="Edit" status="true">';
+                        //$available_str = '<span class="ITS_available">Available: '.$K.'</span>';
+                        $data = array('Question',$qid,'Available',$K);
+                        $tb = new ITS_table('ad',2,2,$data,array(20,80),'ADMIN');
+                        $admin_str = '<div class="ITS_ADMIN">'.$tb->str.'<br>'.$qEdit.'</div>';
                     }
+                    else {
+                        $admin_str = '';
+                    }
+                    $str = $answer;//.$admin_str;
+                }else {    // none available
+                    $NO_QUESTIONS = TRUE;
                 }
             }
-            if ($NO_QUESTIONS) {
-                $str = '<div class="ITS_MESSAGE">&diams;&nbsp;No more questions available for '.$msg.'.</div>';
-                //$str = $this->main();
-            }
-            $mdb2->disconnect();
-            //--------------------//
-
-            return $str;
         }
-        //=====================================================================//
-        function footer() {
-            //=====================================================================//
-            echo '<div id="footerContainer"> MY FOOTER </div>';
+        if ($NO_QUESTIONS) {
+            $str = '<div class="ITS_MESSAGE">&diams;&nbsp;No more questions available for '.$msg.'.</div>';
+            //$str = $this->main();
         }
-        //=====================================================================//
-    } //eo:class
-//=====================================================================//
-    function is_empty($var, $allow_false = false, $allow_ws = false) {
-        if (!isset($var) || is_null($var) || ($allow_ws == false && trim($var) == "" && !is_bool($var)) || ($allow_false === false && is_bool($var) && $var === false) || (is_array($var) && empty($var))) {
-            return true;
-        } else {
-            return false;
-        }
+        $mdb2->disconnect();
+        //--------------------//
+        
+        return $str;
     }
+    //=====================================================================//
+    function footer() {
+        //=====================================================================//
+        echo '<div id="footerContainer"> MY FOOTER </div>';
+    }
+    //=====================================================================//
+} //eo:class
+//=====================================================================//
+function is_empty($var, $allow_false = false, $allow_ws = false) {
+    if (!isset($var) || is_null($var) || ($allow_ws == false && trim($var) == "" && !is_bool($var)) || ($allow_false === false && is_bool($var) && $var === false) || (is_array($var) && empty($var))) {   
+        return true;
+    } else {
+        return false;
+    }
+}
 ?>

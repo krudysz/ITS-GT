@@ -13,7 +13,7 @@ ITS_statistics class - generate and render statistical displays.
 								render_question_answer( $score,$answer,$qtype,$index ) 
 								
 	 Author(s): Greg Krudysz | Aug-28-2008
-	 Last Revision: Mar-9-2012
+	 Last Revision: Feb-4-2012
 */
 //=====================================================================//
 
@@ -353,21 +353,16 @@ class ITS_statistics {
                     $str = $str . '<div style="background:white;border:2px solid silver;padding: 0.25em">' . $ANR[0] . '</div>';
                 }
                 $user_ans = '<center><table class="' . $style . '" style="width:200px">' .
-                        '<tr><td class="' . $style . '" style="text-align:right;width:150px;border:1px solid pink">Your Answer&nbsp;</td><td class="' . $style . '" style="font-size:large;font-weight:bold;text-align:center;">' . $str . '</td></tr>' .
+                        '<tr><td class="' . $style . '" style="text-align:right;width:150px">Your Answer&nbsp;</td><td class="' . $style . '" style="font-size:large;font-weight:bold;text-align:center;">' . $str . '</td></tr>' .
                         '</table></center>';
                 break;
             //----------------------//
-            default:
-            /*
-                $user_ans = '<table class="ITS_SCORE" style="border:3px solid red">' .
-                        '<tr colspan="2"><td class="ITS_SCORE" style="text-align:right">Your Answer</td><td class="ITS_SCORE">' . $answer . '</td><td>'.$dist.'</td><td>'.$rate.'</td></tr>' .
+            default :
+                $user = '<table class="ITS_SCORE">' .
+                        '<tr colspan="2"><td class="ITS_SCORE" style="text-align:right">Your Answer</td><td class="ITS_SCORE">' . $answer . '</td><td>'.$dist.'</td></tr>' .
                         '<tr><td class="ITS_SCORE" style="width:20%;text-align:right">Score</td><td class="ITS_SCORE">'.(round(10*$score[0])/10).'</td></tr>' .
                         '</table>';
-                        */
-                $user_ans = '<center><div class="fl"><table class="ITS_SCORE">' .
-						'<tr colspan="2"><td class="ITS_SCORE" style="text-align:right">Your Answer</td><td class="ITS_SCORE">' . $answer . '</td>' .
-                        '<tr><td class="ITS_SCORE" style="width:20%;text-align:right">Score</td><td class="ITS_SCORE">'.(round(10*$score[0])/10).'</td></tr>' .
-                        '</table></div><div class="fl">'.$dist.'</div><div class="fl">'.$rate.'</div></center>';                        
+                $user_ans = $user . '<p>';
             //----------------------//
         }
         //$user = new ITS_table('ITS_table_stats',2,2,array('Answer',$answer,'Score',$score),array(20,80),'ITS_SCORE');
@@ -511,6 +506,7 @@ class ITS_statistics {
             //-------------------------------
             case 'mc' :
             //-------------------------------
+            
                 if (empty ($qanswer)) {
                     $score = array(0,'');
                 } else {
@@ -524,6 +520,8 @@ class ITS_statistics {
                     $result = $res->fetchRow();
                     $score = array($result[0],(ord($qanswer) - 64));
                 }
+                $q = $score[0];
+                
                 break;
             //-------------------------------
             case 'm' :
@@ -616,20 +614,22 @@ class ITS_statistics {
 					  }
 				  }
 				}*/
+				$q = $score[0];
+				//die($q.'!!');
                 break;
             //-------------------------------
             case 'c' :
             //-------------------------------
             // user answer:
+            /************ OLD SOLUTION
                 $answer = explode(',', $qanswer);
 //echo 'qAnswer '.$qanswer.'<p>';
-
-                $query = 'SELECT * FROM ' . $this->tb_name . '_' . $qtype . ' WHERE id=' . $qid;
+					$query = 'SELECT * FROM ' . $this->tb_name . '_' . $qtype . ' WHERE id=' . $qid;
                 $res = & $this->mdb2->query($query);
                 if (PEAR :: isError($res)) {
                     throw new Question_Control_Exception($res->getMessage());
                 }
-                $result = $res->fetchRow();
+                $result = $res->fetchRow(MDB2_FETCHMODE_ASSOC);
 //echo $query.'<p>';
                 // Obtain values and range
                 $Nvals = $result[(count($result) - 1)];
@@ -642,16 +642,7 @@ class ITS_statistics {
                 $replace = explode(',',$conf);
 
                 for ($v = 0; $v <= ($Nvals-1); $v++) {
-                    /*
-					if (count($answer) <= 1) {
-					  echo 'replace with min';
-						$replace[$v] = $result[3 * ($v +1)];
-					} // min_val{v}
-					else {
-						$replace[$v] = $answer[$v+1];
-					//}
-                    */
-                    // echo '<p>REPLACE: '.$result[$val_idx].' * '.$replace[$v].'<p>';
+                              // echo '<p>REPLACE: '.$result[$val_idx].' * '.$replace[$v].'<p>';
                     $formula = str_replace($result[$val_idx], $replace[$v], $formula);
                     $val_idx = $val_idx + 3;
                 }
@@ -669,9 +660,7 @@ class ITS_statistics {
                 if (empty ($formula)) {
                     $solution = 'NO SOLUTION EXISTS';
                 }
-                //eval("\$str = \"$str\";");
-                //else                  { /*eval("\$solution=" . $formula . ";");*/ }
-
+            
                 //DEBUG: echo 'FORMULA '.$formula.'<br>SOLUTION '.$solution.'<p>';
 
                 if ($solution==0) {
@@ -712,15 +701,9 @@ class ITS_statistics {
                         }
                     }
                 }
-                // obtain highest tolerance
-                // print_r($toll_array);die();
                 sort($toll_array);
                 $toll = $toll_array[0];
-
-                //echo '<p>score: '.$toll.'</p>';//die();
-
-                // tolerate 0.02 deviation: 2% + 1e-4
-                $t = 0.02 + 1e-4;
+              $t = 0.02 + 1e-4;
                 //echo '<p><font color="red">| '.$toll.' <= '.($t).' || '.($toll-$t).'</font></p>';
 
                 if ($toll <= $t) {
@@ -741,23 +724,101 @@ class ITS_statistics {
                     $div = sprintf("%1.2f",$solution*0.02);
                 }
                 $score = array($scr,array($sol,$div));
-//echo '--debug---';				
-                //$score = round(100*exp(-3*$toll));
-                //if ($qid==1097){$score=100;};
-                //echo '<p>FORMULA: '.$formula.' -- '.$answer[0].' | '.$solution.' | '.$toll.'<p>';
-                break;
+               break;
             //-------------------------------
+            
+            OLD SOLUTION ENDS***/
+            
+            // Khyatis changes
+           
+            	$answer = explode(',', $qanswer);  // becomes an array of answers
+				$answer_count = count($answer);
+				$query = 'SELECT * FROM ' . $this->tb_name . '_' . $qtype . ' WHERE id=' . $qid;
+				$res = & $this->mdb2->query($query);
+				if (PEAR :: isError($res)) {throw new Question_Control_Exception($res->getMessage());}
+				$result = $res->fetchRow(MDB2_FETCHMODE_ASSOC);
+				// Obtain values and range
+				$Nvals = $result['vals']; // number of variables
+				
+				for($i=0;$i<$answer_count;$i++){
+					if ($i==0)
+						$col = 'formula';			// TODO:: make changes to the davtabse to change it to formula1
+					else
+						$col = 'formula'.($i+1);
+					$col2 = 'weight'.($i+1);
+					$formula[$i] = $result[$col];
+					$weight[$i] = $result[$col2];
+					//echo "forumluaes: ".$formula[$i];
+				}
+				
+				// IF user-stored value exists, use it in formula, ELSE get min_val{i}
+				// IT DOES NOT EXIST
+				
+				$replace = explode(',',$conf);
+				for($i=0;$i<$answer_count;$i++){
+					for ($v = 0; $v <= ($Nvals-1); $v++) {
+						$col = 'val'.($v+1);
+						$formula[$i] = str_replace($result[$col], $replace[$v], $formula[$i]); 
+						
+						}
+						//echo "formula after replacing".$formula[$i];
+				}
+				$scoreArr = array();
+				$scoreArr[0] = 0;
+				for($i=0;$i<$answer_count;$i++){
+					$pattern = '/([\d.]+)\*\*[\(]([\d\+\-\*\/]+)[\)]/';
+					$replacement = 'pow($1,$2)';
+					$equation = preg_replace($pattern, $replacement, $formula[$i]);
+					eval("\$solution=" . $equation . ";" ); 
+					if (empty ($formula[$i])) 
+						$solution = 'NO SOLUTION EXISTS'; 
+					if ($solution==0)	
+						$solution = 0;    
+					elseif (empty($solution)) 
+						$solution = NULL;
+					$chunks = preg_split("/[\s,=]+/", $answer[$i]);
+					for ($a = 0; $a <= count($chunks) - 1; $a++) {
+						if (is_numeric($chunks[$a])) {
+							if ($solution==0) { $toll_array[$a] = abs($chunks[$a]);                   }
+							else 							{ $toll_array[$a] = abs(1 - ($chunks[$a] / $solution)); }
+						} else {
+							$tmp = '';
+							eval ('$tmp="' . $chunks[$a] . '";');
+							if (is_numeric($tmp)) {
+								$toll_array[$a] = abs(1 - ($tmp / $solution));
+							} else {
+								eval ("\$tmp=\"$chunks[$a]\";");
+								$toll_array[$a] = abs(1 - ($chunks[$a] / $solution));
+							}
+						}
+					}
+					// obtain highest tolerance
+					sort($toll_array);
+					$toll = $toll_array[0];
+					$k = $i+1;
+					if ($toll < 0.02) {$scoreArr[$k] = $weight[$i];
+										
+									} 		//TODO:: Add weights  
+					else              {$scoreArr[$k] = 0;  }
+					
+				}
+				
+				//echo $score;
+				$scoreArr[0] = array_sum($scoreArr);
+		//		echo $scoreArr[0];
+				$score = $scoreArr;
+				//-------------------------------
+				break;
             default:
                 $score = NULL;
             //-------------------------------
         }
-        //print_r($score); //die();
-        return $score;
+         return $score;
     }
     //----------------------------------------------------------------------------
     function get_question_data($qid,$qtype,$user_list_array) {
         //----------------------------------------------------------------------------
-		//echo count($user_list_array); die();
+        //echo count($user_list_array); die();
         $DATA = array ();
         $DATA_array = array ();
 
@@ -879,9 +940,9 @@ class ITS_statistics {
 
         return $DATA_array;
     }
-    //----------------------------------------------------------------------------//
+    //----------------------------------------------------------------------------
     function get_question_stats($data_arr, $qtype, $Nanswers) {
-        //----------------------------------------------------------------------------//
+        //----------------------------------------------------------------------------
         $stats = '';
         switch (strtolower($qtype)) {
             //-------------------------------
@@ -897,8 +958,7 @@ class ITS_statistics {
 	echo '<hr><pre>';
 	var_dump($data_arr);
 	echo '</pre><hr>';
-	echo 'Nanswers: '.$Nanswers.'   Choices: '.$choices;	//
-	die('---');
+	echo 'Nanswers: '.$Nanswers.'   Choices: '.$choices;	//die('---');
                 */
                 for ($i = 0; $i < count($data_arr); $i++) {
                     $data = $data_arr[$i];
@@ -910,7 +970,8 @@ class ITS_statistics {
   echo '<pre>mm';
 	print_r($keys);
 	echo '</pre>kk';
-	die('---');			*/
+	die('---');
+                    */
                     for ($r = 0; $r <= ($Nrecords -1); $r++) {
                         $record = explode(",", strtolower($data[$r]));
                         //echo '<p>|'.$data[$r].'|<p>';
@@ -1075,6 +1136,63 @@ class ITS_statistics {
                 $tb  = new ITS_table('name',count($list)/3,3,$list,array(33,34,33),'ITS_LIST');
                 $ans = '<center>'.$tb->str.'</center>';
                 break;
+                
+            //Khyati s changes
+            //-------------------------------
+            case 'c':
+				$scr = $score;
+                $ans = '';
+                if (empty ($answer)) {
+                    $list[0] = '<span class="TextAlphabet">&nbsp;</span><span class="ITS_null">&nbsp;</span><br>';
+                } else {
+                    $answer = explode(",",$answer);
+                    $list   = array();
+                    $idx = 0;
+                    $k = 0;
+                    $ai = 0;
+                    $sc = 0;
+                    for($i=1;$i<count($scr); $i++ ) {
+                        if (!is_null($scr[$i])) {
+                            $sc++;
+                        }
+                    } 
+                    for ($a = 0; $a < $sc; $a++) {  // count($answer)
+                        $msg     = '';
+                        if (empty ($answer[$a])) {
+                            $ans_str = '&nbsp;';
+                            $class   = 'ITS_null';
+                        }
+                        else {
+                           // echo ' - '.$answer[$a];
+                            //$ans_str = chr($answer[$a]+64); //strtoupper($answer[$a]); // LOGIC??
+                            $ans_str = $answer[$a];
+                            if   ( empty ($scr)) {
+                                $class = "ITS_null";
+                            }
+                            else {
+								$l = $a +1;
+                                if ($scr[$l] == 0) {
+                                    $class = 'ITS_incorrect';
+                                    $msg = 'Incorrect';
+                                }
+                                else {
+                                    $class = 'ITS_correct';
+                                    $msg = '<b>Correct</b>';
+                                }
+                            }
+                        }
+                        $list[$k]   = '<b>'.($ai+1).'.</b>';
+                        $list[$k+1] = '<span class="' . $class . '">'. $ans_str . '</span>';
+                        $list[$k+2] = $msg;
+                        $k = $k+3;
+                        $ai++;
+                        //&}
+                    } //
+                }
+                $tb  = new ITS_table('name',count($list)/3,3,$list,array(33,34,33),'ITS_LIST');
+                $ans = '<center>'.$tb->str.'</center>';
+            
+            break;
             //-------------------------------
             default :
             //-------------------------------
@@ -1103,7 +1221,8 @@ class ITS_statistics {
                 //-------------------------------
                 case 'm' :
                 //-------------------------------
-                //echo '<pre>';print_r($stats);echo '</pre>';//die('---');
+                /*echo '<pre>';print_r($stats);echo '</pre>';//die('---');
+                */
                 // Obtain number of questions
                     $fields = 'L1,L2,L3,L4,L5,L6,L7,L8,L9,L10,L11,L12,L13,L14,L15,L16,L17,L18,R19,L20,L21,L22,L23,L24,L25,L26,L27';
                     $query = 'SELECT ' . $fields . ' FROM webct_m WHERE id=' . $qid;
@@ -1193,6 +1312,10 @@ class ITS_statistics {
                 //-------------------------------
                 case 'c' :
                 //-------------------------------
+                // KHYATI changes
+                // score has a diff format -> score[0] contains total score, followed by scores of each part, 
+                // Score is not a 2 D array.
+                 
                     $data[0] = $score[1][0].'<font color="#922"> &plusmn; '.$score[1][1].'</font>'; //((round(1000*$score[1][1]))/1000);
                     //$data[1] = 'X % Got It';
                     $width = array(20,80);
@@ -1587,9 +1710,7 @@ echo '</pre>';
                     }
                     else {
                         $category = $ITSq->getCategory($chapter);
-                        $query = 'SELECT question_id,answered,qtype,answers,comment,epochtime,duration,rating FROM stats_'.$this->id.',webct WHERE webct.id=stats_'.$this->id.'.question_id AND current_chapter="'.$chapter.'" AND '.$category.' AND answered IS NOT NULL ORDER BY stats_'.$this->id.'.'.$orderby;
-                        //die($query);
-                        //AND comment<>"skip"
+                        $query = 'SELECT question_id,answered,qtype,answers,comment,epochtime,duration,rating FROM stats_'.$this->id.',webct WHERE webct.id=stats_'.$this->id.'.question_id AND current_chapter="'.$chapter.'" AND '.$category.' ORDER BY stats_'.$this->id.'.'.$orderby;
                         $column = '<th style="width:5%;">Score</th>';
                     }
                     //echo $query; //	 die();
@@ -1668,7 +1789,7 @@ echo '</pre>';
                     $Q->get_ANSWERS_data_from_DB();
                     $ANSWER = $Q->render_ANSWERS('a',0);
 
-                    $dist = '-dist-';//'-dist-';
+                    $dist = '';//'-dist-';
                     $FEEDBACK = $this->render_user_answer($ans,$score,$dist,$config,0); //##!!
                     /*
           $Estr.= '<tr class="PROFILE">'.
@@ -1676,23 +1797,6 @@ echo '</pre>';
           '<td class="PROFILE">' . $QUESTION . '</td>'.
           '<td class="PROFILE">' . $ANSWER.'<BR>'.$FEEDBACK . '</td>'.
             '</tr>';*/
-
-                    // COMMENT
-                    $action = '';
-                    /*
-                    if (empty($answers[$qn][4])) {
-                        $action = '';
-                    }
-                    else {
-						switch($answers[$qn][4]){
-							case 'skip':
-                             $action = '<hr style="border-top:1px dashed silver"><font color="red">'.$answers[$qn][4].'</font>';
-                             break;
-                             default:
-                             $action='';
-						 }
-                    }      
-                    * */      
                     // TIMESTAMP
                     if (empty($answers[$qn][5])) {
                         $timestamp = '';
@@ -1720,7 +1824,7 @@ echo '</pre>';
                     $Estr .= '<tr class="PROFILE" id="tablePROFILE">'.
                             '<td class="PROFILE" >' . ($qn+1). '<br><br><a href="Question.php?qNum='.$answers[$qn][0].'" class="ITS_ADMIN">'.$answers[$qn][0].'</a></td>'.
                             '<td class="PROFILE" >' . $QUESTION.$ANSWER. '</td>'.
-                            '<td class="PROFILE" >' . $ans.$timestamp.$dur.$rating.$action.'</td>';
+                            '<td class="PROFILE" >' . $ans.$timestamp.$dur.$rating.'</td>';
                     if (!is_null($tscore)) {
                         $Estr .= '<td class="PROFILE" >' . $tscore.'</td>';
                     }
@@ -1793,17 +1897,17 @@ echo '</pre>';
         }
         $header .= '<th># Practice</th></tr>';
         //die($header);///*
-
+        
         $fdate = date("F j, Y, g:i a T",time());  //$tMay1
         $fdate = explode(',',$fdate);
         $fdate = $fdate[0].','.$fdate[1].'<br>'.$fdate[2];
 
-        $Estr = '<center><div class="file"><a href="'.$file_path.'" target="_blank"><img alt="Export To Excel" src="css/media/excel_graphic.png" /></a><br><font color="blue">'.date("F j, Y, g:i a T",$tMay1).'</font></div>'.
+        $Estr = '<center><div class="file"><a href="'.$file_path.'" target="_blank"><img alt="Export To Excel" src="admin/excel_graphic.png" /></a><br><font color="blue">'.date("F j, Y, g:i a T",$tMay1).'</font></div>'.
                 '<table class="CPROFILE">'.$header;
 
         $sts 	  = array_fill(0,count($chs)-1,0);
         $full_sts = array_fill(0,count($chs)-1,0);
-
+        
         foreach ($users as $key => $user) { //$users as $user){
             //Calculating Scores for this User
             $s = new ITS_statistics($user[0],$class_name,'student');
@@ -1824,9 +1928,7 @@ echo '</pre>';
                 //Score for jth chapter
                 $totalscore[$key][$j] = round($score,2);
                 if ($totalscore[$key][$j]>0) {
-                    if ($totalscore[$key][$j]>=2400) {
-                        $full_sts[$j]++;
-                    }
+					if ($totalscore[$key][$j]>=2400){ $full_sts[$j]++; } 
                     $sts[$j]++;
                 }
             }
@@ -1870,7 +1972,7 @@ echo '</pre>';
         //-- STATS --//
         $pc = 0; //count($pcount);
         foreach ($pcount as $v) {
-            echo $v.'<br>';
+			echo $v.'<br>';
             if(!empty($v)) {
                 $pc++;
             }
@@ -1882,18 +1984,18 @@ echo '</pre>';
         $N = count($data);
         for ($t=0; $t<count($chs); $t++) {
             $td_sts      .= '<td style="text-align:right;font-weight:bold">'.$sts[$t].'<br>'.round(100*$sts[$t]/$N).' <font color="#669">%</font></td>';
-            $td_full_sts .= '<td style="text-align:right;font-weight:bold">'.$full_sts[$t].'<br>'.round(100*$full_sts[$t]/$N).' <font color="#669">%</font></td>';
+			$td_full_sts .= '<td style="text-align:right;font-weight:bold">'.$full_sts[$t].'<br>'.round(100*$full_sts[$t]/$N).' <font color="#669">%</font></td>';
         }
         $Estr .= '<tr style="border-top:2px solid #999;background:lightyellow">'.
                 '<td colspan="2" style="text-align:center"><b>ATTEMPTED</b> / '.$N.'<br><b>%</b></td>'.
                 $td_sts.
                 '<td colspan="2" style="text-align:center;font-weight:bold">'.$pc.'<br>'.round(100*$pc/$N).'<font color="#669">%</font></td>'.
                 '</tr>'.
-                '<tr style="border-top:2px solid #999;background:lightyellow">'.
+				'<tr style="border-top:2px solid #999;background:lightyellow">'.
                 '<td colspan="2" style="text-align:center"><b>WITH FULL CREDIT</b> (2400 pts) / '.$N.'<br><b>%</b></td>'.
                 $td_full_sts.
                 '<td style="text-align:center;font-weight:bold"></td>'.
-                '</tr>';
+                '</tr>';                
         $Estr.= '</table></center>';
         //-- STATS --//
         fclose($fp);

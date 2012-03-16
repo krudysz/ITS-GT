@@ -18,7 +18,7 @@
   ex. $ITS_question = new ITS_question(90001,"its","user_cpt");
 
   Author(s): Greg Krudysz | Aug-28-2008
-  Last Revision: Mar-5-2012
+  Last Revision: Jan-27-2012
 */
 //=====================================================================//
 
@@ -44,6 +44,7 @@ class ITS_question {
     public $Q_question;
     public $Q_image;
     public $Q_answers;
+    public $Q_vals;
     public $Q_answers_config;
     public $Q_question_config;
     public $Q_category;
@@ -53,6 +54,9 @@ class ITS_question {
     var $Q_answers_values = array();
     var $Q_weights_values = array();
     var $Q_images_values  = array();
+    // Added by Khyati
+    public $Q_question_parts = array();
+    ////
     var $edit_flag = 0;
 
     public function set_Q_type($type) {
@@ -93,21 +97,21 @@ class ITS_question {
         global $db_dsn, $db_name, $tb_name, $db_table_user_state, $mimetex_path, $files_path;
 
         $this->student_id = $student_id;
-        $this->db_name 	  = $db_name;
-        $this->tb_name 	  = $table_name;
-        $this->cpt_array  = array();
+        $this->db_name = $db_name;
+        $this->tb_name = $table_name;
+        $this->cpt_array = array();
         $this->cpt_attrib = array();
-        $this->style 	  = 'ITS';
+        $this->style = 'ITS';
         $this->mimetex_path = $mimetex_path;
-        $this->files_path   = $files_path;
+        $this->files_path = $files_path;
         $this->fields = 'id,qtype,title,question,image,answers,answers_config,question_config,category';
     }
     //=====================================================================//
-    function load_DATA_from_DB($qid) {
+    function load_DATA_from_DB($q_num) {
         //=====================================================================//
         // Pull out webct data
-        $query = 'SELECT ' . $this->fields . ' FROM ' . $this->tb_name . ' WHERE id=' . $qid;
-        //echo '<p>'.$query; die();
+        $query = 'SELECT ' . $this->fields . ' FROM ' . $this->tb_name . ' WHERE id=' . $q_num;
+        //echo '<p>'.$query;
         $res = mysql_query($query);
         if (!$res) {
             die('Query execution problem in ITS_question: ' . msql_error());
@@ -122,7 +126,6 @@ class ITS_question {
     //=====================================================================//
     function load_DATA($data) {
         //=====================================================================//
-        //print_r($data);die();
 
         if (empty($data[0])) {
             $data[0] = '';
@@ -136,9 +139,9 @@ class ITS_question {
         if (empty($data[3])) {
             $data[3] = '';
         }
-        /*if (empty($data[4])) {
+        if (empty($data[4])) {
             $data[4] = '';
-        }*/
+        }
         if (empty($data[5])) {
             $data[5] = 0;
         }
@@ -170,7 +173,7 @@ class ITS_question {
 
         $TABLE_TITLE = createEditTable('TITLE', $this->Q_title, "ITS");
 
-        $title_str = '<p><div class="SubHeading">' . $TABLE_TITLE . '</div>';
+        $title_str = "<p><DIV class=SubHeading>" . $TABLE_TITLE . "</DIV>";
         return $title_str;
     }
 
@@ -184,7 +187,20 @@ class ITS_question {
             //echo $query;
             $res  = mysql_query($query);
             $vals = mysql_fetch_array($res);
-
+			// Fetch answer options text
+			// Khyatis changes start
+			$fields = 'text1';
+			for($k=1;$k<=$this->Q_answers;$k++){
+				$fields .=', text'.($k+1);
+			}
+			$query = "SELECT " . $fields . " FROM " . $this->tb_name . "_" . $this->Q_type . " WHERE id=" . $this->Q_num;
+			$res = mysql_query($query);
+			if (!$res) {
+				die('Query execution problem in ITS_question: ' . msql_error());
+			}
+			$this->Q_question_parts = mysql_fetch_assoc($res);
+			
+			
             // get token fields
             $fields = "val1,min_val1,max_val1";
             for ($i = 2; $i <= $vals[0]; $i++) {
@@ -210,6 +226,7 @@ class ITS_question {
                     for ($i = 1; $i <= count($vals); $i++) {
                         //echo $vdata["val".$i].' '.$vals[($i-1)];
                         $question = str_replace($vdata["val" . $i], $vals[($i - 1)], $question);
+                        $this->Q_question_parts['text1'] = str_replace($vdata["val" . $i], $vals[($i - 1)], $this->Q_question_parts['text1']);
                     }
                     break;
                 //-------------------------------------------//
@@ -225,6 +242,10 @@ class ITS_question {
                         //echo $vdata["min_val".$i].'___'.$vdata["max_val".$i].'<br>';
                         //echo $vdata["val".$i].' '.$rnv[($i-1)];
                         $question = str_replace($vdata["val" . $i], $rnv[($i - 1)], $question);
+                        //  echo("heeloooooooooo".$this->Q_question_parts['text1'].$vdata["val" . $i]. $vals[($i - 1)]);
+						for($k=1;$k<=$this->Q_answers;$k++){
+							$this->Q_question_parts['text'.$k] =  str_replace($vdata["val" . $i], $rnv[($i - 1)],  $this->Q_question_parts['text'.$k]);
+						}
                         $this->Q_answers_permutation[$i] = $rnv[($i - 1)];
                     }
                     //var_dump($this->Q_answers_permutation);
@@ -245,11 +266,12 @@ class ITS_question {
         $question_simple_str = $this->Q_question;
 
         return $question_simple_str;
-    }
+    }  
     //=====================================================================//
     function render_QUESTION() {
         //=====================================================================//
         $ques_str = $this->Q_question;
+       // die($ques_str);
         /*
                 $query_tag_id = "SELECT tag_id FROM " . $this->tb_name ." WHERE id=" . $this->Q_num;
                 $res = mysql_query($query_tag_id);
@@ -290,38 +312,32 @@ class ITS_question {
 
         //--DEBUG--// echo '<pre>';print_r('<font color=green>'.$ques_str.'</font>');echo '</pre>';
 
+        $TABLE_QUESTION = $this->createEditTable('QUESTION', $ques_str, "ITS_QUESTION");
+        $TABLE_QUESTION = $this->renderFieldCheck($TABLE_QUESTION);
+
         //echo $TABLE_QUESTION.'<hr>';
         //--- IMAGE ----------------//
         //echo getcwd() . "\n"; //die();
         //echo '<br>img src="' . $this->files_path . '--'.$this->Q_image;
         //die();
-
-        if ($this->Q_image) {
-/*---NEW---			
-            $query_img = 'SELECT dir,name FROM images WHERE id='. $this->Q_image;
-            $res = mysql_query($query_img);
-            if (!$res) {
-                die('Query execution problem in ITS_question: ' . msql_error());
-            }
-
-            $row = mysql_fetch_assoc($res);
-            $src = $this->files_path.'/'.$row['dir'].'/'.$row['name'];
-                        $img = '<img src="' . $src . '" class="ITS_question_img" alt="' . $src . '">';
----NEW---*/
-            //echo '<br>';
-            //die($src);
-            //
-            $src = 'ITS_FILES/images/question/5/lighthouse.png';
-
-            $img = '<img src="' . $this->files_path . $this->Q_image . '" class="ITS_question_img" alt="' . $this->files_path . $this->Q_image . '">';
-            $img = '<a class="example2" href="' . $src . '">'.$img.'</a>';
+        
+        $img = '';
+        if (!empty($this->Q_image)) {
+            //$img = '<img src="' . $this->files_path . $this->Q_image . '" class="ITS_question_img" alt="' . $this->files_path . $this->Q_image . '">';
+            $img = '<a class="example2" href="' . $this->Q_image . '"><img src="' . $this->Q_image . '" alt="' . $this->Q_image . '"></a>';
         } else {
             $img = '';
         }
-		//echo $this->files_path . $this->Q_image.'<br>';
-        //$TABLE_IMAGE = $this->createImageTable('IMAGE_ID', $img, "ITS_QUESTION");
-        $TABLE_QUESTION = $this->createEditTable('QUESTION', $img.$ques_str, "ITS_QUESTION");
-        $TABLE_QUESTION = $this->renderFieldCheck($TABLE_QUESTION);
+        
+        /*
+        $img = '';
+        if (!empty($this->Q_image)) {
+            //$img = '<img src="' . $this->files_path . $this->Q_image . '" class="ITS_question_img" alt="' . $this->files_path . $this->Q_image . '">';
+            $img = '<a class="example2" href="' . $this->files_path . $this->Q_image . '"><img src="' . $this->files_path . $this->Q_image . '" alt="' . $this->files_path . $this->Q_image . '"></a>';
+        } else {
+            $img = '';
+        }
+        */
         //--------------------------//
         //echo $this->Q_question_config;
         //if ($this->Q_question_config == 2){ //---- TITLED ----//
@@ -340,9 +356,8 @@ class ITS_question {
         //$question_str = $question_str . "</DIV>";
         //}
 
-        //$question_str     = '<div style="float:left;border:2px solid green;clear:left;overflow:auto" >' . $TABLE_QUESTION . '</div>';
-        //$question_img   = '<div class="ITS_question_img">' . $TABLE_IMAGE . '</div>';
-        $div_ITS_QUESTION = '<div class="ITS_QUESTION">' . $TABLE_QUESTION . '</div>';
+        $question_str     = '<div class="ITS_question_text">' . $img . $TABLE_QUESTION . '</div>';
+        $div_ITS_QUESTION = '<div class="ITS_QUESTION">' . $question_str . '</div>';
 
         return $div_ITS_QUESTION;
     }
@@ -360,54 +375,73 @@ class ITS_question {
     }
     //=====================================================================//
     function render_data() {
-        //=====================================================================//
-        //
-        //var_dump($this->Q_image);     //die();
+		
+    //=====================================================================//   
         if (empty($this->Q_image)) {
             //<form method="POST" enctype="multipart/form-data"><input type="hidden" name="protocol" value="http"><input type="file" name="files[]" multiple></form>';
             //$img = '<form name="ITS_file" action="upload2.php" enctype="multipart/form-data" method="POST"><input name="ITS_image" size="10" type="file"><input id="testme" name="upload" value="Upload" type="submit"><input type="hidden" name="qid" value="'.$this->Q_num.'" /></form>';
-            $img = '<form name="ITS_file" action="ajax/ITS_image.php" enctype="multipart/form-data" method="POST"><input name="ITS_image" size="10" type="file"><input id="testme" name="upload" value="Upload" type="submit"><input type="hidden" name="qid" value="'.$this->Q_num.'" /><noscript><input type="submit" value="Submit"></noscript></form>';
+			$img = '<form name="ITS_file" action="ajax/ITS_image.php" enctype="multipart/form-data" method="POST"><input name="ITS_image" size="10" type="file"><input id="testme" name="upload" value="Upload" type="submit"><input type="hidden" name="qid" value="'.$this->Q_num.'" /></form>';        
         } else {
             $img = $this->Q_image;
         }
-//var_dump($img);
+
         $qid = $this->Q_num;
-        if (empty($qid)) {
-            $qid = 1;
-        }
-
-
+        if (empty($qid)){ $qid = 1; }
+   
         $t = new ITS_tag('tags');
         $Ques_tag_arr  = $t->getByResource($this->tb_name,$qid);
-        $Ques_tag_list = $t->render($Ques_tag_arr,$qid,$this->tb_name);
-        //$Ques_tag_list = '';
-        //var_dump($arr);
-
-        //-- search box --//
+		// --> CAUSING THE PROBLEM, SO COMMENTED, $Ques_tag_list = $t->render($Ques_tag_arr,$qid,$this->tb_name);
+		//var_dump($arr);
+	
+		//-- search box --//
         $s  = new ITS_search();
         $sb = $s->renderBox($this->tb_name,$qid);
-        //---
         //$tagBox = new ITS_tagInterface();
         //$tags   = $tagBox->displayTags($this->id,$qid,$tagBox->getTags($qid));
         //$stags = $b.'<br>'.$tagBox->createSearchAddBox(1,$qid);
         //=======
         //echo $style;
-
+		$tt = $img;
         $style = 'ITS';
-        $css   = 'ITS_QUESTION_DB';
+        $css = 'ITS_QUESTION_DB';
         //                '<td class="' . $css . '">' . $this->createEditTable('tags', $tagList, $style) . '</td>' .
-        $db1 = '<tr><th>Title</th><th>Ans</th><th>Category</th></tr>' .
+        $db1 = '<tr><th>Title</th><th>Image</th><th>Ans</th><th>Category</th></tr>' .
                 '<tr>' .
                 '<td class="' . $css . '">' . $this->createEditTable('title', $this->Q_title, $style) . '</td>' .
+                '<td id="X11" class="' . $css . '">' . $tt . '</td>' .
                 '<td class="' . $css . '">' . $this->createEditTable('answers', $this->Q_answers, $style) . '</td>' .
                 '<td class="' . $css . '">' . $this->createEditTable('category', $this->Q_category, $style) . '</td>' .
-                '</tr>'.
-                '<tr><th colspan="4">Tags</th></tr><tr><td colspan="4">'.$Ques_tag_list.$sb.'</td></tr>';
+                '</tr>';
+                // BECAUSE IT WASNT '<tr><th colspan="4">Tags</th></tr><tr><td colspan="4">'.$Ques_tag_list.$sb.'</td></tr>';
         $db2 = '';
 
         switch ($this->Q_type) {
             case 'c':
-                $vals   = $this->Q_answers_values;
+            
+            /** Khyati's Changes ***/
+              $vals   = $this->Q_answers_values; // contains the formulaes
+                $fields = $this->Q_answers_fields;
+                $Nvals = $this->Q_vals;
+                $db2 .= '<tr>';
+                for($k=0;$k<$this->Q_answers;$k++){
+					$w=$k+1;
+					$db2 .= '<th>Formula'.$w.'</th>';
+					$edit_tb[$k] = $this->createEditTable('formula'.$w, $vals[$k], $style);
+				}
+                
+                $db2 .= '<th>Value</th><th>Min value</th><th>Max value</th></tr>'
+                      .'<tr>';
+                for($k=0;$k<$this->Q_answers;$k++)    
+						$db2 .= '<td rowspan="' . $Nvals . '" class="' . $css . '">' . $edit_tb[$k] . '</td>';
+                for ($f = 0; $f < $Nvals; $f++) {
+                    $val_tb = $this->createEditTable('val' . ($f + 1), $vals[3 * $f + $this->Q_answers + 1], $style);
+                    $min_tb = $this->createEditTable('min_val' . ($f + 1), $vals[3 * $f + $this->Q_answers + 2], $style);
+                    $max_tb = $this->createEditTable('max_val' . ($f + 1), $vals[3 * $f + $this->Q_answers + 3], $style);
+                    //$answer_str .= '<font color="blue">'.$f.'</font> = '.$vals[$f].'<br>';
+                    $db2 .= '<td class="ITS_QUESTION_DB">' . $val_tb . '</td><td class="' . $css . '">' . $min_tb . '</td><td class="' . $css . '">' . $max_tb . '</td></tr>';
+                } 
+             /** Khyati s changes end*/
+             /*   $vals   = $this->Q_answers_values;
                 $fields = $this->Q_answers_fields;
                 $Nvals  = (count($fields) - 1) / 3;
                 //ITS_debug($fields); // die();
@@ -422,6 +456,8 @@ class ITS_question {
                     //$answer_str .= '<font color="blue">'.$f.'</font> = '.$vals[$f].'<br>';
                     $db2 .= '<td class="ITS_QUESTION_DB">' . $val_tb . '</td><td class="' . $css . '">' . $min_tb . '</td><td class="' . $css . '">' . $max_tb . '</td></tr>';
                 }
+                * 
+                */
                 //$tb = new ITS_table('ANSWER_C',1,1,$tb_C_str,array(100),$class);
                 //$answer_str = '<center><div class="ITS_ANSWER">'.$tb_C_str.'</div></center>';
                 break;
@@ -429,7 +465,7 @@ class ITS_question {
         }
 
         $tb  = '<table class="'.$css.'">' . $db1 . $db2 . '</table>';
-        $str = '<p><center>'.$tb.'</center></p>';
+        $str = '<p><center>'.$tb.'</center>';
         return $str;
     }
     //=====================================================================//
@@ -467,13 +503,13 @@ class ITS_question {
                     die('Query execution problem in ITS_question: ' . msql_error());
                 }
                 $weights = mysql_fetch_array($res);
-
+                
                 $query = "SELECT " . $images . " FROM " . $this->tb_name . "_" . $this->Q_type . " WHERE id=" . $this->Q_num;
                 $res = mysql_query($query);
                 if (!$res) {
                     die('Query execution problem in ITS_question: ' . msql_error());
                 }
-                $images = mysql_fetch_array($res);
+                $images = mysql_fetch_array($res);                
 
                 $this->Q_answers_fields = $fields;
                 $this->Q_answers_values = $answers;
@@ -507,31 +543,31 @@ class ITS_question {
                     $L_fields .=  ",L" . $i;
                     $R_fields .=  ",R" . $i;
                     $L_images .=  ",Limage" . $i;
-                    $R_images .=  ",Rimage" . $i;
+                    $R_images .=  ",Rimage" . $i;                    
                 }
 
                 $Lquery  = "SELECT " . $L_fields . " FROM " . $this->tb_name . "_" . $this->Q_type . " WHERE id=" . $this->Q_num;
                 $Rquery  = "SELECT " . $R_fields . " FROM " . $this->tb_name . "_" . $this->Q_type . " WHERE id=" . $this->Q_num;
                 $Liquery = "SELECT " . $L_images . " FROM " . $this->tb_name . "_" . $this->Q_type . " WHERE id=" . $this->Q_num;
-                $Riquery = "SELECT " . $R_images . " FROM " . $this->tb_name . "_" . $this->Q_type . " WHERE id=" . $this->Q_num;
-
+                $Riquery = "SELECT " . $R_images . " FROM " . $this->tb_name . "_" . $this->Q_type . " WHERE id=" . $this->Q_num;                
+                
                 $Lres  = mysql_query($Lquery);
                 $Rres  = mysql_query($Rquery);
                 $Lires = mysql_query($Liquery);
-                $Rires = mysql_query($Riquery);
-
+                $Rires = mysql_query($Riquery);     
+          
                 if (!$Lres) {
                     die('Query execution problem in ITS_question: ' . msql_error());
                 }
-
+                      
                 $L_answers = mysql_fetch_array($Lres);
-                $R_answers = mysql_fetch_array($Rres);
+                $R_answers = mysql_fetch_array($Rres);          
                 $L_images  = mysql_fetch_array($Lires);
-                $R_images  = mysql_fetch_array($Rires);
-
+                $R_images  = mysql_fetch_array($Rires);                
+ 
                 $this->Q_answers_fields = array($L_fields, $R_fields);
                 $this->Q_answers_values = array($L_answers, $R_answers);
-                $this->Q_images_values  = array($L_images, $R_images);
+                $this->Q_images_values  = array($L_images, $R_images);                       
                 break;
             //-------------------------------------------//
             case 'c':
@@ -543,12 +579,26 @@ class ITS_question {
                     die('Query execution problem in ITS_question: ' . msql_error());
                 }
                 $Nanswers = mysql_fetch_array($res);
-
+                // Khyati s cahnges start
+                $this->Q_vals = $Nanswers[0];
+                $n = $this->Q_answers;
+                $fields = 'formula';
+                for($k=1;$k<=$n;$k++){
+					$fields .= ', formula'.($k+1);
+				}
+				
+                // Khyatis changes end
+                
+                for ($i = 1; $i <= $Nanswers[0]; $i++) {
+                    $fields .= ',val' . $i . ',min_val' . $i . ',max_val' . $i;
+                }
+/*
                 //$n = $this->Q_answers;
                 $fields = 'formula';
                 for ($i = 1; $i <= $Nanswers[0]; $i++) {
                     $fields .= ',val' . $i . ',min_val' . $i . ',max_val' . $i;
                 }
+                */
 
                 $query = 'SELECT ' . $fields . ' FROM ' . $this->tb_name . '_' . $this->Q_type . ' WHERE id=' . $this->Q_num;
                 //echo $query.'<p>'; die();
@@ -563,7 +613,7 @@ class ITS_question {
                 //$this->Q_weights_values = $weights;
                 break;
         }
-    }
+    } 
     //=====================================================================//
     function render_ANSWERS($name, $mode) { // MODE: 1-Question | 2-EDIT
         //=====================================================================//
@@ -577,7 +627,7 @@ class ITS_question {
                 $answer_str = $answer_str
                         . '<form action=score.php method=post name=form1>'
                         . '<textarea class=TXA_ANSWER name=TXA_ANSWER width=100% cols=80% rows=3></textarea>'
-                        . '<p><noscript><input type="submit" value="Submit"></noscript></form>';
+                        . '<p></form>';
                 break;
             //-------------------------------------------//
             case 'mc':
@@ -603,15 +653,14 @@ class ITS_question {
                     $ans = $this->renderFieldCheck($ans);
                     $answer[$i] = trim($ans);
                     $weight[$i] = $this->Q_weights_values[$i - 1];
-                    $image[$i]  = $this->renderQuestionImage($this->Q_images_values[$i - 1]);
+
                     switch ($mode) {
                         case 2: // 2-Edit
                             $ans = $this->Q_answers_values["answer" . $i];
                             $answer[$i] = $this->createEditTable('ANSWER' . $i, trim($ans), 'ITS_ANSWER');
                             $answer[$i] = $this->renderFieldCheck($answer[$i]);
                             $weight[$i] = $this->createEditTable('WEIGHT' . $i, $this->Q_weights_values[$i - 1], 'ITS_WEIGHT');
-
-                            $image[$i]  = $this->createImageTable('IMAGE' . $i, $image[$i], 'ITS_IMAGE');
+                            $image[$i]  = $this->createEditTable('IMAGE' . $i, $this->Q_images_values[$i - 1], 'ITS_IMAGE');
                             break;
                     }
 
@@ -665,16 +714,16 @@ class ITS_question {
                 $answers_values = $this->Q_answers_values;
                 $L_answers = $answers_values[0];
                 $R_answers = $answers_values[1];
-
+                
                 $images_values = $this->Q_images_values;
                 $L_images = $images_values[0];
-                $R_images = $images_values[1];
+                $R_images = $images_values[1];                
 
                 $ii = 1;
                 $L_list = '';
                 for ($i = 1; $i <= $n; $i++) {
                     //echo $L_answers["L".$i].' ~ '.$R_answers["R".$i].'<p>';
-                    $check_NULL  = !strcmp($L_answers["L" . $i], 'NULL');
+                    $check_NULL = !strcmp($L_answers["L" . $i], 'NULL');
                     $check_EMPTY = empty($L_answers["L" . $i]);
                     if (!(($check_NULL) OR ($check_EMPTY))) {
                         $L[$i - 1] = $i;
@@ -762,13 +811,12 @@ class ITS_question {
                             case 2:
                                 $ans = $this->createEditTable('L' . $i, $L_answers["L" . $i], $style);
                                 $ans = $this->renderFieldCheck($ans);
-                                $ig  = $this->renderQuestionImage($L_images["Limage" . $i]);
-                                $img = $this->createImageTable('Limage' . $i, $ig, $style);
+                                $img = $this->createEditTable('Limage' . $i, $L_images["Limage" . $i], $style);
                                 break;
                             //case 2: $ans = $this->createEditTable('L'.$i,$L_answers["L".$i],$style); break;
                         }
                         $data[$ii - 1] = '<b>' . $ik . '. </b>';
-                        $data[$ii] 	   = '<div class="' . $class . '">' . $bank . '</div>';
+                        $data[$ii] = '<div class="' . $class . '">' . $bank . '</div>';
                         $data[$ii + 1] = $ans;
                         $data[$ii + 2] = $img;
 
@@ -820,18 +868,15 @@ class ITS_question {
                       } */
 
                     $edit_tb = $this->createEditTable('R' . $i, $ans, $style);
-
-                    $ig   = $this->renderQuestionImage($R_images["Rimage" . $i]);
-                    $Rimg = $this->createImageTable('Rimage' . $i, $ig, $style);
-
+                    $Rimg = $this->createEditTable('Rimage' . $i, $R_images["Rimage" . $i], $style);
                     //==$tb_R = new ITS_table('RT'.$this->Q_type,1,2,array($label,$edit_tb),array(30,70),'ITSxx');
                     $data = array($label, $edit_tb,$Rimg);
                     $style = 'CHOICE_ACTIVE';
                     $tb_R_str .= '<tr><td class="ITS_ANSWER_M">' . $label . '</td><td class="ITS_ANSWER_M"><div class="' . $style . '">' . $edit_tb . '</div></td><td class="ITS_ANSWER_M"><div class="'.$style.'">' . $Rimg . '</div></td></tr>';
-                    /*
+					/*
 					$form_image = '<form name="browser" action="server_browser.php"><input type="hidden" name="id" value="'.$this->Q_num.'"><input type="hidden" name="col_name" value="Rimage' . $i.'"><input type="submit" value="Upload bb Image"></form>';
                     $tb_R_str .= '<td>'.$form_image.'</td></tr>';
-                    */
+                    */ 
                     //}
                 }
                 $tb_R_str .= '</table>';
@@ -840,69 +885,7 @@ class ITS_question {
                 $tb = new ITS_table('ANSWER_' . $this->Q_type, 1, 2, array($tb_L_str, $tb_R_str), array(50, 50), 'ITS');
                 $answer_str = $tb->str;
                 break;
-            /* ======== OLD SOLUTION ==========
-              $n = $this->Q_answers;
-              $answers_values = $this->Q_answers_values;
-              $L_answers = $answers_values[0];
-              $R_answers = $answers_values[1];
-
-              $R = range(1,count($R_answers)/2);
-              shuffle($R);
-
-              // construct ANSWERS table
-              $rows  = $this->Q_answers;
-              $width = array(1,99);
-
-              // Left table
-              $tb_L_str = '';
-              for ($i=1;$i<=$n;$i++){
-              $check_NULL = !strcmp($L_answers["L".$i],'NULL');
-              $check_EMPTY = empty($L_answers["L".$i]);
-              //echo $L_answers["L".$i].'<p>'; //(!$check_EMPTY)
-              if (!(($check_NULL) OR ($check_EMPTY))) {
-              if (($i % 2) == 0){ $style = "ITS_ANSWER_STRIPE"; }
-              else 			        { $style = "ITS_ANSWER";        }
-
-              $edit_tb = $this->createEditTable('L'.$i,$L_answers["L".$i],$style);
-              $data    = array("<span class=TextAlphabet>".chr($i+64).".</span>",$edit_tb);
-              $tb_L    = new ITS_table('ANSWER_'.$this->Q_type.'_'.$i,1,count($data),$data,$width,$style);
-              $tb_L_str = $tb_L_str.$tb_L->str;
-              }
-              }
-              $tb_L_str = '<DIV class="ITS_ANSWER">'.$tb_L_str.'</div>';
-
-              // Right table
-              $tb_R_str = '';
-              for ($i=1;$i<=$n;$i++){
-              if (!(is_null($R_answers["R".$i]))){
-              if (($i % 2) == 0){ $style = "ITS_ANSWER_STRIPE"; }
-              else 			        { $style = "ITS_ANSWER";        }
-              $edit_tb = $this->createEditTable('R'.$i,$R_answers["R".$R[$i-1]],$style);
-
-              $data    = array('<input type=text size=1 maxlength=1 name="'.$name.'" id="'.$name.'" value="">',$edit_tb);
-              //$data    = array('<input type=text size=1 maxlength=1 name="'.$name.'['.$i.']" value="">',$edit_tb);
-              $tb_R    = new ITS_table('ANSWER_'.$this->Q_type,1,count($data),$data,$width,$style);
-              $tb_R_str = $tb_R_str.$tb_R->str;
-              }
-              }
-              $tb_R_str = '<DIV class="ITS_ANSWER">'.$tb_R_str.'</div>';
-
-              $this->Q_answers_permutation = $R;
-
-              $tb = new ITS_table('ANSWER_'.$this->Q_type,1,2,array($tb_L_str,$tb_R_str),array(50,50),'ITS');
-              $answer_str = $answer_str . $tb->str;
-
-              $new = '<ol id="selectable">'.
-              '<li class="ui-state-default">1</li>'.
-              '<li class="ui-state-default">2</li>'.
-              '<li class="ui-state-default">3</li>'.
-              '<li class="ui-state-default">4</li>'.
-              '</ol>';
-              echo $new;
-
-              break;
-              ======== OLD SOLUTION ========== */              
-            //-------------------------------------------//
+                  //-------------------------------------------//
             case 'c':
             //-------------------------------------------//
                 $style = '';
@@ -913,14 +896,26 @@ class ITS_question {
                   $tb = '<table class="ITS_ANSWER_BOXED"><tr><td class="ITS_ANSWER_BOXED_ALPH">'.$this->caption[$i].'</td><td class="ITS_ANSWER_BOXED"><span class="'.$style.'">'.$answer[$i].'</span></td><td><div class="CHOICE_WEIGHT">'.$weight[$i].'</div></td></tr></table>';
                   $answer_str .= $tb;
                   } */
-
+                  
                 // ANSWERS
-                switch ($mode) {
+                
+              
+				  switch ($mode) {
                     case 0: $answer_str = '';
                         break;
                     case 2: $answer_str = '';
                         break;
-                    default: $answer_str .= '<textarea class="TXA_ANSWER" id="ITS_TA" name="' . $name . '"></textarea>';
+                    default:
+                    //Khyatis changes
+                     {
+						//Changes to make multiple answer boxes: SHOULD the IDS be different for diff boxes?? how is the scoring done
+						for($k=0;$k<$this->Q_answers;$k++)
+						$answer_str .= $this->Q_question_parts['text'.($k+1)].'<textarea class="TXA_ANSWER" id="ITS_TA'.$k.'" name="' . $name . '"></textarea><br>';
+					}
+					$answer_str .= '<input type="hidden" value="'.$this->Q_answers.'" id="answersCount">';
+                    // khyatis Changes
+                    
+                    // $answer_str .= '<textarea class="TXA_ANSWER" id="ITS_TA" name="' . $name . '"></textarea>';
                 }
                 break;
             //-------------------------------------------//
@@ -936,7 +931,7 @@ class ITS_question {
     }
     //=====================================================================//
     function get_ANSWERS_solution_from_DB() {
-        //=====================================================================//
+    //=====================================================================//
         switch ($this->Q_type) {
             //-------------------------------------------//
             case 's':
@@ -967,7 +962,7 @@ class ITS_question {
             //-------------------------------------------//
             case 'm':
             //-------------------------------------------//
-            //die('need solution');
+                //die('need solution');
                 break;
             //-------------------------------------------//
             case 'c':
@@ -977,7 +972,7 @@ class ITS_question {
     }
     //=====================================================================//
     function set_ANSWERS_solution($solution) {
-        //=====================================================================//
+    //=====================================================================//
         switch ($this->Q_type) {
             //-------------------------------------------//
             case 's':
@@ -1043,33 +1038,14 @@ class ITS_question {
             //-------------------------------------------//
                 break;
         }
-    }
-    //=====================================================================//
-    function renderQuestionImage($img_val) {
-        //=====================================================================//
-        if ($img_val) {
-            $query_img = 'SELECT dir,name FROM images WHERE id='. $img_val;
-            $res = mysql_query($query_img);
-            if (!$res) {
-                die('Query execution problem in ITS_question: ' . msql_error());
-            }
-
-            $row = mysql_fetch_assoc($res);
-            $src = $this->files_path.'/'.$row['dir'].'/'.$row['name'];
-            $img = '<img src="' . $src . '" class="ITS_question_img" alt="' . $src . '">';
-        } else {
-            $img = '';
-        }
-
-        return $img;
-    }
+    }  
     //=====================================================================//
     function renderQuestionForm($action) {
-        //=====================================================================//
+    //=====================================================================//
         $act    = explode('~', $action);                        // echo $act[0];
         $class  = 'text ui-widget-content ui-corner-all ITS_Q';
         $fields = explode(',', $this->fields);
-
+        
         /* $qtypes = array('Multiple Choice','Matching','Calculated','Short Answer','Paragraph');
           $qtype = '<select id="ITS_qtype" name="qtype" qid="'.$this->Q_num.'">';
           for ($t=1; $t<=count($this->Q_type_arr); $t++) {
@@ -1081,7 +1057,7 @@ class ITS_question {
 
         $qtype = '<div id="navContainer">' .
                 '<ul id="navListQC">' .
-                '<li qtype="mc" value="mc" name="qtype"><a href="#X" id="current">Multiple Choice</a></li>' .
+                '<li qtype="mc" value="mc" name="qtype"><a href="#" id="current">Multiple Choice</a></li>' .
                 '<li qtype="m"  value="m"  name="qtype"><a href="#">Matching</a></li>' .
                 '<li qtype="c"  value="c"  name="qtype"><a href="#">Calculated</a></li>' .
                 '<li qtype="s"  value="s"  name="qtype"><a href="#">Short Answer</a></li>' .
@@ -1091,7 +1067,7 @@ class ITS_question {
 
         $form = '<form id="Qform"><fieldset><table class="ITS_newQuestion">';
         $form .= '<tr><td colspan="2" style="position:relative;width:100%;">' . $qtype . '</td></tr>';
-
+        
         for ($i = 2; $i < count($fields); $i++) {
             $name = 'Q_' . $fields[$i];
             $label = '<label for="' . $fields[$i] . '"><b>' . strtoupper(preg_replace('/_/', ' ', $fields[$i])) . ': </b></label>';
@@ -1110,10 +1086,10 @@ class ITS_question {
                       $sel .= '<option '.$issel.' value="'.($a).'">'.$a.'</option>';
                       }
                       $sel .= '</select>'; */
-
+                     
                     $sel = '<input type="button" name="changeAnswer" id="remAnswer" v="-" value="&mdash;" class="ITS_buttonQ" /><br>'
                           .'<input type="button" name="changeAnswer" id="addAnswer" v="+" value="+"       class="ITS_buttonQ" />';
-
+ 
                     switch ($this->Q_type) {
                         //-------------------------------------------//
                         case 's':
@@ -1169,15 +1145,24 @@ class ITS_question {
                         case 'c':
                         //-------------------------------------------//
                             $n = 1; //$this->Q_answers;
+                            $formula_count = $this->Q_answers;  
+                          // Khyatis changes
                             $ans = '<table id="ITS_Qans" class="ITS_Qans" n="' . $n . '" qtype="' . $this->Q_type . '">'
-                                    . '<tr>'
-                                    . '<td width="10%"><label for="formula">formula</label></td>'
+									. '<tr width=100%><td><LABEL >Number of Formulaes</LABEL></td>'
+									. '<td><input type="button" value="+" id="add_fcount" class="ITS_buttonQ"></td><td><input type="button" id="dec_fcount" value="-" class="ITS_buttonQ"></td>'
+									. '<td width="90%">Weights must sum up to 100</td></tr>'
+									. '<tr><input type="hidden" name="answers" id="answers" value="1" /></tr>'
+                                    . '<tr class="formla" id="formulaes1" >'
+                                    . '<td width="10%"><label for="text1">Text</label></td>'
+									. '<td width="30%" ><textarea name="text1" id="text1" value="" class="'. $class . '" /></td>'
+                                    . '<td width="10%"><label for="formula">Formula</label></td>'
                                     . '<td width="90%" colspan="6"><textarea name="formula" id="formula" value="" class="' . $class . '" /></td>'
-                                    . '<td><input type="hidden" name="vals" id="vals" value="'.$n.'" /></td>'
-                                    . '</tr>';
+                                    . '<td width="10%"><label for="weight1">Weight</label></td><td width="40%"><input type="text" MAXLENGTH=3 name="weight1" id="weight1" class="' . $class . '"></td></tr>'
+                                    . '<tr><td><input type="hidden" name="vals" id="vals" value="'.$n.'" /></td></tr>';
+                                    
                             for ($a = 1; $a <= $n; $a++) {
                                 $ans .= '<tr>'
-                                        . '<td width="10%"><label for="answer' . $a . '">value&nbsp;' . $a . '</label></td>'
+                                        . '<td width="10%"><label for="value' . $a . '">value&nbsp;' . $a . '</label></td>'
                                         . '<td width="40%"><input type="text" name="val' . $a . '" id="answer' . $a . '" value="" class="' . $class . '" /></td>'
                                         . '<td width="10%"><label for="minvalue' . $a . '">min</label></td>'
                                         . '<td width="10%"><input type="text" name="min_val' . $a . '" id="minvalue' . $a . '" value="" class="' . $class . '" /></td>'
@@ -1187,7 +1172,10 @@ class ITS_question {
                             }
                             $ans .= '</table>';
                             //$ans = '';
-                            $form .= '<tr id="ansQ"><td>' . $label . $sel . '</td><td>' . $ans . '</td></tr>';
+							//Khyatis Changes
+                            //$form .= '<tr id="ansQ"><td>' . $label . $sel . '</td><td>' . $ans . '</td></tr>';
+                            $form .= '<tr id="ansQ"><td><b>Number of Variables</b><br>'. $sel . '</td><td>' . $ans . '</td></tr>';
+                            
                             break;
                     }
 
@@ -1199,7 +1187,7 @@ class ITS_question {
                     $form .= '<tr><td style="width:10%;padding:0.25em;text-align:right">' . $label . '</td><td colspan="5">' . $field . '</td></tr>';
                     break;
                 //+++++++++++++++++++++++++++++++++++++++++++//
-                case 'image_id':
+                case 'image':
                 //+++++++++++++++++++++++++++++++++++++++++++//
                     $field = '<input type="file" size="50%" name="' . $fields[$i] . '" id="' . $fields[$i] . '" value="' . htmlspecialchars($this->$name) . '" class="' . $class . '"/>';
                     $form .= '<tr><td style="width:10%;padding:0.25em;text-align:right">' . $label . '</td><td colspan="5" style="text-align:center">' . $field . '</td></tr>';
@@ -1220,7 +1208,7 @@ class ITS_question {
                       $sel  .= '</select>';
                       $field = $sel.$cmt;
                       $form .= '<tr><td style="width:10%;padding:0.25em;text-align:right">'.$label.'</td><td colspan="5">'.$field.'</td></tr>';
-                */
+                */                
                     break;
                 //+++++++++++++++++++++++++++++++++++++++++++//
                 case 'answers_config':
@@ -1239,7 +1227,7 @@ class ITS_question {
                       $sel  .= '</select>';
                       $field = $sel.$cmt;
                       $form .= '<tr><td style="width:10%;padding:0.25em;text-align:right">'.$label.'</td><td colspan="5">'.$field.'</td></tr>';
-                */
+                */                
                     break;
                 //+++++++++++++++++++++++++++++++++++++++++++//
                 case 'category':
@@ -1277,8 +1265,8 @@ class ITS_question {
             }
         }
         $buttons = '<div id="cancelDialog" class="ITS_button" style="float:right">Cancel</div>'.
-                '<div id="submitDialog" class="ITS_button" style="float:right">Create New Question</div>';
-        $form  .= '</table>' . $buttons . '</fieldset><noscript><input type="submit" value="Submit"></noscript></form>';
+                   '<div id="submitDialog" class="ITS_button" style="float:right">Create New Question</div>';
+        $form  .= '</table>' . $buttons . '</fieldset></form>';
         $dialog = '<div title="Create New Question">' . $form . '</div>';   // id="dialog-form"
         /*
           $dialog = '<div id="dialog-form" title="Create new Question" style="display:none">'
@@ -1304,7 +1292,7 @@ class ITS_question {
           .'<td><input type="text" name="Qcategory" id="Qcategory" value="'.$category.'" class="text ui-widget-content ui-corner-all ITS_Q" /></td>'
           .'</tr></table><p><div id="cancelDialog" class="ITS_button" style="float:right">Cancel</div><div id="submitDialog" class="ITS_button" style="float:right">Create New Question</div>'
           .'</fieldset></form></div>';
-        */
+        */              
         return $dialog;
     }
     //=====================================================================//
@@ -1313,13 +1301,13 @@ class ITS_question {
         $nav = '<input type="button" class="' . $style . '" id="createQuestion" name="new"   value="New"   qid="' . $qid . '" qtype="' . $qtype . '">'
                 . '<input type="button" class="' . $style . '" id="cloneQuestion"  name="clone" value="Clone" qid="' . $qid . '" qtype="' . $qtype . '">'
                 . '<input type="button" class="' . $style . '" id="importQuestion" name="new"   value="import QTI" qid="' . $qid . '">'
-                . '<input type="button" class="' . $style . '" id="exportQuestion" name="export"   value="export to QTI" qid="' . $qid . '">'
-                . '<input type="button" class="' . $style . '" id="exportManyQuestion" name="export_many"   value="export multiple question" qid="' . $qid . '">'
+				. '<input type="button" class="' . $style . '" id="exportQuestion" name="export"   value="export to QTI" qid="' . $qid . '">'
+				. '<input type="button" class="' . $style . '" id="exportManyQuestion" name="export_many"   value="export multiple question" qid="' . $qid . '">'                
                 . '<input type="button" class="' . $style . '" onclick="ITS_QCONTROL_EDITMODE(this)" name="editMode" value="Edit" status="true">';
 
         /* <!--<input type="button" class="ITS_button" id="deleteQuestion" name="delete" value="Delete" qid="<?php echo $qid;?>">
           <input type="button" class="ITS_button" id="testme" name="test" value="test" qid="<?php echo $qid;?>">-->
-        */
+        */    
         return $nav;
     }
     //=====================================================================//
@@ -1328,47 +1316,19 @@ class ITS_question {
         // eg. createEditTable('TITLE','This is my title',$style);
         //die($this->mimetex_path);
         //echo '|div id="ITS_'.$TargetName.'_TARGET" class="ITS_TARGET" code="'.htmlspecialchars($Target_str).'" path="'.$this->mimetex_path.'"|<hr>';
-
-        if(stristr($TargetName, 'image')!=FALSE && $Target!='') {
-            $tb  = '<img src="'.$this->files_path.$Target.'">';
-        }
-        else {
-            $tb  = $Target;
-        }
+                
+        if(stristr($TargetName, 'image')!=FALSE && $Target!=''){ $tb  = '<img src="'.$this->files_path.$Target.'">'; }
+		else 												   { $tb  = $Target; }
 
         $Table = '<table class="'.$style.'">'
                 . '<tr>'
                 . '<td class="' . $style . '">'
                 . '<div style="border:1px solid #FFFFFF" id="ITS_' . $TargetName . '_TARGET" class="ITS_TARGET" code="' . htmlspecialchars($Target) . '" path="' . $this->mimetex_path . '">'
-                . $tb
-                . '</div>'
+			    . $tb
+				. '</div>'
                 . '</td>'
                 . '<td class="' . $style . '">'
-                . '<span class="ITS_QCONTROL" id="ITS_' . $TargetName . '" ref="'.strtolower($TargetName).'"></span>'
-                . '</td>'
-                . '</tr>'
-                . '</table>';
-        return $Table;
-    }
-    //=====================================================================//
-    function createImageTable($TargetName, $Target, $style) {
-        //=====================================================================//
-        // eg. createEditTable('TITLE','This is my title',$style);
-        //die($this->mimetex_path);
-        //echo '|div id="ITS_'.$TargetName.'_TARGET" class="ITS_TARGET" code="'.htmlspecialchars($Target_str).'" path="'.$this->mimetex_path.'"|<hr>';
-
-        //if(stristr($TargetName, 'image')!=FALSE && $Target!=''){ $tb  = '<img src="'.$this->files_path.$Target.'">'; }
-        //else 												   { $tb  = $Target; }
-
-        $Table = '<table class="'.$style.'">'
-                . '<tr>'
-                . '<td class="'.$style.'">'
-                . '<div style="border:1px solid #fff" id="ITS_' . $TargetName . '_TARGET" class="ITS_TARGET">'
-                . $Target
-                . '</div>'
-                . '</td>'
-                . '<td class="' . $style . '">'
-                . '<span class="ITS_ICONTROL" id="ITS_' . $TargetName . '" ref="'.strtolower($TargetName).'"></span>'
+                . '<span class="ITS_QCONTROL" id="ITS_' . $TargetName . '"></span>'
                 . '</td>'
                 . '</tr>'
                 . '</table>';

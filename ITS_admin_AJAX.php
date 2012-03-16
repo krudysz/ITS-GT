@@ -3,7 +3,7 @@
 ITS_admin_AJAX - script for AJAX admins
 
 Author(s): Greg Krudysz
-Date: Apr-19-2011
+Date: Apr-16-2011
 ---------------------------------------------------------------------*/
 header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); // always modified
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");              // or IE will pull from cache 100% of time (which is really bad) 
@@ -154,14 +154,13 @@ if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
 			  case 'getQuestionMeta':
 	  //-------------------------------------------//
 		    $id = $Data;
-			$query = 'SELECT id,title,image_id,category,tag_id FROM webct WHERE id='.$id;
+			$query = 'SELECT id,title,image,category,tag_id FROM webct WHERE id='.$id;
 			//echo $query;		//
 			
 			$res   = & $mdb2->query($query);
 			$meta  = $res->fetchRow();
 			$title = $meta[1];
 			$image = $meta[2];
-	//		die($image);
 			$category = $meta[3];
 			$tags  = $meta[4];
 			if (empty($tags)) { $str = '<p><b>-- no data --</b></p>'; }
@@ -188,35 +187,33 @@ if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
 		//-------------------------------------------//			
 			  case 'createQuestion':
 	  //-------------------------------------------//
-		  $data   = preg_split('[~]',$Data);
-			$action = $data[0];  //var_dump($data);die();
-			$type   = $data[1];
-			$student_id = 1;
-      	
-		  $obj = new ITS_question($student_id,$db_name,$tb_name);
-      //die($type);
-  		switch ($action){
-			  //---------------//
-    	  case 'new':
-				//---------------//
-    		  $N = 4;  // default number of answers 
-  				// data: id,qtype,title,question,image,answers,answers_config,question_config,category
-  		    $data = array(NULL,$type,'','',NULL,$N,1,1,NULL);
-  				$obj->load_DATA($data);
-  				$obj->Q_answers_values = array_fill(0,$N,NULL);
-  		    $obj->Q_weights_values = array_fill(0,$N,NULL);
-    		break;
-				//---------------//
-    		case 'clone':
-				//---------------//
-				  $q_num = $data[1]; //die($data[1]);
-          $obj->load_DATA_from_DB($q_num);
-					$obj->get_ANSWERS_data_from_DB();
-    		break;
-				//---------------//
-  		}
-		  $str = $obj->renderQuestionForm($Data);
-			break;		
+				$data   = preg_split('[~]',$Data);
+				$action = $data[0];  //var_dump($data);die();
+				$type   = $data[1];
+				$student_id = 1;
+				$obj = new ITS_question($student_id,$db_name,$tb_name);
+				switch ($action){
+					  //---------------//
+					case 'new':
+						//---------------//
+						$N = 4;  // default number of answers 
+						// data: id,qtype,title,question,image,answers,answers_config,question_config,category
+						$data = array(NULL,$type,'','',NULL,$N,1,1,NULL);
+						$obj->load_DATA($data);
+						$obj->Q_answers_values = array_fill(0,$N,NULL);
+						$obj->Q_weights_values = array_fill(0,$N,NULL);
+						break;
+						//---------------//
+					case 'clone':
+						//---------------//
+							$q_num = $data[1]; //die($data[1]);
+							$obj->load_DATA_from_DB($q_num);
+							$obj->get_ANSWERS_data_from_DB();
+						break;
+						//---------------//
+				}
+				$str = $obj->renderQuestionForm($Data);
+				break;		
 		//-------------------------------------------//			
 			  case 'addQuestion':
 	  //-------------------------------------------//
@@ -225,7 +222,7 @@ if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
 		$Qfield_str = array();
 		$Afield_key = array();
 		$Afield_str = array();		
-		$fields     = explode("&",$Data);
+    $fields     = explode("&",$Data);
 		$Qidx = 0;  $Aidx = 0;
 		
     foreach($fields as $field){
@@ -247,7 +244,7 @@ if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
   				case 'tag_id'; 
             $Qfield_key[$Qidx] = $key; 
   			    $Qfield_str[$Qidx] = addslashes($value); //htmlspecialchars($value,ENT_QUOTES);	
-//echo $Qfield_key[$Qidx].' - '.$Qfield_str[$Qidx].'<p>';
+						echo $Qfield_key[$Qidx].' - '.$Qfield_str[$Qidx].'<p>';
   					$Qidx ++;	
   			  break;
   			  default:
@@ -274,9 +271,10 @@ if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
 		$Aquery_fields = implode(',',$Afield_key);
 		$Aquery_values = implode('","',$Afield_str);
 		$Aquery = 'INSERT INTO webct_'.$qtype.' (id,'.$Aquery_fields.') VALUES('.$qid.',"'.$Aquery_values.'");';
+		//echo $Aquery;
 		mysql_query($Aquery);
 		//mysql_real_escape_string(). 
-		$msg = '<div class="ITS_MESSAGE" name="addQ">Added Question <a href="Question.php?qNum='.$qid.'">'.$qid.'</a>';
+		$msg = '<div class="ITS_MESSAGE">Added Question <a href="Question.php?qNum='.$qid.'">'.$qid.'</a>';
 		$str = $msg.'<div class="ITS_SQL">'.$Qquery.'</div><div class="ITS_SQL">'.$Aquery.'</div></div>';
 		//*/
 		//$str = 'ad';
@@ -284,8 +282,8 @@ if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
 		//-------------------------------------------//			
 			  case 'deleteQuestion':
 	  //-------------------------------------------//
-		    $data = preg_split('[~]',$Data);
-		    $id   = $data[0];
+		  $data = preg_split('[~]',$Data);
+		  $id   = $data[0];
 			$type = $data[1];
 			//$query = 'DELETE FROM webct WHERE id='.$id.'; DELETE FROM webct_'.$type.' WHERE id='.$id;
 			$query = 'DELETE w,wt FROM `webct` w,`webct_'.$type.'` wt WHERE w.id='.$id.' AND wt.id=w.id';
@@ -323,7 +321,7 @@ if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
 			}
 			//echo $obj->Q_answers;
 		  $class = 'text ui-widget-content ui-corner-all ITS_Q';
-		  $ans   = '<table id="ITS_Qans" class="ITS_Qans">';
+      $ans   = '<table id="ITS_Qans" class="ITS_Qans">';
       for ($a=1; $a<=$N; $a++) {   
 			   if ($a > $obj->Q_answers) { 
 				 		$answerVal = ''; 

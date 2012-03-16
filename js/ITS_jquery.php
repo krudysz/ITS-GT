@@ -1,6 +1,6 @@
 <?php
 /* =============================================================  /
-  LAST_UPDATE: Mar-5-2012	
+  LAST_UPDATE: Jan-23-2012
   Author(s): Gregory Krudysz
 /* ============================================================= */
 ?>
@@ -35,11 +35,12 @@
             }		
         });
         //-------------fancy box-----------------//
+        /*
         $("a.example2").fancybox({
-				'overlayShow'	: true,
+				'overlayShow'	: false,
 				'transitionIn'	: 'elastic',
 				'transitionOut'	: 'elastic'
-	    }); 
+	    }); */
         //--------------rating-------------------//
         $(".icon#Minst_icon").change(function(){
             $(this).css("background-color","red");
@@ -73,7 +74,7 @@
         });
         /*-------------------------------------------------------------------------*/		
         var ch = $('#Question').attr('ch');
-        //alert(v+' ~ '+ch);
+        // alert(v+' ~ '+ch);
         indexUPDATE(ch,v,'Question');
         /*-------------------------------------------------------------------------*/
          /*     $('span.ITS_plot').live('click', function() {
@@ -199,16 +200,16 @@
                 navUPDATE(ch);
                 //------------//
             });
-			indexUPDATE(ch,v,'Review');
+			indexUPDATE(ch,v);
         });
         /*-------------------------------------------------------------------------*/
         $('.chapter_index').live('click', function() {
             var ch = $(this).text().replace(/^\s+|\s+$/g,""); // need to trim white spaces
             var v  = $('#Question').attr('view');
             //alert(ch+' '+v);
+
+			indexUPDATE(ch,v);
             var mode = $('[name=header] a#current').parent().attr('id');
-            indexUPDATE(ch,v,mode);
-            
             //alert(mode);
             switch (mode) {
                 //----------//
@@ -429,9 +430,13 @@ $('#ITS_submit').live('click', function() {
     //----------//
 case 'C':
     //----------//
-    var val = $('#ITS_TA').val();
-    //alert(val);
-    values[0] = val;
+    var count = $('#answersCount').val(); 
+    var val = 0;
+    var id ='';
+    for(var i=0;i<count; i++){
+		id =  '#ITS_TA'+i;
+		values[i]=$(id).val();
+	}
     break;
 //----------//
 case 'P':
@@ -457,6 +462,7 @@ case 'survey':
     });
     break;
 default:
+
     //alert(qid+'~'+qtype+'~'+chosen+'~'+c+'~'+ch+'~'+t+'~'+mode);
     $.get('ITS_screen_AJAX2.php', {
         ajax_args: "recordChapterAnswer", 
@@ -515,16 +521,10 @@ $(this).attr('disabled', false);
             })*/
 /*-------------------------------------------------------------------------*/	 
 $('#ITS_skip').live('click', function() {
-    var ch     = $(this).attr("ch");
-    var qid    = $(this).attr("qid");
-    var qtype  = $(this).attr("qtype");
-    var t      = $(this).attr("t");
-    var mode   = $(this).attr("mode");
-
-//alert(ch+' '+qid+' '+qtype+' '+t+' '+mode);
+var mode  = $(this).attr("mode");  //alert(mode);
 $.get('ITS_screen_AJAX2.php',{
-ajax_args: "skip", 
-ajax_data: qid+'~'+qtype+'~'+ch+'~'+t+'~'+mode
+ajax_args: "getContent", 
+ajax_data: mode
 }, function(data) {
 $('#contentContainer').html(data);  	
 });
@@ -542,54 +542,12 @@ $('#contentContainer').html(data);
 /*-------------------------------------------------------------------------*/
 });
 //*****************************************//
-function indexUPDATE(ch,v,mode) {
+function indexUPDATE(ch,v) {
 //*****************************************//
 var idx_hide = $('#index_hide').attr('value');
-var r = $('#Question').attr('r');
-//alert('DEBUG: ch '+ch+', view Q? '+v+', hide '+idx_hide+', role '+r+', mode '+mode);
-
 $('.chapter_index').each(function(index) {
 // INDEX HIDE
-if (r==0){
-switch(mode) {
-    case 'Question':
-        //alert(mode);
-        if ( (index) < idx_hide ){
-            $(this).css({display: 'none'});
-            if ( ch == (parseInt(index+1)) ){ ch=parseInt(chhide)+1; }
-        }
-        else {$(this).css({display: 'inline'});}
-        break;
-    case 'Practice':
-        if ( (index) >= idx_hide ){$(this).css({display: 'none'});}
-        else 						{$(this).css({display: 'inline'});}
-        if (ch > idx_hide) { ch = idx_hide; }
-        break;
-    case 'Review':
-        // alert(index+ ' - ' + idx_hide);
-        $(this).css({display: 'inline'});
-        //if (ch > idx_hide) { ch = idx_hide; }
-        break;
-    default:
-        alert('ITS_jquery.php: error');
-}
-} 
-else { $(this).css({display: 'inline'}); }
-
-if ($(this).text()==ch){$(this).attr('id','current');}
-else 				   {$(this).attr('id','');}
-
-});
-}
-
-/*>>> DELETE ???
-var idx_hide = $('#index_hide').attr('value');
-alert(idx_hide+' '+v);
-$('.chapter_index').each(function(index) {
-// INDEX HIDE
-if (!(v)) {
-	alert('ss'); 
-	if ( (index) < idx_hide ){$(this).css({display: 'none'});} }
+if (!(v)) { if ( (index) < idx_hide ){$(this).css({display: 'none'});} }
 if ($(this).text()==ch){
 $(this).attr('id','current');
 }
@@ -598,7 +556,6 @@ $(this).attr('id','');
 }
 });
 }
->>>*/
 //*****************************************//
 function navUPDATE(ch) {
 //*****************************************//
@@ -637,6 +594,7 @@ $("#ITS_rate").css({display:'block'});
 var ui = $("#ITS_rate").data("stars");
 
 // IF NO RATING: enable for rating 
+
 if (ui.options.value == 0) { 
 $("#ITS_rate").stars({
 captionEl: $("#stars-cap"),
@@ -653,7 +611,8 @@ if (value) {
 }
 }			
 });
-}  
+}
+ 
 }
 //*****************************************//
 function slider(ch,qN) { 
