@@ -1,0 +1,243 @@
+/* taggin: b color - #dca;  | #eee (main)
+
+*/
+IMG.ITS_tag { 
+	 position: relative;
+   border: 1px solid silver;
+	 padding: 0.25em;
+	 margin-right: 0.5em;
+	 font:11pt Monotype, serif;
+	 background: #fff; /*#eee;*/
+	 vertical-align: middle;
+}
+DIV.tagContainer {
+	 position: relative;
+	 float: left;
+	 width: 80%;
+   /*border-top: 4px solid #c93;
+	 border-bottom: 4px solid #c93;*/
+	 margin: 0;
+	 padding: 0.5em 0;
+	 font:11pt Monotype, serif;
+	 background: #fff; /*#eee;*/
+	 vertical-align: middle;
+	 display: none;
+}
+DIV.tags {
+	 position: relative;
+	 width: 100%;
+	 text-align: center;
+	 margin: 0.75em 0;
+	 font:11pt Monotype, serif;
+	 background: #fff;
+}
+DIV.tags span.TAG {
+	 float: left;
+	 position: relative;
+	 wdith: auto;
+   border: 2px solid #aaa;
+	 margin: 0.5em;
+	 padding: 0.5em 1em;
+	 display:inline;
+	 background: #fff;
+	 white-space: nowrap;
+}
+DIV.tags span.TAG_ACTIVE {
+	 float: left;
+	 position: relative;
+	 wdith: auto;
+   border: 2px solid #c93;
+	 margin: 0.5em;
+	 padding: 0.25em 1em;
+	 display:inline;
+	 background: #fff; /*#fff;*/
+	 white-space: nowrap;
+}
+DIV.tags span.TAG_ACTIVE:hover {
+   border-color: #000;
+	 background: #fc6;
+	 cursor: pointer;
+}
+DIV.tags span.TAG_SELECTED {
+	 float: left;
+	 position: relative;
+   border: 2px solid #000;
+	 margin: 0.5em;
+	 padding: 0.25em 1em;
+	 display:inline;
+	 background: #fc6;
+	 white-space: nowrap;
+}
+#TAG_NONE {
+	border: 2px solid #666;
+}/*
+DIV.tagContainer span.TAG_SELECTED {
+	 float: left;
+	 position: relative;
+	 wdith: auto;
+   border: 2px solid #00f;
+	 color: #00f;
+	 margin: 0.5em;
+	 padding: 0.25em 1em;
+	 display:inline;
+	 background: #ff0;
+	 white-space: nowrap;
+}*/
+DIV.tagHeader {
+  position: relative;
+	width: 100%;
+	border: 1px solid #c93;
+	text-align:center;
+	color: black;
+	background: #c93;
+	font:12pt Georgia, serif;
+}
+DIV.tagsMore {
+	position: relative;
+	width: 100%;
+	margin: 0;
+	text-align: left;
+	background: #fff;
+	padding: 0;
+	overflow: auto;
+	/*border:1px dotted black;*/
+	/*padding: 0.25em 1em;*/
+}
+DIV.tagsMore#list {
+	display: none;
+}
+SPAN.tagsMoreText {
+  clear: left;
+	position: relative;
+	/*border: 6px solid #eee;*/
+	margin: 0 1em;
+	padding: 0 0.5em;
+	text-align: left;
+	background: #fff;
+	/*padding: 0.25em 1em;*/
+}
+DIV.tagsHeader {
+	position: relative;
+	width: 100%;
+	/*border: 2px solid pink;*/
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	font-weight: bold;
+	background: #fff;
+	font-family: Verdana Bold; /*Comic Sans MS;*/
+}
+DIV.tagsHeader span {
+  position: relative;
+	color: #630;
+	/*border: 2px solid pink;*/
+	font-size: 12pt;
+  margin: 0 0.25em;
+	padding: 0 0.5em;
+}
+SPAN.tagsMoreText:hover {
+	color: #fff;
+  cursor: pointer;
+	background: #666;
+}
+UL.tagsMore {
+  position: relative;
+	border-top: 2px solid #777;
+	background: #fff;
+	margin-left: 1em;
+	margin-right: 1em;
+	list-style-type: none;
+}
+UL.tagsMore li{
+  clear: left;
+  position: relative;
+	/*border-bottom: 2px solid #666;
+	background: #cc9;*/
+	overflow:auto;
+}
+DIV.tagContainer span.TAG_MORE {
+	 float: left;
+	 position: relative;
+	 wdith: auto;
+   border: 2px solid #999;
+	 margin: 0.25em;
+	 padding: 0.25em;
+	 display:inline;
+	 background: #fff;
+	 white-space: nowrap;
+} 
+DIV.tagContainer span.TAG_MORE:hover {
+   border-color: #050;
+	 background: 	#F0E68C;
+	 cursor: pointer;
+}
+input#publish {
+  float: right;
+}
+button.TagButton {
+	width:200px;
+	height:40px;
+	background-color:#98AFC7;
+	color:white;
+	font:10pt Georgia, serif;
+	font-size: 14pt;
+}
+input.InvisibleSrchBtn {
+	visibility:hidden;
+}
+/*
+ * Referred from http://sixrevisions.com/tutorials/javascript_tutorial/create_lightweight_javascript_tooltip/
+ * */
+#tt {
+ position:absolute;
+ border: 2px solid #666;
+ display:block;
+ /*background:url(images/tt_left.gif) top left no-repeat;*/
+ }
+ #tttop {
+ display:block;
+ height:5px;
+ /*margin-left:5px;*/
+ background:url(images/tt_top.gif) top right no-repeat;
+ overflow:hidden;
+ }
+ #ttcont {
+ display:block;
+ /*padding:2px 12px 3px 7px;
+ margin-left:5px;*/
+ padding: 0;
+ margin:0;
+ text-align: left;
+ background:#000;
+ color:#fff;
+ }
+#ttbot {
+display:block;
+/*height:5px;
+margin-left:5px;*/
+background:url(images/tt_bottom.gif) top right no-repeat;
+overflow:hidden;
+}
+span.ITS_info {
+  margin: 0 1em;
+	padding: 0 0.5em;
+	border: 1px solid #eee;
+	font-size: 8pt;
+	font-weight: bold;
+}
+span.ITS_info:hover {
+  color: red;
+	/*background: #0f0;*/
+  cursor: pointer;
+	border-color: #666;
+}
+span.ITS_info img {
+  float: right;
+  padding: 10px;
+  border: 2px solid red;
+}
+/*================= DEBUG =================*/
+/*
+div.tagContainer      {	background: purple; }
+div.ratingContainer   {	background: red;    }*/
+/*=========================================*/

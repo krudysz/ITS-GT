@@ -1,0 +1,278 @@
+.footer {
+   text-align: center;
+   font-size: 7pt;
+   margin-top: 3em;
+   margin-bottom: 0em;
+   margin-left: 0em;
+   margin-right: 0em;
+}
+.Entry {
+   margin-top: 0em;
+   margin-bottom: 0em;
+   margin-right: 1em;
+   margin-left: 1em;
+   font-family: arial; 
+   font-size: 10pt; 
+}
+.TextHighlight {
+   color: red;
+   font-weight: bold
+}
+.TextHighlight2 {
+   color: blue;
+   font-weight: bold
+}
+.TextMessage {
+	 color: green;
+	 font-weight: bold
+}
+.TextAlphabet {
+	 color: red;
+	 font-weight: bold
+}
+.TextRadioEdit {
+   text-align:right;
+	 color: magenta;
+	 font-weight: bold;
+	 border-style: solid;    
+   border-color: magenta;
+   border-right-style: none;
+   border-left-style: none;
+	 border-top-style: none;
+   width: 100%;
+}
+.editMode {
+   text-align:right;
+	 color: magenta;
+	 font-weight: bold
+}
+.TextEdit {
+   text-align:right;
+	 color: magenta;
+	 font-weight: bold
+}
+.Download {
+   font-weight: bold
+}
+.ListIndent {
+   margin-top: 0.5em;
+   margin-bottom: 0.5em;
+   margin-right: 0em;
+   margin-left: 1.5em			 
+}
+IMG.ITS_IMAGE {
+	border: 2px solid silver;
+  /*height: auto;width: auto;*/
+  /*text-align: center*/
+}
+SPAN.ITS_TEXT {
+   color: black;
+}
+SPAN.ITS_QCONTROL {
+   color: saddlebrown
+}
+SPAN.DEFINITION {
+   color: #990000
+}
+DIV.ITS_Message {
+   background: pink;
+   font-size: 14pt;
+   margin-top: 3px;
+   margin-bottom: 3px;
+   margin-right: 10px;
+   margin-left: 10px;
+	 border-spacing: 0px;
+	 border-style: solid;
+}
+DIV.FileTable {
+   margin-top: 0em;
+   margin-bottom: 0em;
+   margin-right: 0em;
+   margin-left: 2em
+}
+DIV.Question {
+   background: pink; 
+   color: black;
+   font-family: arial; 
+   font-size: 12pt;
+	 border-style: none;
+	 border-color: green;
+	 border-spacing: 0px;
+	 padding: 0px;
+}
+DIV.ITS_ANSWER {
+   background: ##E0E0E0;
+   color: black;
+   font-family: arial; 
+   font-size: 12pt;
+	 border: 2px solid silver;
+}
+DIV.Edit {
+   background: white;
+   color: black;
+   font-family: arial; 
+   font-size: 12pt;
+	 border-style: inset;
+	 border-color: magenta;
+	 border-spacing: 0px;
+	 border_width: thin;
+	 padding: 0px;
+   margin-top: 0em;
+   margin-bottom: 0em;
+   margin-right: 0em;
+   margin-left: 0em
+}
+TABLE.ADMIN {
+     vertical-align: top;
+  	 background-color: white; 
+  	 width: 100%; 
+  	 cellspacing: 10;  
+  }
+TABLE.ITS {
+     vertical-align: top;
+  	 background-color: white; 
+  	 width: 100%; 
+  	 cellspacing: 10;  
+  }
+TABLE.ITS_QUESTION {
+   vertical-align: center;
+	 background-color: red;
+	 cellspacing: 10  
+}
+
+TABLE.ITS_ANSWER {
+   padding: 3px;
+	 border-style: solid;
+   vertical-align: bottom;
+	 background-color: white;
+}
+TABLE.ITS_ANSWER1 {
+   padding: 3px;
+	 border-style: solid;
+	 background-color: #E0E0E0; 
+	 width: 100%
+}
+TABLE.ITS_ANSWER_STRIPE {
+   padding: 3px;
+	 border-style: solid;
+   vertical-align: bottom;
+	 background-color: #E0E0E0;
+}
+TABLE.ITS_TEMPLATE {
+   vertical-align: bottom;
+	 background-color: white; 
+}
+TABLE.EDIT {
+	 border-style: double;
+	 border-width: 5px;
+	 border-color: saddlebrown;
+   vertical-align: bottom;
+	 background-color: white;
+}
+TABLE.ITS_DATA {
+   text-align: right;
+	 vertical-align: center;
+	 border-style: solid;
+	 border-width: 3px;
+	 background-color: #E0E0E0;
+	 width: 40%
+}
+TABLE.ITS_GRAPH {
+	 vertical-align: center;
+	 border-style: solid;
+	 border-width: 1px;
+	 background-color: green;
+}
+TABLE.ITS_STATS_SCORED {
+	 vertical-align: center;
+	 border-style: solid;
+	 border-width: 1px;
+	 background-color: white;
+	 width: 40%
+}
+TABLE.ITS_STATS_FILL {
+	 vertical-align: center;
+	 border-style: solid;
+	 border-width: 1px;
+	 background-color: white;
+	 width: 40%
+}
+TD {
+   text-align: left;
+   color: black;
+	 border-width: 0px;
+   border-style: none;
+   padding-top: 0em;
+   padding-bottom: 0em;
+   padding-left: 0em;
+   padding-right: 0em;
+	 background-color: white;
+   font-size: 12pt
+}
+TD.ITS {
+	 background-color: white;
+	 vertical-align: top;
+}
+TD.ITS_QUESTION {
+	 background-color: blue; 
+	 vertical-align: bottom;  #DFFCDF;
+}
+TD.ITS_ANSWER {
+	 background-color: white;
+	 vertical-align: bottom;
+}
+TD.ITS_ANSWER_STRIPE {
+	 background-color: #E0E0E0;
+	 vertical-align: bottom;
+}
+TD.ITS_TEMPLATE {
+	 background-color: #F0F0FF;
+	 vertical-align: bottom
+}
+TD.ITS_EDIT {
+	 background-color: white;
+	 border-width: 3px;
+	 border-style: none;
+}
+TD.ITS_DATA {
+   text-align: center;
+	 border-style: solid;
+	 border-width: 1px;
+	 
+}
+TD.ITS_GRAPH {
+	 border-style: none;
+	 border-width: 1px;
+	 background-color: pink;
+}
+TD.FooterEntry {
+   text-align: center;
+   font-size: 8pt
+}
+TD.ITS_STATS_SCORED {
+   border-style: none;
+   border-width: 1px;
+   background-color: blue;
+}
+TD.ITS_STATS_FILL {
+   border-style: none;
+   border-width: 1px;
+   background-color: white;
+}
+BR#LEFT {
+   clear: left;
+}
+BR#RIGHT {
+   clear: right;
+}
+UL {
+   margin-top: 0em;
+   margin-bottom: 0em;
+   margin-right: 0em;
+   margin-left: 0em
+}
+A:link { color: blue }
+A:visited { color: grey}
+A:hover {color: red }
+
+/*background-color: #E0E0E0; /* pink border for answer table #D0D0D0;*/

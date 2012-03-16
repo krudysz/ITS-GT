@@ -1,0 +1,27 @@
+ /*chapter 7 concept codes*/
+UPDATE concept SET code='x[k] = \\sum_{k=0}^{N}x[k]\\delta[n-k] \\rightarrow X(z)=\\sum_{k=0}^{N}x[k]z^{-k}' WHERE id=7002;
+UPDATE concept SET code='X(z) \\rightarrow x[n]' WHERE id=7003;
+UPDATE concept SET code='x[n] \\leftrightarrow X(z)' WHERE id=7004;
+UPDATE concept SET code='h[n]=\\sum_{k=0}^{M}b_{k}\\delta[n-k]\\leftrightarrow H(z)=\\sum_{k=0}^{M}b_{k}z^{-k}' WHERE id=7005;
+UPDATE concept SET code='\\alpha x_{1}[n] + \\beta x_{2}[n] \\mapsto \\alpha X_{1}(z) + \\beta X_{2}(z)' WHERE id=7006;
+UPDATE concept SET code='x[n-1] \\mapsto z^{-1}X(z)' WHERE id=7007;
+UPDATE concept SET code='x[n-n_{o}] \\mapsto z^{-n_{o}}X(z)' WHERE id=7008;
+UPDATE concept SET code='h[n] = h_{1}[n]\\ast h_{2}[n] \\leftrightarrow H(z) = H_{1}(z)H_{2}(z)' WHERE id=7009;
+UPDATE concept SET code='Y(z) = H(z)X(z)' WHERE id=7010;
+UPDATE concept SET code='H_{1}(z)H_{2}(z)=1' WHERE id=7013;
+UPDATE concept SET code='' WHERE id=7014;
+UPDATE concept SET code='B(z) = 0 \\text{, where } H(z) = \\frac{B(z)}{A(z)}' WHERE id=7015;
+UPDATE concept SET code='A(z) = 0 \\text{, where } H(z) = \\frac{B(z)}{A(z)}' WHERE id=7016;
+UPDATE concept SET code='' WHERE id=7017;
+UPDATE concept SET code='z = e^{j\\omega} \\quad , |z|=1' WHERE id=7018;
+UPDATE concept SET code='H(z)= \\sum_{k=0}^M b_{k}z^{-k} \\rightarrow H(e^{j\\omega})=\\sum_{k=0}^M b_{k}e^{-j\\omega k}' WHERE id=7019;
+UPDATE concept SET code='z = e^{j\\omega}' WHERE id=7020;
+UPDATE concept SET code='' WHERE id=7021;
+UPDATE concept SET code='z^{L} = 1' WHERE id=7022;
+UPDATE concept SET code='H(z)=\\sum_{k=0}^{L-1}z^{-k}=0 \\text{ at } \\hat{\\omega}=\\frac{2\\pi k}{L}' WHERE id=7023;                            
+UPDATE concept SET code='H(z)=\\sum_{k=0}^{L-1}z^{-k}=\\prod_{k=1}^{L-1}(1-e^{\\frac{j2\\pi k}{L}}z^{-1})' WHERE id=7024;
+UPDATE concept SET code='H(z)=\\prod_{k=1,k \\neq k_{o}}^{L-1}(1-e^{\\frac{j2\\pi k}{L}}z^{-1})' WHERE id=7025;
+UPDATE concept SET code='b_{k}=e^{\\frac{j2\\pi k_o k}{L}}' WHERE id=7026;
+UPDATE concept SET code='b_{k}=\\cos(2\\pi k_o k) \\text{ for } k=0,1,..., L-1' WHERE id=7027; 
+UPDATE concept SET code='b_k=b_{M-k} \\quad , k=0,1,... M' WHERE id=7028;
+UPDATE concept SET code='H(z_o)=H(z_o^*)=H(\\frac{1}{z_o})=H(\\frac{1}{z_o^*})=0' WHERE id=7029;

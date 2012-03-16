@@ -1,0 +1,38 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	background: #ddd;
+}
+
+#container
+{
+	margin: 1em auto;
+	width: 650px;
+	background: #fff;
+}
+
+#header { background: #CF3; }
+#mainnav { background: #9F3; }
+
+#menu
+{
+	float: right;
+	width: 165px;
+	background: #6F9;
+}
+
+#contents
+{
+	float: left;
+	width: 440px;
+	background: #9FC;
+	margin: 0 0 0 20px;
+	display: inline; /* IE6 */
+}
+#footer
+{
+	clear: both;
+	background: #FF9;
+}
+

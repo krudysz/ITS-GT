@@ -1,0 +1,28 @@
+#framecontent{position:relative;top:0;left:0;width:100%;overflow:hidden;border-bottom:2px solid #666;background-color:#fff;color:#666}
+#frameseparator{position:relative;left:0;width:80%;overflow:hidden;background-color:#fff}
+/*#maincontent{position:relative;left:0;right:0;bottom:0;overflow:auto;background:#fff;border-top:3px solid #aaa}*/
+#maincontent{position:relative;bottom:0;overflow:auto;background:#fff;border-top:3px solid #aaa}
+.innertube{position:relative;padding-top:5px;margin:auto 15px}
+#ITS_navigation_container{position:relative;width:100%;background-color:#fff;border:1px solid #fff;height:50%;}
+#ITS_navigation_container ul{position:relative;margin-right:3em;background-color:#fff;border:1px solid #fff;color:#666;float:right;width:100%;font-family:arial, helvetica, sans-serif;padding:0}
+#ITS_navigation_container ul li{position:relative;display:inline}
+#ITS_navigation_container ul li a{position:relative;background-color:#fff;color:#666;text-decoration:none;float:right;border:1px solid #666;font:12pt Georgia, serif;padding:.4em 1em}
+#ITS_navigation_container ul li a#current{background-color:#eee}
+#ITS_navigation_container ul li a#current:hover{background-color:#666}
+#ITS_navigation_container ul li a:hover{background-color:#666;color:#fff}
+#ITS_navlist{background-color:#636}
+
+* body { background-color:#fff }
+
+  	     p { margin: 10px; padding: 5px;font-family:"Times New Roman", Times, serif; font-size: 120%;}
+         table.key { margin: 5% 0;text-align: center; font-size: 200%; font-weight: bold; font: monospace;}
+         table.key td { padding: 0.5em; }
+         .out { color: #2A2; }
+         .ex { text-align: left; color:#666; margin-left: 40%; }
+         .ex li { padding: 0.25em; }
+         
+/*================= DEBUG ================= /
+#framecontent				{ border: 2px solid red;   }
+table.ITS_image    { border: 1px solid green; }
+table.ITS_image td { border: 1px solid blue;  }
+/*=========================================*/        

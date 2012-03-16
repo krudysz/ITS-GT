@@ -1,0 +1,142 @@
+/*
+ITS_profile.css - main CSS file for ITS/Profile.php
+
+Author(s): Greg Krudysz
+Last Update: May-10-2011
+=============================================*/
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  height: 100%; 
+  max-height: 100%; 
+}
+.dialogButton {
+  float: right;
+	padding: auto 0.5em;
+	margin: 0 0.25em 0.25em 0;
+  font: 8pt Georgia, serif;
+  border: 2px solid #fff;
+  background-color: #fff;
+}
+.dialogButton:hover { 
+  cursor: pointer;
+	color: #f00; 
+  border: 2px solid #f00;
+}
+div.spacer {
+  float: right;
+  padding: 0.2em;
+	margin: 0.25em;
+  font: 12pt Georgia, serif;
+	border: none;
+  background-color: #fff;
+}
+option.highlighted {
+	color: #000;
+	/*
+	background-color: #ff6;
+	font-weight: bold; 
+	font-size: 12px; */
+}
+#profile {
+	/*border-bottom: 4px solid #616;
+	padding: 0.5em;*/
+	padding-bottom: 15px;
+}
+TABLE.PROFILE {
+	position: relative;
+	width: 96%;
+	margin: 0 2%;
+	border: 1px solid #aaa;
+	vertical-align: middle;
+	border-collapse: collapse;
+	background: #fff;
+	font-size: 8pt;
+	table-layout: fixed;
+}
+TD.PROFILE {
+  background-color: #fff;
+	border: 1px solid #aaa;
+}
+TD.PROFILE PRE {
+  font-size: 8pt;
+}
+TD.PROFILE SPAN {
+  font-size: 8pt;
+}
+TABLE.CPROFILE {
+	position: relative;
+	border: 1px solid #aaa;
+	vertical-align: middle;
+	border-collapse: collapse;
+	background: #fff;
+	font-size: 8pt;
+	table-layout: fixed;
+}
+TABLE.CPROFILE TR {
+  color: #000;
+  background-color: #FFFFFF;
+	border-bottom: 1px dashed #aaa;
+	font-size: 9pt;
+	padding: 5px;
+}
+TABLE.CPROFILE TD {
+  padding: 5px;
+	font-size: 9pt;
+}
+TABLE.CPROFILE TR:hover {
+  background-color: #FFFF99;
+	font-size: 9pt;
+}
+/*
+TD.PROFILE_IDX {
+  background-color: #abc;
+	border: 1px solid #666;
+	font-size: 12pt;
+}*/
+TABLE.PROFILE,TABLE.CPROFILE TH {
+  background-color: #eee;
+	border: 1px solid #666;
+	padding: 0.5em;
+}
+TR.PROFILE  {
+  background-color: #fff;
+	border: 1px solid #666;
+	font-size: 12pt;
+	padding: 0.25em;
+}
+TABLE.DATA {
+  clear: both;
+	position: relative;
+	width: 100%;
+	vertical-align: middle;
+	border-collapse: collapse;
+	background: #fff;
+	margin-top: -10px; 
+	padding: 0;
+}
+TABLE.DATA td   { padding: 0;    }
+#sortProfile {
+  border: 2px solid #999;
+}
+#sortProfile option {
+  border: 2px solid #999;
+	text-align: center;
+}
+
+#framecontent   { height: 140px; }
+#frameseparator { top: 140px; height: 140px; /*Height of frame div*/ }
+#maincontent    { top: 140px; /*Set top value to HeightOfFrameDiv*/ }
+
+/*================= COLORS ================*/
+#menuContainer  {	background: #fff; }
+/*=========================================*/
+
+/*================= DEBUG =================*/
+/*
+#framecontent        {	background: pink;      }
+.innertube           {	background: yellow;    }
+*/
+/*=========================================*/

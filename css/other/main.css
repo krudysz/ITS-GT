@@ -1,0 +1,236 @@
+BODY,TH,CAPTION {
+   color: black;
+	 font: 14pt Verdana, Geneva, sans-serif;
+	 /*font-family: arial,sans-serif; /*font: 100% Georgia, serif; /*font-family: arial; */
+	 margin:0;
+   padding:0;
+   /*height:100%;*/
+}
+p { margin:0; padding:10px;    }
+Q { font: 12pt Georgia, serif; }
+TT {
+	font-family: cursive,serif;
+}
+TH {
+  color: green;
+  background: silver;
+}
+LI {
+  vertical-align: middle;
+	list-style: square;
+}
+DIV {
+  vertical-align: top;
+  /*Wrapping Words For all Browsers below*/
+	/*white-space: pre-wrap;      /* css-3 */
+	/*white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  /*white-space: -pre-wrap;     /* Opera 4-6 */
+  /*white-space: -o-pre-wrap;   /* Opera 7 */
+  /*word-wrap: break-word;      /* IE 5.5+ */
+}
+DIV.ITS_menu1{
+/*
+  float: right;
+	text-align:right;
+	border: 1px solid pink;
+	height: 40px;
+	margin:10px 5px 5px auto;
+*/
+	padding:1em; 
+	margin:0 auto 1em auto;
+	background:#fff;
+	border:1px solid #bbbbbb;
+}
+#banner{
+	padding:1em; margin:0 auto 1em auto;
+	background:#fff;
+	border:1px solid #bbbbbb;
+}
+#pageContainer{
+  postion:absolute;
+	width: 90%;
+	/*height:100%;	 */
+	/*margin-left:-100%;*/
+	border: px solid gold;
+	margin:0 auto; /*Centers the Container*/
+	/*overflow:hidden;*/
+  bottom: 0px;
+}
+#main {
+	width: 100%;
+	margin:0 auto; /*Centers the Container*/
+	border:0px solid blue;
+	overflow:auto; /*Makes the Container Wrap around the floats*/
+	padding:0;
+	bottom:0;
+}
+#messageIcon{
+  width:20px;
+	height:20%;
+	float:left;
+	margin-left:-100%;
+	text-align:center;
+	color: black;
+	border:2px solid silver;
+	display:none;
+	margin:2% auto auto 0;
+}
+#messageContainer{
+/*
+  float: right;
+  /*postion:relative; /*absolute;*/
+  /*postion:relative;*/
+	/*
+	text-align:center;
+	border:2px solid #bbbbbb;
+	overflow:hide;
+	*/
+  padding:1em; 
+	margin:0 auto 1em auto;
+	background:#fff;
+	border:1px solid #bbbbbb;
+}
+#headerContainer{
+	height:auto;
+	background: gold;
+	border: 2px solid blue;
+	margin-right:-100%; /*Margin Trick to allow room for right container*/
+	padding:0;
+}
+#contentContainer{
+	border: 3px solid silver;
+	/*border-left: 3px solid silver;
+	border-bottom: 3px solid silver;*/
+	float:right;
+	/*margin-left:200px; Make Room for the Sidebar*/
+}
+#navigationContainer{
+  bottom: 0;
+  height:65px;
+	border: none; /*2px solid gold;*/
+	float:left;
+	vertical-align: middle;
+	/*margin-left:200px; Make Room for the Sidebar*/
+}
+#ITS_screen_index{
+  top: 0;
+  width: auto;
+	padding:0;
+	background:#fff;
+	border: 2px solid silver;
+	float:left;
+	/*margin-left:200px; Make Room for the Sidebar*/
+}
+DIV.screen {
+  height:500px;
+	margin:0 auto; /*Centers the Container*/
+	text-align: left;
+	border:2px solid gold;
+	background:white;
+	overflow:auto; /*Makes the Container Wrap around the floats*/
+}
+DIV.content {
+	margin:0 auto; /*Centers the Container*/
+	text-align: left;
+	border:2px solid gold;
+	/*overflow:auto; /*Makes the Container Wrap around the floats*/
+}
+DIV.ITS_quote {
+  /*border: 1px solid red;*/
+  /*width:100%;*/
+}
+TABLE.ITS_screen_index {
+  width:50px;
+  border: none; /*1px solid pink;*/
+}
+TD.ITS_screen_index {
+  width: 50%;
+	text-align:center;
+  /*border: 1px solid silver;*/
+}
+TABLE.ITS_message {
+  /*padding:5px;*/
+}
+TD.ITS_message {
+  width:auto;
+  height: auto;
+	/*padding: 5px;*/
+}
+DIV.ITS_screen_control {
+  border: 2px solid silver;
+	color: black;
+	text-align: center;
+}
+DIV.ITS_screen_A {
+  height: 40px;
+  border: 3px solid silver;
+	background: white;
+}
+DIV.ITS_screen_L {
+  height: 40px;
+  font: 14pt Georgia, serif;
+	color: silver;
+  border: 3px solid silver;
+	vertical-align: middle;
+}
+DIV.ITS_screen_S {
+  border: 3px solid silver;
+}
+DIV.ITS_screen_N {
+	text-align: center;
+}
+TABLE.ITS_TEMP {
+}
+TD.ITS_TEMP {
+  height:50px;
+}
+TABLE.ITS_ghost {
+  background: white;
+	border: none;
+}
+TD.ITS_ghost {
+  background: white;
+}
+/*==== COLORS ====*/
+/* message: */
+TABLE.ITS_message,TD.ITS_message,
+DIV.ITS_quote,#messageContainer {
+  background: gainsboro; /*LightBlue;/*khaki;*/
+}
+/* general: */
+BODY,TH,CAPTION,DIV.ITS_menu1,
+#pageContainer,#main,#messageIcon,#contentContainer,#navigationContainer,
+DIV.content,DIV.ITS_screen_control,
+TABLE.ITS_TEMP,TD.ITS_TEMP,TABLE.ITS_screen_header,TD.ITS_screen_header{
+  background: gainsboro;
+}
+/*==== PADDING ====DIV.ITS_screen_control,*/
+#messageIcon,#navigationContainer,
+DIV.screen,DIV.content,
+DIV.ITS_screen_A,DIV.ITS_screen_L,DIV.ITS_screen_S,DIV.ITS_screen_N {
+  padding: 5px;
+}
+/*================*/
+
+
+
+/*=================================*/
+/*==== COLORS ====*/
+/* message: */
+TABLE.ITS_message,TD.ITS_message,
+DIV.ITS_quote,#messageContainer {
+  background: lightyellow; /*LightBlue;/*khaki;*/
+}
+/* general: */
+BODY,TH,CAPTION,DIV.ITS_menu1,
+#pageContainer,#main,#menuContainer,#messageIcon,#navigationContainer,
+DIV.content,DIV.ITS_screen_control,
+TABLE.ITS_TEMP,TD.ITS_TEMP,TABLE.ITS_screen_header,TD.ITS_screen_header{
+  background: gainsboro;
+}
+/*==== PADDING ====DIV.ITS_screen_control,DIV.ITS_screen_A,DIV.ITS_screen_L,*/
+#messageIcon,#navigationContainer,
+DIV.screen,DIV.content,
+DIV.ITS_screen_S,DIV.ITS_screen_N {
+  padding: 5px;
+}

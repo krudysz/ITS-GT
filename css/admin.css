@@ -1,0 +1,36 @@
+.ITS_course_tab { margin-right:15px;}
+div.HACK{position:relative;width:100%;font-family:verdana,monospace;font-weight:700;letter-spacing:.1em;border:2px solid #FFC0CB;color:red;margin:1em 0;padding:.5em .1em}
+div.debug{float:left;color:red;font-weight:700;background-color:#FF9;border:2px solid red;margin:10px;padding:10px}
+table.ITS_backtrace{background-color:#FFF;border:2px solid #999;border-collapse:collapse;margin:.5em;padding:5px}
+table.ITS_backtrace td{border:2px solid #999;text-align:left;padding:.25em}
+div.file{float:left;background-color:#FFF;border:1px solid #FFF;vertical-align:middle;margin:auto 3px;padding:0}
+div.file a img{border:none}
+a.file{position:relative;background-color:#ff9;border:1px solid #ccc;padding:5px}
+a.ITS_EDIT{float:left;margin-left:.5em;font-family:"Times New Roman", Times, Monospace;font-size:10pt;padding:.25em}
+textarea.ITS_EDIT{font-family:verdana,monospace;position:relative;min-width:80%;border:none;border-bottom:2px solid silver;background-color:#FFF;padding:.5em}
+ul.ITS_EDIT{position:relative;display:block}
+ul.ITS_EDIT li{background-color:#fff;color:blue;font-size:12pt;font-family:cursive;text-decoration:none;padding:.2em 1em}
+div.ITS_ADMIN{position:relative;font-family:verdana,monospace;font-weight:700;background-color:#FFF;border:2px solid #EEE;overflow:auto;padding:.5em .1em}
+div.ITS_ADMIN:hover{border:2px solid #999;background-color:#FFA}
+a.ITS_ADMIN{position:relative;width:100%;font-family:verdana,monospace;font-size:60%;font-weight:700;text-decoration:none;letter-spacing:.1em;background-color:#FFF;border:2px solid #EEE;z-index:2;padding:.5em .1em}
+a.ITS_ADMIN:hover{background-color:#FFA;text-decoration:underline;color:#666;border:2px solid #666}
+TABLE.ITS_ADMIN{border:2px solid #FFF;border-collapse:collapse;margin:.5em;padding:0}
+TABLE.ITS_ADMIN TH{background:red;border:2px solid #006400;color:#000;padding:.25em}
+TABLE.ITS_ADMIN TD{border:2px solid #FFF;color:#000;padding:.25em}
+.ITS_button{border:2px solid #666;color:#000;background:#ffa;font-family:cursive;margin:.5em;padding:.25em .5em}
+.ITS_button:hover{cursor:pointer}
+.ITS_button_div{float:right;border:2px solid #666;color:#000;background:#ffa;font-family:cursive;margin:0;padding:0}
+FIELDSET{background:#fff;border:2px solid #666;padding:.5em}
+.ITS_SQL{border:2px solid #000;color:#fff;background:#090;font-family:monospace;font-weight:700;text-align:left;font-size:12pt;margin:.5em;padding:.5em 1em}
+div.ITS_MESSAGE{font-family:cursive;text-align:left;margin:.5em;padding:.5em 1em}
+#navcontainer ul{padding-left:0;margin-left:0;background-color:#fff;color:#666;float:left;width:100%;font-family:arial, helvetica, sans-serif}
+#navcontainer ul li{display:inline}
+#navcontainer ul li a{background-color:#fff;color:#666;font-size:12pt;font-family:cursive;text-decoration:none;float:left;border-right:2px solid #666;padding:.2em 1em}
+#navcontainer ul li a:hover{background-color:#666;color:#fff}
+#navEdit{border:#FFF}
+#navlistEdit{border:1px solid #FFF;margin:0;padding:0}
+#navlistEdit li{list-style:none;margin-left:.25em;text-align:center;border:1px solid #FFF;padding:5px}
+li.ITS_addTAG{font-size:8pt;color:#666}
+li.ITS_addTAG:hover{background-color:#FFC;cursor:pointer}
+#navlistEdit li:hover{border:1px solid #666}
+#navlistEdit li a{text-decoration:none;font-family:Georgia;font-weight:700;font-size:8pt}

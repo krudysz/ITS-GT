@@ -1,0 +1,110 @@
+/*
+ITS_navigation.css - CSS file for the navigation bar in ITS/Profile.php | Question.php | Logs.php
+
+Author(s): Greg Krudysz
+Last Update: Feb-10-2011
+
+=============================================*/
+
+/*================= PAGE STRUCTURE ================*/
+#framecontent{
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  /*height: 120px;     Height of frame div*/
+  overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+	border-bottom: 2px solid #666;
+  background-color: #fff;
+  color: #666;
+}
+#frameseparator {
+  position: absolute;
+  /*top: 120px; 
+	height: 120px; /*Height of frame div*/
+  left: 0; 
+  width: 80%; 
+  overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+  background-color: #fff;
+}
+#maincontent {
+  position: fixed; 
+  /*top: 120px; /*Set top value to HeightOfFrameDiv*/
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto; 
+  background: #fff;
+	border-top: 3px solid #aaa;
+}
+.innertube{
+  position: relative;
+	padding-top: 5px; 
+	margin: auto 15px; /*Margins for inner DIV inside each DIV (to provide padding)*/
+	/*height: 50px;*/
+	/*border: 2px solid #66e;*/
+}
+* html body{ /*IE6 hack*/
+  padding: 10px 0 0 0; /*Set value to (HeightOfFrameDiv 0 0 0)*/
+}
+* html #maincontent{ /*IE6 hack*/
+  height: 100%; 
+  width: 100%; 
+}
+/*================= Navigation ================*/
+#ITS_navcontainer {
+  position: relative;
+	width: 100%;
+  background-color: #fff;
+	border: 1px solid #fff;
+	height: 60px;
+}
+#ITS_navcontainer ul {
+  position: relative;
+  padding: 0;
+  margin-right: 3em;
+  background-color: #fff; /*#eee*/
+	border: 1px solid #fff; /*#666*/
+  color: #666;
+	float: right;
+  width: 100%;
+  font-family: arial, helvetica, sans-serif;
+}
+#ITS_navcontainer ul li   { position: relative; display: inline; }
+#ITS_navcontainer ul li a {
+  position: relative;
+  padding: 0.4em 1em;
+  background-color: #fff; /*#eee;*/
+  color: #666;
+  text-decoration: none;
+  float: right;
+	border: 1px solid #666;
+  font: 12pt Georgia, serif;
+}
+#ITS_navcontainer ul li a#current {
+  background-color: #eee;
+}
+#ITS_navcontainer ul li a#current:hover {
+  background-color: #666;
+}
+#ITS_navcontainer ul li a:hover {
+  background-color: #666;
+  color: #fff;
+}
+#ITS_navlist {
+ background-color: #636;
+}
+/*================= COLORS ================*/
+/*#scoreContainerContent  {	background: #fff; }
+#framecontent,div.innertube,div.logout,div.spacer   {	background: #ade; }*/
+/*=========================================*/
+
+/*================= DEBUG =================*/
+/*
+#framecontent           {	background: brown;     }
+.innertube              {	background: yellow;    }
+#maincontent            {	background-color:lime;
+												  padding:15px;          }
+#ITS_question_container { background-color:pink; }
+*/
+/*=========================================*/

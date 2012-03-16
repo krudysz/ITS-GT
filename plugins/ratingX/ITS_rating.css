@@ -1,0 +1,58 @@
+/* 
+	 rating: b color - #9d6;  | #eee (main)
+*/
+div.ratingContainer {
+  position: relative;
+  float: left;
+	width: 20%;
+  /*border-top: 4px solid #306;
+  border-bottom: 4px solid #306;*/
+  margin: 0;
+  padding: 0.5em 0;
+	text-align: left;
+  font:11pt Monotype, serif;
+  background: #fff;
+  vertical-align: middle;	
+	display: none;
+}
+div.ITS_rate {
+  margin: 0.5em auto;
+	/*border: 1px solid red;*/
+	width: 90%;
+	text-align: center;
+}
+div.ITS_rate img {
+  width:20px; 
+	height:20px; 
+	margin: 0 0.1em;
+}
+DIV.ratingHeader {
+	position: relative;
+	width: 100%;
+	/*border: 2px solid pink;*/
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	font-weight: bold;
+	background: #fff;
+	font-family: Verdana Bold; /*Comic Sans MS;*/
+}
+DIV.ratingHeader span {
+  position: relative;
+	color: #252;
+	/*border: 2px solid pink;*/
+	font-size: 12pt;
+  margin: 0 0.25em;
+	padding: 0 0.5em;
+}
+div.vote {
+  font-family: tahoma;
+	color: #444;
+	height: 1.5em;
+	font-size: 12pt;
+}
+/*================= DEBUG =================*/
+/*
+div.ratingContainer      {	background: yellow; }
+div.ratingHeader         {	background: red;    }*/
+/*=========================================*/

@@ -1,0 +1,279 @@
+BODY,TH,CAPTION {
+   color: black;
+	 font: 12pt Verdana, Geneva, sans-serif;
+	 /*font-family: arial,sans-serif; /*font: 100% Georgia, serif; /*font-family: arial; */
+	 margin:0;
+   padding:0; /*height:100%;*/
+}
+p  {  margin:0; padding: 10px;         }
+Q  {  font: 8pt Georgia, serif;        }
+TT { font-family: cursive,serif;       }
+TH { color: green; background: silver; }
+LI {
+   vertical-align: middle;
+	 list-style: square;
+}
+IMG.ITS_IMG_ANSWER {
+   border: 2px solid silver;
+	 max-height: 200px;
+}
+DIV {
+  vertical-align: top;
+	overflow: none;
+  /*Wrapping Words For all Browsers below*/
+	/*white-space: pre-wrap;      /* css-3 */
+	white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap;     /* Opera 4-6 */
+  white-space: -o-pre-wrap;   /* Opera 7 */
+  word-wrap: break-word;      /* IE 5.5+ */
+}
+#pageContainer{
+  postion:absolute;
+	width: 95%;
+	/*height:100%;	 */
+	/*margin-left:-100%;*/
+	margin:0 auto; /*Centers the Container*/
+}
+#main {
+	width: 100%;
+	margin:0 auto; /*Centers the Container*/
+	border:0px solid blue;
+	overflow:auto; /*Makes the Container Wrap around the floats*/
+	padding:0;
+	bottom:0;
+}
+/**** MENU **************************************************/
+#menuContainer{
+  postion: relative;
+	/*margin:10px auto 5px auto;*/
+	text-align:right;
+	padding: 10px;
+	overflow:auto;
+}
+/**** MESSAGE ***********************************************/
+#messageIcon{
+  /*postion: absolute;*/
+  width:20px;
+	float:left;
+	text-align:center;
+	color: black;
+	border:2px solid silver;
+	display:none;
+}
+DIV.Icon{
+  /*postion: absolute;*/
+  width:20px;
+	float:left;
+	text-align:center;
+	color: black;
+	border:2px solid silver;
+	display:display;
+	padding:5px;
+	margin: 0 0 0 10px;
+}
+#messageContainer{
+  text-align: center;
+	margin:0 auto;
+	overflow: auto;
+}
+#ITS_message {
+  width:80%;
+	float:left;
+	font: 10pt Georgia, serif;
+	text-align: center;
+	margin-left:5%;
+	padding-top:5px;
+  vertical-align: middle;
+}
+TABLE.ITS_message {
+	display: table-cell;
+	width: auto;
+}
+TD.ITS_message {
+  width:auto; /* NEED THIS !! */
+ 	display:table-cell;
+}
+DIV.ITS_screen_control {
+  border: 2px solid silver;
+	color: black;
+	text-align: center;
+}
+DIV.ITS_screen_control_ghost {
+  border: 2px solid lightyellow;
+}
+/*===*/
+#LN{
+  width:20px;
+	float: left;
+	text-align:center;
+	margin: 0 auto;
+	padding: 3px;
+	height:100%;
+}
+#RN{
+	width:20px;
+  float:right;
+	text-align:center;
+	margin: 0 auto;
+	padding: 3px;
+	height:100%;
+}
+div.close { padding: 1px;}
+div.CL{ clear:both;}
+/**** HEADER ***********************************************/
+#headerContainer{
+	padding:0;
+	margin:0;
+	background:gainsboro;
+	border-top:5px solid #777777;
+}
+TABLE.ITS_header {
+  height: auto;
+  background: #777777;
+	border-collapse:collapse;
+}
+TD.ITS_header {
+  background: gainsboro;
+	vertical-align: middle;
+	/*border-right:3px solid #777777;*/
+}
+DIV.ITS_screen_A {
+  height: 50px;
+	font: 14pt Georgia, serif;
+	font-weight: bold;
+	background: white;
+}
+DIV.ITS_screen_L {
+  height: 50px;
+  font: 14pt Georgia, serif;
+	font-weight: bold;
+	color: #777777;
+	/*border-left: 1px solid red;*/
+	border-right: 1px solid #777777;
+}
+SPAN.ITS_screen_L {
+  height:100%;
+	width: 100%;
+  font: 14pt Georgia, serif;
+	color: pink;
+}
+DIV.ITS_screen_S {
+  border: 3px solid silver;
+	background: white;
+}
+DIV.ITS_screen_N {
+  border: 3px solid white;
+	text-align: center;
+	background: white;
+}
+/**** CONTENT ***********************************************/
+#contentContainer{
+  padding:0; 
+	margin:0 auto 0 auto;
+	background:white;
+	border:2px solid silver;
+}
+/**** NAVIGATION ********************************************/
+#navigationContainer{
+	/*border: 2px solid silver;*/
+	vertical-align: middle;
+}
+#ITS_screen_index{
+  top: 0;
+  width: auto;
+	padding:0;
+	background:#fff;
+	border: 2px solid silver;
+	float:left;
+	/*border: 1px solid red;*/
+	/*margin-left:200px; Make Room for the Sidebar*/
+}
+DIV.screen {
+  height:500px;
+	margin:0 auto; /*Centers the Container*/
+	text-align: left;
+	border:2px solid gold;
+	background:white;
+	overflow:auto; /*for Container to wrap around the floats*/
+}
+DIV.ITS_chapter {
+  text-align: left;
+  padding:10px;
+	border-bottom:2px dotted black;
+	font: 14pt monotone;
+	background: gainsboro;
+}
+TABLE.ITS_screen_index {
+  width:50px;
+  border: none; /*1px solid pink;*/
+}
+TD.ITS_screen_index {
+	text-align:center;
+  /*border: 1px solid silver;*/
+}
+TABLE.ITS_screen_nav {
+	background: gainsboro;
+}
+TD.ITS_screen_nav {
+  height:100%;
+	font: 40pt Georgia, serif;
+	color: black;
+	text-align: center;
+	background: gainsboro;
+}
+TABLE.ITS_concept {
+	border-collapse: collapse;
+	background: gainsboro;
+	table-layout:fixed
+}
+TD.ITS_concept {
+  border: 0px solid DarkOliveGreen;
+  background: white;/*beige; /*Lightsteelblue; /*lightcyan; /*lightyellow;*/
+	text-align: left;
+	font-family: Veranda; /*"Courier New",sans-serif;*/
+	font-size: 12pt;
+	padding:5px;
+	table-layout:fixed
+}
+TABLE.ITS_ghost {
+	height:10px;
+	border: none;
+	overflow: hidden;
+}
+TD.ITS_ghost {
+  background: white;
+	padding:0;
+}
+/*==== COLORS ====*/
+/* message: */
+TABLE.ITS_message,TD.ITS_message,
+DIV.ITS_quote,#messageContainer, {
+  background: lightyellow; /*LightBlue;/*khaki;*/
+}
+/* general: */
+BODY,TH,CAPTION,DIV.ITS_menu1,
+#pageContainer,#main,#menuContainer,#messageIcon,#navigationContainer,
+DIV.content,DIV.ITS_screen_control,
+TABLE.ITS_TEMP,TD.ITS_TEMP,TABLE.ITS_screen_header,TD.ITS_screen_header, {
+  background: gainsboro;
+}
+/*==== PADDING ====DIV.ITS_screen_control,DIV.ITS_screen_A,DIV.ITS_screen_L,*/
+#messageIcon,#navigationContainer,
+DIV.screen,DIV.content,
+DIV.ITS_screen_S,DIV.ITS_screen_N, {
+  padding: 5px;
+}
+/*================*/
+/* easy clearing */
+.clearfix:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+.clearfix { display: inline-table; }
+/* Hides from IE-mac \*/
+html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */

@@ -1,0 +1,52 @@
+div.ITS_TARGET{border:1px solid #FFF}
+div.spacer{float:right;font:12pt Georgia, serif;border:none;background-color:#fff;margin:.25em;padding:.2em}
+.ITS_navigate{clear:both;position:relative;text-align:center;background-color:#666;border-top:1px solid #666;padding:.25em}
+.ITS_navigate_edit{position:absolute;text-align:left;background-color:#DCDCDC;border-top:1px solid #666}
+table.ITS_navigate_edit{position:relative;text-align:center;background-color:#DCDCDC;color:blue}
+table.ITS_navigate_edit th{position:relative;text-align:center;background-color:#4682B4;color:#FF0;padding:5px}
+table.ITS_navigate_edit td{position:relative;text-align:center;background-color:#DCDCDC;padding:5px}
+input.ITS_navigate{background:#fff;border:2px solid #eee;width:4em;margin:auto .25em;padding:.25em}
+input.ITS_navigate:focus{border:2px solid #999}
+input.ITS_navigate_button{background:#eee;border:1px solid #999;width:3em;padding:.25em}
+table.ITS_QINFO th{border:none;font-size:10pt;padding:.25em}
+table.ITS_QINFO td{border:1px solid #777;background:#fff;padding:.25em}
+DIV.CHOICE_WEIGHT{position:relative;width:auto;border:2px solid #00a;background:#ffc;overflow:auto;padding:.25em .5em}
+DIV.CHOICE_IMAGE{position:relative;width:auto;border:2px solid #090;background:#ffc;overflow:auto;padding:0}
+DIV.ITS_Example{position:relative;width:80%;font-weight:700;border:2px solid #ed6;background:#fec;padding:.5em}
+DIV.ITS_note_warning{color:#c00;font-weight:700;border:1px solid #c00;padding:.5em}
+UL.ITS_note_units{font-size:10pt}
+UL.ITS_note_units li{color:#444;margin:0 2em 0 0}
+INPUT.ITS_Q{position:relative;color:#11f;font-weight:700;font-size:11pt;padding:.25em}
+TEXTAREA.ITS_Q{position:relative;width:95%;color:#11f;font-weight:700;font-size:11pt;height:2em;padding:.25em}
+textarea.TXA_ANSWER{width:400px;border:3px solid #ccc;background:#eee;text-align:center;color:blue;font:bold 14pt Tahoma, sans-serif;line-height:18pt;min-height:1em;vertical-align:middle;padding:10px 5px 0}
+textarea.TXA_ANSWER:focus{background:#ffa}
+TEXTAREA.ITS_Q:focus{border:1px solid #000;background:#ffe}
+table.ITS_newQuestion{position:relative;width:100%;border-collapse:collapse}
+table.ITS_newQuestion td{position:relative;border:1px solid #fff;background:#fff;padding:.25em 0}
+table.ITS_Qans{position:relative;width:97%}
+td.ITS_Qans{border:2px solid red;position:relative}
+#Qquestion{height:100px}
+span.ansUpdate{clear:both;float:right;background:#fff;font-size:9pt;border:1px solid #666;margin:.5em 0;padding:.25em}
+span.ansUpdate:hover{color:blue;background:#ff9;cursor:pointer}
+TABLE.ITS_QUESTION_DB{clear:both;position:relative;border-collapse:collapse;border:2px solid #aaa}
+TABLE.ITS_QUESTION_DB TH{border:2px solid #aaa;background:#ffa;margin:.5em 0;padding:.5em 1em}
+TD.ITS_QUESTION_DB{border:2px solid #aaa;text-align:center;background:#fff;white-space:nowrap;margin:0;padding:.5em 1em}
+#ITS_question_container{position:relative;z-index:3;margin:1% 5%}
+#select_type{margin-right:2em}
+#select_chapter option{text-align:center}
+#select_chapter option.highlight{letter-spacing:.5em;font-weight:700}
+div.ITS_QCONTROL{border:1px solid #fff}
+.ITS_addTAG{text-align:center;background:#FFF;white-space:nowrap;margin:0;padding:.5em 1em}
+span.ITS_concept{font:100% Times New Roman, sans-serif}
+span.ITS_concept:hover{background:#ee9;cursor:pointer}
+TABLE.ITS_ANSWER_STRIPE{position:relative;display:inline-table;vertical-align:top;background-color:#D0D0D0;overflow:scroll}
+TD.ITS_ANSWER_STRIPE{position:relative;width:100%;text-align:left;background-color:#E0E0E0;vertical-align:middle;max-height:50px}
+select.ITS_question{position:relative;border:2px solid #999;padding:.2em}
+select.ITS_question option{position:relative;border-bottom:1px dashed #AAA;vertical-align:middle;padding:.1em}
+.ITS_buttonQ{position:relative;width:50px;color:#999;font-weight:700;border:2px solid #999;background:#FFF;margin:.5em;padding:.25em}
+.ITS_buttonQ:hover{cursor:pointer;font-weight:700;color:#000;border:2px solid #000}
+#framecontent{height:115px}
+#frameseparator{top:115px;height:115px}
+#maincontent{top:115px}
+select.ITS_qtype,select.ITS_qtype option{position:relative;border:1px solid blue;padding:.5em}
+#menuContainer,#scoreContainerContent{background:#fff}

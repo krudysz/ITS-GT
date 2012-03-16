@@ -1,0 +1,13 @@
+body{background:#FFF;font-size:8pt}
+div.main{postion:absolute;width:95%;background:#FFF;margin:5px auto}
+HR.ITS_feedback{border:4px solid #666;margin:.5em 0}
+#pageContainer{background:#666}
+div.ITS_QN{clear:both;float:left;font:12pt Monotype, sans-serif;font-weight:700;color:#000;background:#FFF;border:2px solid silver;width:1em;margin-left:0;padding:.5em}
+div.ITS_SURVEY{clear:both;position:relative;width:100%;background:#FFF;border:1px solid silver;padding:.5em}
+TABLE.ITS_survey{border-collapse:collapse;position:relative;width:100%;table-layout:fixed;background-color:#FFF;border:1px solid silver;word-break:BREAK-ALL}
+TD.ITS_survey{position:relative;width:100%;height:auto;border-bottom:1px dashed silver;text-align:left;vertical-align:middle;horizontal-align:center;word-break:BREAK-ALL}
+TABLE.SURVEY{position:relative;border:2px solid silver;font-size:8pt;padding:.25em}
+TD.SURVEY{position:relative;font-size:8pt}
+a:hover{color:red;text-decoration:none}
+TD.ITS_SURVEY{width:100%;font:100% Georgia, serif;font-size:8pt;position:static;text-align:left;overflow:none;word-wrap:break-word;white-space:normal;background-color:#FFF;padding:5px}
+TD.ITS_SURVEY_STRIPE{width:100%;font:100% Georgia, serif;font-size:8pt;position:relative;text-align:left;overflow:none;word-wrap:break-word;white-space:normal;background-color:#eee;border-top:1px solid #aaa;border-bottom:1px solid #aaa;padding:5px}

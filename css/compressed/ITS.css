@@ -1,0 +1,213 @@
+.ITS_error{background:#ff9;color:red;font-weight:700;border:2px solid #000}
+#slider{z-index:2}
+#reviewNavTxt{display:none;position:relative;padding-bottom:1em;border:none;color:#666;font-weight:700}
+#slider .ui-slider{border:1px solid #fff;background:#fff}
+#slider .ui-slider-handle{border:1px solid #999;background:#fff;outline:0}
+#slider .ui-slider-handle:hover{border:1px solid #666;background:#CCC;cursor:pointer}
+#slider .ui-slider-handle:focus{border:1px solid #666;background:#999;cursor:pointer}
+h1,h2,h3,h4,h5,h6{font-size:0;color:#000;font-family:'times new roman', arial, verdana, helvetica,sans-serif;font-style:normal;font-weight:400;font-variant:normal;background-color:#fff;margin:0 0 .5em}
+h1{font-size:1.6em}
+h2{font-size:1.5em;color:#B52C07;font:140% georgia, times, "times new roman", serif}
+h3{font-size:1.4em;font:110% georgia, times, "times new roman", serif;text-align:left;color:blue}
+h4{font-size:1.3em}
+h5{font-size:1.26em}
+h6{font-size:1.2em}
+body{height:100%;font:100% arial, sans-serif;text-align:center;color:#000;background:#dcdcdc;margin:0;padding:0}
+input:-moz-focus-inner{border:0}
+div.ITS_ghost{position:relative;background:#fff;height:auto;padding:0}
+div.ITS_MESSAGE{color:green;text-align:center;font:bold 18px Georgia, sans-serif;width:100%;min-height:100px;vertical-align:middle;border:none;padding:2em 0}
+a:link{color:#B52C07}
+a:hover{color:purple}
+h3 a.header{color:red;border:none}
+p{margin:0;padding:10px}
+Q{font:8pt Georgia, serif}
+TT{font-family:cursive,serif}
+TD{text-align:center;border-style:none;border-width:1px;padding:0}
+input.check33 label{border:1px solid red}
+img.ITS_LaTeX{position:relative;vertical-align:middle}
+#pageContainer{position:relative;width:95%;border-left:2px solid #aaa;border-right:2px solid #aaa;border-bottom:2px solid #aaa;background:#fff;margin:0 auto;padding:1em}
+#menuContainer{position:relative;text-align:right;overflow:auto;background:#fff;padding:0}
+#header h1{position:absolute;left:-500em}
+div.icon{float:left;text-align:center;color:#000;border:2px solid silver;display:none;margin:.5em;padding:.5em}
+#messageContainer{clear:both;position:relative;width:100%;text-align:left;background-color:#dcdcdc;border-bottom:1px solid #dcdcdc;background:#fff}
+#messageContainer span{position:relative;color:#666;background-color:#dcdcdc;background:#fff;margin:0 1em;padding:0 .5em}
+#messageContainerContent{position:relative;width:60%;text-align:left;background-color:#ccc;display:none;border:1px solid #666;background:#ee7;margin:.5em 0;padding:10px}
+#frameContainer{border-left:1px solid #000;border-right:1px solid #000;border-top:1px solid #000;border-bottom:1px solid #000}
+#headerContainer{position:relative;width:100%;border-top:5px solid #777;text-align:center;overflow:auto;margin:0;padding:0}
+div.ITS_screen_L{float:left;width:19%;height:55px;font:12pt Georgia, serif;font-weight:700;border:1px solid #AAA;background-color:#dcdcdc}
+div.ITS_screen_L p{position:relative;height:100%;vertical-align:middle}
+#ITS_screen_A{float:left;width:80%;height:55px;font:10pt Georgia, serif;font-weight:700;border:1px solid #AAA;border-bottom:0;background-color:#fff}
+#ITS_screen_A ul{list-style-type:none;text-align:left;margin:1em 0;padding:0}
+#ITS_screen_A li{display:inline;text-align:center;border:1px solid #fff;margin:2px;padding:5px}
+#ITS_screen_A li#title{border:0;background-color:#fff;color:#556B2F;font:13pt Georgia, serif;font-weight:700;cursor:default}
+#ITS_screen_A li#break{color:gray;border-top:2px solid silver;border-bottom:2px solid silver;background-color:silver;font:15pt Georgia, serif;cursor:default;padding:0}
+#ITS_screen_A li.active{border:1px solid #666;cursor:default}
+#ITS_screen_A a:hover{color:#fff}
+#ITS_screen_A li.active:hover{color:#000;background-color:#fff;cursor:default}
+#ITS_screen_A li:hover{color:#fff;border:1px solid #666;background-color:#666;cursor:pointer}
+#ITS_screen_index{position:relative;font:12pt Georgia, serif;font-weight:700;border:1px solid #fff;padding:.5em 0}
+#ITS_alph_index{position:relative;height:100px;font:9pt Georgia, serif;font-weight:700;border:1px solid #fff;margin:0;padding:5px}
+UL.alphIndex{position:relative;height:100px;border:2px solid silver}
+ul#navlistIdx{position:relative;height:100px;list-style-type:none;text-align:center;display:inline;padding:5px}
+ul#navlistIdx li{position:relative;list-style-type:none;text-align:center;display:inline;border:1px solid #fff;margin:2px;padding:.25em .5em}
+#contentContainer{position:relative;width:100%;height:auto;min-height:500px;background:#fff}
+.imagefloat{float:right;border:1px solid #9FA41D;margin:0 0 10px 10px;padding:2px}
+#ITS_QUESTION{position:relative}
+TEXTAREA.ITS_TA{height:75px;width:60%;border:3px solid silver;background-color:#F1F;padding:10px}
+TABLE.ITS_QUESTION{position:relative;width:100%;table-layout:fixed;vertical-align:middle;border:2px solid #FFF}
+TD.ITS_QUESTION{position:relative;width:100%;height:auto;text-align:left;vertical-align:bottom;border:1px dotted #FFF;font-size:12pt}
+div.ITS_QUESTION{position:relative;margin:0 10%}
+#ITS_QUESTION_TARGET{font-size:120%}
+div.ITS_question_text{clear:both;position:relative;width:100%;text-align:center;border-bottom:2px solid #CCC;z-index:2;background:#fff;margin:0;padding:1em 0}
+div.ITS_question_text2{position:relative;width:49%;text-align:center;background:red;padding:0}
+img.ITS_question_img{float:right;height:auto!important;max-width:49%;max-height:250px;text-align:center;vertical-align:middle;margin:0 1em 0 0;padding:0}
+PRE.ITS_Equation{position:relative;height:auto;text-align:center;vertical-align:middle;border-top:1px solid #aaa;border-bottom:1px solid #aaa;font-family:cursive,serif;font-size:14pt;padding:.5em}
+DIV.ITS_Equation{position:relative;width:90%;text-align:center;vertical-align:middle;border:1px solid #fff;border-top:1px solid #aaa;border-bottom:1px solid #aaa;overflow:auto;margin:.5em 0;padding:.25em .5em}
+DIV.ITS_Equation IMG{position:relative;vertical-align:middle;margin:1em 0}
+PRE.MATLAB{border:3px solid #070;background:#dfd;text-align:left;font-size:90%;color:#000;margin:1em 0;padding:.5em}
+PRE.MATLAB_error{border:2px solid #8B4513;background:#fff;text-align:left;font-size:90%;color:#8B4513;margin:1em 0;padding:.5em}
+span.ML_comment{color:green}
+span.ML_error{color:red}
+#ITS_ANSWER{position:relative;text-align:center}
+DIV.ITS_ANSWER{position:relative;max-width:100%;vertical-align:middle;margin:0 10%;padding:1em 0}
+DIV.ITS_ANSWER IMG{max-height:250px;max-width:350px}
+DIV.ITS_ANSWER span.CHOICE{position:relative;width:auto;border:2px solid red;display:inline;background:#FF9;white-space:nowrap;overflow:auto;margin:0;padding:.25em 1em}
+DIV.ITS_ANSWER span.CHOICE pre.MATLAB{color:blue;margin:-5px;padding:0}
+pre.MATLAB TABLE.ITS_ANSWER{border:2px solid red}
+DIV.ITS_ANSWER SPAN.CHOICE_ACTIVE{position:relative;float:none;width:auto;border:2px solid #aaa;display:inline-block;text-align:center;background:#fff;white-space:nowrap;margin:.5em;padding:.25em 1em}
+DIV.ITS_ANSWER span.CHOICE_ACTIVE pre.MATLAB{margin:-.25em -1em;padding:1em}
+DIV.ITS_ANSWER span.CHOICE_ACTIVE img{margin:0;padding:0}
+DIV.ITS_ANSWER span.CHOICE_ACTIVE:hover{color:#00f;cursor:pointer;background:#ffd700;border-color:#00f}
+DIV.ITS_ANSWER span.CHOICE_SELECTED{position:relative;float:none;width:auto;display:inline-block;white-space:nowrap;text-align:center;border:2px solid #00f;color:#00f;background:#ffd700;margin:.5em;padding:.25em 1em}
+;
+TABLE.ITS1{position:relative;width:100%;vertical-align:bottom;border:1px solid #f6f;background-color:#fff}
+TD.ITS{position:relative;background:#FFF;vertical-align:middle;text-align:left;border:1px solid #fff;margin:0;padding:0}
+UL.ITS_ANSWER{clear:both;text-align:left;list-style-type:none;border:1px solid #000;margin:1em;padding:0}
+UL.ITS_ANSWER LI{border:1px solid #666;margin:0 1em;padding:.25em 0}
+UL.ITS_ANSWER LI:hover{background-color:#dcdcdc;cursor:pointer}
+UL.ITS_ANSWER LI:focus{background-color:#fffacd}
+UL.ITS_ANSWER_IMG{position:relative;padding:0}
+UL.ITS_ANSWER_IMG LI{position:relative;border:1px solid #666;margin:20px;padding:10px}
+UL.ITS_ANSWER_IMG LI:hover{background-color:#FF0;cursor:pointer}
+UL.ITS_ANSWER_IMG LI IMG{position:relative;border:1px solid #626}
+UL.ITS_ANSWER_M{clear:both;text-align:left;list-style-type:none;background:#fff;margin:1em;padding:0}
+UL.ITS_ANSWER_M LI{list-style:none;margin:0 1em;padding:.25em}
+UL.ITS_ANSWER_M LI:hover{background-color:#ff7;color:#00f;cursor:pointer}
+IMG.ITS_IMG_ANS{position:relative;max-height:200px;max-width:300px}
+TABLE.ITS{position:relative;width:100%;vertical-align:top;border:1px solid #fff;background-color:#fff}
+TABLE.ITS_ANSWER_STRIPE{position:relative;width:100%;vertical-align:top;border:none}
+TD.ITS_ANSWER_STRIPE{position:relative;text-align:left}
+TABLE.ITS_ANSWER_BOXED{float:left;border-collapse:collapse;border:none;background-color:#FFF;margin:.25em;padding:.25em}
+TD.ITS_ANSWER_BOXED{border:none;width:1px;margin:0;padding:0}
+TD.ITS_ANSWER_BOXED SPAN.CHOICE{text-align:right;width:auto;border:2px solid #aaa;background:#FFF;white-space:nowrap;display:block;margin:0;padding:.25em 1em}
+TD.ITS_ANSWER_BOXED SPAN.CHOICE PRE.MATLAB{display:block;margin:-.25em -1em;padding:.25em}
+DIV.ITS_ANSWER_BOXED{float:left}
+TD.ITS_ANSWER_M{text-align:center;width:auto;border:none;background:#FFF;white-space:nowrap;margin:0;padding:.25em}
+SPAN.TextAlphabet{position:relative;color:#000;background:#ffd700;font-weight:700;border:2px solid #aaa;display:inline;margin:5px 0 5px 5px;padding:0 3px}
+TABLE.ansCheck{position:relative;width:100%;border:1px solid #fff}
+TD.ansCheck{position:relative;border:1px solid #fff;background:#fff;text-align:left}
+.FEEDBACK{clear:both;margin:1em auto}
+TABLE.ITS_SCORE{clear:both;position:relative;vertical-align:middle;border-collapse:collapse;text-align:center;font-family:cursive,serif}
+TD.ITS_SCORE{font-size:10pt;border:1px solid silver;background:#fffacd;padding:.5em}
+.ITS_TEXT{color:blue;width:20%;font-family:"Courier New";text-align:right;font-weight:700}
+TABLE.ITS_DIST{font-family:manotone;vertical-align:bottom;border:2px solid silver;border-collapse:collapse;width:1%}
+TD.ITS_DIST{border:2px solid silver}
+DIV.ITS_DIST{float:left;border:none;margin-left:1em}
+DIV.ITS_CAPTION{font-size:9pt;font-family:Georgia cursive,serif;font-weight:700;background-color:#fffacd}
+span.ITS_correct{position:relative;border:2px solid #006400;color:#006400;background:#adff2f;padding:.1em .25em}
+span.ITS_incorrect{position:relative;border:2px solid maroon;background-color:#FFC0CB;color:maroon;padding:.1em .25em}
+span.ITS_partial{position:relative;border:2px solid #A52A2A;background-color:#FF0;color:#A52A2A;padding:.1em .25em}
+span.ITS_null{position:relative;border:2px solid #ccc;background-color:#ff9;color:#000;font-weight:700;padding:.1em .25em}
+TABLE.ITS_index{position:relative;width:100%;border-collapse:collapse;table-layout:fixed}
+TD.ITS_index{position:relative;border:2px solid #fff;background:#fff;text-align:left;font-family:Veranda;font-size:12pt;table-layout:fixed;border-top:0 hidden silver;border-bottom:1px dashed silver;border-right:1px double silver;border-left:1px double silver;padding:.5em}
+TD.ITS_index:hover{border-bottom:1px solid #666;color:red;background:#ffa}
+span.hidden{position:relative;float:right;font-size:10pt;text-align:center;background:#fff;color:#ff0;border:1px solid #666;margin:0 0 0 .5em;padding:.1em .25em}
+span.nhidden{position:relative;float:left;text-align:center;background:#fff;margin:0 0 0 .5em}
+TD.ITS_index:hover .nhidden{position:relative;float:left;text-align:center;background:#ffa;margin:0 0 0 .5em}
+TD.ITS_index:hover span.nhidden:hover{color:maroon;background:#ffa;cursor:pointer}
+ul.ITS_list ul{position:relative;width:300px;list-style-type:none;display:inline;font:10pt Georgia, serif;border:1px solid blue;margin:0;padding:1em}
+ul.ITS_list li{list-style-type:none;display:inline;border:1px solid blue;margin:2px;padding:0 .25em}
+#ITS_screen_A ul#navlistIdx li#active{list-style-type:none;margin:0;padding:0}
+TABLE.ITS_version{border:1px solid #666;border-collapse:collapse}
+TD.ITS_version{border:1px solid #666;padding:5px 10px}
+TABLE.ITS_header{border:0 solid #333;border-collapse:collapse}
+TD.ITS_header{border-right:1px solid #666;padding:0 5px}
+#navBoxContainer{position:relative;width:100%;border:none;margin:.5em auto}
+div.navContent{clear:both;position:relative;text-align:center;background:#fff;border:1px solid #fff;margin:0 10%;padding:.25em 0}
+div.navContent table{text-align:left;margin:0 auto}
+div.navContainer{clear:both;position:relative;width:100%;overflow:auto;background-color:#faf;background:#fff;border:1px solid #fff}
+div.navContainer div.a{position:relative;background-color:#016;color:blue;width:10%;height:50px;font-family:arial, helvetica, sans-serif}
+div.navContainer div#content{float:left;width:79.7%;height:50px;background-color:#149}
+div.navContainer div#content:hover{background-color:#369;color:#fff}
+TABLE.ITS_screen_nav{clear:both;position:relative;border:1px solid #fff;border-collapse:collapse;width:100%;table-layout:fixed;background-color:#fff}
+TD.ITS_screen_nav{border:1px solid #fff;font:12pt Georgia, serif;text-align:center;padding:.5em 0}
+div.ITS_navigation{color:#666;border:2px solid #666;font:14pt Georgia, serif;font-weight:700;padding:.5em 0}
+div.ITS_navigation:hover{background-color:#666;color:#fff;cursor:pointer}
+div.ITS_chapter{text-align:left;border-bottom:2px solid silver;font:14pt monotone;overflow:auto;padding:.25em .5em}
+div.ITS_chapter:hover{background:#ffd700;border-bottom:2px solid #666}
+div.ITS_chapter:hover .nhidden{position:relative;float:left;text-align:center;background:#ffd700;margin:0 0 0 .5em}
+div.ITS_chapter:hover span.nhidden:hover{color:red;cursor:pointer}
+span.ITS_plot{position:absolute;right:0;top:0;font:9pt monotone;color:#666;border:1px solid #fff;margin:.5em 0}
+span.ITS_plot:hover{border:1px solid silver;cursor:pointer}
+span.menu{position:relative;text-align:center;vertical-align:middle;width:100px;height:40px}
+span.ITS_available{float:right;width:200px;padding:.5em}
+span.ITS_figs{position:relative;float:right;right:0;font-size:10pt;text-align:center;background:#fff;color:#ff0;border:1px solid #666;margin:0 .5em;padding:.1em .25em}
+div.ITS_figshow{position:relative;overflow:auto;margin:.25em 0}
+div.ITS_figshow img{border:2px solid #ccc}
+div.ITS_figshow img:hover{border:2px solid #666;cursor:pointer}
+div.ITS_popImage{overflow:auto;border:1px solid green}
+table.ITS_LIST{border:2px solid silver;background:#fffacd;border-collapse:collapse}
+td.ITS_LIST{background:#fff;border-bottom:2px solid silver;text-align:left;padding:.25em}
+.thumbnail{float:left;border:1px solid #666;margin:15px}
+div.ITS_BOOK{text-align:left}
+h2.ITS_BOOK{text-align:center;color:red;padding:2em}
+h3.ITS_BOOK{color:red;padding:1em}
+span.ITS_EQ{font-family:cursive,serif;border:1px solid silver}
+span.ITS_keyword{border:1px solid silver;color:red}
+#answerContainer{text-align:center}
+input.ITS_submit{color:#666;font-weight:700;font-size:13pt;background:#fff;border:1px solid #666;outline:0;margin:1em;padding:.5em 1em}
+input.ITS_submit:hover{color:#fff;background:#666;cursor:pointer}
+input.ITS_skip{position:absolute;top:100px;right:0;background-image:url(admin/icons/arrow.small.right.gif);color:#666;font-weight:700;font-size:11pt;background:#fff;font-family:arial;border:1px solid #fff;outline:0;margin:1em 0;padding:.5em}
+input.ITS_skip:hover{color:#000;border:1px solid #000;cursor:pointer}
+div.userContainer{position:relative;width:100%;border-top:2px solid #666;border-bottom:2px solid #666;text-align:left;font:11pt Monotype, serif;background:#eee;vertical-align:middle;margin:20px 0 0;padding:.5em 0}
+#accor div h3{border-left:1px solid #dcdcdc;border-right:1px solid #dcdcdc;border-top:2px solid #666;border-bottom:2px solid #fff}
+#accor div a{color:#666}
+#accor div a span{color:#999}
+div.logout{position:relative;float:right;font:12pt Georgia, serif;border:1px solid #fff;background-color:#dcdcdc;background:#fff;margin:.25em;padding:.2em}
+div.logout a{color:#666;text-decoration:none}
+div.logout:hover,#logout:focus{border:1px solid #AAA;cursor:pointer}
+div.logout:active{color:#000;background-color:#ffd700;cursor:pointer}
+#errorContainer{position:relative;width:100%;color:red;font:italic bold 14px Georgia, sans-serif;display:none;overflow:hidden}
+#errorContainerContent{position:relative;background-color:#ffd700;border-left:1px solid #AAA;border-right:1px solid #AAA;border-bottom:1px solid #AAA;padding:.5em}
+SELECT.ITS_select{border:2px solid #aaa;background:#FFF;width:100px;color:#666;text-align:center;outline:0;padding:0}
+span.instr{position:relative;color:#666;border:1px solid #fff;margin:10% 0 10% -90%;padding:.25em}
+span.instr:hover{border:1px solid #aaa;cursor:pointer}
+span.instr:active{border:1px solid red;cursor:pointer}
+div.ansCheck{margin-right:5px;background:#fff;padding:.25em 0}
+label.ansCheck:hover{border:2px solid blue;color:blue;cursor:pointer}
+label.ansCheck_sel{border:2px solid #aaa;color:#000;background:#ffd700}
+#footerContainer{clear:both;color:#999;font-size:80%;padding-top:5em;text-align:center;border-top:2px solid #999}
+div.footer_list{background:url(media/bgFooter.png) no-repeat;background-size:100% 100%;-webkit-background-origin:content-box;background-origin:content-box;color:#999;width:100%;height:100%;clear:both;position:relative;overflow:auto;margin:10px}
+div.ITS_footer{position:relative;height:100px;border:1px solid #FFF;background:#FFF;text-align:center}
+ul.ITS_footer{position:relative;color:#999;width:80%;margin-left:auto;margin-right:auto;text-align:center;display:block;padding:10px}
+ul.ITS_footer li{font-size:8pt;display:block;text-align:center}
+#footer_list{padding-left:25px;padding-right:25px}
+ul.footer{position:relative;list-style-type:square;margin-left:1em;padding:0}
+ul.footer li{text-align:left;margin:0;padding:.25em}
+ul.footer li a:hover{text-decoration:underline}
+div.footer_col{float:left;width:200px;padding:.5em 0}
+#resBoxContainer{font-size:10pt;border:2px solid #dcdc11;margin-left:3px;color:#666;background:#ffd700;padding:.1em .3em}
+div.ITS_ANSWER{background:#fff}
+#ITS_nav_prev,#ITS_nav_next,input.check33,input.ansCheck{display:none}
+.headering,a:visited{color:blue}
+a:focus,a:active{color:#000}
+h2 a,ul.footer li a{text-decoration:none}
+div.icon:hover,div.icon:focus,div.ITS_screen_L:hover,div.ITS_screen_L:focus{color:#FFF;background:#666;cursor:pointer}
+div.icon:active,div.ITS_screen_L:active{color:#000;background:#ffd700;cursor:pointer}
+#messageContainer span:hover,ul#navlistIdx li:hover{color:#fff;background-color:#666;cursor:pointer}
+ul#navlistIdx li.active,ul#navlistIdx li.active:hover{border:1px solid #666}
+DIV.ITS_ANSWER span.CHOICE_ACTIVE pre.MATLAB:hover,DIV.ITS_ANSWER span.CHOICE_SELECTED pre.MATLAB{background:#ffd700;margin:-.25em -1em;padding:1em}
+span.hidden:hover,span.ITS_figs:hover{background:#666;color:#fff;cursor:pointer}
+span.seg,span.ITS_Equation{border:1px solid silver}
+#role,.navlist li{display:inline}
+label.ansCheck,label.ansCheck_inactive{font-size:10pt;border:2px solid #dcdcdc;margin-left:3px;color:#666;padding:.1em .3em}

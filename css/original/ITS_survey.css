@@ -1,0 +1,113 @@
+/*
+ITS_survey.css - survey CSS file for ITS
+
+Author(s): Greg Krudysz
+
+Last Update: May-17-2011
+W3C CSS Validator results for ITS_survey.css (CSS level 2.1)
+======================================================*/
+body { background: #FFFFFF; font-size: 8pt;}
+div.main {
+  postion:absolute;
+	width: 95%;
+	margin-left:-100%;
+	margin:5px auto; /*Centers the Container*/
+	background: #FFFFFF;
+}
+HR.ITS_feedback {
+	border: 4px solid #666;
+	margin: 0.5em 0;
+}
+#pageContainer {
+  background: #666;
+}
+/*---- Survey ----------------*/
+div.ITS_QN {
+	clear: both;
+	float: left;
+	font: 12pt Monotype, sans-serif;
+	font-weight: bold;
+	color: #000;
+	background: #FFFFFF; /*#eee;*/
+	border: 2px solid silver;
+	padding: 0.5em;
+	width: 1em;
+	margin-left: 0;
+}
+div.ITS_SURVEY {
+	clear: both;
+	position: relative;
+	width: 100%;
+	padding: 0.5em;
+	background: #FFFFFF;
+	border: 1px solid silver;
+}
+TABLE.ITS_survey {
+	position: relative;
+	border-collapse: collapse;
+	border: 2px solid silver;
+}
+TD.ITS_survey {
+	position: relative;
+}
+TABLE.SURVEY {
+	position: relative;
+	padding: 0.25em;
+	border: 2px solid silver;
+	font-size: 8pt;
+}
+TD.SURVEY {
+	position: relative;
+	font-size: 8pt;
+}
+a:hover {
+	color: red;
+	text-decoration: none;
+}
+TABLE.ITS_survey { 
+	 position: relative;
+	 width: 100%;
+	 table-layout: fixed;
+   /*font-family: monospace;*/
+	 background-color: white; /*LemonChiffon;*/
+	 border: 1px solid silver;
+	 WORD-BREAK: BREAK-ALL;
+}
+TD.ITS_survey {		 
+   position: relative;
+	 width: 100%;
+	 height: auto;
+   border-bottom: 1px dashed silver;
+	 text-align: left;
+	 vertical-align: middle;
+   horizontal-align: center;
+	 WORD-BREAK:BREAK-ALL;
+}
+TD.ITS_SURVEY {
+   position: relative;
+   width: 100%;
+   font: 100% Georgia, serif;
+   font-size: 8pt;
+   position: static;
+   text-align: left;
+   overflow: none;
+   word-wrap: break-word;
+   white-space: normal; 
+   padding: 5px;
+   background-color: white;
+} 
+TD.ITS_SURVEY_STRIPE {
+   position: relative;
+   width: 100%;
+   font: 100% Georgia, serif;
+   font-size: 8pt;
+   position: relative;
+   text-align: left;
+   overflow: none;
+   word-wrap: break-word;
+   white-space: normal;
+   padding: 5px;
+   background-color: #eee;
+	 border-top: 1px solid #aaa; 
+	 border-bottom: 1px solid #aaa;
+}

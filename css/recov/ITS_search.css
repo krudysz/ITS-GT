@@ -1,0 +1,83 @@
+/*
+ITS_search.css - admin CSS file for search.php 
+
+Author(s): Greg Krudysz
+Last Update: Jun-26-2011
+=============================================*/
+#ITS_search {
+  position: relative;
+	margin: 5% 0 0 0;
+}
+#ITS_search_empty {
+  position: relative; 
+	padding: 1em;
+	margin: 10% 0 40% 0;
+	text-align: center;
+	font: 100% arial,sans-serif;
+	font-weight: bold;
+}
+#ITS_search_box {
+  position: relative;
+  border: 2px solid #999999; 
+	padding: 5px;
+	margin: 0;
+	width: 50%;
+	color: blue;
+	text-align: center;
+	font: 150% arial,sans-serif;
+	font-weight: bold;
+}
+#ITS_search_query {
+  position: relative; 
+	padding: 5px;
+	margin: 10px 0 0 10%;
+	width: 50%;
+	color: #999999;
+	text-align: left;
+	font: 110% arial,sans-serif;
+}
+td.search_title {
+ text-align: left;
+ padding: 0 0.5em;
+}
+td.search_solution {
+ width: 120px;
+ text-align: center; vertical-align: middle;
+}
+/*
+td.search_title:first-letter { 
+font-size: 130%; 
+font-weight: bold; 
+}*/
+TABLE.ITS_search {
+  border: 2px solid #FFFFFF; /*#006400;*/
+	padding: 0;
+	margin: auto 10%;
+	border-collapse: collapse;
+}
+TABLE.ITS_search th {
+	padding: 0.5em;
+	background: #fff;
+	color: #666;
+}
+TABLE.ITS_search tr {
+  border: 2px solid #FFFFFF;
+  border-bottom: 2px solid #999999;
+	padding: 0.25em;
+}
+TABLE.ITS_search td {
+	padding: 0.25em;
+	color: #000000;
+}
+TABLE.ITS_search tr:hover { 
+	background: #ff9;
+}
+TABLE.ITS_search tr:hover div{ 
+	background: #ff9;
+}
+/*
+TABLE.ITS_search td:hover { 
+	border: #ff9;
+	background: #ff9;
+}
+*/

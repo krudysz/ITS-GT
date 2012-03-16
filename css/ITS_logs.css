@@ -1,0 +1,6 @@
+table.ITS_logs{position:relative;border:1px solid #999;text-align:left;background-color:#fff;border-collapse:collapse;color:#000;margin:.25em 1em}
+table.ITS_logs th{text-align:center;border:1px solid #999;background-color:#ff9;color:#666;padding:5px}
+table.ITS_logs td{text-align:left;border:1px solid #999;background-color:#fff;padding:5px}
+#framecontent{height:100px}
+#frameseparator{top:100px;height:100px}
+#maincontent{top:100px}

@@ -1,0 +1,32 @@
+body{border:0;overflow:hidden;height:100%;max-height:100%;margin:0;padding:0}
+font.mysql{color:green;font-weight:bold}
+div.mysql {background: #fff;border:1px solid #666;padding: 5px;margin-top:10px;}
+.dialogButton{float:right;font:8pt Georgia, serif;border:2px solid #fff;background-color:#fff;margin:0 .25em .25em 0;padding:auto .5em}
+.dialogButton:hover{cursor:pointer;color:red;border:2px solid red}
+div.spacer{float:right;font:12pt Georgia, serif;border:none;background-color:#fff;margin:.25em;padding:.2em}
+option.highlighted{color:#000}
+#profile{padding-bottom:15px;font-family:Georgia,Serif}
+TABLE.PROFILE{position:relative;width:96%;border:1px solid #aaa;vertical-align:middle;border-collapse:collapse;background:#fff;font-size:8pt;table-layout:fixed;margin:0 2%}
+TABLE.PROFILE TH{font-family:Georgia,Serif;font-size:12pt}
+TD.PROFILE{background-color:#fff;border-right:2px solid #999;border-bottom:4px outset #666;padding:1em 0}
+TABLE.CPROFILE{position:relative;border:1px solid #aaa;vertical-align:middle;border-collapse:collapse;background:#fff;font-size:8pt;table-layout:fixed}
+TABLE.CPROFILE TR{color:#000;background-color:#FFF;border-bottom:1px dashed #aaa;font-size:9pt;padding:5px}
+TABLE.CPROFILE TD{font-size:9pt;padding:5px;border-right:1px solid #aaa;font-family:Verdana, Arial, Helvetica, sans-serif;text-decoration:none}
+TABLE.CPROFILE A{font-size:9pt;padding:5px;font-family:"Andale Mono", "Monotype.com", monospace;text-decoration:none;font-weight:bold;outline:0}
+TABLE.CPROFILE TD.sid {font-size:9pt;padding:5px 10px 5px 5px;color:#666;font-family:monospace}
+TABLE.CPROFILE TR:hover{background-color:#FF9;font-size:9pt}
+TABLE.PROFILE,TABLE.CPROFILE TH{background-color:#eee;border:1px solid #666;padding:.5em}
+TR.PROFILE{background-color:#fff;border:1px solid #666;font-size:12pt;padding:.25em}
+TABLE.DATA{clear:both;position:relative;width:100%;vertical-align:middle;border-collapse:collapse;background:#fff;margin-top:-10px;padding:0}
+TABLE.DATA td{padding:0}
+#select_class{min-width:130px}
+#select_user{min-width:200px}
+#select_user option:focus{color:red}
+#sortProfile{position:relative;width:100%;border:1px solid #999;text-align:center;color:#000;background:#eee;font-family:Georgia,Serif;font-size:12pt;font-weight:700;padding:0}
+#sortProfile:hover{background:#fff;cursor:pointer}
+#sortProfile option{border:1px solid #999;border-bottom:1px solid #999;outline:0;padding:0 .5em}
+#framecontent{height:140px}
+#frameseparator{top:140px;height:140px}
+#maincontent{top:140px}
+#menuContainer{background:#fff}
+TD.PROFILE PRE,TD.PROFILE SPAN{font-size:8pt}

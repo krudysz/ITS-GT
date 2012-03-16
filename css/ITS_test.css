@@ -1,0 +1,12 @@
+#carousel{width:25px;height:29px;margin:0 auto}
+#slides{overflow:hidden;position:relative;width:25px;height:25px;border:1px solid #ccc}
+#slides ul{position:relative;left:0;top:0;list-style:none;width:75px;margin:0;padding:0}
+#slides li{width:250px;height:250px;float:left}
+#slides li img{padding:5px}
+#buttons{float:right;padding:0 0 5px}
+#buttons a{display:block;width:31px;height:32px;text-indent:-999em;float:left;outline:0}
+a#prev{background:url(arrow.gif) 0 -31px no-repeat}
+a#prev:hover{background:url(arrow.gif) 0 0 no-repeat}
+a#next{background:url(arrow.gif) -32px -31px no-repeat}
+a#next:hover{background:url(arrow.gif) -32px 0 no-repeat}
+.clear{clear:both}

@@ -1,0 +1,7 @@
+#navContainer{border:1px solid #FFF;padding:0}
+#navList{margin-left:0;border-bottom:2px solid #999;font:bold 14pt Georgia, sans-serif;padding:3px 0}
+#navList li{list-style:none;display:inline;margin:0}
+#navList li a{position:relative;margin-left:30px;border:2px solid #FFF;border-bottom:none;background:#FFF;text-decoration:none;outline:0;color:red;padding:3px 2em}
+#navList li a:hover{color:#000}
+#navList li a#current{color:#666;border:2px solid #999;border-bottom:2px solid #FFF}
+#navList li a:link,#navList li a:visited{color:#999}

@@ -1,0 +1,387 @@
+BODY,TH,CAPTION {
+   /*background: gainsboro;*/
+   color: black;
+	 font-family: arial,sans-serif; /*font: 100% Georgia, serif; /*font-family: arial; */
+   font-size: 14pt;
+	 margin:0;
+   padding:0;
+   height:100%;
+}
+TT {
+   /*border-top: 1px solid #aaa; background:#fafafa;   padding:3px;*/
+	 font-family: cursive,serif;
+}
+TH {
+  color: green;
+  background: silver;
+}
+span {
+  vertical-align:middle;
+}
+span.ML_comment {
+  color: green;
+}
+span.ML_error {
+  color: red;
+}
+span.footer {
+  /*position: relative;*/
+  color: red;
+}
+span.ITS_IMG_FLOAT {
+  color: purple;
+}
+/*--- FEEDBACK ---*/
+HR.ITS_feedback {
+  color: gainsboro;
+}
+span.ITS_correct {
+  width: auto;
+  border: 2px solid darkgreen;
+  color: darkgreen;
+	background: greenyellow;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+span.ITS_incorrect {
+  width: auto;
+  border: 2px solid maroon;
+	background: pink;
+  color: maroon;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+span.ITS_null {
+  border: 2px solid black;
+  /*color: white;*/
+	padding-left: 2px;
+	padding-right: 2px;
+}
+div.ITS_feedback {
+	/*Wrapping Words For all Browsers below*/
+	white-space: pre-wrap;      /* css-3 */
+	white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap;     /* Opera 4-6 */
+  white-space: -o-pre-wrap;   /* Opera 7 */
+  word-wrap: break-word;      /* IE 5.5+ */
+}
+div.ITS_header{
+  text-align: right;
+	vertical-align: middle;
+  position: absolute; 
+	left: 5%;
+	right: 5%;
+	height: 40px;
+	padding: 5px;
+	top: 5px;
+}
+div.main{
+	position: absolute;
+  border: 3px solid silver;
+	left: 5%;
+	right: 5%;
+	top: 45px;
+	min-height:90%; 			 	 /* ff  */
+  height: auto !important; /* ie7 */
+  height: 85%; 					   /* ie6 */
+  min-width:85%; 			 	 /* ff  */
+  width: auto !important; /* ie7 */
+  width: 85%; 					   /* ie6 */
+	background: white;
+}
+DIV.ITS_QUESTIONS_INNER {
+ position: relative;
+ background: white;
+}
+div.survey{
+  border: 3px solid #BBBBBB;
+	padding:10px;
+	padding: 10px;
+	width: 90%;
+}
+div.ITS_footer2{	/* Big div for all the questions */
+  text-align: center;
+  position: absolute;
+  border: 2px solid red;
+	height:50px;
+	width:350px; /*top:40%;left: 40%;*/
+	padding:4px; /*visibility: hidden; /*visible*/
+	background-color: #DFDFDF;
+	display: block;
+}
+.fig {
+  background-color: white;
+	text-align: center;
+  padding: 3px; 
+	overflow:hidden;
+	margin:0 auto;
+	margin-top:20px;
+	/*position: relative; static | absolute | relative | float */
+	/*border:1px solid #000;*/
+}
+.diagram { /* arrows, etc. */
+  position: absolute;
+}
+.block {
+  border: solid;
+	border-width: 2px;
+	position: absolute;
+}
+.box { /* concept box */
+  border: dotted;
+	border-width: 1px;
+	border-color: grey;
+	text-align: right;
+	vertical-align:middle;
+	font-family: monospace;
+  color: black;
+  padding: 0px;
+  position: relative;
+	cursor: pointer; /*move | pointer*/
+  z-index: 1;
+}
+.ITS_box {
+  border: 1px solid #BBBBBB;
+	text-align: middle;
+	vertical-align:middle;
+	font-family: monospace;
+  color: black;
+  padding-right: 5px;
+	padding-left: 5px;
+}
+.TextAlphabet {
+	 color: blue;
+	 font-weight: bold
+}
+.span_box { /* concept box */
+  border: dotted;
+	border-width: 1px;
+	border-color: grey;
+	text-align: right;
+	vertical-align:middle;
+	font-family: monospace;
+  color: black;
+  padding: 0px;
+	cursor: pointer; /*move | pointer*/
+}
+.pos_abs {
+  position: absolute;
+}
+.lab_note {
+  border: 1px solid #1f1f1f;
+  padding:3px;
+  background:#efefef;
+}
+.wcell {
+  background-color: white; /*transparent;*/
+  border: 1px dotted #AAAAAA;
+  color: red;
+  padding: 3px;
+	width: 50px;
+  position: relative;
+	cursor: default; /*move | pointer*/
+	z-index: 0;
+}
+TEXTAREA {
+  border-color: silver;
+}
+TABLE {
+	 vertical-align: middle;
+	 border-width: 0px;
+	 border-spacing: 0px;
+	 width: 100%;
+	 background-color: white; /*silver; /*#E0E0E0; green*/
+}
+TABLE.ITS_tag {
+   border: 0px solid silver;
+	 background-color: white;
+	 cellspacing: 10  
+}
+TABLE.ITS_QUESTION {
+   vertical-align: left;
+	 background-color: white;
+	 cellspacing: 10  
+}
+TD.ITS_QUESTION {
+   text-align: left;
+	 background-color: white; /*vertical-align: bottom;*/
+}
+TABLE.ITS_DATA {
+   text-align: right;
+	 vertical-align: middle;
+	 border-style: solid;
+	 border-width: 0px;
+	 width: 40%;
+	 background-color: blue;
+}
+TABLE.ITS_ANSWER {
+   vertical-align: top;
+	 background-color: white; /* pink border for answer table #D0D0D0;*/
+}
+TABLE.ITS_ANSWER1 {
+	 background-color: silver;
+	 width: 90%;
+}
+TABLE.ITS_ANSWER_STRIPE {
+   vertical-align: top;
+	 background-color: #E0E0E0; /* pink border for answer table #D0D0D0;*/
+}
+TABLE.ITS_Equation {
+   text-align: center;
+	 vertical-align: middle;
+   color: black;
+	 width: 100%;
+}
+TABLE.ITS_feedback_header {
+   border-collapse: collapse;
+   font-family: cursive,serif;
+	 /*border-top: 4px solid #DDDDDD;
+	 border-bottom: 4px solid #DDDDDD;*/
+	 border: 2px solid #DDDDDD;
+	 background-color: #DDDDDD;
+}
+TD.ITS_feedback_header {
+	 text-align: center;
+	 background-color: #DDDDDD;
+}
+TABLE.ITS_feedback_list {
+   border-collapse: collapse;
+   text-align: center;
+	 background-color: white;
+}
+TD.ITS_feedback_list {
+	 padding: 5px;
+   border: 1px solid silver;
+   vertical-align: middle;
+}
+TABLE.ITS_feedback {
+   table-layout: fixed;
+	 position:relative;
+   font-family: monospace;
+	 background-color: white; /*LemonChiffon;*/
+}
+TD.ITS_feedback {		 
+   /*border-bottom: 1px dashed silver;*/
+	 text-align: center;
+	 vertical-align: middle;
+   horizontal-align: center;
+	 padding: 5px;
+}
+TD {
+   vertical-align:middle;
+	 border-width: 0px;
+   border-style: solid pink;
+   padding: 0px;
+}
+TABLE.ITS_DATA {
+   text-align: right;
+	 vertical-align: middle;
+	 border-style: none;
+	 border-width: 3px;
+	 width: 40%
+}
+TABLE.ITS_dist {
+  spacing: 2px;
+	border: none;
+}
+TD.ITS_dist {
+	border: 0px solid red;
+}
+DIV.ITS_dist {
+  border: none;
+}
+.TXA_ANSWER {
+  border: 2px solid silver;
+  width: 100%;
+	height: 50px;
+	padding: 5px;
+}
+DIV.center {
+  padding:1em;
+	text-align: center;
+	float: center;
+}
+DIV.code {		
+		font-family:manospace;
+		white-space:pre;
+		background-color: #DFDFDF;
+		border-style: dashed;
+		border-color: grey;
+		border-width: 1px;
+		margin-left:15px; 
+	  margin-top:0px;
+		margin-bottom:0px;
+		width:300px;
+	}
+/* MATLAB */
+DIV.MATLAB {
+   font-family: monospace;
+   border: 3px dashed #aaa;
+	 background:LemonChiffon;
+	 padding:5px;
+	 padding-left: 20px;
+	 white-space: nowrap;
+}
+PRE.MATLAB {
+   border: 3px dashed #aaa;
+	 background:LemonChiffon;
+	 background-image:url(ML.png);
+	 padding:5px;
+}
+FONT.ML_s {
+	 color: purple;
+}
+PRE.ITS_Equation {
+   text-align: center;
+   padding: 3px;
+   border-top: 1px solid #aaa; /*background:#fafafa;*/
+	 border-bottom: 1px solid #aaa;
+	 font-family: cursive,serif;
+	 font-size: 14pt;
+	 /*width: 80% */
+}
+TD.ITS_ANSWER {
+   text-align: left;
+	 background-color: white; /*#D0D0D0;*/
+	 vertical-align: middle;
+}
+TD.ITS_ANSWER_STRIPE {
+   text-align: left;
+	 background-color: #E0E0E0; 	/*#C0C0C0;*/
+	 vertical-align: middle;
+	 /*font-family: monospace;*/
+}
+IMG {
+	 vertical-align: middle;
+}
+IMG.ITS_tag {
+   border: 2px solid silver;
+	 padding: 5px;
+}
+IMG.ITS_bar {
+	 padding: 5px;
+   border: 2px solid silver;
+}
+IMG.ITS_list {
+   padding: 5px;
+   border: 2px solid silver;
+}
+TEXTAREA {
+  border-color: silver;
+	height:20px;
+	width: 60%;
+}
+SELECT {
+  border: 0px solid red;
+	text-align: middle;
+	overflow: auto;
+}
+OPTION {
+  border: 0px solid blue;
+	text-align: center;
+}
+
+/* ------ COLORS ------ */
+BODY,DIV.ITS_header {
+   background: gainsboro;
+}

@@ -1,0 +1,46 @@
+
+#navContainer{ border: 1px solid #FFFFFF; }
+#navListQC{
+  padding: 3px 0;
+  margin-left: 0;
+  border-bottom: 2px solid #999;
+  font: bold 14pt Georgia, sans-serif;
+}
+#navListQC li{
+  list-style: none;
+  margin: 0;
+  display: inline;
+}
+#navListQC li a{
+  position: relative;
+  padding: 3px 0.5em;
+  margin-left: 0px;
+  border: 2px solid #FFFFFF;
+  border-bottom: none;
+  background: #FFFFFF;
+  text-decoration: none;
+  outline: 0; /* get rid of the dotted line */
+  color: red;
+}
+#navListQC li a:link    { color: #999; } /*#448;*/
+#navListQC li a:visited { color: #999; } /*#667;*/
+#navListQC li a:hover   { color: #000; }
+#navListQC li a#current{
+  color: #666;
+  border: 2px solid #999;
+  border-bottom: 2px solid #FFFFFF;
+}
+#GTlogo {
+  position: relative;
+  float:left;
+  background-image:url('media/gtbuzz.jpg');
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  -webkit-background-origin:content-box; /* Safari */
+  background-origin:content-box;
+	background-position:right center;
+	width: 25px;
+	height: 25px;
+	margin-right: 5px;
+	border: none;
+}

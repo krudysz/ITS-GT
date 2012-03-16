@@ -1,0 +1,67 @@
+/**
+ * tune up the Demo page
+ */
+body, p {	
+	margin: 0;
+	padding: 0;
+}
+body {
+	font: normal normal 12px/1.6em Verdana, Arial, sans-serif;
+}
+.pageBody {
+	margin: 1em;
+}
+.pageBody form {
+	width: 100%;
+	overflow: hidden;
+}
+.pageDesc {
+	padding: .5em;
+	background-color: #e0e0e0;
+	border-bottom: 2px solid #c0c0c0;
+}
+p + p {
+	margin-top: 1em;
+}
+a.unlink {
+	text-decoration: none;
+}
+h4 a,
+.uniForm legend a {
+	padding:0 .3em
+}
+
+
+/**
+ * Messages Bar
+ */
+.message-box { text-align: center; padding: 5px; color:#545454;  margin:5px auto; }
+.clean { background-color: #efefef; border-top: 2px solid #dedede; border-bottom: 2px solid #dedede; }
+.info  { background-color: #f7fafd; border-top: 2px solid #b5d3ff; border-bottom: 2px solid #b5d3ff; }
+.ok    { background-color: #d7f7c4; border-top: 2px solid #82cb2f; border-bottom: 2px solid #82cb2f; }
+.alert { background-color: #fef5be; border-top: 2px solid #fdd425; border-bottom: 2px solid #fdd425; }
+.error { background-color: #ffcdd1; border-top: 2px solid #e10c0c; border-bottom: 2px solid #e10c0c; }
+
+
+
+/**
+ * Star rating L-R panels 
+*/
+.ratings {
+	margin: 0 0 1em;
+	width: 100%;
+	overflow: hidden;
+	line-height: 2em;
+}
+.rating-L {
+	float: left;
+	margin-right: 1em;
+	white-space: nowrap;
+}
+.rating-R {
+	float: left;
+	margin-left: 1em;
+	width: 300px;
+}
+
+

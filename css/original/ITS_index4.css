@@ -1,0 +1,76 @@
+/*
+ITS_intro.css - introductory CSS file for ITS
+
+Author(s): Greg Krudysz
+
+Last Update: Aug-12-2011
+W3C CSS Validator results for ITS_intro.css (CSS level 2.1)
+======================================================*/
+#navContainer{ border: 1px solid #FFFFFF; }
+#navListQC{
+  padding: 3px 0;
+  margin-left: 0;
+  border-bottom: 2px solid #999;
+  font: bold 14pt Georgia, sans-serif;
+}
+#navListQC li{
+  list-style: none;
+  margin: 0;
+  display: inline;
+}
+#navListQC li a{
+  position: relative;
+  padding: 3px 0.5em;
+  margin-left: 0px;
+  border: 2px solid #FFFFFF;
+  border-bottom: none;
+  background: #FFFFFF;
+  text-decoration: none;
+  outline: 0; /* get rid of the dotted line */
+  color: red;
+}
+#navListQC li a:link    { color: #999; } /*#448;*/
+#navListQC li a:visited { color: #999; } /*#667;*/
+#navListQC li a:hover   { color: #000; }
+#navListQC li a#current{
+  color: #666;
+  border: 2px solid #999;
+  border-bottom: 2px solid #FFFFFF;
+}
+#gtlogo {
+  position: relative;
+	border: 2px solid red;
+}
+#gtlogo img {
+  position: relative;
+	width: 25px;
+	height: 25px;
+	padding: 0;
+	margin: 0 5px 0 0;
+	vertical-align: middle;
+	border: none;
+}
+/*
+#gtlogo {
+  position: relative;
+  float:left;
+  background-image:url('media/gtbuzz.jpg');
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  -webkit-background-origin:content-box; /* Safari *//*
+  background-origin:content-box;
+	background-position:right center;
+	width: 25px;
+	height: 25px;
+	margin-right: 5px;
+	border: none;
+}
+*/
+/*================= DEBUG =================/
+#gtlogo         		  {	background: yellow;    }
+#frameContainer			  {	background: magenta;   }/**/
+
+/* QUESTION + ANSWER /
+#gtlogo img 				  { border: 3px solid gold; }/**/
+
+/*=========================================*/

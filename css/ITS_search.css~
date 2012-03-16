@@ -1,0 +1,11 @@
+#ITS_search{position:relative;margin:5% 0 0}
+#ITS_search_empty{position:relative;text-align:center;font:100% arial,sans-serif;font-weight:700;margin:10% 0 40%;padding:1em}
+#ITS_search_box{position:relative;border:2px solid #999;width:50%;color:blue;text-align:center;font:150% arial,sans-serif;font-weight:700;margin:0;padding:5px}
+#ITS_search_query{position:relative;width:50%;color:#999;text-align:left;font:110% arial,sans-serif;margin:10px 0 0 10%;padding:5px}
+td.search_title{text-align:left;padding:0 .5em}
+td.search_solution{width:120px;text-align:center;vertical-align:middle}
+TABLE.ITS_search{border:2px solid #FFF;border-collapse:collapse;margin:auto 10%;padding:0}
+TABLE.ITS_search th{background:#fff;color:#666;padding:.5em}
+TABLE.ITS_search tr{border:2px solid #FFF;border-bottom:2px solid #999;padding:.25em}
+TABLE.ITS_search td{color:#000;padding:.25em}
+TABLE.ITS_search tr:hover,TABLE.ITS_search tr:hover div{background:#ff9}

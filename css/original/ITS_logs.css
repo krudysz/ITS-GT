@@ -1,0 +1,33 @@
+table.ITS_logs {
+  position: relative;
+	border: 1px solid #999;
+	text-align: left;
+	background-color: #fff;
+	border-collapse: collapse;
+	margin: 0.25em 1em;
+	color: #000;
+}
+table.ITS_logs th {
+	text-align: center;
+	border: 1px solid #999;
+	padding: 5px;
+	background-color: #ff9;
+	color: #666;
+}
+table.ITS_logs td {
+	text-align: left;
+	border: 1px solid #999;
+	padding: 5px;			 
+	background-color: #fff;
+}
+#framecontent { height:100px; }
+#frameseparator { top: 100px; height: 100px; /*Height of frame div*/ }
+#maincontent { top: 100px; /*Set top value to HeightOfFrameDiv*/ }
+/*================= DEBUG =================*/
+/*
+#pageContainer        {	background: pink;      }
+*/
+/*================= COLORS ================*/
+/*#scoreContainerContent  {	background: #fff; }
+#framecontent,div.innertube,div.logout,div.spacer   {	background: #ade; }*/
+/*=========================================*/

@@ -1,0 +1,26 @@
+"QUESTION" TAB
+-------------------------------------------------
+chapter  <-- tag
+Qchapter <-- SELECT FROM "QUESTION_TABLE" WHERE tag="chapter"
+Quser    <-- SELECT FROM "USER_TABLE      WHERE tag="chapter"
+
+Q        <-- SELECT Qchapter NOT IN Quser
+
+
+
+
+"PRACTICE" TAB
+-------------------------------------------------
+chapter  <-- tag
+Qchapter <-- SELECT FROM "QUESTION_TABLE" WHERE tag="chapter"
+Quser    <-- SELECT FROM "USER_TABLE      WHERE tag="chapter"
+
+Qrem     <-- SELECT FROM Qchapter NOT IN Quser
+
+IF empty(Qrem)
+
+
+
+-------------------------------------------------
+
+SELECT question_id,answered,qtype,answers,rating,comment FROM stats_1,webct WHERE webct.id=stats_1.question_id AND current_chapter IN (7,-7)

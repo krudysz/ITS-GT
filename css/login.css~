@@ -1,0 +1,52 @@
+.error {
+   background-color: #8B0000; /*darkred*/
+	 color: white;
+}
+p {padding: 2px; }
+a {color: black; }
+table.login {
+   border-collapse: collapse;
+	 border: 3px solid white;
+	 width:300px;
+}
+tr.login { background: #DCDCDC; }
+td.wbot { 
+   border-bottom: 3px solid white;
+	 padding: 0.3em;
+}
+input.login {
+  padding: 0.3em;
+	border: 1px solid silver;
+	width: 150px;
+}
+input:focus, input.sffocus{
+  border-color: #666;
+	background: #ffe;
+}	 
+/*---- submit button ----------------*/
+div.login {
+  width: 120px;
+  padding: 0.5em 1em;
+	margin: 1em 0;
+  font: 12pt Georgia, serif;
+	font-weight: bold;
+	text-align: center;
+	border: 1px solid #AAA;
+  background-color: #DCDCDC;
+}
+div.login:hover {
+	color: white;
+	background: #666;
+	cursor: pointer;
+}
+div.login:focus {
+	color: green;
+	background: #666;
+	cursor: pointer;
+}
+div.login:active {
+	color: black;
+	background: #FFD700; /*gold*/
+	cursor: pointer;
+}
+/*-----------------------------------*/

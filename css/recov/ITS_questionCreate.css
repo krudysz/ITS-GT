@@ -1,0 +1,34 @@
+#navContainer{ border: 1px solid #FFFFFF; padding:0; }
+#navList{
+  padding: 3px 0;
+  margin-left: 0;
+  border-bottom: 2px solid #999;
+  font: bold 14pt Georgia, sans-serif;
+}
+#navList li{
+  list-style: none;
+  margin: 0;
+  display: inline;
+}
+#navList li a{
+  position: relative;
+  padding: 3px 2em;
+  margin-left: 30px;
+  border: 2px solid #FFFFFF;
+  border-bottom: none;
+  background: #FFFFFF;
+  text-decoration: none;
+  outline: 0; /* get rid of the dotted line */
+  color: red;
+}
+#navList li a:link    { color: #999; } /*#448;*/
+#navList li a:visited { color: #999; } /*#667;*/
+
+#navList li a:hover{
+  color: #000;
+}
+#navList li a#current{
+  color: #666;
+  border: 2px solid #999;
+  border-bottom: 2px solid #FFFFFF;
+}

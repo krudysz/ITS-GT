@@ -1,0 +1,63 @@
+<html>
+
+<head>
+
+<script type="text/javascript">
+
+<!-- //
+
+//check if browser is capable, NS3+, IE4+
+
+if (document.images) {
+
+//preload images
+
+//base image
+
+img1N= new Image(108,66);
+
+img1N.src= 'star1.gif' ;
+
+//hover or rollover image
+
+img1H= new Image(108,66);
+
+img1H.src= 'star2.gif' ;
+
+function myOn(myImgName) {
+
+//we need to name the image in the BODY
+
+//so we can use its name here
+
+document[myImgName].src=eval(myImgName+ 'H' ).src;
+
+}
+
+function myOut(myImgName) {
+
+document[myImgName].src=eval(myImgName+ 'N' ).src;
+
+}
+
+} //end of if document.images
+
+//-->
+
+</script>
+
+</head>
+
+<body bgcolor="white">
+
+<h1>
+
+my heading
+
+</h1>
+
+<img src="star1.gif" name="img1" border="0" width="108" height="66" onmouseover="myOn('img1')" alt="Hover Button" onmouseout="myOut('img1')" />
+
+</body>
+
+</html>

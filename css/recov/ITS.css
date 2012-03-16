@@ -1,0 +1,1417 @@
+/*
+ITS.css - main CSS file for ITS
+
+Author(s): Greg Krudysz
+
+Last Update: Jul-29-2011
+W3C CSS Validator results for ITS.css (CSS level 2.1)
+======================================================*/
+h1, h2, h3, h4, h5, h6 {
+  font-size: 0; 
+  color: black; 
+  font-family: 'times new roman', arial, verdana, helvetica,sans-serif; 
+  font-style: normal; 
+  font-weight: normal;	
+  font-variant: normal;
+  background-color: #fff;	 
+  margin: 14px 0 4px 10px;
+}
+h1 {font-size: 1.60em;}
+h2 {font-size: 1.50em;}
+h3 {font-size: 1.40em;}
+h4 {font-size: 1.30em;}
+h5 {font-size: 1.26em;}
+h6 {font-size: 1.20em;} /* Defined default Header sizes */
+
+body { /*TH,CAPTION */
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	/*font: 10pt Verdana, Geneva, sans-serif;*/
+	/*font: 100% Georgia, serif; */
+	font: 100% arial, sans-serif; 
+	text-align: center;
+	color: black;
+	background: #fff;
+}
+input::-moz-focus-inner {border: 0;}
+div.ITS_ghost { 
+  position: relative;
+  background: #fff;
+	padding: 0;
+	height: auto;
+}
+div.ITS_MESSAGE {
+  color: green;
+	padding: 1em;
+	text-align: center;
+	font: bold 18px Georgia, sans-serif;
+	width: 100%;
+	min-height: 50px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.headering { color: blue; }
+a:link    { color: #B52C07; }
+a:visited { color: blue;    }
+a:focus   { color: #000;    }
+a:hover   { color: purple;  }
+a:active  { color: black;   }
+h1, h2, h3, h4, h5, h6 { margin: 0 0 .5em; }
+h2 {	color: #B52C07;
+	    font: 140% georgia, times, "times new roman", serif;
+}
+h2 a { text-decoration: none; }
+h3   { /*color: #7d8206;*/
+	     font: 110% georgia, times, "times new roman", serif;
+			 text-align: left;
+			 color: blue;
+}
+h3 a.header  {  color: red; border: none;}
+
+p  {  margin:0; padding: 10px;         }
+Q  {  font: 8pt Georgia, serif;        }
+TT { font-family: cursive,serif;       }
+TD {
+   text-align: center;
+	 border-width: 1px;
+   border-style: none;
+   padding: 0px;
+}
+input.check33 { display: none; }
+input.check33 label { border: 1px solid red; }
+
+/*IMG  { max-height:200px;  }*/
+/*==========================================================================
+								M A I N
+============================================================================*/
+#pageContainer {
+/*
+    position: absolute;
+	top: 0;
+	bottom: 1em;
+	margin: 0 2%; */
+	position: relative;
+	width: 95%;
+	margin-left:-100%;
+	margin: 0 1em;
+	padding: 1em;
+	margin:0 auto; /*Centers the Container*/
+
+	border-left: 2px solid #aaa;
+	border-right: 2px solid #aaa;
+	border-bottom: 2px solid #aaa;
+}
+/*==========================================================================
+               M E N U
+============================================================================*/
+#menuContainer {
+  position: relative;
+	/*margin:10px auto 5px auto;*/
+	text-align: right;
+	padding: 0em;
+	overflow: auto;
+	/*display: inline;*/
+}
+#header h1 {
+	position: absolute;
+	left: -500em;
+}
+div.icon {
+	float:left;
+	text-align:center;
+	color: black;
+	border:2px solid silver;
+	margin: 0.5em;
+	padding: 0.5em;
+	display:none;
+}
+div.icon:hover,div.icon:focus {
+	color: white;
+	background: #666;
+	cursor: pointer;
+}
+div.icon:active {
+	color: black;
+	background: #ffd700;
+	cursor: pointer;
+}
+/*==========================================================================
+               M E S S A G E
+============================================================================*/
+/*
+#messageContainer {
+ float: left;
+ text-align: left;
+ padding: 5px;
+ border: 1px solid #666;
+ background: #eee;
+ width: 70%;
+}
+#messageContainerContent {
+ float: left;
+ text-align: left;
+ padding: 5px;
+ border: 1px solid #666;
+ background: #eee;
+ width: 70%;
+}*/
+/**---**/
+#messageContainer {
+  clear: both;
+  position: relative;
+	width: 100%; /* important */
+	/*margin:0;*/
+	text-align: left;
+	background-color: #dcdcdc;
+	border-bottom: 1px solid #dcdcdc;
+} 
+#messageContainer span {
+  position: relative;
+	color: #666;
+	padding: 0 0.5em;
+	margin: 0 1em;
+	background-color: #dcdcdc;
+}
+#messageContainer span:hover {
+	color: #fff;
+	background-color: #666;
+	cursor: pointer;
+}
+#messageContainerContent{
+  position: relative;
+	width: 60%; /* important */
+	padding:10px;
+	text-align: left;
+	margin: 0.5em 0;
+	background-color: #ccc;
+	display: none;
+	border: 1px solid #666;
+}
+#frameContainer {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+/*==========================================================================
+               H E A D E R
+============================================================================*/
+#headerContainer {
+  position: relative;
+	width: 100%;
+	padding:0;																										
+	margin:0;
+	border-top: 5px solid #777777;
+	text-align: center;
+	overflow: auto;
+	/*display:in-line;*/
+}
+div.ITS_screen_L {
+  float: left;
+  width: 19%;
+	height: 55px;
+  font: 12pt Georgia, serif;
+	font-weight: bold;
+	border: 1px solid #AAA;
+  background-color: #dcdcdc;
+}
+div.ITS_screen_L p {
+  position: relative;
+	height: 100%;
+	vertical-align: middle;
+}
+div.ITS_screen_L:hover,div.ITS_screen_L:focus {
+	color: white;
+	background: #666;
+	cursor: pointer;
+}
+div.ITS_screen_L:active {
+	color: black;
+	background: #ffd700;
+	cursor: pointer;
+}
+/* active */
+#ITS_screen_A {
+  float: left;
+	width: 80%;
+  height: 55px;
+	font: 10pt Georgia, serif;
+	font-weight: bold;
+	border: 1px solid #AAA;
+	border-bottom: 0;
+	background-color: #fff;
+}
+#ITS_screen_A ul
+{
+  list-style-type: none;
+  text-align: left;
+  padding: 0;
+	margin: 1em 0;
+}
+#ITS_screen_A li
+{ 
+  display: inline;
+  text-align: center;
+  margin: 2px; /* between spacing */
+	padding: 5px;
+	border: 1px solid #fff;
+}
+#ITS_screen_A li#title {
+	border: 0;
+	background-color: #fff;
+	color: #556B2F;
+	font: 13pt Georgia, serif;
+	font-weight: bold;
+	cursor: default;
+}
+#ITS_screen_A li#break {
+	background-color: #fff;
+	color: gray;
+	border-top:2px solid silver;
+	border-bottom:2px solid silver;
+	background-color: silver;
+	font: 15pt Georgia, serif;
+	cursor: default;
+	padding: 0;
+}
+#ITS_screen_A li.active {
+	border: 1px solid #666;
+	cursor: default;
+}
+#ITS_screen_A a:hover   { color: #fff; }
+#ITS_screen_A li.active:hover {
+	color: #000;
+	background-color: #fff;
+	cursor: default;
+}
+#ITS_screen_A li:hover {
+  color: #fff;
+  border: 1px solid #666;
+	background-color: #666;
+	cursor: pointer;
+}
+/* *--* */
+#ITS_screen_index {
+  position: relative;
+	font: 12pt Georgia, serif;
+	font-weight: bold;
+	border: 1px solid #fff;
+	padding: 0.5em 0;
+}
+#ITS_alph_index {
+  position: relative;
+	height: 100px;
+	font: 9pt Georgia, serif;
+	font-weight: bold;
+	border: 1px solid #fff;
+	padding: 5px;
+	margin: 0;
+}
+UL.alphIndex {
+  position: relative;
+	height: 100px;
+  border: 2px solid silver;
+}
+ul#navlistIdx {
+  position: relative;
+	height: 100px;
+  list-style-type: none;
+  text-align: center;
+  padding: 5px;
+	display: inline;
+}
+ul#navlistIdx li {
+  position: relative;
+  list-style-type: none;
+  text-align: center;
+  padding: 0.25em 0.5em;
+	margin: 2px; /* between spacing */
+	display: inline;
+	border: 1px solid #fff;
+}
+ul#navlistIdx li:hover {
+  color: #fff;
+	background-color: #666;
+	cursor: pointer;
+}
+ul#navlistIdx li.active {
+	border: 1px solid #666;
+}
+ul#navlistIdx li.active:hover {
+	border: 1px solid #666;
+}
+/*==========================================================================
+               C O N T E N T
+============================================================================*/
+#contentContainer{
+  position: relative;
+	width: 100%; /* important */
+	height: auto;
+	min-height: 500px;
+	/*border: 2px solid #dcdcdc;*/
+}
+.imagefloat {
+	float: right;
+	padding: 2px;
+	border: 1px solid #9FA41D;
+	margin: 0 0 10px 10px;
+}
+/* --- Question ------------------------------------------------ */
+TEXTAREA.ITS_TA {
+  height: 75px;
+	width: 60%;
+  border: 3px solid silver;
+  background-color: #F1F;
+	padding: 10px;
+} 
+TABLE.ITS_QUESTION {
+  position: relative;
+	/*width: 100%;*/
+	table-layout: fixed;
+  vertical-align: middle;
+} 
+TD.ITS_QUESTION {
+  position: relative;
+	/*width: 100%;*/
+	height: auto;
+  text-align: left; 
+	vertical-align: bottom;
+	/*border: 1px dotted red;*/
+	font-size: 12pt;
+} 
+/*
+.ITS_QUESTION div {
+  position: relative;
+	/*width: 100%;  important *//*
+	height: auto;
+	border: 1px solid #FFF;
+	margin: 0;
+}*/
+#ITS_QUESTION_TARGET {
+	font-size:120%;
+}
+div.ITS_question_text {
+  clear: both;
+	position: relative;
+	/*width: 100%;*/
+	/*height: auto !important;*/
+	padding: 0.5em 0;
+	margin: 0.5em;
+	text-align: left;
+	border-bottom: 2px dotted #CCCCCC;
+	z-index: 2;
+	overflow: auto;
+} 
+div.ITS_question_text2 {
+	position: relative;
+	width:49%;
+	text-align: center;
+	padding: 0;
+}/*
+div.ITS_question_text:hover{
+	color: silver;
+}*/
+img.ITS_question_img  {
+  float: right;
+	height: auto !important;
+  padding: 0;
+	margin: 0 1em 0 0;
+  max-width: 49%;
+  max-height: 250px;
+  text-align:center;
+  vertical-align: middle;
+  /*border: 1px solid #399;*/	
+}
+/*
+div.ITS_question_img {
+  position: relative;
+  width:49%;
+	padding: 0;
+	max-height: 200px;
+  text-align:center;
+  background: limegreen;
+}	
+div.ITS_question_img img {
+	position: relative;
+	height: auto;
+	margin: 0 auto;
+  border: 1px solid silver;
+	max-height: 200px; /* ATTENTION *-/
+}*/
+PRE.ITS_Equation {
+   position: relative;
+	 height: auto;
+   text-align: center;
+	 vertical-align: middle;
+   padding: 0.5em;
+   border-top: 1px solid #aaa;  /*background:#fafafa;*/
+	 border-bottom: 1px solid #aaa;
+	 font-family: cursive,serif;
+	 font-size: 14pt;
+}
+DIV.ITS_Equation {
+   position: relative;
+   width: 100%;
+   text-align: center;
+	 vertical-align: middle;
+   padding: 0.25em 0.5em;
+	 margin: 0.5em 0;
+	 border: 1px solid #fff;
+   border-top: 1px solid #aaa;  /*background:#fafafa;*/
+	 border-bottom: 1px solid #aaa;
+	 overflow: auto;
+}
+DIV.ITS_Equation IMG {
+   position: relative;
+	 vertical-align: middle;
+	 margin: auto;
+	 padding: 0.5em;
+}
+PRE.MATLAB {
+   border: 3px solid #070; /*#999; */
+	 background: #dfd;
+	 text-align: left;
+	 padding: 0.25em 0.5em;
+	 color: #000;
+}
+span.ML_comment { color: green; }
+span.ML_error   { color: red;   }
+/*------- ANSWER ------------------------------------------------ */
+DIV.ITS_ANSWER {
+   clear: both;
+	 position: relative;
+	 float: right;
+	 width: 100%; 
+   /*border-top: 2px solid silver;
+	 border-bottom: 2px solid silver;*/
+	 padding: 1em 0;
+	 background: #eee;
+	 text-align: center;
+	 display: table-cell;
+   vertical-align: middle;	 
+}
+DIV.ITS_ANSWER IMG {
+  /*position: fixed;*/
+  max-height: 250px;
+	max-width: 350px;
+}
+DIV.ITS_ANSWER span.CHOICE {
+	 float: left;
+	 position: relative;
+	 width: auto;
+   border: 2px solid #aaa;
+	 margin: 0;
+	 padding: 0.25em 1em;
+	 display: inline;
+	 background: #FFFFFF;
+	 white-space: nowrap;
+}
+DIV.ITS_ANSWER span.CHOICE pre.MATLAB {
+	 margin: -0.25em -1em;
+}
+pre.MATLAB TABLE.ITS_ANSWER {
+	 border: 2px solid red;
+}
+DIV.ITS_ANSWER span.CHOICE_ACTIVE {
+	 float: left;
+	 position: relative;
+   border: 2px solid #aaa;
+	 margin: 0.5em;
+	 padding: 0.25em 1em;
+	 display:inline;
+	 text-align: left;
+	 background: #fff;
+	 white-space: nowrap;
+}
+DIV.ITS_ANSWER span.CHOICE_ACTIVE pre.MATLAB       {margin: -0.25em -1em;}
+DIV.ITS_ANSWER span.CHOICE_ACTIVE pre.MATLAB:hover {margin: -0.25em -1em; background: #ffd700;}
+DIV.ITS_ANSWER span.CHOICE_ACTIVE img 						 {margin:0; padding: 0;}
+DIV.ITS_ANSWER span.CHOICE_ACTIVE:hover {
+   border-color: #00f;
+	 color: #00f;
+	 cursor: pointer;
+	 background: #ffd700;
+}
+DIV.ITS_ANSWER span.CHOICE_SELECTED {
+   float: left;
+	 position: relative;
+	 width: auto;
+	 margin: 0.5em;
+	 padding: 0.25em 1em;
+	 display:inline;
+	 white-space: nowrap;
+	 text-align: left;
+	 border: 2px solid #00f;
+	 color: #00f;
+	 background: #ffd700;
+}
+DIV.ITS_ANSWER span.CHOICE_SELECTED pre.MATLAB {
+	 margin: -0.25em -1em;
+	 background: #ffd700;
+}
+TABLE.ITS1 {
+   position: relative;
+	 width: 100%;
+	 vertical-align: bottom;
+	 border: 1px solid #f6f; /* #fffacd; */
+	 background-color: #fff; /* pink border for answer table #D0D0D0;*/
+	 /*overflow: auto;*/
+}
+TD.ITS {
+   position: relative;
+   text-align: left;
+	 border: 2px solid #FFFFFF;
+	 background: #FFFFFF;
+	 vertical-align: middle;
+	 margin: 0;
+	 padding: 0;
+	 /*max-height:50px;*/
+}
+UL.ITS_ANSWER {
+   clear: both;
+	 text-align: left;
+	 list-style-type: none;
+   padding: 0;
+	 margin: 1em;
+	 border: 1px solid black;
+}
+UL.ITS_ANSWER LI {
+	 border: 1px solid #666;
+	 padding: 0.25em 0;
+	 margin: 0 1em;
+}
+UL.ITS_ANSWER LI:hover {
+	 background-color: #dcdcdc;
+	 cursor: pointer;
+}
+UL.ITS_ANSWER LI:focus {
+	 background-color: #fffacd;
+}
+UL.ITS_ANSWER_IMG {
+   position: relative;
+	 /*list-style-type: none;*/
+   padding: 0;
+}
+UL.ITS_ANSWER_IMG LI {
+   position: relative;
+	 /*display: inline;*/
+	 border: 1px solid #666;
+	 padding: 10px;
+	 margin: 20px;
+}
+UL.ITS_ANSWER_IMG LI:hover {
+	 background-color: yellow;
+	 cursor: pointer;
+}
+UL.ITS_ANSWER_IMG LI IMG {
+	 position: relative;
+	 border: 1px solid #626;
+}
+UL.ITS_ANSWER_M {
+   clear: both;
+	 text-align: left;
+	 list-style-type: none;
+	 margin-right: 10px;
+   padding: 0;
+	 margin: 1em;
+	 background: #fff;
+}
+UL.ITS_ANSWER_M LI {
+   list-style: none;
+	 padding: 0.25em;
+	 margin: 0 1em;
+}
+UL.ITS_ANSWER_M LI:hover {
+   /*border: 1px solid gainsboro;*/
+	 background-color: #ffff77;
+	 color: #0000ff;
+	 cursor: pointer;
+}
+IMG.ITS_IMG_ANS {
+  position: relative;
+  max-height: 200px;
+	max-width:  300px;
+}
+TABLE.ITS {
+   position: relative;
+	 width: 100%;
+   vertical-align: top;
+	 border: 1px solid #fff;
+	 background-color: #fff;
+}
+TD.ITS {
+   text-align: left; 
+	 border: 1px solid #fff;
+}
+TABLE.ITS_ANSWER_STRIPE {
+   position: relative;
+	 width: 100%;
+   vertical-align: top;
+	 /*background-color: #fffacd; /*#E0E0E0; /* pink border for answer table #D0D0D0;*/
+	 border: none; /*1px solid #fff; /*#E0E0E0;*/
+	 /*overflow: scroll;*/
+}
+TD.ITS_ANSWER_STRIPE {
+   position: relative;
+   text-align: left;
+	 /*
+	 border: 1px solid #fffacd; /*#E0E0E0;*/
+	 /*background-color: #E0E0E0; 	/*#C0C0C0;*/
+	 /*vertical-align: middle;	 
+	 /*max-height:50px;*/
+}
+TABLE.ITS_ANSWER_BOXED {
+  position: relative;
+  float: left;
+	border-collapse: collapse;
+	border: 3px solid #FFFFFF;
+	background-color: #FFFFFF;
+	margin: 0.25em;
+  padding: 0.25em;
+}
+TD.ITS_ANSWER_BOXED {
+  border: none;
+	width: 1px;
+	padding: 0;
+	margin: 0;
+}
+TD.ITS_ANSWER_BOXED SPAN.CHOICE {
+  text-align: right;
+	width: auto;
+  border: 2px solid #aaa;
+	padding: 0.25em 1em;
+	margin: 0;
+	background: #FFFFFF;
+	white-space: nowrap;
+}
+DIV.ITS_ANSWER_BOXED {
+  float: left;
+}
+TD.ITS_ANSWER_M {
+  text-align: center;
+	width: auto;
+  border: none; /*2px dotted #CCCCCC;*/
+	padding: 0.25em;
+	margin: 0;
+	background: #FFFFFF;
+	white-space: nowrap;
+}
+SPAN.TextAlphabet {
+  position: relative;
+  padding: 0 3px;
+	margin: 5px 0 5px 5px;
+  color: #000;
+	background: #ffd700;
+	font-weight: bold;
+	border: 2px solid #aaa;
+	display: inline;
+}
+/*
+TD.ITS_ANSWER_BOXED_ALPH SPAN.TextAlphabet {
+  border: #ffd700; /* gold *//*
+	background: red;
+}*/
+TABLE.ansCheck {
+  position: relative;
+  width: 100%;
+  border: 1px solid #fff;
+}
+TD.ansCheck {
+  position: relative;
+  border: 1px solid #fff;
+  background: #fff;
+  text-align: left;
+}
+/*------- SCORE ----------------------*/
+TABLE.ITS_SCORE {
+   position: relative;
+   vertical-align: middle;
+	 border-collapse: collapse;
+	 text-align: center;
+	 font-family: cursive,serif;
+}
+TD.ITS_SCORE {
+   font-size: 10pt;
+	 padding: 0.5em;
+	 border: 1px solid silver;
+	 background: #fffacd;
+}
+.ITS_TEXT { 
+   color: blue; 
+	 width:20%;
+	 font-family: "Courier New";
+	 text-align:right; 
+	 font-weight: bold;
+}
+TABLE.ITS_DIST {
+   font-family: manotone;
+   vertical-align: bottom;
+	 border: 2px solid silver;
+	 border-collapse: collapse;
+	 width: 1%;
+}
+TD.ITS_DIST {
+   border: 2px solid silver;
+}
+DIV.ITS_DIST {
+	 float: left;
+	 border: none;
+	 margin-left: 1em;
+}
+DIV.ITS_CAPTION {
+	 font-size: 9pt;
+	 font-family: Georgia cursive,serif;
+	 font-weight: bold;
+   background-color: #fffacd;
+}	
+span.ITS_correct {
+  position: relative;
+	border: 2px solid #006400;
+  color: #006400;
+	background: #adff2f;
+	padding: 0.1em 0.25em;
+}
+span.ITS_incorrect {
+  position: relative;
+  border: 2px solid #800000;
+	background-color: #FFC0CB;
+  color: #800000; /*marron*/
+	padding: 0.1em 0.25em;
+}
+span.ITS_partial {
+  position: relative;
+  border: 2px solid #A52A2A; /*brown*/
+	background-color: yellow;
+  color: #A52A2A;
+	padding: 0.1em 0.25em;
+}
+span.ITS_null {
+  position: relative;
+  border: 2px solid #ccc;
+	background-color: #ff9;
+  color: #000;
+	font-weight: bold;
+	padding: 0.1em 0.25em;
+}
+/*---------------------------*/
+TABLE.ITS_index {
+  position: relative;
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+TD.ITS_index {
+  position: relative;
+  border: 2px solid #fff;
+  background: #fff; /*white;/*beige; /*Lightsteelblue; /*lightcyan; /*lightyellow;*/
+	text-align: left;
+	font-family: Veranda; /*"Courier New",sans-serif;*/
+	font-size: 12pt;
+	padding: 0.5em;
+	table-layout:fixed;
+	border-top:0px hidden silver;
+	border-bottom:1px dashed silver;
+	border-right:1px double silver;
+	border-left:1px double silver;
+}
+TD.ITS_index:hover{
+	border-bottom:1px solid #666;
+	color: red;/*#00f;*/
+  background: #ffa;/*#556B2F;/*beige; /*Lightsteelblue; /*lightcyan; /*lightyellow;*/
+	/*cursor: pointer;*/
+}
+span.hidden {
+  position: relative;
+	float:right;
+	font-size: 10pt;
+  text-align: center;
+	margin: 0 0 0 0.5em;
+	padding: 0.1em 0.25em ;
+	background: #fff;
+	color: #ff0;
+	border: 1px solid #666;
+}
+span.hidden:hover {
+	background: #666;
+	color: #fff;
+	cursor: pointer;
+}
+/*------------------*/
+span.nhidden {
+  position: relative;
+  float:left;
+  text-align: center;
+	margin: 0 0 0 0.5em;
+	background: #fff;
+}/*
+div.ITS_chapter .nhidden {
+  position: relative;
+  float: left;
+  text-align: center;
+	margin: 0 0 0 0.5em;
+	background: #ffa;
+}
+div.ITS_chapter:hover span.nhidden:hover{
+	color: 	#800000;
+  background: #ffa;
+	cursor: pointer;
+}*/
+TD.ITS_index:hover .nhidden {
+  position: relative;
+  float: left;
+  text-align: center;
+	margin: 0 0 0 0.5em;
+	background: #ffa;
+}
+TD.ITS_index:hover span.nhidden:hover{
+	color: 	#800000;
+  background: #ffa;/*#556B2F;/*beige; /*Lightsteelblue; /*lightcyan; /*lightyellow;*/
+	cursor: pointer;
+}
+/* --- distribution --*/
+/*
+img.ITS_list { 
+  float: left;
+	border: 1px solid red;
+}
+/*--------------------*/
+/*==========================================================================*/
+/* --- Question --- */
+ul.ITS_list ul
+{ position: relative;
+  width: 300px;
+  list-style-type: none;
+  /*text-align: center;*/
+  padding: 1em;
+	margin: 0;
+	display: inline;
+	font: 10pt Georgia, serif;
+	border: 1px solid blue;
+}
+ul.ITS_list li {
+  list-style-type: none;
+  /*text-align: center;*/
+  padding: 0 0.25em;
+	margin: 2px; /* between spacing */
+	display: inline;
+	border: 1px solid blue;
+}
+#ITS_screen_A ul#navlistIdx li#active {
+  list-style-type: none;
+  /*text-align: center;*/
+  padding: 0;
+	margin: 0;
+	/*display: inline;*/
+}
+/*------------------------------ */
+TABLE.ITS_version {
+ border: 1px solid #666;
+ border-collapse:collapse;
+}
+TD.ITS_version {
+ border: 1px solid #666;
+ padding: 5px 10px;
+}
+/*------------------------------ */
+span.seg {
+ border: 1px solid silver;
+}
+TABLE.ITS_header {
+ border: 0px solid #333;
+ border-collapse:collapse;
+}
+TD.ITS_header {
+ border-right: 1px solid #666;
+ padding: 0 5px;
+}
+/* ------------------------------
+   Navigation styles
+------------------------------ */
+#navBoxContainer {
+  position: relative;
+	width: 100%;
+	margin: 0.5em auto;
+	border: none;
+}
+div.navContent {
+  clear: both;
+	float: left;
+  position: relative;
+	width: 100%;
+	text-align:center;
+	border: 1px solid #fff;
+	background: #fff;
+}
+div.navContent table  {
+  margin: 0 auto; 
+  text-align: left;
+}
+div.navContainer {
+  clear: both;
+  position: relative;
+	/*bottom: 0;*/
+  /*padding: 0; 
+	margin: 1em 0;*/
+	background-color: #fff;
+	width: 100%; /* important */
+	overflow: auto;
+	border: 1px solid blue;
+	background-color: #faf;
+}
+div.navContainer div.a {
+  position: relative;
+  background-color: #016;
+  color: blue;
+  width: 10%;
+  height:50px;
+  font-family: arial, helvetica, sans-serif;
+}
+div.navContainer div#content { 
+  float: left;
+  width: 79.7%;
+  height:50px;
+  background-color: #149;
+}
+div.navContainer div#content:hover {
+  background-color: #369;
+  color: #fff;
+}
+TABLE.ITS_screen_nav {
+  clear: both;
+  position: relative;
+	border: 1px solid #fff;
+	border-collapse:collapse;
+	width: 100%;
+	table-layout: fixed;
+	background-color: #fff;
+}
+TD.ITS_screen_nav {
+  border: 1px solid #fff;
+	font: 12pt Georgia, serif;
+	padding: 0.5em 0;
+	text-align: center;
+}
+div.ITS_navigation {
+  color: #666;
+  padding: 0.5em 0;
+  border: 2px solid #666;
+  font: 14pt Georgia, serif;
+  font-weight: bold;
+}
+/* PROBLEMS in IE: answers disappear (??) */
+div.ITS_navigation:hover {
+  background-color: #666;
+  color: #fff;
+  cursor:pointer;
+}
+div.ITS_chapter {
+  text-align: left;
+  padding: 0.25em 0.5em;
+	border-bottom:2px solid silver;
+	font: 14pt monotone;
+  overflow: auto;
+}
+div.ITS_chapter:hover {
+	background: #ffd700;
+	border-bottom:2px solid #666;
+}
+div.ITS_chapter:hover .nhidden {
+	position: relative;
+  float: left;
+  text-align: center;
+	margin: 0 0 0 0.5em;
+  background: #ffd700;
+}
+div.ITS_chapter:hover span.nhidden:hover{
+	color: 	red;
+	cursor: pointer;
+}
+/*------------------*/
+span.ITS_plot {
+  /*float: right;*/
+  /*text-align: right;*/
+	position: absolute;
+	right: 0;
+	top: 0;
+  font: 9pt monotone;
+	color: #666;
+	margin: 0.5em 0;
+	border: 1px solid #fff;
+}
+span.ITS_plot:hover {
+	border: 1px solid silver;
+	cursor: pointer;
+}
+span.menu {
+  /*position: absolute;*/
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+	width: 100px;
+	height: 40px;
+}
+/*---*/
+span.ITS_available {
+  float: right;
+	width: 200px;
+	padding: 0.5em;
+}
+div.ITS_ADMIN {
+  clear: both;
+  position: relative;
+	border: 2px solid #37d;
+	color: #37d;
+	overflow:auto;
+}
+span.ITS_figs {
+  position: relative;
+	float:right;
+	right: 0;
+	font-size: 10pt;
+  text-align: center;
+	margin: 0 0.5em;
+	padding: 0.1em 0.25em ;
+	background: #fff;
+	color: #ff0;
+	border: 1px solid #666;
+}
+span.ITS_figs:hover {
+	background: #666;
+	color: #fff;
+	cursor: pointer;
+}
+div.ITS_figshow {
+  position: relative;
+	margin: 0.25em 0;
+	overflow: auto;
+}
+div.ITS_figshow img {
+	border: 2px solid #ccc;
+}
+div.ITS_figshow img:hover {
+  border: 2px solid #666;
+	cursor: pointer;
+}
+div.ITS_popImage {
+  overflow: auto;
+	border: 1px solid green;
+}
+table.ITS_LIST {
+  border: 2px solid silver;
+	background: #fffacd;
+	border-collapse: collapse;
+}
+td.ITS_LIST {
+  background: #fff;
+  border-bottom: 2px solid silver;
+  text-align: left;
+	padding: 0.25em;
+}
+.thumbnail {
+  float: left;
+  /*width: 200px;*/
+  border: 1px solid #666;
+  margin: 15px;
+}
+/********* BOOK ***********/
+div.ITS_BOOK {
+  text-align: left;
+}
+h2.ITS_BOOK {
+  text-align: center;
+	color: red;
+	padding: 2em;
+}
+h3.ITS_BOOK {
+	color: red;
+	padding: 1em;
+}
+span.ITS_Equation {
+  border: 1px solid silver;
+}
+span.ITS_EQ {
+  font-family: cursive,serif;
+  border: 1px solid silver;
+}
+span.ITS_keyword {
+  border: 1px solid silver;
+  color: red;
+}
+/*----------------------*/
+#answerContainer {
+  text-align: center;
+}
+input.ITS_submit {
+  color: #666;
+	font-weight: bold;
+	font-size: 13pt;
+	padding: 0.5em 1em;
+	margin: 1em;
+	background:#fff;
+  border: 1px solid #666;
+}
+input.ITS_submit:hover {
+  color: #fff;
+	background: #666;
+	cursor: pointer; 
+}
+input.ITS_skip {
+  color: #666;
+	font-weight: bold;
+	font-size: 11pt;
+	padding: 0.25em 0.5em;
+	background:#fff;
+	font-family: arial;
+	margin-top: 1em;
+	border: 1px solid #fff;
+  /*border-top: 1px solid #666;
+	border-bottom: 1px solid #666;*/
+}
+input.ITS_skip:hover {
+  color: blue;
+	border: 1px solid blue;
+	cursor: pointer; 
+}
+div.userContainer {
+  position: relative;
+	width: 100%;
+  border-top: 2px solid #666;
+	border-bottom: 2px solid #666;
+  margin: 0;
+	margin-top: 20px;
+  padding: 0.5em 0;
+	text-align: left;
+  font:11pt Monotype, serif;
+  background: #eee;
+  vertical-align: middle;	
+}
+/*---- Accordian --------------------*/
+#accor div h3 {
+  border-left: 1px solid #dcdcdc;
+	border-right: 1px solid #dcdcdc;
+  border-top: 2px solid #666;
+	border-bottom: 2px solid #ffffff;
+}
+#accor div a { color: #666; }
+#accor div a span { color: #999999; }
+/*---- Logout button ----------------*/
+div.logout {
+  position: relative;
+  float: right;
+  padding: 0.2em;
+	margin: 0.25em;
+  font: 12pt Georgia, serif;
+	border: 1px solid #fff;
+  background-color: #dcdcdc;
+}
+div.logout a {
+  color: #666;
+	text-decoration: none;
+}
+div.logout:hover,#logout:focus {
+	border: 1px solid #AAA;
+	cursor: pointer;
+}
+div.logout:active {
+	color: black;
+	background-color: #ffd700;
+	cursor: pointer;
+}
+#errorContainer {
+  position: relative;
+  width: 100%;
+  color: red;
+	font: italic bold 14px Georgia, sans-serif;
+  display: none;
+	overflow: hidden;
+}
+#errorContainerContent {
+  position: relative;
+  background-color: #ffd700;
+	padding: 0.5em;
+	border-left: 1px solid #AAA;
+	border-right: 1px solid #AAA;
+	border-bottom: 1px solid #AAA;
+}
+/*-----------------------------------*/
+#role {
+  display: inline;
+}
+SELECT.ITS_select {
+  border: 2px solid #aaa;
+	padding: 0 0 0 0.25em;
+	color: #666;
+}
+span.instr {
+ position: relative;
+ /*float: right;*/
+ padding: 0.25em;
+ margin: 10% 0 10% -90%;
+ color: #666;
+ border: 1px solid #fff;
+}
+span.instr:hover {
+ border: 1px solid #aaa;
+ cursor: pointer;
+}
+span.instr:active {
+ border: 1px solid red;
+ cursor: pointer;
+}
+div.ansCheck {
+ margin-right: 5px;
+ padding: 0.25em 0;
+ background: #fff;
+}
+input.ansCheck {
+ display: none;
+}
+label.ansCheck {
+ font-size: 10pt;
+ border: 2px solid #dcdcdc;
+ padding: 0.1em 0.3em;
+ margin-left: 3px;
+ color: #666;
+}
+label.ansCheck:hover {
+ border: 2px solid blue;
+ color: blue;
+ cursor: pointer;
+}
+label.ansCheck_sel {
+ border: 2px solid #aaa;
+ color: #000;
+ background: #ffd700;
+}
+label.ansCheck_inactive {
+ font-size: 10pt;
+ border: 2px solid #dcdcdc;
+ padding: 0.1em 0.3em;
+ margin-left: 3px;
+ color: #666;
+}
+/*==========================================================================
+               F O O T E R
+============================================================================*/
+#footerContainer {
+	clear: both;
+	color: #999;
+	font-size: 80%;
+	padding-top: 5em;
+	text-align: center;
+	border-top: 2px solid #999999;
+	/*overflow:auto;*/
+}
+div.footer_list {
+  position: relative;
+  background: url('media/bgFooter.png') no-repeat;
+  background-size:100% 100%;
+  -webkit-background-origin:content-box; /* Safari */
+  background-origin:content-box;
+	clear: both;
+	color: #999;
+	width: 100%;
+	height: 100%;
+}
+/*#footerContainer ul li { display: inline; }*/
+.navlist li { display: inline; }
+
+div.ITS_footer {
+  position: relative;  
+  height: 100px; 
+  border: 1px solid #FFFFFF;
+	background: #FFFFFF;
+  text-align: center;
+}
+ul.ITS_footer {
+  position: relative; 
+	/*margin-bottom: 0;*/
+	color: #999;
+	width: 80%;
+  /*list-style-type: none;*/
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	padding: 10px;
+	display: block;
+}
+ul.ITS_footer  li {
+	font-size: 8pt;
+	display: block;
+	text-align: center;
+}
+div.footer_list {
+ clear: both;
+ position:relative;
+ margin: 10px;
+ overflow: auto;
+}
+ul.footer {
+position: relative;
+list-style-type: square;
+}
+ul.footer li {
+text-align: left;
+padding: 0.1em;
+}
+div.footer_col {
+ float: left;
+ width: 200px;
+ padding: 0.5em;
+}
+/*---- Logout button ----------------*/
+#resBoxContainer {
+ font-size: 10pt;
+ border: 2px solid #dcdc11;
+ padding: 0.1em 0.3em;
+ margin-left: 3px;
+ color: #666;
+ background: #ffd700;
+}
+
+
+
+
+/*==========================================================================*/
+/*---- Logout button ----------------*/
+/*================= COLORS ================*/
+body 								    {	background: #dcdcdc; } 
+#pageContainer          {	background: #fff;      }
+#menuContainer          {	background: #fff;      }
+#messageContainer       {	background: #fff;      }
+#messageContainer span  {	background: #fff;      }
+#messageContainerContent{ background: #ee7;      }
+#contentContainer       {	background: #fff;      }
+div.ITS_question_text   {	background: #fff;      }
+div.ITS_question_text2  {	background: red;       }
+div.ITS_ANSWER          {	background: #fff;      }
+div.navContainer        { background: #fff;  
+                          border: 1px solid #fff;}
+div.navContent 				  { border: 1px solid #fff;}
+/*#footerContainer        {	background: #fff;     }*/
+
+div.logout              {	background: #fff;      }
+
+/*=========================================*/
+
+/*================= DEBUG =================*/
+/*
+#pageContainer        {	background: pink;      }
+#menuContainer        {	background: lime;      }
+#messageContainer     {	background: purple;    }
+#scoreContainer       {	background: gray;      }
+
+div.ITS_question_text {	background: orange;    }
+#contentContainer     {	background: blue;      }
+div.ITS_ANSWER        {	background: limegreen;     }
+div.navContainer      { background: khaki;  
+                        border: 1px solid pink;}
+div.navContent 				{ border: 1px solid red; }
+
+TD.ITS_QUESTION 		  { background: #eef;      }
+#logout               {	background: red;       }
+#frameContainer			  {	background: magenta;   }
+*/
+/*=========================================*/

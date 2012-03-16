@@ -1,0 +1,688 @@
+/*
+ITS.css - main CSS file for ITS
+
+Author(s): Greg Krudysz
+
+Last Update: Mar-11-2010
+=============================================*/
+body /*TH,CAPTION */ {
+	margin: 0;
+	padding: 0;
+	font: 12pt Verdana, Geneva, sans-serif;
+	/*font-family: arial,sans-serif; /*font: 100% Georgia, serif; /*font-family: arial; */
+	text-align: center;
+	color: black;
+	background: gainsboro;
+	/*background: #000 url(ML.png) repeat 0 0;*/
+}
+a:link    { color: #B52C07; }
+a:visited { color: blue; }
+a:focus   { color: #000; }
+a:hover   { color: purple; }
+a:active  { color: black; }
+h1, h2, h3, h4, h5, h6 { margin: 0 0 .5em; }
+h2 {	
+	color: #B52C07;
+	font: 140% georgia, times, "times new roman", serif;
+}
+h2 a { text-decoration: none; }
+h3 {
+	color: #7d8206;
+	font: 110% georgia, times, "times new roman", serif;
+}
+p  {  margin:0; padding: 10px;         }
+Q  {  font: 8pt Georgia, serif;        }
+TT { font-family: cursive,serif;       }
+TD {
+   text-align: center;
+	 border-width: 1px;
+   border-style: none;
+   padding: 0px;
+}
+IMG { max-height:200px; }
+
+/*==========================================================================
+								M A I N
+============================================================================*/
+#pageContainer {
+  postion:absolute;
+	width: 95%;
+	margin-left:-100%;
+	margin:0 auto; /*Centers the Container*/
+	/*background: gainsboro;*/
+}
+/*==========================================================================
+               M E N U
+============================================================================*/
+#menuContainer {
+  postion: relative;
+	/*margin:10px auto 5px auto;*/
+	text-align:right;
+	padding: 10px;
+	overflow:auto;
+	background: gainsboro;
+}
+#header h1 {
+	position: absolute;
+	left: -500em;
+}
+div.icon {
+  /*postion: absolute;*/
+  width:20px;
+	float:left;
+	text-align:center;
+	color: black;
+	border:2px solid silver;
+	display:none;
+}
+div.icon:hover,div.icon:focus {
+	color: white;
+	background: #666;
+	cursor: pointer;
+}
+div.icon:active {
+	color: black;
+	background: gold;
+	cursor: pointer;
+}
+/*==========================================================================
+               M E S S A G E
+============================================================================*/
+
+/*==========================================================================
+               H E A D E R
+============================================================================*/
+#headerContainer {
+  position: relative;
+	width: 100%;
+	padding:0;
+	margin:0;
+	background:gainsboro;
+	border-top:5px solid #777777;
+	overflow: auto;
+	/*display:in-line;*/
+}
+div.ITS_screen_L {
+  float: left;
+  width: 19%;
+	height: 55px;
+  font: 12pt Georgia, serif;
+	font-weight: bold;
+	border: 1px solid #AAA;
+  background-color: gainsboro;
+}
+div.ITS_screen_L p {
+  position: relative;
+	heigh: 100%;
+	vertical-align: middle;
+}
+div.ITS_screen_L:hover,div.ITS_screen_L:focus {
+	color: white;
+	background: #666;
+	cursor: pointer;
+}
+div.ITS_screen_L:active {
+	color: black;
+	background: gold;
+	cursor: pointer;
+}
+/* active */
+#ITS_screen_A {
+  float: left;
+	width: 80%;
+  height: 55px;
+	font: 10pt Georgia, serif;
+	font-weight: bold;
+	border: 1px solid #AAA;
+	border-bottom: 0;
+	background-color: #fff;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+#ITS_screen_A ul
+{
+  list-style-type: none;
+  text-align: left;
+  padding: 0;
+	margin: 1em 0;
+}
+#ITS_screen_A li
+{ 
+  display: inline;
+  text-align: center;
+  margin: 2px; /* between spacing */
+	padding: 5px;
+	border: 1px solid #fff;
+}
+#ITS_screen_A li#title {
+	border: 0;
+	background-color: #fff;
+	color: darkolivegreen;
+	font: 13pt Georgia, serif;
+	font-weight: bold;
+	cursor: default;
+}
+#ITS_screen_A li#break {
+	background-color: #fff;
+	color: gray;
+	border-top:2px solid silver;
+	border-bottom:2px solid silver;
+	background-color: silver;
+	font: 15pt Georgia, serif;
+	cursor: default;
+	padding: 0;
+}
+#ITS_screen_A li.active {
+	border: 1px solid #666;
+	cursor: default;
+}
+#ITS_screen_A a:hover   { color: #fff; }
+#ITS_screen_A li.active:hover {
+	color: #000;
+	background-color: #fff;
+	cursor: default;
+}
+#ITS_screen_A li:hover {
+  color: #fff;
+  border: 1px solid #666;
+	background-color: #666;
+	cursor: pointer;
+}
+/* *--* */
+#ITS_screen_index {
+  position: relative;
+	font: 12pt Georgia, serif;
+	font-weight: bold;
+	border: 1px solid #fff;
+	padding: 0.5em 0;
+}
+#ITS_alph_index {
+  position: relative;
+	font: 9pt Georgia, serif;
+	font-weight: bold;
+	border: 1px solid #fff;
+	padding: 0.5em 0;
+}
+ul#navlistIdx {
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+	margin: 0;
+	display: inline;
+}
+ul#navlistIdx li {
+  list-style-type: none;
+  text-align: center;
+  padding: 0.25em 0.5em;
+	margin: 2px; /* between spacing */
+	display: inline;
+	border: 1px solid #fff;
+}
+ul#navlistIdx li:hover {
+  color: #fff;
+	background-color: #666;
+	cursor: pointer;
+}
+ul#navlistIdx li.active {
+	border: 1px solid #666;
+}
+ul#navlistIdx li.active:hover {
+	border: 1px solid #666;
+}
+/*==========================================================================
+               C O N T E N T
+============================================================================*/
+#contentContainer{
+  position: relative;
+	width: 100%;
+	padding:0;
+	margin:0;
+	background-color: #fff;
+	border-left:2px solid silver;
+	border-right:2px solid silver;
+	border-bottom:2px solid silver;
+	width: 100%; /* important */
+}
+.imagefloat {
+	float: right;
+	padding: 2px;
+	border: 1px solid #9FA41D;
+	margin: 0 0 10px 10px;
+}
+/* --- Question --- */
+TABLE.ITS_QUESTION {
+   vertical-align: center;
+	 padding: 15px;
+}
+TD.ITS_QUESTION {
+   text-align: left; 
+	 vertical-align: bottom;
+}
+div.ITS_question_text {
+	float:left;
+	text-align: left;
+	padding: 15px;
+}
+div.ITS_question_text2 {
+	float:left;
+	text-align: left;
+	padding: 5px;
+  width:49%;
+	/*background: yellow;*/
+}
+/*
+div.ITS_question_text:hover{
+	color: silver;
+}
+*/
+div.ITS_question_img {
+	float:left;
+	padding: 0.5em 0 0 0;
+  width:49%;
+  text-align:center;
+  }	
+div.ITS_question_img img {
+	position: relative;
+	width:100%;
+	height:auto;
+  border: 1px solid silver;
+  }
+div.ITS_question_container img:hover {
+   border:1px solid red;
+  }
+DIV.ITS_Equation {
+   position: relative;
+	 width:100%;
+   vertical-align: middle;	
+	 border: 1px solid #fff;
+}
+PRE.ITS_Equation {
+   text-align: center;
+   padding: 3px;
+   border-top: 1px solid #aaa; /*background:#fafafa;*/
+	 border-bottom: 1px solid #aaa;
+	 font-family: cursive,serif;
+	 font-size: 14pt;
+}
+PRE.MATLAB {
+   border: 2px solid DarkKhaki;
+	 background-repeat:no-repeat;
+	 background-image:url(ML.png);
+	 padding-top: 35px;
+	 padding-left: 60px;
+	 padding-right: 5px;
+	 padding-bottom: 10px;
+}
+span.ML_comment { color: green; }
+span.ML_error   { color: red;   }
+/*------- ANSWER ----------------------*/
+DIV.ITS_ANSWER {
+   clear: both;
+   position: relative;
+   border: 1px solid silver;
+	 text-align: left;
+	 overflow: auto;
+}
+TD.ITS_ANSWER {
+   text-align: left; 
+	 /*max-height:50px;*/
+}
+TABLE.ITS_ANSWER {
+   position: relative;
+	 width: 100%;
+   vertical-align: top;
+	 /*background-color: green; /* pink border for answer table #D0D0D0;*/
+	 border: 1px solid #fff;
+}
+TABLE.ITS {
+   clear:both;
+   position: relative;
+	 width: 100%;
+   vertical-align: top;
+	 border: 1px solid #fff;
+}
+TD.ITS {
+   text-align: center; 
+	 border: 1px solid #fff;
+	 /*max-height:50px;*/
+}
+TABLE.ITS_ANSWER_STRIPE {
+   position: relative;
+	 width: 100%;
+   vertical-align: top;
+	 background-color: #E0E0E0; /* pink border for answer table #D0D0D0;*/
+	 border: 1px solid #E0E0E0;
+	 /*overflow: scroll;*/
+}
+TD.ITS_ANSWER_STRIPE {
+   position: relative;
+   text-align: left;
+	 background-color: #E0E0E0; 	/*#C0C0C0;*/
+	 vertical-align: middle;	 
+	 /*max-height:50px;*/
+}
+SPAN.TextAlphabet {
+   color: #666;
+	 font-weight: bold;
+}	
+/*------- SCORE ----------------------*/
+TABLE.ITS_SCORE {
+   position: relative;
+   vertical-align: middle;
+	 border-collapse: collapse;
+	 text-align: center;
+	 font-family: cursive,serif;
+}
+TD.ITS_SCORE {
+   font-size: 12pt;
+	 padding: 0.5em;
+	 border: 1px solid silver;
+	 background: LemonChiffon;
+}
+.ITS_TEXT { 
+   color: blue; 
+	 width:20%;
+	 font-family: "Courier New";
+	 text-align:right; 
+	 font-weight: bold;
+}
+TABLE.ITS_DIST {
+   font-family: manotone;
+   vertical-align: bottom;
+	 border: 2px solid silver;
+	 border-collapse: collapse;
+	 width: 1%;
+}
+TD.ITS_DIST {
+  border: 2px solid silver;
+}
+DIV.ITS_CAPTION {
+	 font-size: 9pt;
+	 font-family: cursive,serif;
+   background-color: LemonChiffon;
+}
+.SMALL_FONT {
+  font-size: 9pt;
+}	
+span.ITS_correct {
+  width: 50px;
+  border: 2px solid darkgreen;
+  color: darkgreen;
+	background: greenyellow;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+span.ITS_incorrect {
+  width: 50px;
+  border: 2px solid maroon;
+	background: pink;
+  color: maroon;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+/*---------------------------*/
+TABLE.ITS_index {
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+TD.ITS_index {
+  position: relative;
+  border: 2px solid #fff;
+  background: #fff; /*white;/*beige; /*Lightsteelblue; /*lightcyan; /*lightyellow;*/
+	text-align: left;
+	font-family: Veranda; /*"Courier New",sans-serif;*/
+	font-size: 12pt;
+	padding: 0.5em;
+	table-layout:fixed;
+	border-top:0px hidden silver;
+	border-bottom:1px dashed silver;
+	border-right:1px double silver;
+	border-left:1px double silver;
+}
+TD.ITS_index:hover{
+	border-bottom:1px solid #666;
+	color: #00f;
+  background: #ffa;/*DarkOliveGreen;/*beige; /*Lightsteelblue; /*lightcyan; /*lightyellow;*/
+	/*cursor: pointer;*/
+}
+span.hidden {
+  position: relative;
+	float:right;
+	font-size: 10pt;
+  text-align: center;
+	margin: 0 0 0 0.5em;
+	padding: 0.1em 0.25em ;
+	background: #fff;
+	color: #blue;
+	border: 1px solid #666;
+}
+span.hidden:hover {
+	background: #666;
+	color: #fff;
+	cursor: pointer;
+}
+/*
+span.nhidden {
+  position: relative;
+  float:left;
+  text-align: center;
+	margin: 0 0 0 0.5em;
+	background: #fff;
+}
+span.nhidden: hover {
+  background: #ffa;
+}
+*/
+/*------------------*/
+span.nhidden {
+  position: relative;
+  float:left;
+  text-align: center;
+	margin: 0 0 0 0.5em;
+	background: #fff;
+}
+TD.ITS_index:hover .nhidden {
+  position: relative;
+  float: left;
+  text-align: center;
+	margin: 0 0 0 0.5em;
+	background: #ffa;
+}
+TD.ITS_index:hover span.nhidden:hover{
+	color: 	#800000;
+  background: #ffa;/*DarkOliveGreen;/*beige; /*Lightsteelblue; /*lightcyan; /*lightyellow;*/
+	cursor: pointer;
+}
+/*==========================================================================
+               F O O T E R
+============================================================================*/
+#footerContainer {
+	clear: both;
+	color: #666;
+	text-align: right;
+	font-size: 80%;
+	background: gainsboro;
+	padding: 5px;
+	text-align: center;
+	overflow:auto;
+}
+#footerContainer ul li { display: inline; }
+
+/* --- Question --- */
+ul.ITS_list ul
+{ postion: relative;
+  width: 200px;
+  list-style-type: none;
+  /*text-align: center;*/
+  padding: 0;
+	margin: 0;
+	display: inline;
+	font: 10pt Georgia, serif;
+	border: 1px solid blue;
+}
+ul.ITS_list li {
+  list-style-type: none;
+  /*text-align: center;*/
+  padding: 0 0.25em;
+	margin: 2px; /* between spacing */
+	display: inline;
+	border: 1px solid blue;
+}
+#ITS_screen_A ul#navlistIdx li#active {
+  list-style-type: none;
+  /*text-align: center;*/
+  padding: 0;
+	margin: 0;
+	/*display: inline;*/
+}
+/*------------------------------ */
+TABLE.ITS_version {
+ border: 1px solid #666;
+ border-collapse:collapse;
+}
+TD.ITS_version {
+ border: 1px solid #666;
+ padding: 5px 10px;
+}
+/*------------------------------ */
+span.seg {
+ border: 1px solid silver;
+}
+TABLE.ITS_header {
+ border: 0px solid #333;
+ border-collapse:collapse;
+}
+TD.ITS_header {
+ border-right: 1px solid #666;
+ padding: 0 5px;
+}
+/*---- Logout button ----------------*/
+div.logout {
+  float: right;
+  padding: 0.25em;
+  font: 12pt Georgia, serif;
+	font-weight: bold;
+	border: 1px solid gainsboro;
+  background-color: gainsboro;
+}
+div.logout a {
+  color: #666;
+	text-decoration: none;
+}
+div.logout:hover,div.logout:focus {
+	border: 1px solid #AAA;
+	cursor: pointer;
+}
+div.logout:active {
+	color: black;
+	background-color: gold;
+	cursor: pointer;
+}
+/*------------------------------*/
+/* ------------------------------
+   Navigation styles
+------------------------------ */
+div.navContent {
+  postion: relative;
+	width: 100%;
+	text-align:center;
+}
+div.navContent table  {
+  margin: 0 auto; 
+  text-align: left;
+}
+div.navContainer {
+  position: relative;
+	bottom: 0;
+  padding: 0; 
+	margin: 1em 0;
+	/*border: 1px solid red;*/
+	width: 100%; /* important */
+}
+div.navContainer div {
+  float: left;
+  background-color: #036;
+  color: white;
+  width: 10%;
+  height:50px;
+  font-family: arial, helvetica, sans-serif;
+}
+div.navContainer div#content { 
+  float: left;
+  width: 79.7%;
+  height:50px;
+  background-color: #449;
+}
+div.navContainer div:hover {
+  background-color: #369;
+  color: #fff;
+}
+TABLE.ITS_screen_nav {
+  position: relative;
+	border: 1px solid #fff;
+	border-collapse:collapse;
+	width: 100%;
+	table-layout: fixed;
+	background-color: #fff;
+}
+TD.ITS_screen_nav {
+  border: 1px solid #fff;
+	font: 12pt Georgia, serif;
+	padding: 0.5em 0;
+	text-align: center;
+}
+div.ITS_navigation {
+  color: #666;
+  padding: 0.5em 0;
+  border: 2px solid #666;
+  font: 18pt Georgia, serif;
+  font-weight: bold;
+}
+div.ITS_navigation:hover {
+  background-color: #666;
+  color: #fff;
+  cursor:pointer;
+}
+div.ITS_chapter {
+  text-align: left;
+  padding: 0.25em 0.5em;
+	border-bottom:2px solid silver;
+	font: 14pt monotone;
+}
+div.ITS_chapter:hover {
+	border-bottom:2px solid silver;
+	background: gold;
+	cursor: pointer;
+	border-bottom:2px solid #666;
+}
+/*------------------*/
+span.ITS_plot {
+  /*float: right;*/
+  /*text-align: right;*/
+	position: absolute;
+	right: 0;
+	top: 0;
+  font: 9pt monotone;
+	color: #666;
+	margin: 0.5em 0;
+	border: 1px solid #fff;
+}
+span.ITS_plot:hover {
+	border: 1px solid silver;
+	cursor: pointer;
+}
+span.menu {
+  /*position: absolute;*/
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+	width: 100px;
+	height: 40px;
+}
+div.ITS_MESSAGE {
+  border-top: 2px solid gold;
+	border-bottom: 2px solid gold;
+	padding: 0.5em 0;
+	margin: 0 0 0.5em 0;
+}

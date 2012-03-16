@@ -1,0 +1,233 @@
+/*
+admin.css - admin CSS file for ITS 
+
+Author(s): Greg Krudysz
+Last Update: Aug-21-2011
+=============================================*/
+
+div.HACK {
+  position: relative;
+	width: 100%;
+  font-family: verdana,monospace;
+	font-weight: bold;
+  letter-spacing: 0.1em;
+	padding: 0.5em 0.1em;
+  border: 2px solid pink; 
+	color: red;
+	margin: 1em 0;
+}
+div.debug {
+  float: left;
+	margin: 10px;
+	padding: 10px;
+	color: #FF0000;
+	font-weight: bold;
+  background-color: #FFFF99;
+	border: 2px solid #FF0000; 
+}
+table.ITS_backtrace {
+  background-color: #FFFFFF;
+  border: 2px solid #999999; /*#006400;*/
+	padding: 5px;
+	margin: 0.5em;
+	border-collapse: collapse;
+}
+table.ITS_backtrace td {
+  border: 2px solid #999999; /*#006400;*/
+	padding: 0.25em;
+	text-align: left;
+}
+div.file {
+  float: left;
+	margin: auto 3px;
+	padding: 0;
+  background-color: #FFFFFF;
+	border: 1px solid #FFFFFF; 
+	vertical-align: middle;
+}
+div.file a img {border: none; }
+a.file {
+  position: relative;
+	padding: 5px;
+  background-color: #ff9;
+	border: 1px solid #ccc;
+}
+a.ITS_EDIT {
+  float: left;
+  padding: 0.25em;
+	margin-left: 0.5em;
+  font-family:"Times New Roman", Times, Monospace;
+  font-size: 10pt;
+}
+textarea.ITS_EDIT {
+  font-family: verdana,monospace;
+  position: relative;
+	min-width: 80%;
+	/*height: 200px;*/
+	padding: 0.5em;
+	border: none;
+	border-bottom: 2px solid silver;
+	background-color: #FFFFFF;
+}
+ul.ITS_EDIT {
+  position: relative;
+	display: block;
+}
+ul.ITS_EDIT li {
+  padding: 0.2em 1em;
+  background-color: #fff;
+  color: blue;
+  font-size: 12pt;
+  font-family: cursive;
+  text-decoration: none;
+}
+div.ITS_ADMIN {
+  position: relative;
+  font-family: verdana,monospace;
+  font-weight: bold;
+	padding: 0.5em 0.1em;
+  background-color: #FFFFFF;
+  border: 2px solid #EEE; 
+	overflow:auto;
+}
+div.ITS_ADMIN:hover {
+  border: 2px solid #999;
+  background-color: #FFFFAA;
+}
+a.ITS_ADMIN {
+  position: relative;
+	width: 100%;
+  font-family: verdana,monospace;
+	font-size: 60%;
+	font-weight: bold;
+	text-decoration: none;
+  letter-spacing: 0.1em;
+	padding: 0.5em 0.1em;
+  background-color: #FFFFFF;
+  border: 2px solid #EEE; 
+	z-index: 2;
+}
+a.ITS_ADMIN:hover {
+  background-color: #FFFFAA;
+	text-decoration: underline; 
+	color: #666;
+	border: 2px solid #666;
+}
+TABLE.ITS_ADMIN {
+    border: 2px solid #FFFFFF; /*#006400;*/
+	padding: 0;
+	margin: 0.5em;
+	border-collapse: collapse;
+}
+TABLE.ITS_ADMIN TH {
+  background: red; /*#9f9;*/
+	border: 2px solid #006400;
+	padding: 0.25em;
+	color: #000000;
+}
+TABLE.ITS_ADMIN TD {
+  border: 2px solid #FFFFFF;
+	padding: 0.25em;
+	color: #000000;
+}
+.ITS_button {
+  border: 2px solid #666;
+	padding: 0.25em 0.5em;
+	color: #000000;
+	background: #ffa;
+	font-family: cursive;
+	margin: 0.5em;
+}
+.ITS_button:hover {
+  cursor: pointer; 
+}
+.ITS_button_div {
+  float: right;
+  border: 2px solid #666;
+	padding: 0;
+	color: #000000;
+	background: #ffa;
+	font-family: cursive;
+	margin: 0;
+}
+FIELDSET {
+  padding: 0.5em;
+	background: #fff;
+	border: 2px solid #666;	
+}
+.ITS_SQL {
+  border: 2px solid #000;
+	padding: 0.5em 1em;
+	color: #fff;
+	background: #090;
+	font-family: monospace;
+	font-weight: bold;
+	text-align: left;
+	font-size: 12pt;
+	margin: 0.5em;
+}
+div.ITS_MESSAGE {
+  /*border: 2px solid #000;*/
+	padding: 0.5em 1em;
+	font-family: cursive;
+	text-align: left;
+	margin: 0.5em;  
+}
+#navcontainer ul {
+  padding-left: 0;
+  margin-left: 0;
+  background-color: #fff;
+  color: #666;
+  float: left;
+  width: 100%;
+  font-family: arial, helvetica, sans-serif;
+}
+#navcontainer ul li { display: inline; }
+#navcontainer ul li a {
+  padding: 0.2em 1em;
+  background-color: #fff;
+  color: #666;
+  font-size: 12pt;
+  font-family: cursive;
+  text-decoration: none;
+  float: left;
+  border-right: 2px solid #666;
+}
+#navcontainer ul li a:hover {
+  background-color: #666; /*#369;*/
+  color: #fff;
+}
+/*----------------*/
+#navEdit {
+  border: #FFF;
+}
+#navlistEdit {
+  padding: 0;
+  margin: 0;
+	border: 1px solid #FFF;
+}
+#navlistEdit li {
+  list-style: none;
+  margin-left: 0.25em;
+  padding: 5px;
+	text-align: center;
+  border: 1px solid #FFF;
+}
+li.ITS_addTAG {
+  font-size: 8pt;	
+	color: #666;
+}
+li.ITS_addTAG:hover {
+  background-color: #FFFFCC;
+	cursor: pointer; 
+}
+#navlistEdit li:hover {
+	border: 1px solid #666;
+}
+#navlistEdit li a { 
+  text-decoration: none; 
+  font-family: "Georgia";
+	font-weight: bold;
+  font-size: 8pt;	
+	/*color: #999;*/
+}

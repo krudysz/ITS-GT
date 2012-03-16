@@ -1,0 +1,10 @@
+#scoreContainer{clear:both;position:relative;width:100%;text-align:left;background-color:#DCDCDC;border-bottom:1px solid #DCDCDC;background:#fff}
+#scoreContainer span{position:relative;color:#666;background-color:#fff;background:#fff;margin:0 1em;padding:0 .5em}
+#scoreContainer span:hover{color:#fff;background-color:#666;cursor:pointer}
+#scoreContainerContent{position:relative;width:90%;text-align:center;display:none;background:#fff;margin:0;padding:1em}
+SPAN.gray{color:gray}
+SPAN.ITS_computeScores{color:#00c;font-weight:700;overflow:auto;padding:1em}
+SPAN.ITS_computeScores_Total{color:#00c;font-weight:700}
+SPAN.ITS_smallFont{position:relative;font-size:80%;font-weight:700}
+TABLE.ITS_mySCORE{position:relative;width:100%;vertical-align:middle;margin-left:-10px;border-collapse:collapse;text-align:center;font-family:cursive,serif;font-size:80%;border-style:none}
+TD.ITS_mySCORE{font-size:8pt;border:1px solid silver;background:#fff;padding:.15em}

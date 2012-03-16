@@ -1,0 +1,90 @@
+/*
+ITS_intro.css - introductory CSS file for ITS
+
+Author(s): Greg Krudysz
+
+Last Update: Aug-12-2011
+W3C CSS Validator results for ITS_intro.css (CSS level 2.1)
+======================================================*/
+#container{
+  position:relative;
+	background:#fff;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50em;
+}
+#header{
+	background:#fff;
+	margin: 0;
+	padding: 0;
+	height: 30px;
+}
+#header h1 { margin: 0; }
+#navigation{
+  position: relative;
+	float: right;
+	width: 100%;
+	height: 10%;
+	background:#fff;
+}
+#navigation ul{
+	margin: 0;
+	padding: 0;
+}
+#navigation ul li{
+	list-style-type: none;
+	display: inline;	
+	margin: 0 0.5em;
+	vertical-align: middle;
+}
+#navigation li a{
+	display: block;
+	float: right;
+	padding: 5px 10px;
+	color:#666;
+	background: #fff;
+	text-decoration: none;
+	-webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+	border: 2px solid #999;
+	outline: 0; /* get rid of the dotted line */	
+}
+#navigation li a:hover { color:#000; border-color:#FFD700;} /* background:#FFD700; gold*/
+#content {
+	clear: left;
+	padding: 10% 5%;
+	margin: 0;
+	color: #555;
+	border-top: 2px solid #999;
+}
+#content h2{
+	color:#000;
+	font-size: 120%;
+	margin: 0 0 .5em;
+}
+ul.list_intro li { font-size:18pt; list-style-type:square; padding: 0.5em;}
+div.loginContainer {
+	background:#fff;
+	color: #999;
+}
+input {border: 2px solid #999; padding: 0.25em;}
+input:focus { border: 2px solid #000; color:#000; }
+#footer{
+  position: relative;
+	background:#fff;
+	text-align: right;
+	padding: 15px 0;
+	color: #777;
+	width: 100%;
+	bottom:0;
+	border-top: 2px solid #999;
+}
+/*================= DEBUG =================/
+#header        {	background: pink;      }
+#navigation    {	background: lime;      }
+#content       {	background: purple;    }
+#footer        {	background: green;     }
+
+#content       {	border: 2px solid red; }
+/*=========================================*/

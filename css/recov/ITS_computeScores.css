@@ -1,0 +1,72 @@
+#scoreContainer {
+  clear: both;
+  position: relative;
+	width: 100%; /* important */
+	/*margin:0;*/
+	text-align: left;
+	background-color: #DCDCDC;
+	border-bottom: 1px solid #DCDCDC;
+} 
+#scoreContainer span {
+  position: relative;
+	color: #666;
+	padding: 0 0.5em;
+	margin: 0 1em;
+	background-color: #fff;
+}
+#scoreContainer span:hover {
+	color: #fff;
+	background-color: #666;
+	cursor: pointer;
+}
+#scoreContainerContent {
+  position: relative;
+	width: 90%; /* important */
+	padding: 1em;
+	text-align: center;
+	margin: 0;
+	display: none;
+} 
+/*------- SCORE ----------------------*/
+SPAN.gray {
+   color: gray;
+}
+SPAN.ITS_computeScores {
+   color: #00c;
+	 font-weight: bold;
+	 padding: 1em;
+	 overflow: auto;
+}
+SPAN.ITS_computeScores_Total {
+   color: #00c;
+	 font-weight: bold;
+}
+SPAN.ITS_smallFont {
+   position: relative;
+   font-size: 80%;
+	 font-weight: bold;
+}
+TABLE.ITS_mySCORE {
+   position: relative;
+	 width: 100%;
+   vertical-align: middle;
+	 margin-left: -10px;
+	 border-style: none;
+	 border-collapse: collapse;
+	 text-align: center;
+	 font-family: cursive,serif;
+	 font-size: 80%;
+}
+TD.ITS_mySCORE {
+   font-size: 8pt;
+	 padding: 0.15em;
+	 border: 1px solid silver;
+	 background: #fff; /*LemonChiffon;*/
+}
+/*-----------------------------------*/ 
+
+/*================= COLORS ================*/
+#scoreContainer         {	background: #fff;      }
+#scoreContainer span    { background: #fff;      }
+#scoreContainerContent  {	background: #fff;      }
+/*=========================================*/

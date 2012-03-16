@@ -1,0 +1,32 @@
+BODY,CAPTION {
+   /*background: gainsboro;*/
+   color: black;
+	 /*font-family: arial,sans-serif; font: 100% Georgia, serif; /*font-family: arial; */
+   font-size: 11pt;
+	 margin:0;
+   padding:10px;
+   height:100%;
+}
+h3 {
+   border-top: 1px solid #666;
+	 border-bottom: 1px solid #666;
+	 background: lightskyblue;
+	 padding: 0.2em 1em;
+}
+table {
+   border-collapse: collapse;
+	 border: 1px solid silver;
+	 text-align: center;
+}
+td { 
+   border: 1px solid silver;
+	 padding: 5px;
+}
+th {
+   text-align: center;
+	 background: #eee;
+	 width: 150px;
+}
+.header {
+   color: blue;
+}

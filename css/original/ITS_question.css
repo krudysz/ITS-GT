@@ -1,0 +1,326 @@
+/*
+ITS_question.css - main CSS file for ITS/Question.php
+
+Author(s): Greg Krudysz
+Last Update: Jul-26-2011
+=============================================*/
+div.ITS_TARGET {
+    border: 1px solid #FFFFFF;
+}
+div.spacer {
+    float: right;
+    padding: 0.2em;
+    margin: 0.25em;
+    font: 12pt Georgia, serif;
+    border: none;
+    background-color: #fff;
+}
+.ITS_navigate {
+    clear: both;
+    position: relative;
+    text-align: center;
+    background-color: #666;
+    padding: 0.25em;
+    border-top: 1px solid #666;
+} 
+.ITS_navigate_edit {
+    position: absolute;
+    text-align: left;
+    background-color: #DCDCDC ;
+    border-top: 1px solid #666;
+}
+table.ITS_navigate_edit {
+    position: relative;
+    text-align: center;
+    background-color: #DCDCDC ;
+    color: blue;
+}
+table.ITS_navigate_edit th {
+    position: relative;
+    text-align: center;
+    padding: 5px;
+    background-color: #4682B4; /*steelblue*/
+    color: yellow;
+}
+table.ITS_navigate_edit td {
+    position: relative;
+    text-align: center;
+    padding: 5px;			 
+    background-color: #DCDCDC ;
+}
+input.ITS_navigate {
+    background: #fff;
+    border: 2px solid #eee;
+    padding: 0.25em;
+    margin: auto 0.25em;
+    width: 4em;
+}
+input.ITS_navigate:focus {
+    border: 2px solid #999;
+}
+input.ITS_navigate_button {
+    background: #eee;
+    border: 1px solid #999;
+    padding: 0.25em;
+    width: 3em;
+}
+table.ITS_QINFO {
+    /*border-collapse: collapse;*/
+}
+table.ITS_QINFO th {								 
+    padding: 0.25em;
+    /*background: #aaa;*/
+    border: none;
+    font-size: 10pt;
+}
+table.ITS_QINFO td {
+    padding: 0.25em;
+    border: 1px solid #777;
+    background: #fff;
+}
+DIV.CHOICE_WEIGHT {
+    position: relative;
+    width: auto;
+    padding: 0.25em 0.5em;
+    /*margin: 0 0 0 0.25em;*/
+    border: 2px solid #00a;
+    background: #ffc;/*#ddf*/;
+    overflow: auto;
+}
+DIV.ITS_Example {
+    position: relative;
+    width: 80%;
+    font-weight: bold;
+    padding: 0.5em;
+    border: 2px solid #eedd66;
+    background: #ffeecc;
+}
+DIV.ITS_note_warning {
+    color: #c00;
+    font-weight: bold;
+    padding: 0.5em;
+    border: 1px solid #c00;
+}
+/*ITS_question_text*/
+UL.ITS_note_units {
+    font-size: 10pt;
+}
+UL.ITS_note_units li {
+    margin: 0 2em 0 0;
+    color: #444;
+}
+INPUT.ITS_Q {
+    position: relative;
+    padding: 0.25em;
+    color: #11f;
+    font-weight: bold;
+    font-size: 11pt;
+}
+TEXTAREA.ITS_Q {
+    position: relative;
+    padding: 0.25em;
+    width: 95%;
+    color: #11f;
+    font-weight: bold;
+    font-size: 11pt;
+    height: 2em;
+}
+textarea.TXA_ANSWER {
+    /*overflow: auto;*/
+    width: 400px;
+    border: 3px solid #cccccc;
+    background: #eee;
+    text-align: center;
+    color: blue;
+    padding: 10px 5px 0 5px;
+    font: bold 14pt Tahoma, sans-serif;
+    line-height:18pt;
+    min-height: 1em;
+    vertical-align: middle;
+}
+textarea.TXA_ANSWER:focus {
+    background: #ffa;
+}
+TEXTAREA.ITS_Q:focus {
+    border: 1px solid #000;
+    background: #ffe;
+}
+table.ITS_newQuestion {
+    position: relative;
+    width: 100%;
+    border-collapse: collapse;
+}
+table.ITS_newQuestion td {
+    position: relative;
+    padding: 0.25em 0;
+    border: 1px solid #fff;
+    background: #fff;
+}
+table.ITS_Qans {
+    position: relative;
+    width: 97%;
+}
+td.ITS_Qans {
+    border: 2px solid red;
+    position: relative;
+}
+#Qquestion {
+    height: 100px;
+}
+span.ansUpdate {
+    clear: both;
+    float: right;
+    background: #fff;
+    padding: 0.25em;
+    margin: 0.5em 0;
+    font-size: 9pt;
+    border: 1px solid #666;
+}
+span.ansUpdate:hover {
+    color: blue;
+    background: #ff9;
+    cursor: pointer;
+}
+TABLE.ITS_QUESTION_DB {
+    clear: both;
+    position: relative;
+    border-collapse: collapse;
+    border: 2px solid #aaa;
+}
+TABLE.ITS_QUESTION_DB TH {
+    border: 2px solid #aaa;
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    background: #ffa;
+}
+TD.ITS_QUESTION_DB {
+    border: 2px solid #aaa;
+    text-align:center;
+    padding: 0.5em 1em;
+    margin: 0;
+    background: #fff;
+    white-space: nowrap;
+}
+#ITS_question_container {
+    position: relative;
+    margin: 1% 5%;
+    z-index: 3;
+}
+/*
+textarea.ITS_EDIT {
+  float:left;
+	width: 700px;
+	height: 200px;
+	padding: 5px;
+	border: 2px solid #999;
+  background: #ffc;
+}*/
+#select_type {
+    margin-right: 2em;
+}
+#select_chapter option { text-align:center; } /* Does not work in IE 8.0 */
+#select_chapter option.highlight {
+    letter-spacing: 0.5em;
+    font-weight: bold;
+}
+div.ITS_QCONTROL {
+    border: 1px solid #fff;
+}
+.ITS_addTAG {
+    text-align:center;
+    padding: 0.5em 1em;
+    margin: 0;
+    background: #FFF;
+    white-space: nowrap; 
+}
+span.ITS_concept {
+    font: 100% 	Times New Roman, sans-serif;
+}
+span.ITS_concept:hover {
+    background: #ee9;
+    cursor: pointer;
+}
+TABLE.ITS_ANSWER_STRIPE {
+    position: relative;
+    display: inline-table;
+    vertical-align: top;
+    background-color: #D0D0D0; /* pink border for answer table #D0D0D0;*/
+    overflow: scroll;
+}
+TD.ITS_ANSWER_STRIPE {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    background-color: #E0E0E0; 	/*#C0C0C0;*/
+    vertical-align: middle;	 
+    max-height:50px;
+}
+select.ITS_question {
+    position: relative;
+    padding: 0.2em;
+    border: 2px solid #999;
+}
+select.ITS_question option {
+    position: relative;
+    padding: 0.1em;
+    border-bottom: 1px dashed #AAA;
+    vertical-align: middle;
+}
+select.ITS_qtype {
+    position: relative;
+    padding: 0.5em;
+    border: 1px solid blue;
+}
+select.ITS_qtype option {
+    position: relative;
+    padding: 0.5em;
+    border: 1px solid blue;
+}
+/*
+div.ITS_QCONTROL:hover {
+	background: #eee;
+}
+a.ITS_EDIT {
+  border: 1px solid #fff;
+	padding: 0.25em;
+}
+a.ITS_EDIT:hover {
+  border: 1px solid #666;
+}*/
+
+.ITS_buttonQ {
+    position: relative;
+    margin: 0.5em;
+    padding: 0.25em;
+    width: 50px;
+    color: #999;
+    font-weight: bold;
+    border: 2px solid #999;
+    background: #FFFFFF;
+}
+.ITS_buttonQ:hover {
+    cursor: pointer;
+    font-weight: bold;
+    color: #000;
+    border: 2px solid #000;
+}
+#framecontent   { height:115px; /*border:2px solid pink;*/           }
+#frameseparator { top: 115px; height: 115px; /*Height of frame div*/ }
+#maincontent    { top: 115px; /*Set top value to HeightOfFrameDiv*/  }
+
+/*================= COLORS ================*/
+#menuContainer          {	background: #fff;      }
+/*=========================================*/
+
+/*================= DEBUG =================*/
+/*
+#pageContainer        {	background: pink;      }
+*/
+/*=========================================*/
+
+/*-----------------------------------------*/ 
+
+/*================= COLORS ================*/
+#scoreContainerContent  {	background: #fff; }
+/*#framecontent,div.innertube,div.logout,div.spacer   {	background: #ade; }*/
+/*=========================================*/

@@ -1,0 +1,117 @@
+DIV.ITS_QUESTION_BREAK {
+   background-color: gainsboro;
+   /*border-top: 2px solid silver;
+	 border-bottom: 2px solid silver;*/
+	 text-align: center;
+	 padding: 5px;
+}
+TABLE.ITS_QUESTION_SECTION {
+   vertical-align: left;
+	 border: 1px solid green;
+	 cellspacing: 10  
+}
+TD.ITS_QUESTION_SECTION {
+   text-align: left;
+	 border: 1px solid green;
+	 padding:5px;
+}
+TABLE.ITS_QUESTION_PART {
+   position: relative;
+   vertical-align: bottom;
+	 /*border-top: 2px solid gainsboro;
+	 border-bottom: 2px solid gainsboro;*/
+	 border-right: 4px solid gainsboro;
+	 border: 2px solid #666;
+	 table-layout: fixed;
+	 /*display: inline-table;*/
+	 overflow: auto;
+}
+TD.ITS_QUESTION_PART {
+   position: relative;
+	 /*padding: 5px;*/
+	 border: 0px solid red;
+   vertical-align: top;
+   text-align: middle;
+	 /*table-layout: fixed;*/
+	 display: inline-table;
+}
+TD.ITS_QUESTION_PART_NUM {
+   vertical-align: top;
+   text-align: left;
+	 border-right: 4px solid gainsboro;
+	 padding: 1px;
+	 width: 35px;
+   white-space: nowrap;
+}
+TABLE.ITS_QUESTION_QUESTION {
+   vertical-align: left;
+	 border-bottom: 3px solid pink;
+	 overflow: auto;
+	 /*cellspacing: 10  */
+}
+TD.ITS_QUESTION_SECTION_QUESTION {
+   vertical-align: bottom;
+   text-align: left;
+	 border: 1px solid white;
+}
+/* ROUND BORDER */
+TABLE.ITS_QUESTION_BORDER {
+   border: 0; 
+	 /*width: 200;*/
+	 cellpadding: 0; 
+	 cellspacing: 0;
+   border-collapse: collapse;
+}
+TD.ITS_QUESTION_BORDER {
+   width: 13px;
+   height: 13px;
+	 cellpadding: 0;
+	 cellspacing: 0;
+	 border: 0px solid blue;
+}
+IMG.ITS_IMG_ANS {
+   border: 2px solid silver;
+	 /*max-width: 300px; 			 	 /* ff  */
+   /*width: auto !important;   /* ie7 */
+   /*width: auto; 					   /* ie6 */
+	 display: inline-block;
+	 overflow:hidden;
+}
+IMG.ITS_pzplot {
+   position: relative;
+   border: 2px solid silver;
+}
+TABLE.ITS_SCORE {
+   vertical-align: middle;
+	 border: 1px solid black;
+	 border-collapse: collapse;
+	 text-align: right;
+	 font-family: cursive,serif;
+}
+TD.ITS_SCORE {
+   font-size: 9pt;
+	 border: 1px solid silver;
+	 /*background: lightbrown;*/
+	 padding: 3px;
+}
+TABLE.ITS_DIST {
+   font-family: manotone;
+   vertical-align: bottom;
+	 border: 1px solid silver;
+	 border-collapse: collapse;
+	 width: 1%;
+}
+TD.ITS_DIST {
+  border: 1px solid silver;
+}
+DIV.ITS_CAPTION {
+	 font-size: 9pt;
+	 font-family: cursive,serif;
+	 border-top: 2px solid silver;
+	 border-left: 2px solid silver;
+	 border-right: 2px solid silver;
+   background-color: LemonChiffon;
+}
+.SMALL_FONT {
+  font-size: 9pt;
+}

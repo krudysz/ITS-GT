@@ -1,0 +1,93 @@
+ <!---- QTI IMPORTER start ----------->
+  <link href="css/swfupload.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="swfupload/swfupload.js"></script>
+  <script type="text/javascript">
+  	function popWindow(wName){
+		features = 'width=700,height=400,toolbar=no,location=no,directories=no,menubar=no,scrollbars=no,copyhistory=no,resizable=no';
+		pop = window.open('',wName,features);
+		if(pop.focus){ pop.focus(); }
+		return true;
+	}
+  </script>
+<link href="uploadify/uploadify.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="uploadify/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="uploadify/swfobject.js"></script>
+<script type="text/javascript" src="uploadify/jquery.uploadify.v2.1.4.min.js"></script>
+<script type="text/javascript">
+/*
+$(document).ready(function() {
+  $('#file_upload').uploadify({
+    'uploader'  : 'uploadify/uploadify.swf',
+    'script'    : 'uploadify/uploadify.php',
+    'cancelImg' : 'uploadify/cancel.png',
+    'folder'    : 'ITS_FILES/QTI/images',
+	  'multi'     : true,
+    'auto'      : true,
+	  'fileExt'   : '*.jpg;*.gif;*.png',
+    'fileDesc'  : 'Image Files (.JPG, .GIF, .PNG)'
+  });
+  $('#QTIsubmit').submit(function() {
+	  //var wName = 'Aga';
+    //features = 'width=700,height=700,toolbar=no,location=no,directories=no,menubar=no,scrollbars=no,copyhistory=no,resizable=no';
+		//pop = window.open('',wName,features);
+		//if(pop.focus){ pop.focus(); }
+		return true;
+  });
+});*/
+</script>
+<!---- QTI IMPORTER end ----------->
+78
+238
+245
+251
+253
+350
+378
+385
+477
+540
+570
+585
+653
+690
+696
+791
+835
+836
+850
+868
+896
+945
+1081
+196
+1197
+1199
+1200
+1201
+1202
+2124
+2125
+2126
+2127
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

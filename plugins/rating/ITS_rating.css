@@ -1,0 +1,52 @@
+/* ITS_rating.css */
+/* Messages Bar */
+.message-box { text-align: center; padding: 5px; color:blue;  margin:5px auto; } /*#545454*/
+.clean { background-color: #efefef; border-top: 2px solid #dedede; border-bottom: 2px solid #dedede; }
+.info  { background-color: #f7fafd; border-top: 2px solid #b5d3ff; border-bottom: 2px solid #b5d3ff; }
+.ok    { background-color: #d7f7c4; border-top: 2px solid #82cb2f; border-bottom: 2px solid #82cb2f; }
+.alert { background-color: #fef5be; border-top: 2px solid #fdd425; border-bottom: 2px solid #fdd425; }
+.error { background-color: #ffcdd1; border-top: 2px solid #e10c0c; border-bottom: 2px solid #e10c0c; }
+/* Star rating L-R panels */
+.ratings  { margin: 0 0 1em; width: 100%; overflow: hidden; line-height: 2em; }
+.rating-L { float: left; margin-right: 1em; white-space: nowrap; }
+.rating-R { float: left; margin-left:  1em; width: 300px; }
+#ratingContainer {
+  float: left;
+  background-color: #FFF; /*#eef;*/
+  border: 1px solid #FFF;
+  text-align: left;   /* Reset alignment to compensate for 'text-align:center': */
+  /*width: 300px;     /* 200px Specify the width of the element. This should be the same as 'body min-width': */
+  margin-left: auto;  /* Set left and right margins to auto, thus centering the element in the containing (body) tag: */
+  margin-right: auto;
+  padding: 0.5em;
+  overflow: auto;
+  margin-bottom: 7px;
+  width:200px;
+}
+.center {
+  position: absolute;  /* take element out of the normal page flow! */
+  top: 3px;            /* position the element vertically using top or bottom and define width as you like: */
+  width: 50%;   
+  margin-left: auto;   /* adding auto-margins left and right will center the element horizontally! */
+  margin-right: auto;
+  background-color: #f4f;
+  border-bottom: 2px solid blue;
+}
+#ITS_rate {
+  position: relative;
+  display: none;  /* get rid of flicker */
+  /*overflow:auto;*/
+  background-color: #FFF;
+  border: 2px solid #FFF;
+  width: 150px;   
+}
+#stars-cap {
+  position: relative;  
+	width: 99%;
+	text-align: center;
+	font-size: 85%;
+	background-color: #FFF;
+	padding: 0.2em 0;
+	/*border: 1px solid #aaa;*/
+	border-bottom: 2px solid #aaa;
+}

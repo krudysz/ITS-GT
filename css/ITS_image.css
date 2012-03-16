@@ -1,0 +1,44 @@
+/*
+#picture {width:100%;  background-color:#ffffff; left:500px;}
+#picture a.small, #picture a.small:visited { display:block; width:100px; height:100px; text-decoration:none; background:#ffffff; top:0; left:0; border:0;}
+#picture a img {border:0;}
+#picture a.small:hover {text-decoration:none; background-color:#000000; color:#000000;}
+#picture a .large {display:block; position:relative; width:0; height:0; border:0; left:0;}
+#picture a.small:hover .large {display:block; position:absolute; top:180px; left:50%; width:auto; max-width: 50%; height:auto; }
+*/
+.active {border: 2px solid brown;padding: 1px;outline: 0;}
+.bo{border:2px solid #999;padding: 1px;}
+/*-------------------------------------------------*/
+#Image_container {position:relative;height:70%}
+.select {background-color: yellow;	}
+.ques_img_table {border:1px solid #fff;}
+h3.ITS_image { clear:both;text-align: left; } 
+#server_container {border:1px solid brown; }
+#main_table { border:1px solid red;}
+.img_sel { border:2px solid red; }
+
+table.ITS_image    { position:relative;border: 1px solid #fff;width:100%; }
+table.ITS_image td { position:relative;border: 1px solid #fff; }
+#ITS_Q { position:relative;margin:0 90% auto 0;font-size:28pt;}
+#ITS_Q a { padding: 0.5em;}
+#image { width:60%;text-align:center; }
+#list  { width:60%;text-align: center;height:150px;min-height:150px;border-top:1px solid #999;border-bottom:1px solid #999; }
+.img_sm 		{ width:100px;height:auto;border:2px solid #fff; }
+.img_sm#current { border:2px solid blue; }
+#ITS_image_container { position:relative;max-width:800px;height:400px;background:#fff;text-align:center;vertical-align:middle; }
+#ITS_image_container img { position:relative;max-height:395px;max-width:99%;background:#fff; }
+div.logo { font:fantasy,courier;font-size: 24pt;color:#999;border-top:3px ridge #999;border-bottom:3px ridge #999;margin:auto 20%;padding:10px; }
+#pgno {border: 1px solid #fff;margin: auto 0.5em; }
+input { outline:none;font-size:110%;}/*background:#ff9;*/
+
+#ITS_navigation_container   { position:relative;height:10%; }
+#Image_navigation_container { position:relative;overflow:auto;margin:1em 0; }
+
+/*================= DEBUG ================= /
+#ITS_navigation_container   { border: 1px solid #000;   }
+#Image_container 			{ border: 3px solid red;    }
+#Image_navigation_container { border: 3px solid purple; }
+#ITS_image_container 		{ border: 3px solid brown;  }
+table.ITS_image    { border: 1px solid green; }
+table.ITS_image td { border: 1px solid blue;  }
+/*=========================================*/

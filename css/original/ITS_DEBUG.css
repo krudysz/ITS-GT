@@ -1,0 +1,17 @@
+TABLE.ITS_backtrace {
+  position: relative;
+	/*width: 100%;
+	table-layout: fixed;*/
+  vertical-align: middle;
+	background-color: #ee9;
+} 
+TABLE.ITS_backtrace td {
+  position: relative;
+	/*width: 100%;*/
+	padding: 0 3px;
+	height: auto;
+  text-align: left; 
+	vertical-align: bottom;
+	/*border: 1px dotted red;*/
+	font-size: 12pt;
+} 

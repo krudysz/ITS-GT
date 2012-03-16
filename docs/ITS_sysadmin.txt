@@ -1,0 +1,24 @@
+  
+  Server     Apache              2.0.55  http://httpd.apache.org/download.cgi 
+  Database   MySQL               5.0.21  http://dev.mysql.com/downloads/mysql/5.0.html\#downloads 
+   
+  CGI        PHP                 5.3     http://www.php.net/downloads.php 
+  CGI	     PHP: [gd],[zip] module
+  CGI-Apps   PHP PEAR                    http://pear.php.net 
+  CGI-DB     PHP PEAR::MDB2              http://pear.php.net/package/MDB2/  
+             MDB2\_Driver\_mysql         
+  CGI-Table  Structures/Datagrid      http://pear.php.net/manual/en/package.structures.structures-datagrid.php
+             /Renderer/CVS               
+             /Renderer/HTMLTable         
+   
+  Math       MATLAB              R2011  
+  Math	     Python 		 2.7,3.2
+  Renderer   LaTeX                       http://www.forkosh.dreamhost.com/source\_mimetexmanual.html
+  
+---------------------------------------------------------------------------------------------------------
+ OPTIONAL: Install later on
+---------------------------------------------------------------------------------------------------------
+  GUI	     Mathematica 
+  GUI        LabVIEW             8.6     
+  Bayes Net  PNL                 1.0     https://sourceforge.net/projects/openpnl/
+  C++ to DB  mySQL++                     http://tangentsoft.net/mysql++/

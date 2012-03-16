@@ -1,0 +1,7 @@
+
+INSTRUCTIONS:
+
+REMOTE: on its.ece.gatech.edu
+
+1. Paths have not been fixed yet:
+   - copy "classes" folder and add to "_include"

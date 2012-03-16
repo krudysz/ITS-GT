@@ -1,0 +1,54 @@
+<html>
+
+    <head>
+        <title>SQL QUESTION TABLES</title>
+        <link rel="stylesheet" href="css/docs.css" type="text/css" media="screen">
+    </head>
+    <body>
+
+    <center>
+                <h3>SQL tables: <font color="purple">QUESTIONS</font></h3>
+    </center>
+    <p>
+        <!-- WEBCT -->
+    <h3 class="sql">WEBCT</h3>
+    <center>
+    <table class="sql">
+        <tr><th>id</th><th>qtype</th><th>title</th><th>image</th><th>question</th><th>answers</th><th>answers_config</th><th>question_config</th><th>category</th><th>tag_id</th></tr>
+        <tr><td>1</td><td>MC</td><td>My multiple choice</td><td>test.png</td><td>What is sin(t)?</td><td>4</td><td>[1|2]</td><td>[1|2]</td><td>Chapter1</td><td>712,4,38</td></tr>
+    </table>
+    <img class="doc" src="media/sql_webct.png">
+    </center>
+    <p>
+        <!-- WEBCT_MC -->
+    <h3 class="sql">WEBCT_MC</h3>
+    <center>
+    <table class="sql">
+        <tr><th>id</th><th>feedback</th><th>weight<span class="var">[i]</span></th><th>answer<span class="var">[i]</span></th><th>reason<span class="var">[i]</span></th><th>image<span class="var">[i]</span></th></tr>
+        <tr><td>1</td><td>Hint: Consider using Euler</td><td>[0-100]</td><td>x[n]=&delta;[n]</td><td>since x[0] = 0</td><td>images/Q17/signal.png</td></tr>
+    </table>
+        <img class="doc" src="media/sql_webct_mc.png">
+    </center>
+    <p>
+        <!-- WEBCT_M -->
+    <h3 class="sql">WEBCT_M</h3>
+    <center>
+    <table class="sql">
+        <tr><th>id</th><th>L<span class="var">[i]</span></th><th>Limage<span class="var">[i]</span></th><th>R<span class="var">[i]</span></th><th>Rimage<span class="var">[i]</span></th></tr>
+        <tr><td>1</td><td>sin(&theta;)</td><td>/images/PreLabs/lighthouse.png</td><td>cos(&theta; - &pi;/2)</td><td>/images/PreLabs/lighthouse2.png</td></tr>
+    </table>
+        <img class="doc" src="media/sql_webct_m.png">
+    </center>
+    <p>
+        <!-- WEBCT_C -->
+    <h3 class="sql">WEBCT_C</h3>
+    <center>
+    <table class="sql">
+        <tr><th>id</th><th>formula</th><th>val<span class="var">[i]</span></th><th>min_val<span class="var">[i]</span></th><th>max_val<span class="var">[i]</span></th><th>vals</th></tr>
+        <tr><td>1</td><td>2*{a}+1</td><td>{a}</td><td>1</td><td>5</td><td>1</td></tr>
+    </table>
+        <img class="doc" src="media/sql_webct_c.png">
+    </center>
+    <p>
+</body>
+</html>

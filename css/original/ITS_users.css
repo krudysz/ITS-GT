@@ -1,0 +1,77 @@
+/*
+ITS_students.css - main CSS file for ITS/students.php
+
+Author(s): Greg Krudysz
+Last Update: Mar-09-2011
+
+=============================================*/
+form.ITS_user {
+  position: relative;
+  background: #fff;
+	margin: 10%
+}
+table.ITS_user {
+  position: relative;
+	width: 300px;
+  border-collapse: collapse;
+	border: 1px solid #666;
+	margin: 2em 0;
+}
+table.ITS_user th {
+	font-size: 10pt;
+	letter-spacing: 0.1em;
+	color: #666;
+	border: 1px solid #fff;
+	font-family: arial, helvetica, sans-serif;
+}
+table.ITS_user td {
+	border: 1px solid #fff;
+	position: relative;
+	border: 1px solid #fff;
+	width: 100%;
+	vertical-align: middle;
+  padding: 3px;
+	text-align: center;
+}
+input.ITS_fields {
+  position: relative;
+	color: blue;
+	font-weight: bold;
+	text-align: center;
+	width: 120px;
+	border: 2px solid #999;
+	padding: 3px;
+}
+table.ITS_user select {
+  position: relative;
+	color: blue;
+	font-weight: bold;
+	text-align: center;
+	border: 2px solid #999;
+	padding: 3px;
+}
+table.ITS_user option {
+  position: relative;
+	color: blue;
+	font-weight: bold;
+	border: 2px solid #999;
+}
+#framecontent   { height:110px; }
+#frameseparator { top: 110px; height: 110px; /*Height of frame div*/ }
+#maincontent    { top: 110px;  /*Set top value to HeightOfFrameDiv*/ }
+/*================= COLORS ================*/
+#menuContainer          {	background: #fff;    }
+/*=========================================*/
+
+/*================= DEBUG =================*/
+/*
+#pageContainer        {	background: pink;      }
+*/
+/*=========================================*/
+
+/*-----------------------------------------*/ 
+
+/*================= COLORS ================*/
+#scoreContainerContent  {	background: #fff; }
+/*#framecontent,div.innertube,div.logout,div.spacer   {	background: #ade; }*/
+/*=========================================*/

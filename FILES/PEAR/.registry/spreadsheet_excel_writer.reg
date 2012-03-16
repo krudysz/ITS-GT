@@ -1,0 +1,90 @@
+a:23:{s:7:"attribs";a:6:{s:15:"packagerversion";s:5:"1.9.0";s:7:"version";s:3:"2.0";s:5:"xmlns";s:35:"http://pear.php.net/dtd/package-2.0";s:11:"xmlns:tasks";s:33:"http://pear.php.net/dtd/tasks-1.0";s:9:"xmlns:xsi";s:41:"http://www.w3.org/2001/XMLSchema-instance";s:18:"xsi:schemaLocation";s:147:"http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd";}s:4:"name";s:24:"Spreadsheet_Excel_Writer";s:7:"channel";s:12:"pear.php.net";s:7:"summary";s:41:"Package for generating Excel spreadsheets";s:11:"description";s:389:"Spreadsheet_Excel_Writer was born as a porting of the Spreadsheet::WriteExcel Perl module to PHP.
+  It allows writing of Excel spreadsheets without the need for COM objects.
+  It supports formulas, images (BMP) and all kinds of formatting for text and cells.
+  It currently supports the BIFF5 format (Excel 5.0), so functionality appeared in the latest Excel versions is not yet available.";s:4:"lead";a:2:{i:0;a:4:{s:4:"name";s:15:"Carsten Schmitz";s:4:"user";s:8:"cschmitz";s:5:"email";s:23:"cschmitz@limesurvey.org";s:6:"active";s:3:"yes";}i:1;a:4:{s:4:"name";s:13:"Xavier Noguer";s:4:"user";s:7:"xnoguer";s:5:"email";s:15:"xnoguer@php.net";s:6:"active";s:2:"no";}}s:9:"developer";a:2:{i:0;a:4:{s:4:"name";s:14:"Franck Lefevre";s:4:"user";s:9:"progi1984";s:5:"email";s:19:"progi1984@gmail.com";s:6:"active";s:3:"yes";}i:1;a:4:{s:4:"name";s:12:"Mika Tuupola";s:4:"user";s:7:"tuupola";s:5:"email";s:22:"tuupola@appelsiini.net";s:6:"active";s:2:"no";}}s:4:"date";s:10:"2009-11-28";s:4:"time";s:8:"14:27:16";s:7:"version";a:2:{s:7:"release";s:5:"0.9.2";s:3:"api";s:5:"0.9.2";}s:9:"stability";a:2:{s:7:"release";s:4:"beta";s:3:"api";s:4:"beta";}s:7:"license";a:2:{s:7:"attribs";a:1:{s:3:"uri";s:39:"http://www.gnu.org/copyleft/lesser.html";}s:8:"_content";s:4:"LGPL";}s:5:"notes";s:1071:"+Added feature: setTmpDir property for people that have openbase_dir. (dufuz)
+-Fixed bug #14932: The name of the Workbook stream MUST be "Workbook", not "Book" (progi1984)
+-Fixed bug #10399: Fatal error when closing workbook with no worksheets. (cweiske)
+-Fixed bug #9511 Shared /tmp dir assumed (dufuz)
+-Fixed bug #8701: Problems with the method setTextRotation() (progi1984)
+-Fixed bug #6640: Illegal character for XML encoding of pear package (mj)
+-Fixed bug #2405: Text concat operator and truncate formula (progi1984)
+-Fixed bug #2261: Excel 2002 crashes when use write() with @ as first value of the text in behalf of progi1984 (cweiske)
+-Fixed bug #1572 & #2942 - Problems with files with over 200 row / or 30kb of filesize - patch originally by michal dot fapso at goldenboat dot net - tested and reviewed (alan_k)
+-Fixed bug #1730 Wrong operand class used for A1:A2 (tuupola)
+-Fixed bug #608 Column guts always hidden, i.e. always displayed with zero height (dufuz)
+-Fixed bug: Proper codepage for BIFF8 (arnaud)
+-Fixed deprecated eregi function calls (cschmitz)";s:8:"contents";a:1:{s:3:"dir";a:2:{s:7:"attribs";a:1:{s:4:"name";s:1:"/";}s:4:"file";a:7:{i:0;a:1:{s:7:"attribs";a:3:{s:6:"md5sum";s:32:"0790e7fed322a637e074b84a9ec2ecc5";s:4:"name";s:39:"Spreadsheet/Excel/Writer/BIFFwriter.php";s:4:"role";s:3:"php";}}i:1;a:1:{s:7:"attribs";a:3:{s:6:"md5sum";s:32:"12740e89b7f1921b95f17cab7a800036";s:4:"name";s:35:"Spreadsheet/Excel/Writer/Format.php";s:4:"role";s:3:"php";}}i:2;a:1:{s:7:"attribs";a:3:{s:6:"md5sum";s:32:"e55934f36468f623b1a8a17ec5787e84";s:4:"name";s:35:"Spreadsheet/Excel/Writer/Parser.php";s:4:"role";s:3:"php";}}i:3;a:1:{s:7:"attribs";a:3:{s:6:"md5sum";s:32:"90fe536e6333170d39a975503263201b";s:4:"name";s:38:"Spreadsheet/Excel/Writer/Validator.php";s:4:"role";s:3:"php";}}i:4;a:1:{s:7:"attribs";a:3:{s:6:"md5sum";s:32:"35e6fa32e5ca0f7a01cc424ae7e15e41";s:4:"name";s:37:"Spreadsheet/Excel/Writer/Workbook.php";s:4:"role";s:3:"php";}}i:5;a:1:{s:7:"attribs";a:3:{s:6:"md5sum";s:32:"4ba5d3b02b05c3d617a5d18f84edf998";s:4:"name";s:38:"Spreadsheet/Excel/Writer/Worksheet.php";s:4:"role";s:3:"php";}}i:6;a:1:{s:7:"attribs";a:3:{s:6:"md5sum";s:32:"c6e89b466c6976fa34287a37b7eb6199";s:4:"name";s:28:"Spreadsheet/Excel/Writer.php";s:4:"role";s:3:"php";}}}}}s:12:"dependencies";a:1:{s:8:"required";a:3:{s:3:"php";a:1:{s:3:"min";s:5:"4.1.0";}s:13:"pearinstaller";a:1:{s:3:"min";s:7:"1.4.0b1";}s:7:"package";a:3:{s:4:"name";s:3:"OLE";s:7:"channel";s:12:"pear.php.net";s:3:"min";s:3:"0.5";}}}s:10:"phprelease";s:0:"";s:9:"changelog";a:1:{s:7:"release";a:10:{i:0;a:5:{s:7:"version";a:2:{s:7:"release";s:3:"0.2";s:3:"api";s:3:"0.2";}s:9:"stability";a:2:{s:7:"release";s:4:"beta";s:3:"api";s:4:"beta";}s:4:"date";s:10:"2003-03-17";s:7:"license";a:2:{s:7:"attribs";a:1:{s:3:"uri";s:39:"http://www.gnu.org/copyleft/lesser.html";}s:8:"_content";s:4:"LGPL";}s:5:"notes";s:346:"-added several formatting methods: setTextRotation(), setStrikeOut(),
+setOutLine(), setShadow(), setScript().
+-fixed bug in Workbook::sheets() (Bjoern Schotte).
+-fixed range for references in formulas (Edward).
+-added support for external references in formulas.
+-added support for comparisons in formulas.
+-added support for strings in formulas.";}i:1;a:5:{s:7:"version";a:2:{s:7:"release";s:3:"0.3";s:3:"api";s:3:"0.3";}s:9:"stability";a:2:{s:7:"release";s:6:"stable";s:3:"api";s:6:"stable";}s:4:"date";s:10:"2003-05-02";s:7:"license";a:2:{s:7:"attribs";a:1:{s:3:"uri";s:39:"http://www.gnu.org/copyleft/lesser.html";}s:8:"_content";s:4:"LGPL";}s:5:"notes";s:472:"New features:
+ -added support for row ranges (JT Hughes)
+ -added method method Format::setUnLocked() (Ajit Dixit)
+ -added Worksheet::writeRow() and Worksheet::writeCol()
+Bug fixes:
+ -fixed problem with unparenthesized expresions in formulas (Brent Laminack)
+ -fixed problems with non ISO-8859-1 characters (KUBO Atsuhiro)
+ -fixed swapping of columns in formulas (JT Hughes)
+ -fixed assorted bugs in tokenizing formulas (JT Hughes)
+ -fixed Worksheet::activate() (JT Hughes)";}i:2;a:5:{s:7:"version";a:2:{s:7:"release";s:3:"0.4";s:3:"api";s:3:"0.4";}s:9:"stability";a:2:{s:7:"release";s:6:"stable";s:3:"api";s:6:"stable";}s:4:"date";s:10:"2003-08-21";s:7:"license";a:2:{s:7:"attribs";a:1:{s:3:"uri";s:39:"http://www.gnu.org/copyleft/lesser.html";}s:8:"_content";s:4:"LGPL";}s:5:"notes";s:470:"New features:
+ -using OLE package (>= 0.3) to generate files bigger than 7MB
+ -changed setFgColor() and setBgColor()'s behavior to something more intuitive.
+Bug fixes:
+ -fixed bug #25133, lowercase cell references (jkwiat03 at hotmail dot com)
+ -fixed Bug #23730, worksheet names containing spaces in formulas (Robin Ericsson)
+ -fixed Bug #24147, formulas ended in '0' (paul at classical dot com)
+ -fixed swapping of arguments in variable arguments functions (JT Hughes)";}i:3;a:5:{s:7:"version";a:2:{s:7:"release";s:3:"0.5";s:3:"api";s:3:"0.5";}s:9:"stability";a:2:{s:7:"release";s:6:"stable";s:3:"api";s:6:"stable";}s:4:"date";s:10:"2003-10-01";s:7:"license";a:2:{s:7:"attribs";a:1:{s:3:"uri";s:39:"http://www.gnu.org/copyleft/lesser.html";}s:8:"_content";s:4:"LGPL";}s:5:"notes";s:318:"New features:
+ -added rowcolToCell() utility method for easy writing of formula's cell references (JT Hughes).
+ -added Worksheet::setOutline() method (Herman Kuiper)
+ -added Format::setFontFamily() method (Donnie Miller)
+Bug fixes:
+ -fixed bug #21, cyrillic characters in sheet references (arhip at goldentele dot com)";}i:4;a:5:{s:7:"version";a:2:{s:7:"release";s:3:"0.6";s:3:"api";s:3:"0.6";}s:9:"stability";a:2:{s:7:"release";s:6:"stable";s:3:"api";s:6:"stable";}s:4:"date";s:10:"2003-11-15";s:7:"license";a:2:{s:7:"attribs";a:1:{s:3:"uri";s:39:"http://www.gnu.org/copyleft/lesser.html";}s:8:"_content";s:4:"LGPL";}s:5:"notes";s:605:"New features:
+ - allow semicolon as argument separator (Axel Pratzner)
+ - added experimental Excel97 generation. You can test it with setVersion():
+   Beware! this method will be deprecated in a future release (when
+   Excel97 becomes the default). It is only available for testing
+   purposes. Use it at your own risk.
+ - strings longer than 255 bytes are now available using the experimental
+   Excel97 generation. But not all Excel97 features are available yet!
+Bug fixes:
+ - Fixed bug #225, error in writeUrl() (jamesn at tocquigny dot com)
+ - Fixed bug #59, retval undefined for writeRow() (Bertrand)";}i:5;a:5:{s:7:"version";a:2:{s:7:"release";s:3:"0.7";s:3:"api";s:3:"0.7";}s:9:"stability";a:2:{s:7:"release";s:6:"stable";s:3:"api";s:6:"stable";}s:4:"date";s:10:"2004-02-27";s:7:"license";a:2:{s:7:"attribs";a:1:{s:3:"uri";s:39:"http://www.gnu.org/copyleft/lesser.html";}s:8:"_content";s:4:"LGPL";}s:5:"notes";s:322:"New features:
+ - allow setting temp dir other than default using setTempDir() (using OLE 5.0 for this).
+ - added setMerge() for merging (only for experimental Excel97 generation)
+ - added setCountry() method.
+ - added setLocked() method.
+Bug fixes:
+ - Fixed bug #415, typo in BIFF8 code (papercrane at reversefold dot com)";}i:6;a:5:{s:7:"version";a:2:{s:7:"release";s:3:"0.8";s:3:"api";s:3:"0.8";}s:9:"stability";a:2:{s:7:"release";s:6:"stable";s:3:"api";s:6:"stable";}s:4:"date";s:10:"2004-06-22";s:7:"license";a:2:{s:7:"attribs";a:1:{s:3:"uri";s:39:"http://www.gnu.org/copyleft/lesser.html";}s:8:"_content";s:4:"LGPL";}s:5:"notes";s:339:"New features:
+ - added hideScreenGridlines() (Paul Osman)
+Bug fixes:
+ - Fixed SST table (long strings) (Bernd Jaenichen)
+ - Fixed bug #1218, SST table (boucher dot stephane at free dot fr)
+ - Fixed bug #781, insertBitmap ignores row height
+ - Fixed bug #578, setVPageBreaks doesn't handle multiple value arrays (natel at tocquigny dot com)";}i:7;a:5:{s:7:"version";a:2:{s:7:"release";s:5:"0.9.0";s:3:"api";s:5:"0.9.0";}s:9:"stability";a:2:{s:7:"release";s:6:"stable";s:3:"api";s:6:"stable";}s:4:"date";s:10:"2005-11-21";s:7:"license";a:2:{s:7:"attribs";a:1:{s:3:"uri";s:39:"http://www.gnu.org/copyleft/lesser.html";}s:8:"_content";s:4:"LGPL";}s:5:"notes";s:870:"New features:
+- adding new methods Format::setVAlign() and Format::setHAlign()
+- adding support for uncapitalized functions in formulas (ej: "=sum(B27:B31)")
+- adding support for different charsets with method Worksheet::setInputEncoding()
+- adding support for sheetnames longer than 31 chars when using setVersion(8).
+Bug fixes:
+- Fixed Bug #1796, wrong regular expression in _writeUrlInternal
+- Fixed Bug #2363, wrong export filename with spaces
+- Fixed Bug #2425, Error using writeFormula with Now() and TODAY()
+- Fixed Bug #2876, German Umlauts destroy sheet references
+- Fixed Bug #1706, Formulas refer to other Worksheets with "spezial" names don't work
+- Fixed Bug #2748, setMargins(), setHeader() and setFooter() work in excel but not in openoffice.
+- Fixed Bug #5698, preg_replace in _writeUrlInternal
+- Fixed Bug #2823, Inpropper results from writeUrl() method";}i:8;a:5:{s:7:"version";a:2:{s:7:"release";s:5:"0.9.1";s:3:"api";s:5:"0.9.1";}s:9:"stability";a:2:{s:7:"release";s:6:"stable";s:3:"api";s:6:"stable";}s:4:"date";s:10:"2006-09-26";s:7:"license";a:2:{s:7:"attribs";a:1:{s:3:"uri";s:39:"http://www.gnu.org/copyleft/lesser.html";}s:8:"_content";s:4:"LGPL";}s:5:"notes";s:0:"";}i:9;a:5:{s:7:"version";a:2:{s:7:"release";s:5:"0.9.2";s:3:"api";s:5:"0.9.2";}s:9:"stability";a:2:{s:7:"release";s:4:"beta";s:3:"api";s:6:"stable";}s:4:"date";s:10:"2009-11-28";s:7:"license";a:2:{s:7:"attribs";a:1:{s:3:"uri";s:39:"http://www.gnu.org/copyleft/lesser.html";}s:8:"_content";s:4:"LGPL";}s:5:"notes";s:0:"";}}}s:8:"filelist";a:7:{s:39:"Spreadsheet/Excel/Writer/BIFFwriter.php";a:4:{s:6:"md5sum";s:32:"0790e7fed322a637e074b84a9ec2ecc5";s:4:"name";s:39:"Spreadsheet/Excel/Writer/BIFFwriter.php";s:4:"role";s:3:"php";s:12:"installed_as";s:58:"/root/Desktop/PEAR/Spreadsheet/Excel/Writer/BIFFwriter.php";}s:35:"Spreadsheet/Excel/Writer/Format.php";a:4:{s:6:"md5sum";s:32:"12740e89b7f1921b95f17cab7a800036";s:4:"name";s:35:"Spreadsheet/Excel/Writer/Format.php";s:4:"role";s:3:"php";s:12:"installed_as";s:54:"/root/Desktop/PEAR/Spreadsheet/Excel/Writer/Format.php";}s:35:"Spreadsheet/Excel/Writer/Parser.php";a:4:{s:6:"md5sum";s:32:"e55934f36468f623b1a8a17ec5787e84";s:4:"name";s:35:"Spreadsheet/Excel/Writer/Parser.php";s:4:"role";s:3:"php";s:12:"installed_as";s:54:"/root/Desktop/PEAR/Spreadsheet/Excel/Writer/Parser.php";}s:38:"Spreadsheet/Excel/Writer/Validator.php";a:4:{s:6:"md5sum";s:32:"90fe536e6333170d39a975503263201b";s:4:"name";s:38:"Spreadsheet/Excel/Writer/Validator.php";s:4:"role";s:3:"php";s:12:"installed_as";s:57:"/root/Desktop/PEAR/Spreadsheet/Excel/Writer/Validator.php";}s:37:"Spreadsheet/Excel/Writer/Workbook.php";a:4:{s:6:"md5sum";s:32:"35e6fa32e5ca0f7a01cc424ae7e15e41";s:4:"name";s:37:"Spreadsheet/Excel/Writer/Workbook.php";s:4:"role";s:3:"php";s:12:"installed_as";s:56:"/root/Desktop/PEAR/Spreadsheet/Excel/Writer/Workbook.php";}s:38:"Spreadsheet/Excel/Writer/Worksheet.php";a:4:{s:6:"md5sum";s:32:"4ba5d3b02b05c3d617a5d18f84edf998";s:4:"name";s:38:"Spreadsheet/Excel/Writer/Worksheet.php";s:4:"role";s:3:"php";s:12:"installed_as";s:57:"/root/Desktop/PEAR/Spreadsheet/Excel/Writer/Worksheet.php";}s:28:"Spreadsheet/Excel/Writer.php";a:4:{s:6:"md5sum";s:32:"c6e89b466c6976fa34287a37b7eb6199";s:4:"name";s:28:"Spreadsheet/Excel/Writer.php";s:4:"role";s:3:"php";s:12:"installed_as";s:47:"/root/Desktop/PEAR/Spreadsheet/Excel/Writer.php";}}s:12:"_lastversion";N;s:7:"dirtree";a:3:{s:43:"/root/Desktop/PEAR/Spreadsheet/Excel/Writer";b:1;s:36:"/root/Desktop/PEAR/Spreadsheet/Excel";b:1;s:30:"/root/Desktop/PEAR/Spreadsheet";b:1;}s:3:"old";a:7:{s:7:"version";s:5:"0.9.2";s:12:"release_date";s:10:"2009-11-28";s:13:"release_state";s:4:"beta";s:15:"release_license";s:4:"LGPL";s:13:"release_notes";s:1071:"+Added feature: setTmpDir property for people that have openbase_dir. (dufuz)
+-Fixed bug #14932: The name of the Workbook stream MUST be "Workbook", not "Book" (progi1984)
+-Fixed bug #10399: Fatal error when closing workbook with no worksheets. (cweiske)
+-Fixed bug #9511 Shared /tmp dir assumed (dufuz)
+-Fixed bug #8701: Problems with the method setTextRotation() (progi1984)
+-Fixed bug #6640: Illegal character for XML encoding of pear package (mj)
+-Fixed bug #2405: Text concat operator and truncate formula (progi1984)
+-Fixed bug #2261: Excel 2002 crashes when use write() with @ as first value of the text in behalf of progi1984 (cweiske)
+-Fixed bug #1572 & #2942 - Problems with files with over 200 row / or 30kb of filesize - patch originally by michal dot fapso at goldenboat dot net - tested and reviewed (alan_k)
+-Fixed bug #1730 Wrong operand class used for A1:A2 (tuupola)
+-Fixed bug #608 Column guts always hidden, i.e. always displayed with zero height (dufuz)
+-Fixed bug: Proper codepage for BIFF8 (arnaud)
+-Fixed deprecated eregi function calls (cschmitz)";s:12:"release_deps";a:3:{i:0;a:4:{s:4:"type";s:3:"php";s:3:"rel";s:2:"ge";s:7:"version";s:5:"4.1.0";s:8:"optional";s:2:"no";}i:1;a:6:{s:4:"type";s:3:"pkg";s:7:"channel";s:12:"pear.php.net";s:4:"name";s:4:"PEAR";s:3:"rel";s:2:"ge";s:7:"version";s:7:"1.4.0b1";s:8:"optional";s:2:"no";}i:2;a:6:{s:4:"type";s:3:"pkg";s:7:"channel";s:12:"pear.php.net";s:4:"name";s:3:"OLE";s:3:"rel";s:2:"ge";s:7:"version";s:3:"0.5";s:8:"optional";s:2:"no";}}s:11:"maintainers";a:4:{i:0;a:5:{s:4:"name";s:15:"Carsten Schmitz";s:5:"email";s:23:"cschmitz@limesurvey.org";s:6:"active";s:3:"yes";s:6:"handle";s:8:"cschmitz";s:4:"role";s:4:"lead";}i:1;a:5:{s:4:"name";s:13:"Xavier Noguer";s:5:"email";s:15:"xnoguer@php.net";s:6:"active";s:2:"no";s:6:"handle";s:7:"xnoguer";s:4:"role";s:4:"lead";}i:2;a:5:{s:4:"name";s:14:"Franck Lefevre";s:5:"email";s:19:"progi1984@gmail.com";s:6:"active";s:3:"yes";s:6:"handle";s:9:"progi1984";s:4:"role";s:9:"developer";}i:3;a:5:{s:4:"name";s:12:"Mika Tuupola";s:5:"email";s:22:"tuupola@appelsiini.net";s:6:"active";s:2:"no";s:6:"handle";s:7:"tuupola";s:4:"role";s:9:"developer";}}}s:10:"xsdversion";s:3:"2.0";s:13:"_lastmodified";i:1292260271;}

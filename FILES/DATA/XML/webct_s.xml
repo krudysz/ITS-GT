@@ -1,0 +1,2146 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="webct_s.xsl"?>
+<webct_s>
+	<entry>
+		<id>11</id>
+		<ans1>\A(\s*\w*\s*=|)\s*myBPF\s*\(\s*\[\s*1\s*(\,|\;|\s+)\s*2\s*\]\s*\,\s*110\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*myBPF\s*\(\s*\[\s*2\s*(\,|\;|\s+)\s*1\s*\]\s*\,\s*110\s*\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>12</id>
+		<ans1>\A(\s*\w*\s*=|)\s*AA\s*\(\s*:\s*\,\s*100\s*\)\s*;?\s*\Z:100:0:20:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>33</id>
+		<ans1>signal.m:100:0:20:0
+</ans1>
+		<ans2>signal:100:0:20:0
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>59</id>
+		<ans1>yy:100:0:20:0
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>66</id>
+		<ans1>\A(\s*\w*\s*=|\s*)\s*abs\s*\(\s*zz\s*\)\s*;?\s*\Z:100:0:20:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>116</id>
+		<ans1>\A\s*stem\s*\(\s*(0\s*:(\s*1\s*\:|)\s*39|nn|kk\s*\(\s*1\s*:(\s*1\s*\:|)\s*40\s*\))\s*\,\s*yy\s*\(\s*(nn\s*\+\s*1|1\s*:(\s*1\s*\:|)\s*40)\s*\)(\s*\,\s*&apos;filled&apos;|)(\s*\,\s*&apos;\D*&apos;|)(\s*\,\s*&apos;filled&apos;|)\s*\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2>\A\s*stem\s*\((\s*1\s*:(\s*1\s*\:|)\s*40\s*\,|)\s*yy\s*\(\s*1\s*:(\s*1\s*\:|)\s*40\s*\)(\s*\,\s*&apos;filled&apos;|)(\s*\,\s*&apos;\D*&apos;|)(\s*\,\s*&apos;filled&apos;|)\s*\)\s*;?\s*\Z:50:0:40:2
+</ans2>
+		<ans3>\A\s*stem\s*\(\s*(0\s*:(\s*1\s*\:|)\s*39|nn\s*(\(\s*1\s*:(\s*1\s*\:|)\s*40\s*\)|))\s*\,\s*yy\s*\(\s*nn\s*(\(\s*2\s*:(\s*1\s*\:|)\s*41\s*\)|)\s*\)(\s*\,\s*&apos;filled&apos;|)(\s*\,\s*&apos;\D*&apos;|)(\s*\,\s*&apos;filled&apos;|)\s*\)\s*;?\s*\Z:50:0:20:2
+</ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>121</id>
+		<ans1>\A(\s*\w*\s*=|)\s*(firfilt|conv(2|))\s*\(\s*(bb1\s*\,\s*bb2|bb2\s*\,\s*bb1)\s*\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>128</id>
+		<ans1>44200:100:0:20:0
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>147</id>
+		<ans1>\A(\s*\w*\s*=|)\s*xx\s*\(\s*\:\s*\)\s*\*\s*ones\s*\(\s*1\s*\,\s*100\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>152</id>
+		<ans1>\A(\s*\w*\s*=|)\s*ones\s*\(\s*99\s*\,\s*1\s*\)\s*\*\s*xx\s*\(\s*\:\s*\)\s*\.&apos;\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*ones\s*\(\s*99\s*\,\s*1\s*\)\s*\*\s*transpose\s*\(\s*xx\s*\(\s*\:\s*\)\s*\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>159</id>
+		<ans1>\A(\s*\w+\s*=|)\s*cos\s*\(\s*0.02\s*\*\s*pi\s*\*\s*\[\s*0\s*\:\s*99\s*\]\s*\)\s*\.\*\s*mod\s*\(\s*\[\s*0\s*\:\s*99\s*\]\s*\,\s*2\s*\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2>\A(\s*\w+\s*=|)\s*cos\s*\(\s*pi\s*\*\s*0.02\s*\*\s*\[\s*0\s*\:\s*99\s*\]\s*\)\s*\.\*\s*mod\s*\(\s*\[\s*0\s*\:\s*99\s*\]\s*\,\s*2\s*\)\s*;?\s*\Z:100:0:40:2
+</ans2>
+		<ans3>\A(\s*\w+\s*=|)\s*cos\s*\(\s*0.02\s*\*\s*\[\s*0\s*\:\s*99\s*\]\s*\*\s*pi\s*\)\s*\.\*\s*mod\s*\(\s*\[\s*0\s*\:\s*99\s*\]\s*\,\s*2\s*\)\s*;?\s*\Z:100:0:40:2
+</ans3>
+		<ans4>\A(\s*\w+\s*=|)\s*cos\s*\(\s*pi\s*\*\s*\[\s*0\s*\:\s*99\s*\]\s*\*\s*0.02\s*\)\s*\.\*\s*mod\s*\(\s*\[\s*0\s*\:\s*99\s*\]\s*\,\s*2\s*\)\s*;?\s*\Z:100:0:40:2
+</ans4>
+		<ans5>\A(\s*\w+\s*=|)\s*cos\s*\(\s*\[\s*0\s*\:\s*99\s*\]\s*\*\s*pi\s*\*\s*0.02\s*\)\s*\.\*\s*mod\s*\(\s*\[\s*0\s*\:\s*99\s*\]\s*\,\s*2\s*\)\s*;?\s*\Z:100:0:40:2
+</ans5>
+		<ans6>\A(\s*\w+\s*=|)\s*cos\s*\(\s*\[\s*0\s*\:\s*99\s*\]\s*\*\s*0.02\s*\*\s*pi\s*\)\s*\.\*\s*mod\s*\(\s*\[\s*0\s*\:\s*99\s*\]\s*\,\s*2\s*\)\s*;?\s*\Z:100:0:40:2
+</ans6>
+		<ans7>\A(\s*\w+\s*=|)\s*mod\s*\(\s*\[\s*0\s*\:\s*99\s*\]\s*\,\s*2\s*\)\s*\.\*\s*cos\s*\(\s*0.02\s*\*\s*pi\s*\*\s*\[\s*0\s*\:\s*99\s*\]\s*\)\s*;?\s*\Z:100:0:40:2
+</ans7>
+		<ans8>\A(\s*\w+\s*=|)\s*mod\s*\(\s*\[\s*0\s*\:\s*99\s*\]\s*\,\s*2\s*\)\s*\.\*\s*cos\s*\(\s*pi\s*\*\s*0.02\s*\*\s*\[\s*0\s*\:\s*99\s*\]\s*\)\s*;?\s*\Z:100:0:40:2
+</ans8>
+		<ans9>\A(\s*\w+\s*=|)\s*mod\s*\(\s*\[\s*0\s*\:\s*99\s*\]\s*\,\s*2\s*\)\s*\.\*\s*cos\s*\(\s*0.02\s*\*\s*\[\s*0\s*\:\s*99\s*\]\s*\*\s*pi\s*\)\s*;?\s*\Z:100:0:40:2
+</ans9>
+		<ans10>:A(s*w+s*=|)s*mods*(s*[s*0s*:s*99s*]s*,s*2s*)s*.*s*coss*(s*pis**s*[s*0s*:s*99s*]s**s*0.02s*)s*;?s*:100:0:40:2
+</ans10>
+		<ans11>:A(s*w+s*=|)s*mods*(s*[s*0s*:s*99s*]s*,s*2s*)s*.*s*coss*(s*[s*0s*:s*99s*]s**s*pis**s*0.02s*)s*;?s*:100:0:40:2
+</ans11>
+		<ans12>:A(s*w+s*=|)s*mods*(s*[s*0s*:s*99s*]s*,s*2s*)s*.*s*coss*(s*[s*0s*:s*99s*]s**s*0.02s**s*pis*)s*;?s*:100:0:40:2
+</ans12>
+	</entry>
+	<entry>
+		<id>160</id>
+		<ans1>\A(\s*\w*\s*=|)\s*VHBPF\s*\(\s*1.03\s*\,\s*1.3\s*\,\s*98\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>161</id>
+		<ans1>\A(\s*\w*\s*=|)\s*VHBPF\s*\(\s*1.3\s*\,\s*2.3\s*\,\s*54\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>162</id>
+		<ans1>\A(\s*\w*\s*=|)\s*VHBPF\s*\(\s*1.8\s*\,\s*2.2\s*\,\s*66\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>163</id>
+		<ans1>\A(\s*\w*\s*=|)\s*VHBPF\s*\(\s*1\s*\,\s*2\s*\,\s*110\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>170</id>
+		<ans1>\A\s*xx\s*=\s*wavread\s*\(\s*&apos;tobe(|.wav)&apos;\s*\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>175</id>
+		<ans1>\A\s*xx\s*=\s*wavread\s*\(\s*&apos;apple(|.wav)&apos;\s*\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>176</id>
+		<ans1>\A\s*xx\s*=\s*wavread\s*\(\s*&apos;juice(|.wav)&apos;\s*\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>199</id>
+		<ans1>\A\s*0\s*\Z:100:0:30:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>200</id>
+		<ans1>\A(\s*\w*\s*=|)\s*ttonedial\s*\(\s*'831055135'\s*\,\s*8000\s*\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>201</id>
+		<ans1>\A(\s*\w*\s*=|)\s*ttonedial\s*\(\s*'189643103'\s*\,\s*8000\s*\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>202</id>
+		<ans1>\A(\s*\w*\s*=|)\s*ttonedial\s*\(\s*'357558829'\s*\,\s*11025\s*\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>203</id>
+		<ans1>\A(\s*\w*\s*=|)\s*ttonedial\s*\(\s*'794181561'\s*\,\s*11025\s*\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>205</id>
+		<ans1>\A(\s*\w*\s*=|)\s*ttoneBPF\s*\(\s*ff\s*\,\s*512\s*\,\s*8000\s*\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>210</id>
+		<ans1>\A(\s*\w*\s*=|)\s*zeros\s*\(\s*100(\s*|\s*\,\s*100\s*)\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*zeros\s*\(\s*\[\s*100(\s*|\s*\,\s*100\s*)\]\s*\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*\[\s*zeros\s*\(\s*\[?\s*100(\s*|\s*\,\s*100\s*)\]?\s*\)\s*\]\s*;?\s*\Z:80:0:25:2
+</ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>216</id>
+		<ans1>\A(\s*(\[\s*\w+\s*(|\,\s*\w+\s*(|\,\s*\w+\s*))\]|\w*)\s*=|)\s*find\s*\(\s*bb(\s*\(\s*\:\s*\)|)\s*\&lt;\s*0\s*\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>218</id>
+		<ans1>\A\s*zvect\s*\((\s*\[\s*0\s*(\,|\s)\s*0\s*\]\s*,)?\s*\[\s*b1\s*(\,|\s)\s*b2\s*\]\s*(,\s*'\D*'\s*(,\s*\d+\s*)?)?\)\s*;?\s*\Z:100:0:35:2
+</ans1>
+		<ans2>\A\s*zvect\s*\((\s*\[\s*0\s*(\,|\s)\s*0\s*\]\s*,)?\s*\[\s*b2\s*(\,|\s)\s*b1\s*\]\s*(,\s*'\D*'\s*(,\s*\d+\s*)?)?\)\s*;?\s*\Z:100:0:20:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>254</id>
+		<ans1>\A\s*xx\s*=\s*imread\s*\(\s*&apos;ECE2025.png&apos;\s*\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2>\A\s*xx\s*=\s*imread\s*\(\s*&apos;ECE2025&apos;\s*\,\s*&apos;png&apos;\s*\)\s*;?\s*\Z:100:0:30:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>257</id>
+		<ans1>\A\s*which\s+('?)[zZ][vV][eE][cC][tT](.[mM])?\1(\s+\-[aA][lL][lL])?\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A\s*which\s*\(\s*'[zZ][vV][eE][cC][tT](.[mM])?'\s*(,\s*'-[aA][lL][lL]'\s*)?\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>258</id>
+		<ans1>\A\s*which\s+('?)[zZ][pP][rR][iI][nN][tT](.[mM])?\1(\s+\-[aA][lL][lL])?\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A\s*which\s*\(\s*'[zZ][pP][rR][iI][nN][tT](.[mM])?'\s*(,\s*'-[aA][lL][lL]'\s*)?\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>259</id>
+		<ans1>\A\s*yy\s*=\s*imread\s*\(\s*&apos;DC10.png&apos;\s*\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2>\A\s*yy\s*=\s*imread\s*\(\s*&apos;DC10&apos;\s*\,\s*&apos;png&apos;\s*\)\s*;?\s*\Z:100:0:30:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>260</id>
+		<ans1>\A\s*bb\s*=\s*imread\s*\(\s*&apos;houses.png&apos;\s*\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2>\A\s*bb\s*=\s*imread\s*\(\s*&apos;houses&apos;\s*\,\s*&apos;png&apos;\s*\)\s*;?\s*\Z:100:0:30:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>264</id>
+		<ans1>\A\s*zcat\s*\(\s*\[\s*z1\s*(\,|\s)\s*z2\s*(\,|\s)\s*z3\s*\]\s*(,\s*'\D*'\s*(,\s*\d+\s*)?)?\)\s*;?\s*\Z:100:0:35:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>279</id>
+		<ans1>\A(\s*\w*\s*=|)\s*specgram\s*\(\s*yy\s*\,\s*(\d+|\[\s*\])\s*\,\s*33125\s*(|\,\s*\d+\s*(|\,\s*\d+\s*))\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*plotspec\s*\(\s*yy(|\s*\+\s*j\s*\*\s*\d?\.?\d*e-\d*)\s*\,\s*33125\s*(|\,\s*\d+\s*)\)\s*;?\s*\Z:100:0:20:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>287</id>
+		<ans1>0:100:0::
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>289</id>
+		<ans1>\A(\s*\w*\s*=|)\s*AA\s*\(\s*2\s*:\s*3\s*:\s*end\s*\,\s*2\s*:\s*3\s*:\s*end\s*\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*AA\s*\(\s*2\s*:\s*3\s*:\s*size\s*\(\s*AA\s*,\s*1\s*\)\s*\,\s*2\s*:\s*3\s*:\s*size\s*\(\s*AA\s*,\s*2\s*\)\s*\)\s*;?\s*\Z:80:0:40:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*AA\s*\(\s*1\s*:\s*3\s*:\s*end\s*\,\s*1\s*:\s*3\s*:\s*end\s*\)\s*;?\s*\Z:50:0:40:2
+</ans3>
+		<ans4>\A(\s*\w*\s*=|)\s*AA\s*\(\s*1\s*:\s*3\s*:\s*size\s*\(\s*AA\s*,\s*1\s*\)\s*\,\s*1\s*:\s*3\s*:\s*size\s*\(\s*AA\s*,\s*2\s*\)\s*\)\s*;?\s*\Z:50:0:40:2
+</ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>306</id>
+		<ans1>vertically:100:0:20:0
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>309</id>
+		<ans1>\A(\s*\w*\s*=|)\s*xx\s*\(\s*\:\s*\)\s*&apos;\s*\*\s*xx\s*\(\s*\:\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*ctranspose\s*\(\s*xx\s*\(\s*\:\s*\)\s*\)\s*\*\s*xx\s*\(\s*\:\s*\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>329</id>
+		<ans1>\A\s*zz\s*=\s*\[\s*xx\s*(\,|\s)\s*zeros\(\s*1\s*\,\s*2000\s*\)\s*(\,|\s)\s*yy\s*\]\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2>\A\s*(=|)\s*\[\s*xx\s*(\,|\s)\s*zeros\(\s*1\s*\,\s*2000\s*\)\s*(\,|\s)\s*yy\s*\]\s*;?\s*\Z:75:0:30:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>359</id>
+		<ans1>\A\s*zz\s*=\s*\[\s*xx\s*(\,|\s)\s*zeros\(\s*1\s*\,\s*8000\s*\)\s*(\,|\s)\s*yy\s*\]\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2>\A\s*(=|)\s*\[\s*xx\s*(\,|\s)\s*zeros\(\s*1\s*\,\s*8000\s*\)\s*(\,|\s)\s*yy\s*\]\s*;?\s*\Z:75:0:30:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>370</id>
+		<ans1>\A(\s*\w*\s*=|)\s*char\s*\(\s*bin2dec\s*\(\s*fskbit\s*\)\s*\s*\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*char\s*\(\s*bin2dec\s*\(\s*&apos;\s*fskbit\s*&apos;\s*\)\s*\s*\)\s*;?\s*\Z:50:0:40:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*setstr\s*\(\s*bin2dec\s*\(\s*fskbit\s*\)\s*\s*\)\s*;?\s*\Z:100:0:40:2
+</ans3>
+		<ans4>\A(\s*\w*\s*=|)\s*setstr\s*\(\s*bin2dec\s*\(\s*&apos;\s*fskbit\s*&apos;\s*\)\s*\s*\)\s*;?\s*\Z:50:0:40:2
+</ans4>
+		<ans5>\A(\s*\w*\s*=|)\s*char\s*\(\s*bin2dec\s*\(\s*'01011101'\s*\)\s*\s*\)\s*;?\s*\Z:50:0:20:2
+</ans5>
+		<ans6>\A(\s*\w*\s*=|)\s*bin2dec\s*\(\s*fskbit\s*\)\s*\s*;?\s*\Z:50:0:20:2
+</ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>375</id>
+		<ans1>\A(\s*(\[\s*\w+\s*(|\,\s*\w+\s*(|\,\s*\w+\s*))\]|\w*)\s*=|)\s*find\s*\(\s*bb(\s*\(\s*\:\s*\)|)\s*\&gt;\s*0\s*\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>402</id>
+		<ans1>88400:100:0:20:0
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>405</id>
+		<ans1>\A(\s*\w*\s*=|)\s*AA\s*\(\s*150\s*\,\s*:\s*\)\s*;?\s*\Z:100:0:20:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*AA\s*\(\s*150\s*\,\s*1\s*:\s*256\s*\)\s*;?\s*\Z:90:0:20:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>421</id>
+		<ans1>\A(\s*\w*\s*=|)\s*specgram\s*\(\s*zz\s*\,\s*(\d+|\[\s*\])\s*\,\s*44100\s*(|\,\s*\d+\s*(|\,\s*\d+\s*))\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*plotspec\s*\(\s*zz(|\s*\+\s*j\s*\*\s*\d?\.?\d*e-\d*)\s*\,\s*44100\s*(|\,\s*\d+\s*)\)\s*;?\s*\Z:100:0:20:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>427</id>
+		<ans1>\A(\s*\w*\s*=|)\s*ones\s*\(\s*100(\s*|\s*\,\s*100\s*)\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*ones\s*\(\s*\[\s*100(\s*|\s*\,\s*100\s*)\]\s*\)\s*;?\s*\Z:100:0:30:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*\[\s*ones\s*\(\s*\[?\s*100(\s*|\s*\,\s*100\s*)\]?\s*\)\s*\]\s*;?\s*\Z:80:0:30:2
+</ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>435</id>
+		<ans1>10:100:0:20:0
+</ans1>
+		<ans2>10.0:100:0:20:0
+</ans2>
+		<ans3>10.00:100:0:20:0
+</ans3>
+		<ans4>10 seconds:100:0:20:0
+</ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>436</id>
+		<ans1>\A(\s*\w*\s*=|)\s*zeros\s*\(\s*100\s*\,\s*99\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*zeros\s*\(\s*\[\s*100\s*\,\s*99\s*\]\s*\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*\[\s*zeros\s*\(\s*\[?\s*100\s*\,\s*99\s*\]?\s*\)\s*\]\s*;?\s*\Z:80:0:25:2
+</ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>438</id>
+		<ans1>\A\s*zprint\s*\(\s*\[\s*b1\s*(\,|\s)\s*b2\s*(\,|\s)\s*b3\s*\]\s*\)\s*;?\s*\Z:100:0:35:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>458</id>
+		<ans1>\A\s*(help|helpwin)\s+[sS][uU][bB][pP][lL][oO][tT]\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>463</id>
+		<ans1>\A\s*lookfor\s+'[zZ][oO][oO][mM] [iI][nN]'\s*;?\s*\Z:100:0:20:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>499</id>
+		<ans1>\A(\s*\w*\s*=|)\s*ones\s*\(\s*100\s*\,\s*99\s*\)\s*;?\s*\Z:100:0:35:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*ones\s*\(\s*\[\s*100\s*\,\s*99\s*\]\s*\)\s*;?\s*\Z:100:0:30:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*\[\s*ones\s*\(\s*\[?\s*100\s*\,\s*99\s*\]?\s*\)\s*\]\s*;?\s*\Z:80:0:30:2
+</ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>524</id>
+		<ans1>\A(\s*\w*\s*=|)\s*interp1\s*\(\s*xx\s*\,\s*yy\s*\,\s*xx1\s*(|\,\s*&apos;\*?linear\s*&apos;\s*)\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*interp1q\s*\(\s*xx\s*\,\s*yy\s*\,\s*xx1\s*\)\s*;?\s*\Z:100:0:40:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>528</id>
+		<ans1>\A(\s*\w*\s*=|)\s*char\s*\(\s*bin2dec\s*\(\s*vv\s*\)\s*\s*\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*char\s*\(\s*bin2dec\s*\(\s*&apos;\s*vv\s*&apos;\s*\)\s*\s*\)\s*;?\s*\Z:50:0:40:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*setstr\s*\(\s*bin2dec\s*\(\s*vv\s*\)\s*\s*\)\s*;?\s*\Z:100:0:40:2
+</ans3>
+		<ans4>\A(\s*\w*\s*=|)\s*setstr\s*\(\s*bin2dec\s*\(\s*&apos;\s*vv\s*&apos;\s*\)\s*\s*\)\s*;?\s*\Z:50:0:40:2
+</ans4>
+		<ans5>\A(\s*\w*\s*=|)\s*char\s*\(\s*bin2dec\s*\(\s*'01011101'\s*\)\s*\s*\)\s*;?\s*\Z:50:0:20:2
+</ans5>
+		<ans6>\A(\s*\w*\s*=|)\s*bin2dec\s*\(\s*vv\s*\)\s*\s*;?\s*\Z:50:0:20:2
+</ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>534</id>
+		<ans1>\A(\s*\w*\s*=|\s*)\s*real\s*\(\s*zz\s*\)\s*;?\s*\Z:100:0:20:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>559</id>
+		<ans1>\A(\s*\w*\s*=|)\s*AA\s*\(\s*3\s*:\s*4\s*:\s*end\s*\,\s*3\s*:\s*4\s*:\s*end\s*\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*AA\s*\(\s*3\s*:\s*4\s*:\s*size\s*\(\s*AA\s*,\s*1\s*\)\s*\,\s*3\s*:\s*4\s*:\s*size\s*\(\s*AA\s*,\s*2\s*\)\s*\)\s*;?\s*\Z:80:0:40:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*AA\s*\(\s*1\s*:\s*4\s*:\s*end\s*\,\s*1\s*:\s*4\s*:\s*end\s*\)\s*;?\s*\Z:50:0:40:2
+</ans3>
+		<ans4>\A(\s*\w*\s*=|)\s*AA\s*\(\s*1\s*:\s*4\s*:\s*size\s*\(\s*AA\s*,\s*1\s*\)\s*\,\s*1\s*:\s*4\s*:\s*size\s*\(\s*AA\s*,\s*2\s*\)\s*\)\s*;?\s*\Z:50:0:40:2
+</ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>569</id>
+		<ans1>0:100:0:20:0
+</ans1>
+		<ans2>0.0:100:0:20:0
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>573</id>
+		<ans1>\A(\s*\w*\s*=|)\s*\[\s*1\s*(\,| )\s*(0|).9\s*(\,| )\s*-(0|).25\s*\]\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*\[\s*1\s*\;\s*(0|).9\s*\;\s*-(0|).25\s*\]\s*;?\s*\Z:100:0:20:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*(firfilt|conv(2|))\s*\(\s*\[\s*1\s*(\,| )\s*(0|).9\s*(\,| )\s*-(0|).25\s*\]\s*\,\s*(1|\[\s*1\s*\])\s*\)\s*;?\s*\Z:100:0:20:2
+</ans3>
+		<ans4>\A(\s*\w*\s*=|)\s*conv(2|)\s*\(\s*(1|\[\s*1\s*\])\s*\,\s*\[\s*1\s*(\,| )\s*(0|).9\s*(\,| )\s*-(0|).25\s*\]\s*\)\s*;?\s*\Z:100:0:20:2
+</ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>595</id>
+		<ans1>\A(\s*\w*\s*=|)\s*AA\s*\(\s*250\s*\,\s*:\s*\)\s*;?\s*\Z:100:0:20:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*AA\s*\(\s*250\s*\,\s*1\s*:\s*256\s*\)\s*;?\s*\Z:90:0:20:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>598</id>
+		<ans1>signal:100:0:20:0
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>599</id>
+		<ans1>\A\s*which\s+('?)[zZ][cC][aA][tT](.[mM])?\1(\s+\-[aA][lL][lL])?\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A\s*which\s*\(\s*'[zZ][cC][aA][tT](.[mM])?'\s*(,\s*'-[aA][lL][lL]'\s*)?\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>605</id>
+		<ans1>\A(\s*\w*\s*=|)\s*char\s*\(\s*bin2dec\s*\(\s*aa\s*\)\s*\s*\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*char\s*\(\s*bin2dec\s*\(\s*&apos;\s*aa\s*&apos;\s*\)\s*\s*\)\s*;?\s*\Z:50:0:40:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*setstr\s*\(\s*bin2dec\s*\(\s*aa\s*\)\s*\s*\)\s*;?\s*\Z:100:0:40:2
+</ans3>
+		<ans4>\A(\s*\w*\s*=|)\s*setstr\s*\(\s*bin2dec\s*\(\s*&apos;\s*aa\s*&apos;\s*\)\s*\s*\)\s*;?\s*\Z:50:0:40:2
+</ans4>
+		<ans5>\A(\s*\w*\s*=|)\s*char\s*\(\s*bin2dec\s*\(\s*'01011101'\s*\)\s*\s*\)\s*;?\s*\Z:50:0:20:2
+</ans5>
+		<ans6>\A(\s*\w*\s*=|)\s*bin2dec\s*\(\s*aa\s*\)\s*\s*;?\s*\Z:50:0:20:2
+</ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>610</id>
+		<ans1>80825:100:0:20:0
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>620</id>
+		<ans1>\A\s*addpath\s+(&apos;?)[Cc]\:\\?2025\\?\1\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2>\A\s*addpath\s*\(\s*&apos;\s*[Cc]\:\\?2025\\?\s*&apos;\s*\)\s*;?\s*\Z:100:0:40:2
+</ans2>
+		<ans3>\A\s*path\s*\(\s*'[Cc]\:\\?2025\\?'\s*,\s*path\s*\)\s*;?\s*\Z:100:0:40:2
+</ans3>
+		<ans4>\A\s*path\s*\(\s*path\s*,\s*'[Cc]\:\\?2025\\?'\s*\)\s*;?\s*\Z:100:0:40:2
+</ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>622</id>
+		<ans1>\A\s*zz\s*=\s*\[\s*xx\s*(\,|\s)\s*zeros\(\s*1\s*\,\s*4000\s*\)\s*(\,|\s)\s*yy\s*\]\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2>\A\s*(=|)\s*\[\s*xx\s*(\,|\s)\s*zeros\(\s*1\s*\,\s*4000\s*\)\s*(\,|\s)\s*yy\s*\]\s*;?\s*\Z:75:0:30:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>631</id>
+		<ans1>\A(\s*\w*\s*=|)\s*char\s*\(\s*bin2dec\s*\(\s*bitstring\s*\)\s*\s*\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*char\s*\(\s*bin2dec\s*\(\s*&apos;\s*bitstring\s*&apos;\s*\)\s*\s*\)\s*;?\s*\Z:50:0:40:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*setstr\s*\(\s*bin2dec\s*\(\s*bitstring\s*\)\s*\s*\)\s*;?\s*\Z:100:0:40:2
+</ans3>
+		<ans4>\A(\s*\w*\s*=|)\s*setstr\s*\(\s*bin2dec\s*\(\s*&apos;\s*bitstring\s*&apos;\s*\)\s*\s*\)\s*;?\s*\Z:50:0:40:2
+</ans4>
+		<ans5>\A(\s*\w*\s*=|)\s*char\s*\(\s*bin2dec\s*\(\s*'01011101'\s*\)\s*\s*\)\s*;?\s*\Z:50:0:20:2
+</ans5>
+		<ans6>\A(\s*\w*\s*=|)\s*bin2dec\s*\(\s*bitstring\s*\)\s*\s*;?\s*\Z:50:0:20:2
+</ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>634</id>
+		<ans1>\A(\s*\w*\s*=|)\s*VHHPF\s*\(\s*2\s*\,\s*74\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>635</id>
+		<ans1>\A(\s*\w*\s*=|)\s*interp1\s*\(\s*xx\s*\,\s*yy\s*\,\s*xx2\s*(|\,\s*&apos;\*?linear\s*&apos;\s*)\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*interp1q\s*\(\s*xx\s*\,\s*yy\s*\,\s*xx2\s*\)\s*;?\s*\Z:100:0:40:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>640</id>
+		<ans1>\A(\s*\w*\s*=|\s*)\s*angle\s*\(\s*zz\s*\)\s*;?\s*\Z:100:0:20:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|\s*)\s*phase\s*\(\s*zz\s*\)\s*;?\s*\Z:50:0:20:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|\s*)\s*angle\s*\(\s*zz\s*\(\s*1\s*\:\s*(length\s*\(\s*zz\s*\)|end)\s*\)\s*;?\s*\Z:40:0:20:2
+</ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>645</id>
+		<ans1>\A\s*(help|helpwin)\s+[sS][qQ][rR][tT]\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>655</id>
+		<ans1>\A(\s*\w*\s*=|)\s*VHHPF\s*\(\s*3\s*\,\s*98\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>671</id>
+		<ans1>\A\s*soundsc\s*\(\s*xx\s*\,\s*10000\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>689</id>
+		<ans1>\A(\s*\w*\s*=|)\s*AA\s*\(\s*:\s*\,\s*125\s*\)\s*;?\s*\Z:100:0:20:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>694</id>
+		<ans1>\A(\s*\w*\s*=|)\s*AA\s*\(\s*:\s*\,\s*200\s*\)\s*;?\s*\Z:100:0:20:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>698</id>
+		<ans1>\A(\s*\w*\s*=|)\s*interp1\s*\(\s*xx1\s*\,\s*yy1\s*\,\s*xx2\s*(|\,\s*&apos;\*?linear\s*&apos;\s*)\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*interp1q\s*\(\s*xx1\s*\,\s*yy1\s*\,\s*xx2\s*\)\s*;?\s*\Z:100:0:40:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>699</id>
+		<ans1>\A\s*soundsc\s*\(\s*xx\s*\,\s*5000\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>710</id>
+		<ans1>\A(\s*\w*\s*=|)\s*specgram\s*\(\s*xx\s*\,\s*(\d+|\[\s*\])\s*\,\s*22050\s*(|\,\s*\d+\s*(|\,\s*\d+\s*))\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*plotspec\s*\(\s*xx(|\s*\+\s*j\s*\*\s*\d?\.?\d*e-\d*)\s*\,\s*22050\s*(|\,\s*\d+\s*)\)\s*;?\s*\Z:100:0:30:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>714</id>
+		<ans1>\A(\s*\w*\s*=|)\s*interp1\s*\(\s*xx1\s*\,\s*yy1\s*\,\s*xx\s*(|\,\s*&apos;\*?linear\s*&apos;\s*)\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*interp1q\s*\(\s*xx1\s*\,\s*yy1\s*\,\s*xx\s*\)\s*;?\s*\Z:100:0:40:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>732</id>
+		<ans1>\A\s*(27563|27564)\s*\,\s*(82688|82689)\s*\Z:100:0:20:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>737</id>
+		<ans1>WebCT:100:0::
+</ans1>
+		<ans2>webct:50:0::
+</ans2>
+		<ans3>Webct:15:0::
+</ans3>
+		<ans4>WebCt:25:0::
+</ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>738</id>
+		<ans1>\A(\s*\w*\s*=|)\s*VHLPF\s*\(\s*1.15\s*\,\s*70\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>739</id>
+		<ans1>\A(\s*\w*\s*=|)\s*VHLPF\s*\(\s*1.5\s*\,\s*80\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>741</id>
+		<ans1>\A(\s*\w*\s*=|\s*)\s*imag\s*\(\s*zz\s*\)\s*;?\s*\Z:100:0:20:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>752</id>
+		<ans1>\A\s*zprint\s*\(\s*\[\s*z1\s*(\,|\s)\s*z2\s*(\,|\s)\s*z3\s*\]\s*\)\s*;?\s*\Z:100:0:35:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>760</id>
+		<ans1>\A\s*zprint\s*\(\s*\[\s*a1\s*(\,|\s)\s*a2\s*(\,|\s)\s*a3\s*\]\s*\)\s*;?\s*\Z:100:0:35:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>762</id>
+		<ans1>\A(\s*\w*\s*=|)\s*VHLPF\s*\(\s*1.25\s*\,\s*90\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>768</id>
+		<ans1>\A\s*D\s*\Z:100:0:30:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>769</id>
+		<ans1>\A(\s*\w*\s*=|)\s*VHLPF\s*\(\s*2.25\s*\,\s*60\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>773</id>
+		<ans1>3.6400e+003:100:0:20:0
+</ans1>
+		<ans2>3640:100:0:20:0
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>776</id>
+		<ans1>\A(\s*\w*\s*=|)\s*AA\s*\(\s*50\s*\,\s*:\s*\)\s*;?\s*\Z:100:0:20:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*AA\s*\(\s*50\s*\,\s*1\s*:\s*256\s*\)\s*;?\s*\Z:90:0:20:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>782</id>
+		<ans1>\A(\s*\w*\s*=|)\s*VHHPF\s*\(\s*2.25\s*\,\s*60\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>784</id>
+		<ans1>\A(\s*(\[\s*\w+\s*(|\,\s*\w+\s*)\]|\w*)\s*=|)\s*(freqz|freekz)\s*\(\s*bb\s*\,\s*1\s*,\s*ww\s*\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>788</id>
+		<ans1>\A(\s*\w*\s*=|)\s*VHHPF\s*\(\s*1.25\s*\,\s*50\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>803</id>
+		<ans1>\A\s*zvect\s*\((\s*\[\s*0\s*(\,|\s)\s*0\s*\]\s*,)?\s*\[\s*z1\s*(\,|\s)\s*z2\s*\]\s*(,\s*'\D*'\s*(,\s*\d+\s*)?)?\)\s*;?\s*\Z:100:0:35:2
+</ans1>
+		<ans2>\A\s*zvect\s*\((\s*\[\s*0\s*(\,|\s)\s*0\s*\]\s*,)?\s*\[\s*z2\s*(\,|\s)\s*z1\s*\]\s*(,\s*'\D*'\s*(,\s*\d+\s*)?)?\)\s*;?\s*\Z:100:0:20:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>806</id>
+		<ans1>\A\s*zvect\s*\((\s*\[\s*0\s*(\,|\s)\s*0\s*\]\s*,)?\s*\[\s*a1\s*(\,|\s)\s*a2\s*\]\s*(,\s*'\D*'\s*(,\s*\d+\s*)?)?\)\s*;?\s*\Z:100:0:35:2
+</ans1>
+		<ans2>\A\s*zvect\s*\((\s*\[\s*0\s*(\,|\s)\s*0\s*\]\s*,)?\s*\[\s*a2\s*(\,|\s)\s*a1\s*\]\s*(,\s*'\D*'\s*(,\s*\d+\s*)?)?\)\s*;?\s*\Z:100:0:20:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>820</id>
+		<ans1>\A(\s*\w*\s*=|)\s*zeros\s*\(\s*100(\s*|\s*\,\s*86\s*)\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*zeros\s*\(\s*\[\s*100(\s*|\s*\,\s*86\s*)\]\s*\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*\[\s*zeros\s*\(\s*\[?\s*100(\s*|\s*\,\s*86\s*)\]?\s*\)\s*\]\s*;?\s*\Z:80:0:25:2
+</ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>821</id>
+		<ans1>\A(\s*\w*\s*=|)\s*zeros\s*\(\s*100(\s*|\s*\,\s*97\s*)\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*zeros\s*\(\s*\[\s*100(\s*|\s*\,\s*97\s*)\]\s*\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*\[\s*zeros\s*\(\s*\[?\s*100(\s*|\s*\,\s*97\s*)\]?\s*\)\s*\]\s*;?\s*\Z:80:0:25:2
+</ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>822</id>
+		<ans1>\A(\s*\w*\s*=|)\s*zeros\s*\(\s*200(\s*|\s*\,\s*97\s*)\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*zeros\s*\(\s*\[\s*200(\s*|\s*\,\s*97\s*)\]\s*\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*\[\s*zeros\s*\(\s*\[?\s*200(\s*|\s*\,\s*97\s*)\]?\s*\)\s*\]\s*;?\s*\Z:80:0:25:2
+</ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>823</id>
+		<ans1>\A(\s*\w*\s*=|)\s*zeros\s*\(\s*200(\s*|\s*\,\s*86\s*)\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*zeros\s*\(\s*\[\s*200(\s*|\s*\,\s*86\s*)\]\s*\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*\[\s*zeros\s*\(\s*\[?\s*200(\s*|\s*\,\s*86\s*)\]?\s*\)\s*\]\s*;?\s*\Z:80:0:25:2
+</ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>824</id>
+		<ans1>\A(\s*\w*\s*=|)\s*ones\s*\(\s*300(\s*|\s*\,\s*88\s*)\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*ones\s*\(\s*\[\s*300(\s*|\s*\,\s*88\s*)\]\s*\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*\[\s*ones\s*\(\s*\[?\s*300(\s*|\s*\,\s*88\s*)\]?\s*\)\s*\]\s*;?\s*\Z:80:0:25:2
+</ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>825</id>
+		<ans1>\A(\s*\w*\s*=|)\s*ones\s*\(\s*500(\s*|\s*\,\s*88\s*)\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*ones\s*\(\s*\[\s*500(\s*|\s*\,\s*88\s*)\]\s*\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*\[\s*ones\s*\(\s*\[?\s*500(\s*|\s*\,\s*88\s*)\]?\s*\)\s*\]\s*;?\s*\Z:80:0:25:2
+</ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>826</id>
+		<ans1>\A(\s*\w*\s*=|)\s*ones\s*\(\s*300(\s*|\s*\,\s*99\s*)\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*ones\s*\(\s*\[\s*300(\s*|\s*\,\s*99\s*)\]\s*\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*\[\s*ones\s*\(\s*\[?\s*300(\s*|\s*\,\s*99\s*)\]?\s*\)\s*\]\s*;?\s*\Z:80:0:25:2
+</ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>827</id>
+		<ans1>\A(\s*\w*\s*=|)\s*ones\s*\(\s*500(\s*|\s*\,\s*99\s*)\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*ones\s*\(\s*\[\s*500(\s*|\s*\,\s*99\s*)\]\s*\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*\[\s*ones\s*\(\s*\[?\s*500(\s*|\s*\,\s*99\s*)\]?\s*\)\s*\]\s*;?\s*\Z:80:0:25:2
+</ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>829</id>
+		<ans1>151:100:0:20:0
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>837</id>
+		<ans1>\A\s*xx\s*=\s*imread\s*\(\s*&apos;ECE2025.png&apos;\s*\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2>\A\s*xx\s*=\s*imread\s*\(\s*&apos;ECE2025&apos;\s*\,\s*&apos;png&apos;\s*\)\s*;?\s*\Z:100:0:30:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>838</id>
+		<ans1>\A\s*yy\s*=\s*imread\s*\(\s*&apos;DC10.png&apos;\s*\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2>\A\s*yy\s*=\s*imread\s*\(\s*&apos;DC10&apos;\s*\,\s*&apos;png&apos;\s*\)\s*;?\s*\Z:100:0:30:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>839</id>
+		<ans1>\A\s*bb\s*=\s*imread\s*\(\s*&apos;houses.png&apos;\s*\)\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2>\A\s*bb\s*=\s*imread\s*\(\s*&apos;houses&apos;\s*\,\s*&apos;png&apos;\s*\)\s*;?\s*\Z:100:0:30:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>842</id>
+		<ans1>162.666:100:0:20:0
+</ans1>
+		<ans2>162.6662:100:0:20:0
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>854</id>
+		<ans1>\A\s*zcat\s*\(\s*\[\s*a1\s*(\,|\s)\s*a2\s*(\,|\s)\s*a3\s*\]\s*(,\s*'\D*'\s*(,\s*\d+\s*)?)?\)\s*;?\s*\Z:100:0:35:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>856</id>
+		<ans1>\A\s*lookfor\s+'[gG][rR][aA][pP][hH] [tT][iI][tT][lL][eE]'\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>861</id>
+		<ans1>\A\s*(help|helpwin)\s+[oO][rR][iI][eE][nN][tT]\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>870</id>
+		<ans1>\A(\s*\w*\s*=|)\s*AA\s*\(\s*3\s*:\s*3\s*:\s*end\s*\,\s*3\s*:\s*3\s*:\s*end\s*\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*AA\s*\(\s*3\s*:\s*3\s*:\s*size\s*\(\s*AA\s*,\s*1\s*\)\s*\,\s*3\s*:\s*3\s*:\s*size\s*\(\s*AA\s*,\s*2\s*\)\s*\)\s*;?\s*\Z:80:0:40:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*AA\s*\(\s*1\s*:\s*3\s*:\s*end\s*\,\s*1\s*:\s*3\s*:\s*end\s*\)\s*;?\s*\Z:50:0:40:2
+</ans3>
+		<ans4>\A(\s*\w*\s*=|)\s*AA\s*\(\s*1\s*:\s*3\s*:\s*size\s*\(\s*AA\s*,\s*1\s*\)\s*\,\s*1\s*:\s*3\s*:\s*size\s*\(\s*AA\s*,\s*2\s*\)\s*\)\s*;?\s*\Z:50:0:40:2
+</ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>880</id>
+		<ans1>\A\s*lookfor\s+'?[Cc][Oo][Nn][Jj][Uu][Gg][Aa][Tt][Ee]'?\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2>\A\s*lookfor\s*[(]\s*'[Cc][Oo][Nn][Jj][Uu][Gg][Aa][Tt][Ee]'\s*[)];?\s*\Z:100:0:30:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>881</id>
+		<ans1>\A\s*zz\s*=\s*\[\s*xx\s*(\,|\s)\s*zeros\(\s*1\s*\,\s*4000\s*\)\s*(\,|\s)\s*yy\s*\]\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2>\A\s*(=|)\s*\[\s*xx\s*(\,|\s)\s*zeros\(\s*1\s*\,\s*4000\s*\)\s*(\,|\s)\s*yy\s*\]\s*;?\s*\Z:75:0:30:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>889</id>
+		<ans1>\A\s*zcat\s*\(\s*\[\s*b1\s*(\,|\s)\s*b2\s*(\,|\s)\s*b3\s*\]\s*(,\s*'\D*'\s*(,\s*\d+\s*)?)?\)\s*;?\s*\Z:100:0:35:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>925</id>
+		<ans1>\A\s*lookfor\s+'?[zZ][oO][oO][mM]'?\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2>\A\s*lookfor\s*[(]\s*'[zZ][oO][oO][mM]'\s*[)];?\s*\Z:100:0:30:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>933</id>
+		<ans1>\A(\s*\w*\s*=|)\s*AA\s*\(\s*2\s*:\s*2\s*:\s*end\s*\,\s*2\s*:\s*2\s*:\s*end\s*\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*AA\s*\(\s*2\s*:\s*2\s*:\s*size\s*\(\s*AA\s*,\s*1\s*\)\s*\,\s*2\s*:\s*2\s*:\s*size\s*\(\s*AA\s*,\s*2\s*\)\s*\)\s*;?\s*\Z:80:0:40:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*AA\s*\(\s*1\s*:\s*2\s*:\s*end\s*\,\s*1\s*:\s*2\s*:\s*end\s*\)\s*;?\s*\Z:50:0:40:2
+</ans3>
+		<ans4>\A(\s*\w*\s*=|)\s*AA\s*\(\s*1\s*:\s*2\s*:\s*size\s*\(\s*AA\s*,\s*1\s*\)\s*\,\s*1\s*:\s*2\s*:\s*size\s*\(\s*AA\s*,\s*2\s*\)\s*\)\s*;?\s*\Z:50:0:40:2
+</ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>939</id>
+		<ans1>\A\s*(\[\s*[a-z,A-Z]\w*\s*(,\s*[a-z,A-Z]\w*\s*|)\]|[a-z,A-Z]\w*)\s*=\s*filtdemo\s*\(\s*('|’)getfilt('|’)\s*\)\s*;?\s*\Z:100:0:20:2
+</ans1>
+		<ans2>\A\s*filtdemo\s*\(\s*('|’)getfilt('|’)\s*\)\s*;?\s*\Z:50:0:20:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>972</id>
+		<ans1>\A\s*lookfor\s+'?[tT][iI][tT][lL][eE]'?\s*;?\s*\Z:100:0:30:2
+</ans1>
+		<ans2>\A\s*lookfor\s*[(]\s*'[tT][iI][tT][lL][eE]'\s*[)];?\s*\Z:100:0:30:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>979</id>
+		<ans1>\A(\s*(\[\s*\w+\s*(|\,\s*\w+\s*(|\,\s*\w+\s*))\]|\w*)\s*=|)\s*find\s*\(\s*bb(\s*\(\s*\:\s*\)|)\s*==\s*0\s*\)\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>992</id>
+		<ans1>horizontally:100:0:20:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>997</id>
+		<ans1>\A\s*lookfor\s+'[pP][hH][aA][sS][eE] [aA][nN][gG][lL][eE]'\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2></ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>1009</id>
+		<ans1>\A(\s*\w*\s*=|)\s*\[\s*1\s*(\,| )\s*-(0|).9\s*(\,| )\s*(\+|)(0|).25\s*\]\s*;?\s*\Z:100:0:40:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*\[\s*1\s*\;\s*-(0|).9\s*\;\s*(\+|)(0|).25\s*\]\s*;?\s*\Z:100:0:20:2
+</ans2>
+		<ans3>\A(\s*\w*\s*=|)\s*(firfilt|conv(2|))\s*\(\s*\[\s*1\s*(\,| )\s*-(0|).9\s*(\,| )\s*(\+|)(0|).25\s*\]\s*\,\s*(1|\[\s*1\s*\])\s*\)\s*;?\s*\Z:100:0:20:2
+</ans3>
+		<ans4>\A(\s*\w*\s*=|)\s*conv(2|)\s*\(\s*(1|\[\s*1\s*\])\s*\,\s*\[\s*1\s*(\,| )\s*-(0|).9\s*(\,| )\s*(\+|)(0|).25\s*\]\s*\)\s*;?\s*\Z:100:0:20:2
+</ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>1040</id>
+		<ans1>\A(\s*\w*\s*=|)\s*myBPF\s*\(\s*\[\s*1.03\s*(\,|\;|\s+)\s*1.3\s*\]\s*\,\s*98\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*myBPF\s*\(\s*\[\s*1.3\s*(\,|\;|\s+)\s*1.03\s*\]\s*\,\s*98\s*\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>1054</id>
+		<ans1>\A(\s*\w*\s*=|)\s*myBPF\s*\(\s*\[\s*1.3\s*(\,|\;|\s+)\s*2.3\s*\]\s*\,\s*54\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*myBPF\s*\(\s*\[\s*2.3\s*(\,|\;|\s+)\s*1.3\s*\]\s*\,\s*54\s*\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+	<entry>
+		<id>1071</id>
+		<ans1>\A(\s*\w*\s*=|)\s*myBPF\s*\(\s*\[\s*1.8\s*(\,|\;|\s+)\s*2.2\s*\]\s*\,\s*66\s*\)\s*;?\s*\Z:100:0:25:2
+</ans1>
+		<ans2>\A(\s*\w*\s*=|)\s*myBPF\s*\(\s*\[\s*2.2\s*(\,|\;|\s+)\s*1.8\s*\]\s*\,\s*66\s*\)\s*;?\s*\Z:100:0:25:2
+</ans2>
+		<ans3></ans3>
+		<ans4></ans4>
+		<ans5></ans5>
+		<ans6></ans6>
+		<ans7></ans7>
+		<ans8></ans8>
+		<ans9></ans9>
+		<ans10></ans10>
+		<ans11></ans11>
+		<ans12></ans12>
+	</entry>
+</webct_s>

@@ -1,0 +1,50 @@
+hr.ITS_hr{color:red;background:#3ff;padding:.5em}
+#bookContainer{position:relative;background:#fff;text-align:left;border-left:1px solid #666;border-right:1px solid #666;border-bottom:1px solid #666;margin:0 5%;padding:0 5%}
+div.sectionContainer{clear:both;position:relative}
+div.ITS_BOOK{position:relative;width:100%;text-align:left}
+table.ITS_BOOK{border-bottom:1px solid silver;padding:.5em 0}
+div.ITS_PARAGRAPH{border:1px dashed gray}
+div.ITS_Caption{color:#444;background:#fff;font-size:85%;text-align:center;border-top:2px solid silver;border-bottom:2px solid silver;padding:.5em}
+div.ITS_Image{position:relative;max-width:100%;margin:1em;padding:.1em}
+div.ITS_Image img{position:relative;height:auto;width:auto;max-height:70%;max-width:100%}
+img.ITS_TEX{position:relative;vertical-align:middle;margin:0;padding:0}
+img.ITS_TEX_BOX{vertical-align:middle;border:1px solid red;margin:0;padding:0}
+img.ITS_TEX2{vertical-align:middle;border:3px solid orange;margin:0;padding:0}
+div.ITS_EQN_BOX{text-align:center;vertical-align:middle;border:2px solid red;margin:.5em;padding:.25em 0}
+img.ITS_EQUATION{border:1px solid silver;background:#eee;margin:5px;padding:3px}
+div.ITS_EXE{background:#ede;border:2px solid silver;margin:.5em 0;padding:.25em}
+div.ITS_EXE_logo{float:left;color:red;background:#fff;border:1px solid silver;margin:.25em;padding:.25em}
+div.ITS_EXAMPLE{background:#eee;border:2px solid silver;margin:.5em 0;padding:.25em}
+span.ITS_EXAMPLE_TITLE{position:relative;width:100%;font-weight:700;text-align:center;background:#fff;border:1px solid silver;margin:.25em;padding:.25em}
+span.ITS_HTML{font-family:cursive,serif;white-space:nowrap}
+span.ITS_blue{color:blue}
+h2.ITS_BOOK{text-align:center;color:red;padding:2em}
+h3.ITS_BOOK{color:red;padding:1em}
+h3.ITS_NOTE{background:#FF0;border:2px solid #666;margin:.25em;padding:.25em}
+span.ITS_Equation{color:purple}
+span.ITS_EQ{font-family:cursive,serif}
+span.ITS_EQ2{font-family:cursive,serif;border:1px solid green}
+span.ITS_keyword{color:red}
+div.MATLAB{border:2px solid #BDB76B;background:#F0E68C;font-family:Monospace,Console,sans-serif;margin:.5em 0;padding:.25em .25em .25em 15px}
+a.ITS_reference{color:green;border:1px solid #666;padding:0 .5em}
+ol.ITS_alph{list-style-type:lower-alpha}
+ol.ITS_enum{list-style-type:decimal}
+.center{text-align:center}
+#bookNavContainer{position:relative;padding-top:20px;background:#fff;margin:0 5%}
+#chText{float:left;color:#666;margin-top:-20px}
+#chContainer{margin-left:auto;margin-right:auto;margin-bottom:0;border-top:2px solid #ddd;background-color:#fff;z-index:1;padding:0}
+#chContainer ul{list-style-type:none;text-align:center;margin-top:-10px;margin-bottom:23px;position:relative;z-index:2;padding:0}
+#chContainer li{display:inline;text-align:center;font-size:8pt;margin:0 3px}
+#chContainer li a{color:#666;background-color:#FFF;border:2px solid #ddd;text-decoration:none;outline:0;padding:1px 10px}
+#chContainer li a:hover{color:#000;border:2px solid #666}
+#chContainer li a#current{color:#666;font-weight:700;font-size:medium;border:2px solid #666;background-color:#FFF}
+div.metaContainer{background-color:#fff;border-left:1px solid #666;border-right:1px solid #666;border-bottom:1px solid #666}
+#metaList{border:1px solid #fff;border-bottom:1px solid #666;font:bold 12px Verdana, sans-serif;margin:0;padding:3px 0}
+#metaList li{list-style:none;display:inline;margin:0}
+#metaList li a{margin-left:3px;border:1px solid #666;border-bottom:none;background:#DCDCDC;text-decoration:none;padding:3px .5em}
+#metaList li a:hover{background:#FFD700}
+#metaList li a#current{background:#fff;border-bottom:1px solid #fff}
+div.ITS_tags{position:relative;background:#FFF;border:2px dashed #FFF;overflow:auto;margin:.5em 0}
+span.ITS_tag{float:left;background:#fe9;font-size:70%;border:2px solid #060;margin:.5em;padding:.25em}
+div.ITS_EQUATION,div.ITS_EQUATION2,div.ITS_EQUATION3{text-align:center;vertical-align:middle;border-top:2px solid silver;border-bottom:2px solid silver;margin:.5em;padding:.25em 0}
+#metaList li a:link,#metaList li a:visited{color:#666}

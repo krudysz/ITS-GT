@@ -1,0 +1,432 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="webct_p.xsl"?>
+<webct_p>
+	<entry>
+		<id>24</id>
+		<template>Write the MATLAB code here (you can erase everything in this box first). Also state what the numerical value of the correct answer will be. For example, sine of 330 degrees = ??? </template>
+		<answer>sin(330*pi/180)
+&lt;BR&gt;
+sine of 330 degrees = -0.5
+</answer>
+	</entry>
+	<entry>
+		<id>46</id>
+		<template>Please, your answer should not exceed 25 lines.
+</template>
+		<answer>Normalize the dtmf signal. Design the BPF.  Convolve the signal with a bandpass
+filter centered around 941 Hz. Determine if the resulting signal
+contains a maximum value above a threshold value (e.g., 0.59). If
+it does then return a 1, else return a zero.
+&lt;BR&gt; Possible Code: &lt;PRE&gt;
+function  sc = dtmfscore(xx)
+%- Design the BPF
+L = 80;  %-May be a different value, the precise value is not important
+nn = 0:L-1;
+fcent = 941;   %-Must be centered around 941 Hz
+bk = (2/L)*cos(2*pi*(fcent/fs)*nn);
+%-- do NOT assume it was passed in
+%--  you cannot do:   bk = hh(:,1);
+xx = xx*(2/max(abs(xx)));
+yy = conv(xx,bk);
+ymax = max(abs(yy));
+sc = ymax&gt;0.59;
+&lt;/PRE&gt;
+</answer>
+	</entry>
+	<entry>
+		<id>104</id>
+		<template>Please, your answer should not exceed 8 lines.
+</template>
+		<answer>Convolve B1 and B2. The resulting vector contains the
+impulse response of the cascaded system.
+firfilt(B1,B2), firfilt(B2,B1)
+or
+conv(B1,B2), conv(B2,B1)
+or
+conv2(B1,B2), conv2(B2,B1)
+</answer>
+	</entry>
+	<entry>
+		<id>125</id>
+		<template>Please, your answer should not exceed 20 lines.
+</template>
+		<answer>Take the frequency domain of bb
+ie: HH = freqz(BB,1,ww)
+ww = -pi:pi/500:pi;  %- form a dense frequency grid
+
+Then plot the magnitude of the frequency response:
+ie: plot(ww,abs(HH))
+
+The frequency being passed will be frequency with the greatest magnitude of the frequency response.
+ie: ww(find(max(abs(HH)) == abs(HH)))
+</answer>
+	</entry>
+	<entry>
+		<id>234</id>
+		<template>%bb is given.
+ww = [-pi:2*pi/100:pi];
+HH = exp(j*0.3*ww)*(cos(0.5*ww)+cos(ww));
+..... continue from here...
+</template>
+		<answer>NULL</answer>
+	</entry>
+	<entry>
+		<id>274</id>
+		<template>Please, don't write more than 6 lines.
+</template>
+		<answer>There are two main differences:
+&lt;br&gt; 1- Zero-order hold is less complex than the linear interpolation method.
+&lt;br&gt; 2- The image resulting from the Linear interpolation method is smoother and more blurred than the one reconstructed with the zero-order hold method.
+</answer>
+	</entry>
+	<entry>
+		<id>291</id>
+		<template>Please, your answer should not exceed 25 lines.
+</template>
+		<answer>Normalize the dtmf signal. Design the BPF. Convolve the signal with a bandpass filter centered
+around 770 Hz. Determine if the resulting signal contains a maximum value above
+a threshold value (e.g., 0.59). If it does then return a 1, else return a zero.
+&lt;BR&gt; Possible Code: &lt;PRE&gt;
+function  sc = dtmfscore(xx)
+%- Design the BPF
+L = 80;  %-May be a different value, the precise value is not important
+nn = 0:L-1;
+fcent = 770;   %-Must be centered around 770 Hz
+bk = (2/L)*cos(2*pi*(fcent/fs)*nn);
+%-- do NOT assume it was passed in
+%--  you cannot do:   bk = hh(:,1);
+xx = xx*(2/max(abs(xx)));
+yy = conv(xx,bk);
+ymax = max(abs(yy));
+sc = ymax&gt;0.59;
+&lt;/PRE&gt;
+</answer>
+	</entry>
+	<entry>
+		<id>301</id>
+		<template>
+</template>
+		<answer>NULL</answer>
+	</entry>
+	<entry>
+		<id>304</id>
+		<template>
+</template>
+		<answer>NULL</answer>
+	</entry>
+	<entry>
+		<id>396</id>
+		<template>(use WORDS, you may also use your own sample MATLAB code)
+</template>
+		<answer>The program needs to loop over the number of inputs. For each input letter an output sinusoid is created and appended to the existing output vector.  Here is a sample loop:
+xxout = [];
+tt = 0:(1/2400):0.25;
+for kk = 1:length(AC_in)
+if AC_in(kk)=='A'
+xxout = [xxout,cos(2*pi*440*tt)];
+elseif AC_in(kk)=='C'
+xxout = [xxout,cos(2*pi*256*tt)];
+end
+end
+
+NOTE: you could have silence in between, but that is OPTIONAL.  If so, the length of the silence should be small.
+</answer>
+	</entry>
+	<entry>
+		<id>399</id>
+		<template>
+</template>
+		<answer>NULL</answer>
+	</entry>
+	<entry>
+		<id>407</id>
+		<template>
+</template>
+		<answer>NULL</answer>
+	</entry>
+	<entry>
+		<id>415</id>
+		<template>
+</template>
+		<answer>NULL</answer>
+	</entry>
+	<entry>
+		<id>422</id>
+		<template>
+</template>
+		<answer>NULL</answer>
+	</entry>
+	<entry>
+		<id>491</id>
+		<template>
+</template>
+		<answer>NULL</answer>
+	</entry>
+	<entry>
+		<id>494</id>
+		<template>Please, your answer should not exceed 8 lines.
+</template>
+		<answer>NULL</answer>
+	</entry>
+	<entry>
+		<id>641</id>
+		<template>(Write your MATLAB code here)
+</template>
+		<answer>xx3 = 33*exp(j*2*4000*pi*0.04)+ 45*cos(j*2*4000*pi*0.1);
+A3 = abs(xx3);
+Phi3 = angle(xx3);
+</answer>
+	</entry>
+	<entry>
+		<id>667</id>
+		<template>(Write your MATLAB code here)
+</template>
+		<answer>tt = 1:0.001:2;
+
+xx = real( 17*exp(-j*0.2)*exp(j*33*tt) );
+</answer>
+	</entry>
+	<entry>
+		<id>669</id>
+		<template>Please, your answer should not exceed 25 lines.
+</template>
+		<answer>Normalize the dtmf signal. Design the BPF. Convolve the signal with a bandpass
+filter centered around 1209 Hz. Determine if the resulting signal
+contains a maximum value above a threshold value (e.g., 0.59). If
+it does then return a 1, else return a zero.
+&lt;BR&gt; Possible Code: &lt;PRE&gt;
+function  sc = dtmfscore(xx)
+%- Design the BPF
+L = 80;  %-May be a different value, the precise value is not important
+nn = 0:L-1;
+fcent = 1209;   %-Must be centered around 1209 Hz
+bk = (2/L)*cos(2*pi*(fcent/fs)*nn);
+%-- do NOT assume it was passed in
+%--  you cannot do:   bk = hh(:,1);
+xx = xx*(2/max(abs(xx)));
+yy = conv(xx,bk);
+ymax = max(abs(yy));
+sc = ymax&gt;0.59;
+&lt;/PRE&gt;
+</answer>
+	</entry>
+	<entry>
+		<id>724</id>
+		<template>
+</template>
+		<answer>NULL</answer>
+	</entry>
+	<entry>
+		<id>733</id>
+		<template>Please, your answer should not exceed 25 lines.
+</template>
+		<answer>Normalize the dtmf signal. Design the BPF. Convolve the signal with a bandpass
+filter centered around 1477 Hz. Determine if the resulting signal
+contains a maximum value above a threshold value (e.g., 0.59). If
+it does then return a 1, else return a zero.
+&lt;BR&gt; Possible Code: &lt;PRE&gt;
+function  sc = dtmfscore(xx)
+%- Design the BPF
+L = 80;  %-May be a different value, the precise value is not important
+nn = 0:L-1;
+fcent = 1477;   %-Must be centered around 1477 Hz
+bk = (2/L)*cos(2*pi*(fcent/fs)*nn);
+%-- do NOT assume it was passed in
+%--  you cannot do:   bk = hh(:,1);
+xx = xx*(2/max(abs(xx)));
+yy = conv(xx,bk);
+ymax = max(abs(yy));
+sc = ymax&gt;0.59;
+&lt;/PRE&gt;
+</answer>
+	</entry>
+	<entry>
+		<id>734</id>
+		<template>Amplitude =
+phase =
+frequency (in Hz) =
+starting time =
+ending time =
+</template>
+		<answer>NULL</answer>
+	</entry>
+	<entry>
+		<id>796</id>
+		<template>
+</template>
+		<answer>NULL</answer>
+	</entry>
+	<entry>
+		<id>798</id>
+		<template>
+</template>
+		<answer>NULL</answer>
+	</entry>
+	<entry>
+		<id>800</id>
+		<template>
+</template>
+		<answer>NULL</answer>
+	</entry>
+	<entry>
+		<id>801</id>
+		<template>
+</template>
+		<answer>NULL</answer>
+	</entry>
+	<entry>
+		<id>875</id>
+		<template>Write the MATLAB code here (you can erase everything in this box first).
+
+Also state what the numerical value of the correct answer will be.  For example, cosine of -225 degrees = ???
+</template>
+		<answer>cos(-225*pi/180)
+&lt;BR&gt;
+cosine of -225 degrees = -0.707
+</answer>
+	</entry>
+	<entry>
+		<id>894</id>
+		<template>(avoid equations and code; use words)
+</template>
+		<answer>Multiply one complex amplitude by the conjugate of the other.&lt;BR&gt;
+Take the angle of the result which gives you the phase difference.&lt;BR&gt;
+Convert phase difference to time difference by dividing by the frequency.&lt;BR&gt;
+Convert time difference to direction by using the sound velocity and distance between the receivers. Probably this equation has to be given: theta = Arcsin(c*Delta_t/d)
+</answer>
+	</entry>
+	<entry>
+		<id>895</id>
+		<template>(Write your MATLAB code here)
+</template>
+		<answer>tt = -1 : 0.01 : 1;
+
+xx = real( 5*exp(j*0.7)*exp(j*7*tt) );
+</answer>
+	</entry>
+	<entry>
+		<id>901</id>
+		<template>(use WORDS, you may also use your own sample MATLAB code)
+</template>
+		<answer>One correct answer:
+Define a temporary time vector from 0 to 1 seconds - such as
+tt = 0:1/fs:1
+Then define a rising and falling chirp such as:
+Xrise = cos(2*pi*500*tt&#94;2 + 2*pi*1000*tt)
+Xfall = cos(-2*pi*500*tt&#94;2 + 2*pi*2000*tt)
+The final signal vector can be made by adjoining these
+rise and fall vectors:
+Xsignal = [Xrise,Xfall]
+The final time vector of the signal can be:
+Tsignal = [0:1/fs:2]
+The sound output would be done with soundsc(Xsignal,fs)
+
+(where fs is the sampling rate)
+</answer>
+	</entry>
+	<entry>
+		<id>936</id>
+		<template>Please, your answer should not exceed 25 lines.
+</template>
+		<answer>&lt;PRE&gt;
+There are 3 steps.
+Define x(t),
+make the integrand for the Fourier integral,
+and then carry out the integral.
+-----------------------------------------
+STEP 1:
+Write a function that will generate the signal for x(t)
+ONE Example:
+-------------------------------------------------
+function xx = squareXX(tt)
+T = 4;
+ttemp = mod(tt,T);
+xx = 3*((ttemp&gt;=0) -(ttemp&gt;=1) ) ...
+- 2*((ttemp&gt;=1) - (ttemp&gt;=4));
+---------------------------------------------------
+Another option, using MATLAB's square.m M-file
+---------------------------------------------------
+function xx = squareXX(tt)
+T = 4;  duty_cycle = 25;
+xx = 2.5*square((2*pi)*tt/T ,duty_cycle)+0.5;
+---------------------------------------------------
+STEP 2:
+Define the integrand function as follows:
+-------------------------------
+function out = integrandXX(tt,kk)
+% kk is a scalar
+T = 4;
+out = squareXX(tt).*exp(-j*2*pi*kk*tt/T);
+----------------------------
+
+STEP 3:
+Calculate the Fourier Coefficients &amp; harmonics via:
+T = 4;
+for kk = -15:15
+kp = kk+16;
+ak(kp) = quad8('integrandXX',-2,2,[],[],kk);
+end
+fk = (-15:15)/T;
+---------------------------------------------
+
+Alternative quad8() calls are possible.
+For example, if you skip the definition of the integrand,
+then quad8() could be called in the following way:
+
+ak(kp) = (1/T)*quad8(...
+inline('squareXX(t).*exp(-j*2*pi*k*t/4)','t','k'),...
+0,4,[],[],kk);
+--------------------------------------------
+&lt;/PRE&gt;
+</answer>
+	</entry>
+	<entry>
+		<id>940</id>
+		<template>(use WORDS, you may also use your own sample MATLAB code)
+</template>
+		<answer>You need a for loop that tests each element in the input vector.
+If you have a &quot;0&quot;, then you can append the signals, zeros(1,8000*0.05) and  cos(2*pi*1650*(0:1/8000):0.1) to the existing output.
+If you have a &quot;1&quot;, then you can append the signals, zeros(1,8000*0.05) and  cos(2*pi*1850*(0:1/8000):0.1) to the existing output.
+The code would look like:
+xout = [];
+tt = 0:1/8000:0.1;
+for kk=1:length(xin)
+if xin(kk)==0
+xout = [xout,cos(2*pi*1650*tt)];
+elseif xin(kk)==1
+xout = [xout, cos(2*pi*1850*tt)];
+end
+end
+
+NOTE: you could put silence in between. That is optional.
+</answer>
+	</entry>
+	<entry>
+		<id>988</id>
+		<template>Please, your answer should not exceed 6 lines.
+</template>
+		<answer>I look at locations in the image where high edges exist since they contain the high frequency components of the image.
+</answer>
+	</entry>
+	<entry>
+		<id>1046</id>
+		<template>Please, your answer should not exceed 20 lines.
+</template>
+		<answer>Take the frequency domain of bb
+ie: HH = freqz(BB,1,ww)
+ww = -pi:pi/500:pi;  %-- ww is dense frequency grid
+
+Then plot the magnitude of the frequency response:
+ie: plot(ww,abs(HH))
+
+The frequency being NULLED will be frequency with zero magnitude of the frequency response.
+ie: ww( find(abs(HH)&lt;1e-6) )
+</answer>
+	</entry>
+	<entry>
+		<id>1074</id>
+		<template>Please, your answer should not exceed 8 lines.
+</template>
+		<answer>NULL</answer>
+	</entry>
+</webct_p>

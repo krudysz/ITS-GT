@@ -1,0 +1,212 @@
+/*
+ITS_versions.css - main CSS file for ITS_versions.
+
+Author(s): Greg Krudysz
+
+Last Update: Jan-22-2011
+W3C CSS Validator results for ITS.css (CSS level 2.1)
+=============================================*/
+h1, h2, h3, h4, h5, h6 {
+  font-size:0; 
+  color: black; 
+  font-family: 'times new roman', arial, verdana, helvetica,sans-serif; 
+  background-color: #fff;
+  font-style:normal; 
+  font-variant:normal;
+  font-weight:normal; 
+  margin:14px 0 4px 10px;
+}
+h1 {font-size: 1.60em;}
+h2 {font-size: 1.50em;}
+h3 {font-size: 1.40em;}
+h4 {font-size: 1.30em;}
+h5 {font-size: 1.26em;}
+h6 {font-size: 1.20em;}/* Defined default Header sizes*/
+
+body /*TH,CAPTION */ {
+	margin: 0;
+	padding: 0;
+	font: 10pt Verdana, Geneva, sans-serif;
+	/*font-family: arial,sans-serif; /*font: 100% Georgia, serif; /*font-family: arial; */
+	text-align: center;
+	color: black;
+	background: #fff;
+	/*background: #000 url(ML.png) repeat 0 0;*/
+}
+div.ITS_ghost { 
+  position: relative;
+  background: #fff;
+	padding:0;
+	height: auto;
+}
+.headering { color: blue; }
+a:link    { color: #B52C07; }
+a:visited { color: blue;    }
+a:focus   { color: #000;    }
+a:hover   { color: purple;  }
+a:active  { color: black;   }
+h1, h2, h3, h4, h5, h6 { margin: 0 0 .5em; }
+h2 {	color: #B52C07;
+	    font: 140% georgia, times, "times new roman", serif;
+}
+h2 a { text-decoration: none; }
+h3   { /*color: #7d8206;*/
+	     font: 110% georgia, times, "times new roman", serif;
+			 text-align: left;
+			 color: blue;
+}
+h3 a.header  {  color: red; border: none;}
+
+p  {  margin:0; padding: 10px;         }
+Q  {  font: 8pt Georgia, serif;        }
+TT { font-family: cursive,serif;       }
+TD {
+   text-align: center;
+	 border-width: 1px;
+   border-style: none;
+   padding: 0px;
+}
+input.check33 { display: none; }
+input.check33 label { border: 1px solid red; }
+
+/*IMG  { max-height:200px;  }*/
+/*==========================================================================
+								M A I N
+============================================================================*/
+#pageContainer {
+/*
+    position: absolute;
+	top: 0;
+	bottom: 1em;
+	margin: 0 2%; */
+	position: relative;
+	width: 95%;
+	margin-left:-100%;
+	margin: 0 1em;
+	padding: 1em;
+	margin:0 auto; /*Centers the Container*/
+
+	border-left: 2px solid #aaa;
+	border-right: 2px solid #aaa;
+	border-bottom: 2px solid #aaa;
+}
+/*==========================================================================
+               F O O T E R
+============================================================================*/
+#footerContainer {
+	clear: both;
+	color: #666;
+	font-size: 80%;
+	padding-top: 0em;
+	text-align: center;
+	border-top: 5px solid #777777;
+	/*overflow:auto;*/
+}
+#footerContainer ul li { display: inline; }
+
+/* --- Question --- */
+ul.ITS_list ul
+{ position: relative;
+  width: 300px;
+  list-style-type: none;
+  /*text-align: center;*/
+  padding: 1em;
+	margin: 0;
+	display: inline;
+	font: 10pt Georgia, serif;
+	border: 1px solid blue;
+}
+ul.ITS_list li {
+  list-style-type: none;
+  /*text-align: center;*/
+  padding: 0 0.25em;
+	margin: 2px; /* between spacing */
+	display: inline;
+	border: 1px solid blue;
+}
+#ITS_screen_A ul#navlistIdx li#active {
+  list-style-type: none;
+  /*text-align: center;*/
+  padding: 0;
+	margin: 0;
+	/*display: inline;*/
+}
+/*------------------------------ */
+TABLE.ITS_version {
+ border: 1px solid #666;
+ border-collapse:collapse;
+}
+TABLE.ITS_version TH {
+ border: 1px solid #666;
+ background: #eee;
+ padding: 5px;
+}
+TABLE.ITS_version TD {
+ border: 1px solid #666;
+ padding: 5px;
+}
+TABLE.ITS_version TD.list {
+ border: 1px solid #666;
+ text-align: left;
+ color: #00e;
+ padding: 5px;
+}
+/*------------------------------ */
+span.seg {
+ border: 1px solid silver;
+}
+div.error {
+  position: relative;
+	margin: 5px;
+	padding: 2px;
+	color: #050;
+  /*background-color: #ffd700;*/
+	border: 3px dashed #666;
+}
+TABLE.ITS_header {
+ border: 0px solid #333;
+ border-collapse:collapse;
+}
+TD.ITS_header {
+ border-right: 1px solid #666;
+ padding: 0 5px;
+}
+/*================= COLORS ================*/
+body 								    {	background: #dcdcdc;   } 
+#pageContainer          {	background: #fff;      }
+#menuContainer          {	background: #fff;      }
+#messageContainer       {	background: #fff;      }
+#messageContainer span  {	background: #fff;      }
+#messageContainerContent{ background: #ee7;      }
+#contentContainer       {	background: #fff;      }
+div.ITS_question_text   {	background: #fff;      }
+div.ITS_question_text2  {	background: red;       }
+div.ITS_ANSWER          {	background: #fff;      }
+div.navContainer        { background: #fff;  
+                          border: 1px solid #fff;}
+div.navContent 				  { border: 1px solid #fff;}
+#footerContainer        {	background: white;     }
+
+div.logout              {	background: #fff;      }
+
+/*=========================================*/
+
+/*================= DEBUG =================*/
+/*
+#pageContainer        {	background: pink;      }
+#menuContainer        {	background: lime;      }
+#messageContainer     {	background: purple;    }
+#scoreContainer       {	background: gray;      }
+
+div.ITS_question_text {	background: orange;    }
+#contentContainer     {	background: blue;      }
+div.ITS_ANSWER        {	background: limegreen;     }
+div.navContainer      { background: khaki;  
+                        border: 1px solid pink;}
+div.navContent 				{ border: 1px solid red; }
+
+TD.ITS_QUESTION 		  { background: #eef;      }
+#logout               {	background: red;       }
+#frameContainer			  {	background: magenta;   }
+*/
+/*=========================================*/

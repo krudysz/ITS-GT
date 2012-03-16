@@ -1,0 +1,41 @@
+h1,h2,h3,h4,h5,h6{font-size:0;color:#000;font-family:'times new roman', arial, verdana, helvetica,sans-serif;background-color:#fff;font-style:normal;font-variant:normal;font-weight:400;margin:0 0 .5em}
+h1{font-size:1.6em}
+h2{font-size:1.5em;color:#B52C07;font:140% georgia, times, "times new roman", serif}
+h3{font-size:1.4em;font:110% georgia, times, "times new roman", serif;text-align:left;color:blue}
+h4{font-size:1.3em}
+h5{font-size:1.26em}
+h6{font-size:1.2em}
+body /*TH,CAPTION */{font:10pt Verdana, Geneva, sans-serif;text-align:center;color:#000;background:#fff;margin:0;padding:0}
+div.ITS_ghost{position:relative;background:#fff;height:auto;padding:0}
+a:link{color:#B52C07}
+a:hover{color:purple}
+h2 a{text-decoration:none}
+h3 a.header{color:red;border:none}
+p{margin:0;padding:10px}
+Q{font:8pt Georgia, serif}
+TT{font-family:cursive,serif}
+TD{text-align:center;border-style:none;border-width:1px;padding:0}
+input.check33{display:none}
+input.check33 label{border:1px solid red}
+#pageContainer{position:relative;width:95%;border-left:2px solid #aaa;border-right:2px solid #aaa;border-bottom:2px solid #aaa;background:#fff;margin:0 auto;padding:1em}
+#footerContainer{clear:both;color:#666;font-size:80%;padding-top:0;text-align:center;border-top:5px solid #777;background:#FFF}
+#footerContainer ul li{display:inline}
+ul.ITS_list ul{position:relative;width:300px;list-style-type:none;display:inline;font:10pt Georgia, serif;border:1px solid blue;margin:0;padding:1em}
+ul.ITS_list li{list-style-type:none;display:inline;border:1px solid blue;margin:2px;padding:0 .25em}
+#ITS_screen_A ul#navlistIdx li#active{list-style-type:none;margin:0;padding:0}
+TABLE.ITS_version{border:1px solid #666;border-collapse:collapse}
+TABLE.ITS_version TH{border:1px solid #666;background:#eee;padding:5px}
+TABLE.ITS_version TD{border:1px solid #666;padding:5px}
+TABLE.ITS_version TD.list{border:1px solid #666;text-align:left;color:#00e;padding:5px}
+span.seg{border:1px solid silver}
+div.error{position:relative;color:#050;border:3px dashed #666;margin:5px;padding:2px}
+TABLE.ITS_header{border:0 solid #333;border-collapse:collapse}
+TD.ITS_header{border-right:1px solid #666;padding:0 5px}
+body{background:#dcdcdc}
+#messageContainerContent{background:#ee7}
+div.ITS_question_text2{background:red}
+div.navContainer{background:#fff;border:1px solid #fff}
+div.navContent{border:1px solid #fff}
+.headering,a:visited{color:blue}
+a:focus,a:active{color:#000}
+#menuContainer,#messageContainer,#messageContainer span,#contentContainer,div.ITS_question_text,div.ITS_ANSWER,div.logout{background:#fff}

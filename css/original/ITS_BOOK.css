@@ -1,0 +1,342 @@
+/*
+ITS_BOOK.css - main CSS file for ITS 
+
+Author(s): Greg Krudysz
+Last Update: Jul-29-2011
+=============================================*/
+hr.ITS_hr {
+  padding: 0.5em;
+	color: red;
+	background: #3ff;
+}
+#bookContainer {
+  position: relative;
+  margin: 0 5%;
+	padding: 0 5%;
+  background: #fff;
+  text-align: left;
+	border-left: 1px solid #666;
+	border-right: 1px solid #666;
+	border-bottom: 1px solid #666;
+}
+div.sectionContainer {
+  clear:both;
+  position: relative;
+}
+div.ITS_BOOK {
+  position: relative;
+	width: 100%;
+  text-align: left;
+}
+table.ITS_BOOK {
+  padding: 0.5em 0;
+  border-bottom: 1px solid silver;
+}
+div.ITS_PARAGRAPH {
+  border: 1px dashed gray;
+}
+div.ITS_Caption {
+  color: #444;
+	background: #fff;
+	font-size: 85%;
+	padding: 0.5em;
+	text-align: center;
+  border-top: 2px solid silver;
+	border-bottom: 2px solid silver;
+}
+div.ITS_Image {
+  position: relative;
+	max-width: 100%;
+  padding: 0.1em;
+	margin: 1em;
+}
+div.ITS_Image img {
+  position: relative;
+	height: auto;
+	width: auto;
+	max-height: 70%;
+	max-width: 100%;
+}
+img.ITS_TEX {
+  position: relative;
+  padding: 0;
+	margin: 0;
+	vertical-align: middle;
+}
+img.ITS_TEX_BOX {
+  padding: 0;
+	margin: 0;
+	vertical-align: middle;
+	border: 1px solid red;
+}
+img.ITS_TEX2 {
+  padding: 0;
+	margin: 0;
+	vertical-align: middle;
+	border: 3px solid orange;
+}
+div.ITS_EQN_BOX {
+  padding: 0.25em 0;
+	margin: 0.5em;
+	text-align: center;
+	vertical-align: middle;
+  border: 2px solid red;
+}
+div.ITS_EQUATION {
+  padding: 0.25em 0;
+	margin: 0.5em;
+	text-align: center;
+	vertical-align: middle;
+  border-top: 2px solid silver;
+	border-bottom: 2px solid silver;
+}
+img.ITS_EQUATION {
+  margin: 5px;
+  padding: 3px;
+  border: 1px solid silver;
+	background: #eee;
+}
+div.ITS_EQUATION2 {
+  padding: 0.25em 0;
+	margin: 0.5em;
+	text-align: center;
+	vertical-align: middle;
+  border-top: 2px solid silver;
+	border-bottom: 2px solid silver;
+}
+div.ITS_EQUATION3 {
+  padding: 0.25em 0;
+	margin: 0.5em;
+	text-align: center;
+	vertical-align: middle;
+  border-top: 2px solid silver;
+	border-bottom: 2px solid silver;
+}
+div.ITS_EXE {
+  padding: 0.25em;
+	margin: 0.5em 0;
+	background: #ede;
+  border: 2px solid silver;
+}
+div.ITS_EXE_logo {
+  float: left;
+	padding: 0.25em;
+	margin: 0.25em;
+	color: red;
+	background: #fff;
+  border: 1px solid silver;
+}
+div.ITS_EXAMPLE {
+  padding: 0.25em;
+	margin: 0.5em 0;
+	background: #eee;
+  border: 2px solid silver;
+}
+span.ITS_EXAMPLE_TITLE {
+  position: relative;
+	width: 100%;
+  font-weight: bold;
+	padding: 0.25em;
+	margin: 0.25em;
+	text-align: center;
+	background: #fff;
+  border: 1px solid silver;
+}
+span.ITS_HTML {
+  /*background: lime;*/
+	font-family: cursive,serif;
+	white-space: nowrap;
+}
+span.ITS_blue {
+  color: blue;
+}
+h2.ITS_BOOK {
+  text-align: center;
+	color: red;
+	padding: 2em;
+}
+h3.ITS_BOOK {
+	color: red;
+	padding: 1em;
+}
+h3.ITS_NOTE {
+	background: yellow;
+	padding: 0.25em;
+	margin: 0.25em;
+	border: 2px solid #666;
+}
+span.ITS_Equation {
+  color: purple;
+  /*border: 1px solid silver;*/
+}
+span.ITS_EQ {
+  font-family: cursive,serif;
+  /*border: 1px solid green;*/
+	/*color: pink;*/
+}
+span.ITS_EQ2 {
+  font-family: cursive,serif;
+  border: 1px solid green;
+	/*color: pink;*/
+}
+span.ITS_keyword {
+  /*border: 1px solid silver;*/
+  color: red;
+}
+div.MATLAB {
+   border: 2px solid #BDB76B; /*DarkKhaki*/
+	 background: #F0E68C; /*khaki*/
+	 font-family: Monospace,Console,sans-serif;
+	 padding: 0.25em;
+	 padding-left: 15px;
+	 margin: 0.5em 0;
+}
+a.ITS_reference {
+  color: green;
+	border: 1px solid #666;
+	padding: 0 0.5em;
+}
+ol.ITS_alph {
+  list-style-type: lower-alpha;
+}
+ol.ITS_enum {
+  list-style-type: decimal;
+}
+.center {
+  text-align: center;
+}
+/*---- NAVIGATION ----*/
+#bookNavContainer {
+  position: relative;
+  margin: 0 5%;
+	padding-top: 20px;
+  background: #fff;
+	/*border: 1px solid #666;*/
+}
+#chText {
+  float: left;
+	color: #666;
+	margin-top: -20px;
+	/*
+	border-left: 1px solid red;
+	border-bottom: 1px solid red;
+	*/
+}
+#chContainer {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+  padding: 0;
+  border-top: 2px solid #ddd;
+  background-color: #fff;
+  z-index: 1;
+}
+#chContainer ul {
+  list-style-type: none;
+  text-align: center;
+  margin-top: -10px;
+	margin-bottom: 23px;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+#chContainer li {
+  display: inline;
+  text-align: center;
+  margin: 0 3px;
+	font-size: 8pt;
+}
+#chContainer li a {
+  padding: 1px 10px;
+  color: #666;
+  background-color: #FFFFFF; /*#DCDCDC*/
+  border: 2px solid #ddd;
+  text-decoration: none;
+	outline: 0; /* get rid of the dotted line */
+}
+#chContainer li a:hover {
+  color: #000;
+  border: 2px solid #666;
+}
+#chContainer li a#current {
+  color: #666;
+  font-weight: bold;
+	font-size: medium;
+  border: 2px solid #666;
+	background-color: #FFFFFF;
+}
+/*---*/
+div.metaContainer {
+  background-color: #fff;
+	border-left: 1px solid #666;
+	border-right: 1px solid #666;
+	border-bottom: 1px solid #666;
+}
+#metaList {
+  padding: 3px 0;
+  margin: 0;
+  border: 1px solid #fff;
+	border-bottom: 1px solid #666;
+  font: bold 12px Verdana, sans-serif;
+  margin: 0;
+  /*display: inline;*/
+}
+#metaList li {
+  list-style: none;
+  margin: 0;
+  display: inline;
+}
+#metaList li a {
+  padding: 3px 0.5em;
+  margin-left: 3px;
+  border: 1px solid #666;
+  border-bottom: none;
+  background: #DCDCDC;
+  text-decoration: none;
+}
+#metaList li a:link    { color: #666; }
+#metaList li a:visited { color: #666; }
+#metaList li a:hover   { background: #FFD700;}
+#metaList li a#current {
+  background: #fff;
+  border-bottom: 1px solid #fff;
+}
+div.ITS_tags {
+  position:relative;
+	background: #FFFFFF;
+  border: 2px dashed #FFF;
+	margin: 0.5em 0;
+	overflow: auto;
+}
+span.ITS_tag {
+  float: left;
+	background: #fe9;
+	font-size: 70%;
+  margin: 0.5em;
+	padding: 0.25em;
+  border: 2px solid #060;
+}
+/*================= DEBUG =================*/
+/*
+span.ITS_HTML        { background: lime; }
+div.ITS_EQUATION2 	 { border-top: 1px solid orange;
+	                     border-bottom: 1px solid orange;}
+div.ITS_EQUATION3    { border-top: 1px solid green;
+										   border-bottom: 1px solid green; }
+div.ITS_Image img    { border: 1px solid purple;	     }
+img.ITS_TEX          { border: 1px solid red;          }
+
+div.ITS_EQUATION img.beq       { border: 1px solid blue; }
+div.ITS_EQUATION img.bracket   { border: 1px solid red; }
+div.ITS_EQUATION img.equation  { border: 1px solid green; } 
+div.ITS_EQUATION img.equation2 { border: 1px solid orange; } 
+div.ITS_EQUATION img.WideEqFlt { border: 1px solid brown; }
+*/
+/*
+#bookContainer { background: #f4f; }
+#chContainer { border: 1px solid green; }
+#metaList    { border: 1px solid blue;  }
+#bookNavContainer {border: 1px solid red; }
+#metaList { border: 1px solid blue; }
+*/
+/*=========================================*/

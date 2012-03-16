@@ -1,0 +1,10 @@
+
+
+INSERT INTO activity VALUES(4299,"survey01",2999,0,0,"TEMP");
+INSERT INTO activity VALUES(4300,"survey01",3000,1,0,"TEMP");
+INSERT INTO activity VALUES(4301,"survey01",3001,2,0,"TEMP");
+INSERT INTO activity VALUES(4302,"survey01",3002,3,0,"TEMP");
+INSERT INTO activity VALUES(4303,"survey01",3003,4,0,"TEMP");
+INSERT INTO activity VALUES(4304,"survey01",3004,5,0,"TEMP");
+INSERT INTO activity VALUES(4305,"survey01",3005,6,0,"TEMP");
+INSERT INTO activity VALUES(4306,"survey01",3006,7,0,"TEMP");

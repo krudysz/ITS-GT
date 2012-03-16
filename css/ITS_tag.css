@@ -1,0 +1,17 @@
+.ITS_tag{float:left;border:1px solid #999;margin:0.25em}
+.ITS_tag table {border:1px solid #999;border-collapse:collapse;}
+.ITS_tag table.add {border:1px solid red;border-collapse:collapse;background:#eee}
+.ITS_tag table td {border:1px solid #999;padding:0.25em;}
+.ITS_tag_sys{float:left;border:1px solid #999;margin:0.25em;background:#ffa;}
+.ITS_tag_sys table {border:1px solid #999;border-collapse:collapse}
+.ITS_tag_sys table td {border:1px solid #999;padding:0.25em}
+
+.tag_add {color:#666;background:#FF9;font-weight:bold}
+.tag_add:hover{cursor:pointer;color: #FFF;background:#2a2;}
+.tag_del {color:#666;background:#FF9;font-weight:bold}
+.tag_del:hover{cursor:pointer;color: #FFF;background:#e77;}
+.tag_sep {margin:5px;border-top:2px solid #999}
+.tagref{text-decoration:underline;color:red;}
+.tagref:hover{color:red;cursor:pointer;}
+.taginfo{display:none;}
+.clear{clear:both}

@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>MySQL Instructions</title>
+</head>
+<body>
+<h3>Create a database named "test"</h3>
+create database test;
+<br />
+
+<h3>Use the database "test"</h3>
+use test;
+<br />
+
+<h3>Create a table named "example"</h3>
+CREATE TABLE example(
+id INT NOT NULL AUTO_INCREMENT, 
+PRIMARY KEY(id), <br>
+ name VARCHAR(30), <br>
+ age INT);
+<br />
+
+<h3>Insert values in the table "example"</h3>
+INSERT INTO example (name, age) <br />
+VALUES('Timmy Mellowman', '23' );
+<br />
+
+<h3>Display values from the table "example"</h3>
+SELECT * FROM example;
+<br />
+</body>
+</html>

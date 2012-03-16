@@ -1,0 +1,32 @@
+
+		/*
+    $student_id = 1;
+		$q_num = 1218;
+		$obj = new ITS_question($student_id,$db_name,$tb_name);
+		$obj->load_DATA_from_DB($q_num);
+		//$data = $obj->get_data();
+
+		$dialog = '<div id="dialog-form" title="Create new Question" style="display:none">'
+      	  .'<p class="validateTips">To create a templated question just click on the "Create Question" button.</p><br>'
+      	  .'<form>'
+      	  .'<fieldset>'
+      	  .'<table class="ITS_newQuestion"><tr>'
+      		.'<td style="width:20%"><label for="Qtitle">Title</label></td>'
+      		.'<td style="width:80%"><input type="text" name="Qtitle" id="Qtitle" value="'.$obj->Q_title.'" class="text ui-widget-content ui-corner-all ITS_Q" /></td>'
+      		.'</tr><tr><td><label for="Qimage">Image</label></td>'
+      		.'<td><input type="text" name="Qimage" id="Qimage" value="" class="text ui-widget-content ui-corner-all ITS_Q" /></td>'
+      		.'</tr><tr><td><label for="Qquestion">Question</label></td>'
+      		.'<td><input type="text" name="Qquestion" id="Qquestion" value="" style="height:150px" class="text ui-widget-content ui-corner-all ITS_Q" /></td>'
+          .'</tr><tr><td><label for="Qanswers">No. Answers</label>&nbsp;&nbsp;'
+      		.'<select id="Qanswers" style="float:right">'
+          .'<option value="1">1</option>'
+          .'<option value="2">2</option>'
+          .'<option value="3">3</option>'
+          .'<option value="4" selected="selected">4</option>'
+      		.'<option value="5">5</option>'
+          .'</select></td><td></td>'
+          .'</tr><tr><td><label for="Qcategory">Category</label></td>'
+      		.'<td><input type="text" name="Qcategory" id="Qcategory" value="" class="text ui-widget-content ui-corner-all ITS_Q" /></td>'
+      	  .'</tr></table><p><div id="cancelDialog" class="ITS_button" style="float:right">Cancel</div><div id="submitDialog" class="ITS_button" style="float:right">Create New Question</div>'
+      	  .'</fieldset></form></div>';
+		*/
