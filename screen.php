@@ -1,7 +1,7 @@
 <?php
 /* ============================================================= */
-$ITS_version = '188b';
-$LAST_UPDATE = 'Mar-17-2012';
+$ITS_version = '188e';
+$LAST_UPDATE = 'Mar-21-2012';
 /* ============================================================= */
 header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT"); // always modified
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");          // or IE will pull from cache 100% of time (which is really bad) 
@@ -46,7 +46,7 @@ $id = $_SESSION['user']->id();
 //echo $id;die();
 $status = $_SESSION['user']->status();
 $view   = TRUE;  // VIEW: TRUE | FALSE => "Question" tab closed
-$index_max  = 6;
+$index_max  = 7;
 
 $tset = mktime(11, 0, 0, 01, 01, 2012);  // 11 AM, Dec-12, 2011
 //echo date('h-i-s-j-m-y',time()).' - '.$tstart.'<p>';

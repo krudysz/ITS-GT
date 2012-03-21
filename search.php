@@ -1,7 +1,7 @@
 <?php
 /* ============================================================= */
-$ITS_version = '162d';
-$LAST_UPDATE = 'June-29-2011';
+$ITS_version = '188';
+$LAST_UPDATE = 'Mar-20-2012';
 /* ============================================================= */
 
 //--- begin timer ---//
@@ -11,7 +11,7 @@ $starttime = $mtime[1] + $mtime[0];
 		
 header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); // always modified
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");              // or IE will pull from cache 100% of time (which is really bad) 
-header("Cache-Control: no-cache, must-revalidate"); 	         // Must do cache-control headers 
+header("Cache-Control: no-cache, must-revalidate"); 	       // Must do cache-control headers 
 header("Pragma: no-cache");
 
 include ("classes/ITS_timer.php");
@@ -31,6 +31,14 @@ abort_if_unauthenticated();
 $id     =   $_SESSION['user']->id();
 $status =   $_SESSION['user']->status();
 $info   = & $_SESSION['user']->info();
+
+$dsn = preg_split("/[\/:@()]+/",$db_dsn);
+$db_user = $dsn[1];
+$db_pass = $dsn[2];
+$host    = $dsn[4];
+$db_name = $dsn[6];
+//var_dump($host);
+//foreach ($dsn as $value) {echo $value.'<br>';}//die('search.php');
 /* ============================================================= */
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
@@ -68,8 +76,8 @@ $info   = & $_SESSION['user']->info();
                 //echo $_POST['keyword'];
                 if ($_POST['keyword']) {
                     $keyword = $_POST['keyword'];
-                    MySQL_connect("localhost", "root", "root");
-                    MySQL_select_db("its");
+                    MySQL_connect($host,$db_user,$db_pass);
+                    MySQL_select_db($db_name);
                     $sql = "
                                 SELECT *,
                                     MATCH(keywords) AGAINST('$keyword') AS score
@@ -78,7 +86,6 @@ $info   = & $_SESSION['user']->info();
                             ";
                     // DEBUG: echo $sql;die(); ORDER BY score DESC
                     $res = MySQL_query($sql);
-
                     // SELECT *,MATCH (keywords) AGAINST ('fourier') AS score FROM SPF WHERE MATCH(keywords) AGAINST('fourier');			
 
                     if (MySQL_num_rows($res) > 0) {

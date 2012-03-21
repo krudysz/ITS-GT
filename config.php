@@ -35,7 +35,6 @@ switch ($host) {
 	break;
 /*---------------------------------------*/
 	default:
-	
 }
 
 define('INCLUDE_DIR','_include/');

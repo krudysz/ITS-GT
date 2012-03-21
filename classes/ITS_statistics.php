@@ -13,7 +13,7 @@ ITS_statistics class - generate and render statistical displays.
 								render_question_answer( $score,$answer,$qtype,$index ) 
 								
 	 Author(s): Greg Krudysz | Aug-28-2008
-	 Last Revision: Mar-9-2012
+	 Last Revision: Mar-19-2012
 */
 //=====================================================================//
 
@@ -1455,7 +1455,6 @@ echo '</pre>';
     //----------------------------------------------------------------------------
     function render_profile() {
         //----------------------------------------------------------------------------
-        die('now');
         //ITS_debug();
         //$term = array('Fall_2008','Spring_2009','Fall_2009','Spring_2010');
         $term = array ('Fall_2010');
@@ -1587,7 +1586,7 @@ echo '</pre>';
                     }
                     else {
                         $category = $ITSq->getCategory($chapter);
-                        $query = 'SELECT question_id,answered,qtype,answers,comment,epochtime,duration,rating FROM stats_'.$this->id.',webct WHERE webct.id=stats_'.$this->id.'.question_id AND current_chapter="'.$chapter.'" AND '.$category.' AND answered IS NOT NULL ORDER BY stats_'.$this->id.'.'.$orderby;
+                        $query = 'SELECT question_id,answered,qtype,answers,comment,epochtime,duration,rating FROM stats_'.$this->id.',webct WHERE webct.id=stats_'.$this->id.'.question_id AND current_chapter="'.$chapter.'" AND '.$category.' ORDER BY stats_'.$this->id.'.'.$orderby;
                         //die($query);
                         //AND comment<>"skip"
                         $column = '<th style="width:5%;">Score</th>';
@@ -1626,6 +1625,8 @@ echo '</pre>';
                 for ($qn = 0; $qn <= (count($answers)-1); $qn++) {
                     $qtype = strtolower($answers[$qn][2]);
                     $Nanswers = $answers[$qn][3];
+
+					
 
                     $score  = $this->get_question_score($answers[$qn][0], $answers[$qn][1], $answers[$qn][4], $qtype);
                     $tscore = $this->get_total_score($score[0], $answers[$qn][1], $qtype);
@@ -1678,21 +1679,19 @@ echo '</pre>';
             '</tr>';*/
 
                     // COMMENT
-                    $action = '';
-                    /*
                     if (empty($answers[$qn][4])) {
-                        $action = '';
+                        //$ans = '';
                     }
                     else {
 						switch($answers[$qn][4]){
 							case 'skip':
-                             $action = '<hr style="border-top:1px dashed silver"><font color="red">'.$answers[$qn][4].'</font>';
+                             $ans = '<hr style="border-top:1px dashed silver"><font color="#666">SKIP</font>';
                              break;
                              default:
-                             $action='';
+                             //$ans='';
 						 }
                     }      
-                    * */      
+                    //* */      
                     // TIMESTAMP
                     if (empty($answers[$qn][5])) {
                         $timestamp = '';
@@ -1720,7 +1719,7 @@ echo '</pre>';
                     $Estr .= '<tr class="PROFILE" id="tablePROFILE">'.
                             '<td class="PROFILE" >' . ($qn+1). '<br><br><a href="Question.php?qNum='.$answers[$qn][0].'" class="ITS_ADMIN">'.$answers[$qn][0].'</a></td>'.
                             '<td class="PROFILE" >' . $QUESTION.$ANSWER. '</td>'.
-                            '<td class="PROFILE" >' . $ans.$timestamp.$dur.$rating.$action.'</td>';
+                            '<td class="PROFILE" >' . $ans.$timestamp.$dur.$rating.$action.' '.$action.'</td>';
                     if (!is_null($tscore)) {
                         $Estr .= '<td class="PROFILE" >' . $tscore.'</td>';
                     }
@@ -1756,16 +1755,20 @@ echo '</pre>';
         $tscore   = array();
         $tattempt = array();
         $scores   = array();
+        
         /*
-	echo '<pre>';
-	print_r($Nchs);
-	echo '</pre>';
-	die();*/
-
-        $file_path = 'admin/csv/'.$class_name.'_scores'.$chs[count($chs)-1].'.csv';
+		echo '<pre>';
+		print_r($Nchs);
+		echo '</pre>';
+		die();
+		*/
+		
+        $file_path  = 'admin/csv/'.$class_name.'_scores'.$chs[count($chs)-1].'.csv';
+        $file_path1 = 'admin/csv/'.$class_name.'_grades.csv';
         //die($file_path);
-        $fp = fopen($file_path, 'w');
-
+        $fp  = fopen($file_path, 'w');
+		$fp1 = fopen($file_path1, 'w');
+		
         $query = 'SELECT id,first_name,last_name,username FROM users WHERE status="'.$current_semester.'" ORDER BY last_name';
         //echo $query;die();
 
@@ -1785,7 +1788,7 @@ echo '</pre>';
         }
         for ($h=0; $h<count($chs); $h++) {
             if ($h==8) {
-                $header .= '<th><a href="survey1.php?survey=Fall_2011">Survey</a></th>';
+                $header .= '<th><a href="survey1.php?survey='.$current_semester.'">Survey</a></th>';
             }
             else {
                 $header .= '<th>Mod. '.$chs[$h].'</th>';
@@ -1794,15 +1797,19 @@ echo '</pre>';
         $header .= '<th># Practice</th></tr>';
         //die($header);///*
 
-        $fdate = date("F j, Y, g:i a T",time());  //$tMay1
+        $fdate = date("F j, Y, g:i a T",time());  // $tMay1
         $fdate = explode(',',$fdate);
         $fdate = $fdate[0].','.$fdate[1].'<br>'.$fdate[2];
 
-        $Estr = '<center><div class="file"><a href="'.$file_path.'" target="_blank"><img alt="Export To Excel" src="css/media/excel_graphic.png" /></a><br><font color="blue">'.date("F j, Y, g:i a T",$tMay1).'</font></div>'.
+        $Estr = '<center><div class="file"><a href="'.$file_path.'" target="_blank"><img alt="Export To Excel" src="css/media/excel_graphic.png" /></a><br><font color="blue">scores</font></div>'.  //date("F j, Y, g:i a T",$tMay1).
+				'<div class="file"><a href="'.$file_path1.'" target="_blank"><img alt="Export To Excel" src="css/media/excel_graphic.png" /></a><br><font color="blue">grades</font></div>'.
                 '<table class="CPROFILE">'.$header;
 
-        $sts 	  = array_fill(0,count($chs)-1,0);
+        $sts 	  = array_fill(0,count($chs)-1,0);  
         $full_sts = array_fill(0,count($chs)-1,0);
+        $grade    = array_fill(0,count($chs)-1,0); 
+        $ptsMax   = 2400;
+		$ptsGrade = 30;
 
         foreach ($users as $key => $user) { //$users as $user){
             //Calculating Scores for this User
@@ -1821,7 +1828,7 @@ echo '</pre>';
                 $score = mysql_result($r1, 0, "sum");
                 //echo '<p>'.$q1.' - '.$score.'<p>';
 
-                //Score for jth chapter
+                // Score for jth chapter
                 $totalscore[$key][$j] = round($score,2);
                 if ($totalscore[$key][$j]>0) {
                     if ($totalscore[$key][$j]>=2400) {
@@ -1829,6 +1836,9 @@ echo '</pre>';
                     }
                     $sts[$j]++;
                 }
+                // Grade for jth chapter
+                
+                $grade[$j] = round($ptsGrade*min($totalscore[$key][$j],$ptsMax)/$ptsMax);
             }
             //--- "Practice Mode"
             $q2 = 'SELECT count(score) AS p FROM '.$usertable.' WHERE current_chapter<0 AND score IS NOT NULL AND epochtime > '.$epochtime;
@@ -1837,11 +1847,15 @@ echo '</pre>';
             $pcount[] = mysql_result($r2, 0, "p");
             //echo  $pcount; die();
             //---
-            //die();
+            //var_dump($gd);die('end');
+            
             $fields = array($user[0],$user[3],$user[2],$user[1],$totalscore[$key][0],$totalscore[$key][1],$totalscore[$key][2],$totalscore[$key][3],$totalscore[$key][4],$totalscore[$key][5],$totalscore[$key][6],$totalscore[$key][7],$totalscore[$key][8]);
             $data[] = $fields;
+            
             //print_r($fields);
             fputcsv($fp, $fields);
+            $grades = array_merge(array($user[3],$user[2],$user[1]),$grade);
+            fputcsv($fp1, $grades);
             //http://localhost/ITS/Profile.php?class=Spring_2011&sid=1219
 
             $td = '';
@@ -1878,13 +1892,12 @@ echo '</pre>';
 
         $td_sts = '';
         $td_full_sts = '';
-        $id_str = 'yy';
         $N = count($data);
         for ($t=0; $t<count($chs); $t++) {
             $td_sts      .= '<td style="text-align:right;font-weight:bold">'.$sts[$t].'<br>'.round(100*$sts[$t]/$N).' <font color="#669">%</font></td>';
             $td_full_sts .= '<td style="text-align:right;font-weight:bold">'.$full_sts[$t].'<br>'.round(100*$full_sts[$t]/$N).' <font color="#669">%</font></td>';
         }
-        $Estr .= '<tr style="border-top:2px solid #999;background:lightyellow">'.
+        $Estr .= $header.'<tr style="border-top:2px solid #999;background:lightyellow">'.
                 '<td colspan="2" style="text-align:center"><b>ATTEMPTED</b> / '.$N.'<br><b>%</b></td>'.
                 $td_sts.
                 '<td colspan="2" style="text-align:center;font-weight:bold">'.$pc.'<br>'.round(100*$pc/$N).'<font color="#669">%</font></td>'.

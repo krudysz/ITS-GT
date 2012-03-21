@@ -1,9 +1,9 @@
 <?php
-$LAST_UPDATE = 'Feb-14-2012';
+$LAST_UPDATE = 'Mar-19-2012';
 //=====================================================================//
 /*					
 	  Author(s): Gregory Krudysz	 
-	  Last Revision: Feb-14-2012
+	  Last Revision: Mar-19-2012
 */
 //=====================================================================//
 error_reporting(E_ALL); // error_reporting(0);
@@ -52,14 +52,14 @@ $id = $_SESSION['user']->id();
 
 // Course Survey
 if (empty($_GET['survey'])) { $survey = 'Spring_2011';  }
-else 											  { $survey = $_GET['survey']; }
+else 						{ $survey = $_GET['survey']; }
 	 														 
 $status = 'student';
 
 //echo '<img src="phpimg/ITS_pie3.php">';
 //$term = array('Fall_2008','Spring_2009','Fall_2009','Spring_2010');
 
-$tr = new ITS_statistics($id,$survey,$survey); // Spring_2010, Fall_2009
+$tr   = new ITS_statistics($id,$survey,$survey); // Spring_2010, Fall_2009
 $term = array($survey); 
 $tr->render_survey($term);
 

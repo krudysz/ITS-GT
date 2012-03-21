@@ -3,8 +3,8 @@ div.HACK{position:relative;width:100%;font-family:verdana,monospace;font-weight:
 div.debug{float:left;color:red;font-weight:700;background-color:#FF9;border:2px solid red;margin:10px;padding:10px}
 table.ITS_backtrace{background-color:#FFF;border:2px solid #999;border-collapse:collapse;margin:.5em;padding:5px}
 table.ITS_backtrace td{border:2px solid #999;text-align:left;padding:.25em}
-div.file{float:left;background-color:#FFF;border:1px solid #FFF;vertical-align:middle;margin:auto 3px;padding:0}
-div.file a img{border:none}
+div.file{clear:both;float:left;background-color:#FFF;border:1px solid #FFF;vertical-align:middle;padding:1em;}
+div.file a img{border:none;outline:0}
 a.file{position:relative;background-color:#ff9;border:1px solid #ccc;padding:5px}
 a.ITS_EDIT{float:left;margin-left:.5em;font-family:"Times New Roman", Times, Monospace;font-size:10pt;padding:.25em}
 textarea.ITS_EDIT{font-family:verdana,monospace;position:relative;min-width:80%;border:none;border-bottom:2px solid silver;background-color:#FFF;padding:.5em}
