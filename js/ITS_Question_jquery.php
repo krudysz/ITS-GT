@@ -1,7 +1,7 @@
 <?php
-$LAST_UPDATE = 'Feb-09-2012';
 /* =============================================================
   Author(s): Gregory Krudysz
+  Last Update: Feb-19-2012
 /* ============================================================= */
 ?>
 <script type="text/javascript">
@@ -75,23 +75,26 @@ $LAST_UPDATE = 'Feb-09-2012';
         //$("#select_class").buttonset(); /*== NOT WORKING IN FF ?? ==*/
         /*-------------------------------------------------------------------------*/
         $("#scoreContainer").click(function(){$("#scoreContainerContent").slideToggle("slow");});
-        /*-------------------------------------------------------------------------*/	
-        $('#previousQuestion').live('click', function(event) {
-            var qid = $('#ITS_QCONTROL_TEXT').attr("value");
-            //var del = $(this).attr("del"); //alert(delta);
-            $.get('ITS_admin_AJAX.php', { ajax_args: "getQuestionMeta", ajax_data: qid}, function(data) {       
-                $('#metaContainer').html(data);
-            });
-        });		
-        /*-------------------------------------------------------------------------*/	
-        $('#nextQuestion').live('click', function(event) {
-            var qid = $('#ITS_QCONTROL_TEXT').attr("value");
-            //var del = $(this).attr("del"); //alert(delta);
-            alert(qid);
-            $.get('ITS_admin_AJAX.php', { ajax_args: "getQuestionMeta", ajax_data: qid}, function(data) {
-                $('#metaContainer').html(data);  
-            });
-        });		
+		/*-------------------------------------------------------------------------*/
+		/*
+		$("input[name='question_nav']").live('click', function(event) {
+			
+		  var nav = $(this).val();
+		  var qid = $('#ITS_QCONTROL_TEXT').attr("value");
+		  
+		  switch(nav){
+                case '>>': qid++;break;
+                case '<<': qid--;break;
+		  }
+		  
+		  //alert(nav+' , '+qid);
+
+          $.get('ITS_admin_AJAX.php', { ajax_args: "getQuestionMeta", ajax_data: qid}, function(data) {       
+                alert(data);
+                //$('#metaContainer').html(data);
+          });				
+		});
+		*/	      	
         /*-------------------------------------------------------------------------*/
         $('#testme2').live('click', function(event) {
 			$("#ImgDlg").dialog('close');
@@ -206,7 +209,7 @@ $LAST_UPDATE = 'Feb-09-2012';
             var css = 'text ui-widget-content ui-corner-all ITS_Q';
             var lbl = '<b>ANSWERS:</b><br>';
             var sel = '<input type="button" name="changeAnswer" id="remAnswer" v="-" value="&mdash;" class="ITS_buttonQ" /><br>'
-                +'<input type="button" name="changeAnswer" id="addAnswer" v="+" value="+"        class="ITS_buttonQ" />';		
+					 +'<input type="button" name="changeAnswer" id="addAnswer" v="+" value="+"       class="ITS_buttonQ" />';		
             switch(qtype){
                 //------------------//
                 case 'mc':
@@ -328,12 +331,12 @@ $('#add_fcount').live('click',function() {
    
     if(new_value<=4){
 	 $("#answers").val(new_value);
-		var tr = '<tr  id="formulaes'+new_value+'">'
-					+'<td width="10%"><label for="text'+new_value+'">Text'+new_value+'</label></td>'
+		var tr = '<tr id="formulaes'+new_value+'">'
+					+'<td width="10%"><label for="text">Text'+new_value+'</label></td>'
 					+'<td width="30%" ><textarea name="text'+new_value+'" id="text'+new_value+'" value="" class="'+css+'" /></td>'
                     +'<td width="10%"><label for="formula">Formula'+new_value+'</label></td>'
-					+'<td width="30%" colspan="6"><textarea name="formula'+new_value+'" id="formula'+new_value+'" value="" class="'+css+'" /></td>'
-					+'<td width="10%"><label for="weight1">Weight'+new_value+'</label></td><td width="20%"><input type="text" MAXLENGTH=3 name="weight'+new_value+'" class="'+css+'" id="weight'+new_value+'"></td>'
+					+'<td width="90%" colspan="6"><textarea name="formula'+new_value+'" id="formula'+new_value+'" value="" class="'+css+'" /></td>'
+					+'<td width="10%"><label for="weight1">Weight'+new_value+'</label></td><td width="40%"><input type="text" MAXLENGTH=3 name="weight'+new_value+'" class="'+css+'" id="weight'+new_value+'"></td>'
 					+'</tr>';
 		$("#formulaes"+n1).after(tr);
 	}
@@ -585,7 +588,7 @@ switch(v){
     });		 
     /*-------------------------------------------------------------------------*/
     $("a[name='ITS_EDIT_QCONTROL']").live('click', function(event) {
-        alert('jquery ITS_EDIT_QCONTROL');
+        //alert('jquery ITS_EDIT_QCONTROL');
         var textarea_id = $('textarea.ITS_EDIT').attr("id");
         var textarea_value = $('textarea#'+textarea_id).val();
         //alert(textarea_value);
@@ -595,16 +598,28 @@ switch(v){
     });
     /*-------------------------------------------------------------------------*/
     $(".ITS_button[name='editMode']").live('click', function(event) {
+		// EDIT TEXT BOXES
         $('span.ITS_QCONTROL').each(function(index) {
             //<a href="#" name="ITS_EDIT" class="ITS_EDIT" ref="'+$(this).attr("id")+'"> Edit </a>
-            $(this).html('<div id="navEdit"><ul id="navlistEdit"><li><a href="#" name="ITS_IMG" ref="'+$(this).attr("id")+'"> Image </a></li><li><a href="#" name="ITS_EDIT" ref="'+$(this).attr("id")+'"> Edit </a></li></ul></div>');
+            $(this).html('<div id="navEdit"><ul id="navlistEdit"><li><a href="#" name="ITS_EDIT" ref="'+$(this).attr("id")+'"> Edit </a></li></ul></div>');
             var idd = $(this).attr("id");
             //alert('#'+idd+'_TARGET');
             $('#'+idd+'_TARGET').css({'border': '2px dotted silver'});
         });
+        // EDIT IMAGES
+        $('span.ITS_ICONTROL').each(function(index) {
+			//alert($(this).attr("ref"));
+            //<a href="#" name="ITS_EDIT" class="ITS_EDIT" ref="'+$(this).attr("id")+'"> Edit </a>
+            $(this).html('<div id="navEdit"><ul id="navlistEdit"><li><a href="#" name="ITS_IMG" ref="'+$(this).attr("ref")+'"> Image </a></li></ul></div>');
+            var idd = $(this).attr("id");
+            //alert('#'+idd+'_TARGET');
+            $('#'+idd+'_TARGET').css({'border': '2px dashed #666','padding':'0.25em','overflow':'auto'});
+        });        
+        
     });		
     /*-------------------------------------------------------------------------*/
     $("a.[name='ITS_EDIT']").live('click', function(event) {
+		
         //alert('ITS_EDIT');
         var obj_id = $(this).attr("ref");
         var tar_id = obj_id+'_TARGET';
@@ -711,7 +726,9 @@ switch(v){
     /*-------------------------------------------------------------------------*/
     $("a[name='ITS_IMG']").live('click', function(event) {
 		var qid = $('#ITS_QCONTROL_TEXT').attr("value");
-        var dialog = $('<div id="ImgDlg" style="ITS"></div>').appendTo('body');
+		var fld = $(this).attr("ref");
+//alert(qid+' - '+fld);				
+        var dialog = $('<div id="ImgDlg" style="ITS" fld="'+fld+'"></div>').appendTo('body');
         dialog.dialog({
 			title: 'UPLOAD IMAGE FROM:',
             resizable: true,
@@ -720,13 +737,13 @@ switch(v){
             modal: false,
             buttons: { "My Computer": function() { 
 						//$( this ).dialog( "close" );
-                        $('#ImgDlg').html('<center><form name="ITS_file" action="ajax/ITS_image.php" enctype="multipart/form-data" method="POST"><input id="ITS_image_file" name="ITS_image" size="10" type="file"><input id="ITS_image_upload" name="upload" value="Upload" type="submit"><input type="hidden" name="qid" value="'+qid+'"/></form></center>');
+                        $('#ImgDlg').html('<center><form name="ITS_file" action="ajax/ITS_image.php" enctype="multipart/form-data" method="POST"><input id="ITS_image_file" name="ITS_image" size="10" type="file"><input id="ITS_image_upload" name="upload" value="Upload" type="submit"><input type="hidden" name="qid" value="'+qid+'"><input type="hidden" name="fld" value="'+fld+'"></form></center>');
 						$("#ImgDlg").dialog( "option", "title","From My Computer:");
 						//$('#ITS_image_file').css('border','1px solid red');
 
                 },"SERVER": function() { 
 					/* Solution 1: Redirect to another page */
-					window.location.replace('Image.php?id='+qid);
+					window.location.replace('Image.php?id='+qid+'&f='+fld);
 					//*/
 					/* Solution 2: Redirect to lower div-page //
                     $.get('server_browser2.php', { ajax_args: "deleteQuestion", ajax_data: 0}, function(data) {
@@ -741,6 +758,12 @@ switch(v){
                         $('#ImgDlg').html(data);
                     });
                     */
+                },"delete": function() { 
+						//$( this ).dialog( "close" );
+                        $('#ImgDlg').html('<center><input name="ITS_image_delete" value="Yes, delete it" type="button" qid="'+qid+'" fld="'+fld+'"><input name="ITS_image_delete" value="No" type="button">');
+						$("#ImgDlg").dialog( "option", "title","Delete this image from question?");
+						//$('#ITS_image_file').css('border','1px solid red');
+
                 },
                 Cancel: function() { $( this ).dialog( "close" ); }
             }
@@ -774,6 +797,23 @@ switch(v){
     $('#ITS_image_upload').live('click', function(event) {
 			$("#ImgDlg").dialog('close');    
     });
+    /*-------------------------------------------------------------------------*/
+    $('input[name="ITS_image_delete"]').live('click', function(event) {
+            if ($(this).val()=='Yes, delete it'){
+			   var qid = $(this).attr('qid');
+			   var fld = $(this).attr('fld');
+              
+			   $.get('ajax/ITS_image.php', {
+				  ajax_args: "delete", 
+				  ajax_data: qid+'~'+0+'~'+fld
+			   }, function(data) {
+				  $("#ImgDlg").dialog('close');		
+				  window.location.replace('Question.php?qNum='+qid);	
+			   });	     
+			} else {
+			   $("#ImgDlg").dialog( "option", "title","Image:").html(''); 
+			}			   
+    });    
     /*-------------------------------------------------------------------------*/
     $(".ITS_addTAG").live('click', function(event) {
         var obj_id = $(this).attr("ref");	

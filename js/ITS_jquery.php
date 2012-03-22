@@ -1,6 +1,6 @@
 <?php
 /* =============================================================  /
-  LAST_UPDATE: Mar-5-2012	
+  LAST_UPDATE: Mar-5-2012
   Author(s): Gregory Krudysz
 /* ============================================================= */
 ?>
@@ -35,11 +35,12 @@
             }		
         });
         //-------------fancy box-----------------//
+        /*
         $("a.example2").fancybox({
-				'overlayShow'	: true,
+				'overlayShow'	: false,
 				'transitionIn'	: 'elastic',
 				'transitionOut'	: 'elastic'
-	    }); 
+	    }); */
         //--------------rating-------------------//
         $(".icon#Minst_icon").change(function(){
             $(this).css("background-color","red");
@@ -428,10 +429,14 @@ $('#ITS_submit').live('click', function() {
         break;
     //----------//
 case 'C':
-    //----------//
-    var val = $('#ITS_TA').val();
-    //alert(val);
-    values[0] = val;
+    var count = $('#answersCount').val(); 
+    var val = 0;
+    var id ='';
+    for(var i=0;i<count; i++){
+		id =  '#ITS_TA'+i;
+		values[i]=$(id).val();
+	}
+    
     break;
 //----------//
 case 'P':
