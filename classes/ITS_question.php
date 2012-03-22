@@ -339,7 +339,18 @@ class ITS_question {
             //die($src);
             //$src = 'ITS_FILES/images/question/5/lighthouse.png';
 
-            $img = '<img src="' . $this->files_path . $this->Q_image . '" class="ITS_question_img" alt="' . $this->files_path . $this->Q_image . '">';
+            //$img = '<img src="' . $this->files_path . $this->Q_image . '" class="ITS_question_img" alt="' . $this->files_path . $this->Q_image . '">';
+            
+            if (preg_match("/phpimg/i",$this->Q_image)) {
+				//die($this->Q_image);
+			$img = '<img src="' . $this->files_path . $this->Q_image . '" class="ITS_question_img" alt="' . $this->files_path . $this->Q_image . '">';
+    //$img = '<a id="inline" href="#data"><img src="' . $this->files_path . $this->Q_image . '" class="ITS_question_img" alt="' . $this->files_path . $this->Q_image . '"></a>';
+    //$img.= '<div style="display:none"><div id="data"><img src="' . $this->files_path . $this->Q_image . '" class="ITS_question_img" alt="' . $this->files_path . $this->Q_image . '"></div></div>';
+} else {
+    $img = '<a id="single_image" href="' . $this->files_path . $this->Q_image . '" class="ITS_question_img" alt="' . $this->files_path . $this->Q_image . '"><img src="' . $this->files_path . $this->Q_image . '" class="ITS_question_img" alt="' . $this->files_path . $this->Q_image . '"></a>';
+}
+                       
+            
             //$img = '<a class="example2" href="' . $src . '"><img src="' . $src . '" alt="' . $src . '"></a>';
         } else {
             $img = '';

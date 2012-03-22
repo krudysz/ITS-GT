@@ -49,7 +49,9 @@ args[0]  = QCTR_TEXT.value; // question number
 args[1]  = CONTROL;         // control
 args[2]  = TARGET;          // target
  //alert(TARGET);
+
 ITS_AJAX("ITS_control.php",args,DATA,ITS_QCONTROL_UPDATE,TARGET);
+
 }
 //-------------------------------------------------//
 function ITS_QCONTROL_UPDATE(obj_id,text) {

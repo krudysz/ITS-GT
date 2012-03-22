@@ -294,12 +294,30 @@ header("Location: http://".$_SERVER['HTTP_HOST'].rtrim(dirname($_SERVER['PHP_SEL
 		 
 		 /* Export Many code  */
 		  $("#exportManyQuestion").live('click', function(event) {
-        $("#exportManyQuestionContainer").css("display","inline");
-       
+          $("#exportManyQuestionContainer").css("display","inline");
     });      
-		 
 		 /* Export many code ends */	
         </script>
+        <script type="text/javascript" src="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+        <link rel="stylesheet" type="text/css" href="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<script type="text/javascript">
+$(document).ready(function() {
+	/* This is basic - uses default settings */
+	$("a#single_image").fancybox();	
+	/* Using custom settings */	
+	$("a#inline").fancybox({
+		'hideOnContentClick': true
+	});
+	/* Apply fancybox to multiple items */	
+	$("a.group").fancybox({
+		'transitionIn'	:	'elastic',
+		'transitionOut'	:	'elastic',
+		'speedIn'		:	600, 
+		'speedOut'		:	200, 
+		'overlayShow'	:	false
+	});
+});
+</script>        
     </head>
     <body>
         <!---===========================================--->

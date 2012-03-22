@@ -12,6 +12,7 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");   // or IE will pull from cach
 //echo getcwd() . "\n";
 require_once("../config.php");
 include "../classes/ITS_image.php";
+$style = '<script type="text/javascript">$(document).ready(function() {$("a#single_image").fancybox();})</script>';
 
 session_start();
 //===================================================================//

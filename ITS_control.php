@@ -4,8 +4,15 @@ ITS_control - script for AJAX question control objects: CANCEL | SAVE
 			  when in 'Edit' mode, called from ITS_QControl.js
 
 Author(s): Greg Krudysz
-Last Update: Feb-19-2012
+Last Update: Mar-22-2012
 ---------------------------------------------------------------------*/
+
+header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT"); // always modified
+header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");   // or IE will pull from cache 100% of time (which is really bad) 
+header("Cache-Control: no-cache, must-revalidate"); // Must do cache-control headers 
+header("Pragma: no-cache");
+
+
 require_once("config.php");
 require_once($MDB2_path.'MDB2.php');
 require_once("classes/ITS_tag.php");
@@ -13,7 +20,8 @@ require_once("classes/ITS_search.php");
 require_once("classes/ITS_table.php");
 require_once("classes/ITS_configure.php");
 require_once("classes/ITS_question.php");
-
+	
+$style = '<head><script type="text/javascript">$(document).ready(function() {$("a#single_image").fancybox();})</script></head>';
 session_start();
 //===================================================================//
 global $db_dsn, $db_name, $tb_name, $db_table_user_state;
@@ -64,7 +72,7 @@ switch ($Control){
 	    $Q->get_ANSWERS_data_from_DB();
 	      
 	      //$Q->get_ANSWERS_solution_from_DB();
-	      echo $nav.$Q->render_ANSWERS('a',2).$Q->render_data();
+	      echo $style.$nav.$Q->render_ANSWERS('a',2).$Q->render_data();
 		  break;
 		//-------------------------------------------//
 	  case 'CANCEL':
@@ -117,7 +125,7 @@ switch ($Control){
 
 		// Pre-process string for output:
 		$str = $Q->renderFieldCheck($Data);
-		echo $str;
+		echo $style.$str;
 		break;
 		//-------------------------------------------//
 }

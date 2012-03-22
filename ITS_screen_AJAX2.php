@@ -17,14 +17,13 @@ require_once (INCLUDE_DIR . "common.php");
 require_once($MDB2_path.'MDB2.php');
 include("classes/ITS_screen2.php");
 include("classes/ITS_computeScores.php");
-
 /*
 $style = '<head>'
 .'<script type="text/javascript" src="MathJax/MathJax.js"></script>'
 .'<link type="text/css" href="jquery-ui-1.8.4.custom/css/ui-lightness/jquery-ui-1.8.4.custom.css" rel="stylesheet" />'
 .'</head>';
 */
-$style = '';
+$style = '<script type="text/javascript">$(document).ready(function() {$("a#single_image").fancybox();})</script>';
 session_start();
 //===================================================================//
 global $db_dsn, $db_name, $tb_name, $db_table_user_state;

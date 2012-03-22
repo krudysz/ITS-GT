@@ -58,39 +58,25 @@ $_SESSION['image'] = $img;
 <link rel="stylesheet" href="css/ITS_navigation.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/ITS_image.css" type="text/css">
 <link rel="stylesheet" href="css/admin.css" type="text/css" media="screen">
-<script type="text/javascript" src="js/jquery-1.5.js"></script></head>
-<body>
-<center>
-<!-- div #ITS_navigation_container -->
-<?php echo $nav;?>
-<!-- end: #ITS_navigation_container -->
-<!-- div #Image_container -->
-		<!-- <?php echo $qidstr;?> -->
-		<div id="Image_container">
-		<table class="ITS_Image">
-		<tr><td id="ITS_image_container"><div class="logo">IMAGES</div></td></tr>
-		<tr><td id="list"><center><?php echo $Simgs_str;?></center></td></tr>		
-		</table>
-		</div>
-<!-- end: #Image_container -->		
-
-<!-- div #Image_navigation_container -->
-		<div id="Image_navigation_container">
-			<input type="button" name="img_nav" value="<" id="prev">
-			<span id="pgno">1</span>
-			<input type="button" name="img_nav" value=">" id="next">
-			<input type="hidden" name="id" value="<?php echo $id;?>"><br>
-			<input type="hidden" name="image" id="image">
-			<input type="hidden" name="fld" value="<?php echo $fld;?>">	
-			<p>
-			<input id="img_submit" type="submit" name="control" value="Select" qid="<?php echo $id;?>" fld="<?php echo $fld;?>">
-			<input id="img_cancel" type="button" name="control" value="Cancel" qid="<?php echo $id;?>">
-			</p>
-		</div>
-<!-- end #Image_navigation_container -->			
-	</center>
-</body>
-	<script>
+<script type="text/javascript" src="js/jquery-1.5.js"></script>
+<script type="text/javascript" src="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<link rel="stylesheet" type="text/css" href="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<script type="text/javascript">
+$(document).ready(function() {
+	/* This is basic - uses default settings */
+	$("a#single_image").fancybox();	
+	/* Using custom settings */	
+	$("a#inline").fancybox({
+		'hideOnContentClick': true
+	});
+	/* Apply fancybox to multiple items */	
+	$("a.group").fancybox({
+		'transitionIn'	:	'elastic',
+		'transitionOut'	:	'elastic',
+		'speedIn'		:	600, 
+		'speedOut'		:	200, 
+		'overlayShow'	:	false
+	});
 	/*-------------------------------------------------------------------------*/
 	var page = 0;
 	$("#picture	").delegate("td", "click", function() {  
@@ -105,11 +91,13 @@ $_SESSION['image'] = $img;
 	$(".img_sm").live("hover", function(){ 
 		var iid = $(this).attr('iid');
 		var src = $(this).attr("src");
-		$("#ITS_image_container").html('<img src="'+src+'" iid="'+iid+'">'); 
+		$("a#single_image").fancybox();
+		$("#ITS_image_container").html('<a id="single_image" href="'+src+'"><img src="'+src+'" iid="'+iid+'"></a>'); 		
         $('.img_sm').each(function(index) {
 			if (index==val){$(this).attr('id','current');} 
 			else 		   {$(this).attr('id','');       }
         });
+        $("a#single_image").fancybox();	
 	}); 
 	/*-------------------------------------------------------------------------*/
 	$("input[name='img_nav']").live('click', function(event) {
@@ -150,7 +138,40 @@ $_SESSION['image'] = $img;
 		default:
 		  alert('action error');
 		}
-	}); 
-	/*-------------------------------------------------------------------------*/		
-	</script>
+	});
+	/*-------------------------------------------------------------------------*/	
+})
+</script> 
+</head>
+<body>
+<center>
+<!-- div #ITS_navigation_container -->
+<?php echo $nav;?>
+<!-- end: #ITS_navigation_container -->
+<!-- div #Image_container -->
+		<!-- <?php echo $qidstr;?> -->
+		<div id="Image_container">
+		<table class="ITS_Image">
+		<tr><td id="ITS_image_container"><div class="logo">IMAGES</div></td></tr>
+		<tr><td id="list"><center><?php echo $Simgs_str;?></center></td></tr>		
+		</table>
+		</div>
+<!-- end: #Image_container -->		
+
+<!-- div #Image_navigation_container -->
+		<div id="Image_navigation_container">
+			<input type="button" name="img_nav" value="<" id="prev">
+			<span id="pgno">1</span>
+			<input type="button" name="img_nav" value=">" id="next">
+			<input type="hidden" name="id" value="<?php echo $id;?>"><br>
+			<input type="hidden" name="image" id="image">
+			<input type="hidden" name="fld" value="<?php echo $fld;?>">	
+			<p>
+			<input id="img_submit" type="submit" name="control" value="Select" qid="<?php echo $id;?>" fld="<?php echo $fld;?>">
+			<input id="img_cancel" type="button" name="control" value="Cancel" qid="<?php echo $id;?>">
+			</p>
+		</div>
+<!-- end #Image_navigation_container -->			
+	</center>
+</body>
 </html>

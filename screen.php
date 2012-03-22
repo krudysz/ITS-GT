@@ -1,6 +1,6 @@
 <?php
 /* ============================================================= */
-$ITS_version = '188g';
+$ITS_version = '188h';
 $LAST_UPDATE = 'Mar-22-2012';
 /* ============================================================= */
 header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT"); // always modified
@@ -160,6 +160,24 @@ $_SESSION['screen'] = $screen;
         ?>
         <script type="text/javascript" src="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
         <link rel="stylesheet" type="text/css" href="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" media="screen" />
+<script type="text/javascript">
+$(document).ready(function() {
+	/* This is basic - uses default settings */
+	$("a#single_image").fancybox();	
+	/* Using custom settings */	
+	$("a#inline").fancybox({
+		'hideOnContentClick': true
+	});
+	/* Apply fancybox to multiple items */	
+	$("a.group").fancybox({
+		'transitionIn'	:	'elastic',
+		'transitionOut'	:	'elastic',
+		'speedIn'		:	600, 
+		'speedOut'		:	200, 
+		'overlayShow'	:	false
+	});
+});
+</script>
     </head>
     <body onload="UR_Start()">
         <div id="pageContainer">
@@ -193,7 +211,7 @@ $_SESSION['screen'] = $screen;
                             $chMax = 15;
                             break;
                         default:
-                            $chUser = 5;
+                            $chUser = 1;
                             $chMax = $index_max;
                     }
 
@@ -322,7 +340,7 @@ $_SESSION['screen'] = $screen;
 				    .'<div style="display:none"><div name="data">Some title</div></div>';
                 */
 //echo $screen->reviewMode(1,0);
-                ?>
+                ?>              
             </div>
             <!-- FOOTER -->
             <?php include '_include/footer.php'; ?>

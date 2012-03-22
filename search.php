@@ -1,7 +1,7 @@
 <?php
 /* ============================================================= */
-$ITS_version = '188g';
-$LAST_UPDATE = 'Mar-22-2012';
+$ITS_version = '188j';
+$LAST_UPDATE = 'Mar-23-2012';
 /* ============================================================= */
 
 //--- begin timer ---//
@@ -37,6 +37,8 @@ $db_user = $dsn[1];
 $db_pass = $dsn[2];
 $host    = $dsn[4];
 $db_name = $dsn[6];
+$path1 = 'ITS_FILES/SPFIRST/PNGs/';
+$path2 = 'ITS_FILES/SPFIRST/solutions/';
 //var_dump($host);
 //foreach ($dsn as $value) {echo $value.'<br>';}//die('search.php');
 /* ============================================================= */
@@ -89,7 +91,7 @@ $db_name = $dsn[6];
                     // SELECT *,MATCH (keywords) AGAINST ('fourier') AS score FROM SPF WHERE MATCH(keywords) AGAINST('fourier');			
 
                     if (MySQL_num_rows($res) > 0) {
-                        echo '<div id="ITS_search_query"> " ' . $keyword . ' " [ <a target="_blank" href="http://its.vip.gatech.edu/admin/tables1.php?table_name=SPF&table_name2=-&entry_nos=-">SPF table</a> ] </div>';
+                        echo '<div id="ITS_search_query"> " ' . $keyword . ' " [ <a target="_blank" href="http://itsdev4.vip.gatech.edu/admin/tables1.php?table_name=SPF&table_name2=-&entry_nos=-">SPF table</a> ] </div>';
                         ?>
                         <table class="ITS_search">
                             <tr><th>Title</th><th>File</th><th>Solution</th><th>Ch.</th><th>Term</th><th>Year</th></tr>
@@ -97,9 +99,24 @@ $db_name = $dsn[6];
                             $idx = 1;
                             $tb  = '';
                             while ($row = MySQL_fetch_array($res)) {
+								//echo '<pre>';var_dump($row);echo '</pre>';die();
                                 $fname = $row['statement'];
                                 $solutions = $row['solutions'];
+                                $term = $row['term'];
+                                switch ($term){
+									case 'Spring':
+									case 'Summer':
+									$t = $term[0].$term[1];
+									break;
+									case 'Fall':
+									case 'Winter':
+									$t = $term[0];
+									break;
+								}
+                                $year = $row['year'];
+								$f = $path1.strtolower($t).'_'.$year[2].$year[3].'/'.preg_replace('/.pdf/','.png', $fname);
 
+//echo $path;die();
                                 $sol_arr = explode(',', $solutions);
 
                                 $sol_list = '';
@@ -107,14 +124,14 @@ $db_name = $dsn[6];
                                     if (empty($s)) {
                                         $sol_list .= '';
                                     } else {
-                                        $sol_list .= '<div class="file"><a href="' . $s . '" target="_blank"><img alt="' . $s . '" src="admin/icons/png_icon.png" /></a></div>';
+                                        $sol_list .= '<div class="file"><a href="' . $path2.strtolower($t).'_'.$year[2].$year[3].'/'.$s . '" target="_blank"><img alt="' . $path2.strtolower($t).'_'.$year[2].$year[3].'/'.$s . '" src="admin/icons/png_icon.png" /></a></div>';
                                     }
-                                }
+                                }	
                                 //echo '<pre>';var_dump($sol_list);echo '</pre>';die();
                                 //$sol  = '<div class="file"><a href="'.$solutions.'" target="_blank"><img alt="'.$solutions.'" src="'.$solutions.'" /></a></div>';
 
                                 $sol = '<div class="file">' . $sol_list . '</div>';
-                                $file = '<div class="file"><a href="' . $fname . '" target="_blank"><img alt="' . $fname . '" src="admin/icons/pdf_icon.gif" /></a></div>';
+                                $file = '<div class="file"><a href="' . $f . '" target="_blank"><img alt="' . $f . '" src="admin/icons/png_icon.png" /></a></div>';
                                 //echo "<tr><td>{$row['id']}</td><td>{$row['title']}</td><td>{$row['score']}</td></tr>";   
                                 $tb .= "<tr>" .
                                         '<td class="search_title">' . $row["title"] . '</td>' .

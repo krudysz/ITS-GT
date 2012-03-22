@@ -46,7 +46,6 @@ xmlHttp.onreadystatechange=function() {
     }
 xmlHttp.open("POST",url,true)
 xmlHttp.send(null)
-
 return false;
 }
 //-------------------------------------------------//
