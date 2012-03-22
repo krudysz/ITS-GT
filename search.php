@@ -1,7 +1,7 @@
 <?php
 /* ============================================================= */
-$ITS_version = '188';
-$LAST_UPDATE = 'Mar-20-2012';
+$ITS_version = '188g';
+$LAST_UPDATE = 'Mar-22-2012';
 /* ============================================================= */
 
 //--- begin timer ---//
@@ -89,7 +89,7 @@ $db_name = $dsn[6];
                     // SELECT *,MATCH (keywords) AGAINST ('fourier') AS score FROM SPF WHERE MATCH(keywords) AGAINST('fourier');			
 
                     if (MySQL_num_rows($res) > 0) {
-                        echo '<div id="ITS_search_query"> " ' . $keyword . ' "</div>';
+                        echo '<div id="ITS_search_query"> " ' . $keyword . ' " [ <a target="_blank" href="http://its.vip.gatech.edu/admin/tables1.php?table_name=SPF&table_name2=-&entry_nos=-">SPF table</a> ] </div>';
                         ?>
                         <table class="ITS_search">
                             <tr><th>Title</th><th>File</th><th>Solution</th><th>Ch.</th><th>Term</th><th>Year</th></tr>
