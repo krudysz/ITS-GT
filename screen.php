@@ -1,7 +1,7 @@
 <?php
 /* ============================================================= */
-$ITS_version = '188f';
-$LAST_UPDATE = 'Mar-21-2012';
+$ITS_version = '188g';
+$LAST_UPDATE = 'Mar-22-2012';
 /* ============================================================= */
 header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT"); // always modified
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");          // or IE will pull from cache 100% of time (which is really bad) 
