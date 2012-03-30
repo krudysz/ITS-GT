@@ -9,11 +9,11 @@ ITS_statistics class - generate and render statistical displays.
 		
 								 ex. $ITS_stats = new ITS_statistics(45,'Fall_2009','student');
 								 
-		Methods: 		render_user_answer    ()				
-								render_question_answer( $score,$answer,$qtype,$index ) 
+		Methods: 	render_user_answer    ()				
+					render_question_answer( $score,$answer,$qtype,$index ) 
 								
 	 Author(s): Greg Krudysz | Aug-28-2008
-	 Last Revision: Mar-22-2012
+	 Last Revision: Mar-28-2012
 */
 //=====================================================================//
 
@@ -1702,8 +1702,7 @@ echo '</pre>';
     //----------------------------------------------------------------------------
     function render_profile2($chapter,$orderby) {
         //----------------------------------------------------------------------------
-        //
-        die('function render_profile2($chapter,$orderby)');
+        //die('function render_profile2($chapter,$orderby)');
         $term = $this->term;
         $ITSq = new ITS_query();
         //$term = array('Fall_2010');
@@ -1801,14 +1800,18 @@ echo '</pre>';
                     else {
                         $ans = $this->render_question_answer($score,$answers[$qn][1], $qtype,0); //##!!
                     }
-
+//echo '-ss';
                     //$ans = $this->render_user_answer($ansM_list, $score,'', 2, 0);
                     $Q = new ITS_question($this->id, $this->db_name, $this->tb_name);
                     $Q->load_DATA_from_DB($answers[$qn][0]);
-                    $QUESTION = $Q->render_QUESTION_check($answers[$qn][4]);
-                    $Q->get_ANSWERS_data_from_DB();
-                    $ANSWER = $Q->render_ANSWERS('a',0);
+//echo '++';//.$answers[$qn][4];
 
+                    $QUESTION = $Q->render_QUESTION_check($answers[$qn][4]);           
+//echo $QUESTION; 
+//echo 'heel';                    
+                    $Q->get_ANSWERS_data_from_DB();
+                
+                    $ANSWER = $Q->render_ANSWERS('a',0);
                     $dist = '-dist-';//'-dist-';
                     $FEEDBACK = $this->render_user_answer($ans,$score,$dist,$config,0); //##!!
                     /*
@@ -1826,7 +1829,8 @@ echo '</pre>';
                     else {
 						switch($answers[$qn][4]){
 							case 'skip':
-                             $ans = '<hr style="border-top:1px dashed silver"><font color="#666">SKIP</font>';
+                             $ans = '<hr class="PROFILE"><font color="#666">SKIP</font>';
+                             die('xx');
                              break;
                              default:
                              //$ans='';
@@ -1837,34 +1841,38 @@ echo '</pre>';
                         $timestamp = '';
                     }
                     else {
-                        $timestamp = '<hr style="border-top:1px dashed silver"><b><font color="darkblue" size="1.2">'.date("M j G:i:s T Y",$answers[$qn][5]).'</font></b>';
+                        $timestamp = '<hr class="PROFILE"><b><font color="darkblue" size="1.2">'.date("M j G:i:s T Y",$answers[$qn][5]).'</font></b>';
                     }
                     // DURATION
                     if (empty($answers[$qn][6])) {
                         $dur = '';
                     }
                     else {
-                        $dur = '<hr style="border-top:1px dashed silver"><font color="blue">'.$answers[$qn][6].' sec</font>';
+                        $dur = '<hr class="PROFILE"><font color="blue">'.$answers[$qn][6].' sec</font>';
                     }
                     // RATING
                     if (empty($answers[$qn][7])) {
                         $rating = '';
                     }
                     else {
-                        $rating = '<hr style="border-top:1px dashed silver"><font color="brown">'.$rateStr[$answers[$qn][7]-1].'</font>';
+                        $rating = '<hr class="PROFILE"><font color="brown">'.$rateStr[$answers[$qn][7]-1].'</font>';
                     }
-
+//echo $ans.$timestamp.$dur.$rating.$action.'<hr>';
                     //echo $answers[$qn][5]; //$timestamp; die();
                     //style="background-color:#eee"
+                                  
                     $Estr .= '<tr class="PROFILE" id="tablePROFILE">'.
                             '<td class="PROFILE" >' . ($qn+1). '<br><br><a href="Question.php?qNum='.$answers[$qn][0].'" class="ITS_ADMIN">'.$answers[$qn][0].'</a></td>'.
                             '<td class="PROFILE" >' . $QUESTION.$ANSWER. '</td>'.
                             '<td class="PROFILE" >' . $ans.$timestamp.$dur.$rating.$action.'</td>';
+               
                     if (!is_null($tscore)) {
                         $Estr .= '<td class="PROFILE" >' . $tscore.'</td>';
                     }
+                
                     $Estr .=  '</tr>';
-                }
+//echo $qn.' - '.(count($answers)-1).'<br>';     
+                } 
                 //die();
                 // eof $qn
                 //echo $Estr.'</table>';

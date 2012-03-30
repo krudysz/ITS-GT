@@ -1,9 +1,10 @@
 <?php
-$LAST_UPDATE = 'Mar-13-2012';
+$LAST_UPDATE = 'Mar-30-2012';
 //=====================================================================//
 /* 	 Author(s): Gregory Krudysz
      Last Revision: Gregory Krudysz, Mar-13-2012                       */
 //=====================================================================//
+
 //--- begin timer ---//
 $mtime = microtime();
 $mtime = explode(" ",$mtime);
@@ -94,6 +95,37 @@ if ($status == 'admin' OR $status == 'instructor') {
             $resource_source = $ITSq->getCategory($ch);
             $subnav = '<form id="'.$course.'" name="'.$course.'" action="Course.php" method="GET"><input type="hidden" name="c" value="'.$course.'">'.$chapter.'<noscript><input type="submit" value="Submit"></noscript></form>';
             break;
+        //=======================================//
+        case 'warmup':
+        //=======================================//
+        //------- CHAPTER -------------//
+            $ch_max = 14;
+            if (isset($_GET['ch'])) {
+                $ch = $_GET['ch'];
+            }
+            else {
+                $ch = 1;
+            }
+
+            $chapter = 'Module #<select class="ITS_select" name="ch" id="select_chapter" onchange="javascript:this.form.submit()">';
+            for ($c=1; $c<=$ch_max; $c++) {
+                if ($ch == $c) {
+                    $sel = 'selected="selected"';
+                }
+                else {
+                    $sel = '';
+                }
+                $chapter .= '<option value="'.$c.'" '.$sel.'>'.$c.'</option>';
+            }
+            $chapter .= '</select>';
+            //--- QUESTIONS ------------------------------------------//
+            $msg = '';
+            $questions = array();
+
+            //--- USERS --- ------------------------------------------//
+            $resource_source = 'category IN ("Warm-up0'.$ch.'")';
+            $subnav = '<form id="'.$course.'" name="'.$course.'" action="Course.php" method="GET"><input type="hidden" name="c" value="'.$course.'">'.$chapter.'<noscript><input type="submit" value="Submit"></noscript></form>';
+            break;            
         //=======================================//
         case 'ece3075':
         //=======================================//

@@ -23,7 +23,10 @@ $style = '<head>'
 .'<link type="text/css" href="jquery-ui-1.8.4.custom/css/ui-lightness/jquery-ui-1.8.4.custom.css" rel="stylesheet" />'
 .'</head>';
 */
-$style = '<script type="text/javascript">$(document).ready(function() {$("a#single_image").fancybox();})</script>';
+$style = '<head><script type="text/javascript" src="js/jquery-ui-1.8.4.custom/js/jquery-1.4.2.min.js"></script>'
+        .'<script type="text/javascript" src="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>'
+        .'<link rel="stylesheet" type="text/css" href="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css" media="screen" />'
+		.'<script type="text/javascript">$(document).ready(function() {$("a#single_image").fancybox();})</script></head>';
 session_start();
 //===================================================================//
 global $db_dsn, $db_name, $tb_name, $db_table_user_state;

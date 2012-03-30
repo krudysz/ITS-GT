@@ -461,7 +461,19 @@ img.ITS_question_img {
   text-align:right;
   vertical-align: middle;
   z-index: 3;
-  border: 2px ridge #eee;
+  border: 2px solid #fff;
+}
+img.ITS_question_img:hover { border: 2px dotted #ccc; }
+img.ITS_question_img2 {
+  float: right;
+  height: auto !important;
+  padding: 0;
+  margin: 0.5em 1em;
+  max-height: 250px;
+  text-align:right;
+  vertical-align: middle;
+  z-index: 3;
+  border: 2px solid #fff;
 }
 /*
 div.ITS_question_img {

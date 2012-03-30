@@ -61,6 +61,7 @@ class ITS_navigation {
 		array('SPEN','Course.php?c=spen'),
 		array('ECE 3075','Course.php?c=ece3075'),
 		array('ECE 2025','Course.php?c=ece2025'),
+		array('Warmup','Course.php?c=warmup'),
 				 );          
         $tabArr = array_merge(array_slice($tabArr, 0,3) ,$cArr);				 
         break;           

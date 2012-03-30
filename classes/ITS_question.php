@@ -18,7 +18,7 @@
   ex. $ITS_question = new ITS_question(90001,"its","user_cpt");
 
   Author(s): Greg Krudysz | Aug-28-2008
-  Last Revision: Mar-5-2012
+  Last Revision: Mar-29-2012
 */
 //=====================================================================//
 
@@ -111,7 +111,7 @@ class ITS_question {
         //=====================================================================//
         // Pull out webct data
         $query = 'SELECT ' . $this->fields . ' FROM ' . $this->tb_name . ' WHERE id=' . $qid;
-        //echo '<p>'.$query; die();
+        //echo '<p>'.$query; //die();
         $res = mysql_query($query);
         if (!$res) {
             die('Query execution problem in ITS_question: ' . msql_error());
@@ -126,7 +126,7 @@ class ITS_question {
     //=====================================================================//
     function load_DATA($data) {
         //=====================================================================//
-        //print_r($data);die();
+        //print_r($data);//die();
 
         if (empty($data[0])) {
             $data[0] = '';
@@ -181,7 +181,6 @@ class ITS_question {
     //=====================================================================//
     function render_QUESTION_check($conf) { // mode: (0-rand) | (1-DB) parameters
         //=====================================================================//
-       
         if ($this->Q_type == 'c') { // replace question variable {v} with rv //
             //echo 'MODE: '.$mode.' at '.date('l jS \of F Y h:i:s A').'<p>';
             // echo '<font color="blue">render_QUESTION_check()</font>:';
@@ -192,10 +191,12 @@ class ITS_question {
 			// Fetch answer options text
 			// Khyatis changes start
 			$fields = 'text1';
-			for($k=1;$k<=$this->Q_answers;$k++){
+			//echo $this->Q_answers;
+			for($k=1;$k<$this->Q_answers;$k++){
 				$fields .=', text'.($k+1);
 			}
 			$query = "SELECT " . $fields . " FROM " . $this->tb_name . "_" . $this->Q_type . " WHERE id=" . $this->Q_num;
+			//echo $query;
 			$res = mysql_query($query);
 			if (!$res) {
 				die('Query execution problem in ITS_question: ' . msql_error());
@@ -209,7 +210,7 @@ class ITS_question {
                 $fields = $fields . ",val" . $i . ",min_val" . $i . ",max_val" . $i;
             }
 
-            $query = " SELECT " . $fields . " from " . $this->tb_name . "_" . $this->Q_type . " WHERE id=" . $this->Q_num;
+            $query = " SELECT " . $fields . " FROM " . $this->tb_name . "_" . $this->Q_type . " WHERE id=" . $this->Q_num;
             //echo $query;
             $res = mysql_query($query);
             if (!$res) {
@@ -219,18 +220,19 @@ class ITS_question {
             $question = $this->Q_question;
 
             $mode = intval(empty($conf));
-         //ITS_debug('<p>'.$conf.'<br>'.$mode.'</p>');           
+            //ITS_debug('<p>'.$conf.'<br>'.$mode.'</p>');           
             //echo 'MODE: '.$mode.' at '.date('l jS \of F Y h:i:s A').'<p>';
             switch ($mode) {
                 //-------------------------------------------//
                 case 0:
                 //-------------------------------------------//
+                //echo 'case 0';
                     $vals = explode(',', $conf);
                     for ($i = 1; $i <= count($vals); $i++) {
                         //echo $vdata["val".$i].' '.$vals[($i-1)];
                         $question = str_replace($vdata["val" . $i], $vals[($i - 1)], $question);
                         //$this->Q_question_parts['text'.$i] = str_replace($vdata["val" . $i], $vals[($i - 1)], $this->Q_question_parts['text'.$i]);
-				      for($k=1;$k<=$this->Q_answers;$k++){
+				      for($k=1;$k<$this->Q_answers;$k++){
 							$this->Q_question_parts['text'.$k] =  str_replace($vdata["val" . $i], $rnv[($i - 1)],  $this->Q_question_parts['text'.$k]);
 					  }                         
                     }                   
@@ -258,7 +260,6 @@ class ITS_question {
                     break;
                 //-------------------------------------------//
             }
-
             $this->Q_question = $question;
         }
         $question_check_str = self::render_QUESTION();
@@ -343,14 +344,13 @@ class ITS_question {
             
             if (preg_match("/phpimg/i",$this->Q_image)) {
 				//die($this->Q_image);
-			$img = '<img src="' . $this->files_path . $this->Q_image . '" class="ITS_question_img" alt="' . $this->files_path . $this->Q_image . '">';
+			$img = '<img src="' . $this->files_path . $this->Q_image . '" class="ITS_question_img2" alt="' . $this->files_path . $this->Q_image . '">';
     //$img = '<a id="inline" href="#data"><img src="' . $this->files_path . $this->Q_image . '" class="ITS_question_img" alt="' . $this->files_path . $this->Q_image . '"></a>';
     //$img.= '<div style="display:none"><div id="data"><img src="' . $this->files_path . $this->Q_image . '" class="ITS_question_img" alt="' . $this->files_path . $this->Q_image . '"></div></div>';
 } else {
     $img = '<a id="single_image" href="' . $this->files_path . $this->Q_image . '" class="ITS_question_img" alt="' . $this->files_path . $this->Q_image . '"><img src="' . $this->files_path . $this->Q_image . '" class="ITS_question_img" alt="' . $this->files_path . $this->Q_image . '"></a>';
 }
-                       
-            
+                           
             //$img = '<a class="example2" href="' . $src . '"><img src="' . $src . '" alt="' . $src . '"></a>';
         } else {
             $img = '';
@@ -559,7 +559,6 @@ class ITS_question {
             //-------------------------------------------//
             case 'm':
             //-------------------------------------------//
-
                 $n = $this->Q_answers;
                 $L_fields = "L1";
                 $L_images = "Limage1";
@@ -1132,7 +1131,7 @@ class ITS_question {
     }
     //=====================================================================//
     function renderQuestionImage($img_val) {
-        //=====================================================================//
+    //=====================================================================//
         if ($img_val) {
             $query_img = 'SELECT dir,name FROM images WHERE id='. $img_val;
             $res = mysql_query($query_img);
@@ -1151,7 +1150,7 @@ class ITS_question {
     }
     //=====================================================================//
     function renderQuestionForm($action) {
-        //=====================================================================//
+    //=====================================================================//
         $act    = explode('~', $action);                        // echo $act[0];
         $class  = 'text ui-widget-content ui-corner-all ITS_Q';
         $fields = explode(',', $this->fields);
@@ -1408,7 +1407,7 @@ class ITS_question {
     }
     //=====================================================================//
     function render_Admin_Nav($qid, $qtype, $style) {
-        //=====================================================================//
+    //=====================================================================//
         $nav = '<input type="button" class="' . $style . '" id="createQuestion" name="new"   value="New"   qid="' . $qid . '" qtype="' . $qtype . '">'
                 . '<input type="button" class="' . $style . '" id="cloneQuestion"  name="clone" value="Clone" qid="' . $qid . '" qtype="' . $qtype . '">'
                 . '<input type="button" class="' . $style . '" id="importQuestion" name="new"   value="import QTI" qid="' . $qid . '">'
@@ -1423,7 +1422,7 @@ class ITS_question {
     }
     //=====================================================================//
     function createEditTable($TargetName, $Target, $style) {
-        //=====================================================================//
+    //=====================================================================//
         // eg. createEditTable('TITLE','This is my title',$style);
         //die($this->mimetex_path);
         //echo '|div id="ITS_'.$TargetName.'_TARGET" class="ITS_TARGET" code="'.htmlspecialchars($Target_str).'" path="'.$this->mimetex_path.'"|<hr>';
@@ -1475,7 +1474,7 @@ class ITS_question {
     }
     //=====================================================================//
     function renderFieldCheck($field) {
-        //=====================================================================//
+    //=====================================================================//
         // LATEX: <latex>latex_code</latex> ==> MIMETEX img
         // IMAGE_PATH
 
