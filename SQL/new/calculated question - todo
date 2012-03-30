@@ -1,0 +1,80 @@
+QUESTION RENDERING TO STUDENTS:
+1.COSMETIC CHANGES - text - box - text - box - Done to question viewer and creatrion, not at the editing part, will make once greg passes on the latest edition. along with show of weights
+
+TOLERANCE VALUE:
+1. MAKE CHANGES TO THE DATABASE
+2. replace .2 with in the scoring module with whatever
+
+
+
+weights not adding to 100  - more than 100 points for a question
+
+Add the drop down in the answers field..
+will anything else change??
+
+________________DEFERRED_______________________________________________________________________________________________________________________
+
+2. display the right answers in the review mode. should we show the right answers? WOKING ON -> displaying the correct value ?? ITS_DIST
+SCORING:
+1. ADD WEIGHTS TO QUESTION EDITING -> REVIEW MODE
+
+drop down make auto change to see more formulaes in the edit mode. 	
+___________________________________________________________________________________________________________________________________________________
+
+_________________DONE____________________________________________________________________________________________________________________
+QUESTION EDITING:
+1. EDIT BOXES FOR NEW FORMULAES - ITS QUESTION QUERY - DONE - done in new script
+
+***BUG: same thing in Cloning! - BUG that it does not render in the first go! even with question - taken care
+SCORING:
+1. ADD WEIGHTS TO ANSWER OPTIONS -> CHANGE IN QUESTION CREATION -> CHANGE IN QUESTION EDITING -> REVIEW MODE does not support fractional weights
+
+
+QUESTION CREATION:
+1. NUMBER OF ANSWERS - DONE -  done in new script
+2. ADD MORE FORMULAES - ADD replace- TR in table -- replace! - add more formulaes but wont update dynamically - done in new script
+
+ITS_QUESTION -> cahnges for answer options in edit mode -> how to propagate! to added formulaes - Done
+
+************************************************************************************************************************************************************************
+Last :
+-> QTI update (changes will include the number of answers field - t be a variable and then different forulaes and weights)
+
+// 2. AND ANSWER OPTIONS -> IF WE GIVE THE CAPABILITY TO CHANGE IT ONCE THE QUESTION IS MADE
+
+
+Done:
+weights - for now equal distribution - next version diff weights ! - done in new script
+multiple answers - ITS_screen.php - done in new script
+formulaes  - added - done in new script
+multiple variables upto 5 - right now 4 formulaes - more than enough! -  done in new script
+
+Comments: 
+DATABASE UPDATE:
+formula1, formula2, formula3, 
+will each formula have its own variables or can they be general. and be reused 
+
+alter table webct_c add column (formula2 varchar(256),
+				formula3 varchar(256),
+				formula4 varchar(256)
+)
+alter table webct_c add column (weight1 int(11),
+				weight2 int(11),
+				weight3 int(11),
+				weight4 int(11)
+)
+alter table webct_c rename column weight3  to weight3 
+alter table webct_c add column (text1 varchar(256),
+				text2 varchar(256),
+				text3 varchar(256),
+				text4 varchar(256)
+)
+
+ALTER TABLE table [ * ]
+      RENAME [ COLUMN ] column TO newcolumn
+
+
+
+
+// WHEN CHANGES ARE MADE TO WEBCT THEN THE LOAD_DATA FUNCITON IN ITS_question.phP must be REVISITED TO MAKE CHANGES SUCH AS REPALCE THE INDECES WITH THE COLUMN NAME !
+SHOULD the IDS be different for diff boxes?? how is the scoring done for questions displayed for students. 

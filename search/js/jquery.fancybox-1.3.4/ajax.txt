@@ -1,0 +1,6 @@
+<div style="width:400px;">
+	<h2>This comes from ajax request</h2>
+	<p>
+Convolution - soemthing of other <latex>\frac{\pi}{2}</latex>
+	</p>
+</div>

@@ -1,0 +1,50 @@
+body /*TH,CAPTION */{font:10pt Verdana, Geneva, sans-serif;text-align:center;color:#000;background:#fff;margin:5% 10%;padding:0}
+h1,h2,h3,h4,h5,h6{color:#000;font-family:'times new roman', arial, verdana, helvetica,sans-serif;background-color:#fff;font-style:normal;font-variant:normal;font-weight:400;margin:0 0 .5em}
+div.ITS_ghost{position:relative;background:#fff;height:auto;padding:0}
+a:focus,a:active{color:#000}
+a:link{color:#B52C07}
+a:hover{color:red}
+h2 a{text-decoration:none}
+h3 a.header{color:red;border:none}
+code { color:#633}
+ul li{list-style-type:none}
+img.doc{border:2px solid #999;margin:.5em;padding:.5em}
+span.var{color:#191}
+h3 {border-bottom:3px solid #666;background:#FFF;font-size:3em;font:bold 150% georgia, times, "times new roman", serif;text-align:center;margin:1em 0;padding:.2em 1em}
+h3.sql{text-align:left;color:#F52;background:#FFF}
+table.docs{border-collapse:collapse;text-align:left}
+table.docs td{border-bottom:2px solid #999;padding:.5em 0;text-align:left}
+table.docs td ul li{padding:.1em}
+table.sql{border:1px solid #666;text-align:center}
+table.sql th{position:relative;font-family:monospace;letter-spacing:.1em;border:2px solid #666;background:#eee;text-align:center;padding:.5em}
+table.sql td{border:3px solid #666;color:blue;text-align:center;padding:.5em}
+table.sql td.sql{border:2px solid #666;color:green;background:#ffa;font-weight:700;text-align:center;padding:5px}
+.header{color:blue;width:5%}
+.subheader{color:blue;background-color:#fff;text-align:center}
+p{margin:0;padding:10px}
+Q{font:8pt Georgia, serif}
+TT{font-family:cursive,serif}
+TD{text-align:center;border-style:none;border-width:1px;padding:0}
+input.check33{display:none}
+input.check33 label{border:1px solid red}
+#pageContainer{position:relative;width:95%;border-left:2px solid #aaa;border-right:2px solid #aaa;border-bottom:2px solid #aaa;background:#fff;margin:0 auto;padding:1em}
+#footerContainer{clear:both;color:#666;font-size:80%;padding-top:0;text-align:center;border-top:5px solid #777;background:#FFF}
+#footerContainer ul li{display:inline}
+ul.ITS_list ul{position:relative;width:300px;list-style-type:none;display:inline;font:10pt Georgia, serif;border:1px solid blue;margin:0;padding:1em}
+ul.ITS_list li{list-style-type:none;display:inline;border:1px solid blue;margin:2px;padding:0 .25em}
+#ITS_screen_A ul#navlistIdx li#active{list-style-type:none;margin:0;padding:0}
+TABLE.ITS_version{border:1px solid #666;border-collapse:collapse}
+TABLE.ITS_version TH{border:1px solid #666;background:#eee;padding:5px}
+TABLE.ITS_version TD{border:1px solid #666;padding:5px}
+TABLE.ITS_version TD.list{border:1px solid #666;text-align:left;color:#00e;padding:5px}
+span.seg{border:1px solid silver}
+div.error{position:relative;color:#050;border:3px dashed #666;margin:5px;padding:2px}
+TABLE.ITS_header{border:0 solid #333;border-collapse:collapse}
+TD.ITS_header{border-right:1px solid #666;padding:0 5px}
+#messageContainerContent{background:#ee7}
+div.ITS_question_text2{background:red}
+div.navContainer{background:#fff;border:1px solid #fff}
+div.navContent{border:1px solid #fff}
+.headering,a:visited{color:blue}
+#menuContainer,#messageContainer,#messageContainer span,#contentContainer,div.ITS_question_text,div.ITS_ANSWER,div.logout{background:#fff}
+i { color:green }

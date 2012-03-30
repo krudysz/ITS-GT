@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>SPF - search</title>
+	<link rel="stylesheet" href="css/docs.css">
+</head>
+<body>
+<h3>
+Instructions for setting up the SPF search tool:
+</h3><center>
+  <table class="ITS_version" summary="ITS versions">
+	    <!--------------------------------------------------------------------->
+			<tr><th>ITEM</th><th>ACTION</th></tr>
+	    <!--------------------------------------------------------------------->
+	    <tr>
+		  <td>SPF search tool</td>
+			<td class="list">
+			  <ol>
+				<li><b>Install AMP:</b> Apache | MySQL | PHP </li>
+				<li>AMP on Ubuntu: <code><br>sudo apt-get install apache2<br>sudo apt-get install php5 libapache2-mod-php5<br>sudo apt-get install mysql-server</code></li>
+								<li><b>Unzip SPFsearch.zip:</b> place in <code>/var/www/html</code> directory</li>
+				<li><b>Login to MySQL and Create Database:</b> - assume user=root, pass=root, database=its<br><code> mysql -u root -proot<br>mysql>> create database its; <i>[ENTER]</i><br>quit; <i>[ENTER]</i></code></li>
+				<li><b>Load SPF Database:</b><br><code>mysql -u root -D its -proot < sql/SPF.sql</code></li>	
+				<li><b>Test:</b><ul><li><a href="http://localhost/search/search.php">http://localhost/search/search.php</a></li><li><a href="http://localhost/search/tables.php">http://localhost/search/tables.php</a></li></ul></li>			
+			  </ol>
+			</td>
+		  </tr>
+	    <!--------------------------------------------------------------------->			
+  </table></center>
+</body>
+</html>
